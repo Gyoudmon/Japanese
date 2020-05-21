@@ -4,25 +4,30 @@
 
 @(require scribble/latex-render)
 
-@(require "../digitama/multilanguage.rkt")
+@require{../digitama/multilanguage.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-title/pkg-desc[]
 
+@; The preface will always be displayed after the table of contents if it is `include-section`ed.
+@handbook-preface-section[]
+
+This is a book on Japanese Grammer based on Linguistics.
+
 @handbook-smart-table[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@include-section["sentence.scrbl"]
+@include-section{sentence.scrbl}
 
-@include-section["noun.scrbl"]
-@include-section["adjective.scrbl"]
-@include-section["verb.scrbl"]
+@include-section{noun.scrbl}
+@include-section{adjective.scrbl}
+@include-section{verb.scrbl}
 
-@include-section["phonetics.scrbl"]
+@include-section{phonetics.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #true
- (bib-entry #:key      "CHoJL"
+ (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
             #:author   (authors "Yoko Hasegawa")
             #:location (book-location #:publisher "Cambridge University Press")
