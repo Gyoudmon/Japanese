@@ -7,7 +7,6 @@
 
 (require racket/list)
 (require racket/string)
-(require racket/class)
 
 (require racket/draw)
 (require [except-in pict table])
@@ -20,5 +19,8 @@
             [(element? elem) (map content->string (element-content elem))]
             [else (format "~a" elem)]))
     
-    (text (string-join (flatten (map content->string contents)) " ")
-          font 12)))
+    (make-traverse-element
+     (λ [get set]
+       (if (member 'latex (get 'scribble:current-render-mode '(latex)))
+           (text (string-join (flatten (map content->string contents)) " ") font 12)
+           contents)))))
