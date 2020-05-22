@@ -2,6 +2,6 @@
 
 @(require digimon/tamer)
 
-@handbook-story{形容詞}
+@handbook-story{Verbs}
 
 @handbook-reference[]

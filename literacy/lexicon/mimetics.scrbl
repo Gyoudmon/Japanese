@@ -2,6 +2,6 @@
 
 @(require digimon/tamer)
 
-@handbook-story{動詞}
+@handbook-story{Mimetics}
 
 @handbook-reference[]

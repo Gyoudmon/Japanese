@@ -4,7 +4,7 @@
 
 @(require scribble/latex-render)
 
-@require{../digitama/multilanguage.rkt}
+@require{digitama/multilanguage.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-title/pkg-desc[]
@@ -17,13 +17,10 @@ This is a book on Japanese Grammer based on Linguistics.
 @handbook-smart-table[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@include-section{sentence.scrbl}
-
-@include-section{noun.scrbl}
-@include-section{adjective.scrbl}
-@include-section{verb.scrbl}
-
-@include-section{phonetics.scrbl}
+@include-section{literacy/lexicon.scrbl}
+@include-section{literacy/grammar.scrbl}
+@include-section{literacy/pragmatics.scrbl}
+@include-section{literacy/phonetics.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #true

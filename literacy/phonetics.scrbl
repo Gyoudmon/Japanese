@@ -2,7 +2,7 @@
 
 @(require digimon/tamer)
 
-@handbook-story{音声}
+@handbook-story{Phonetics}
 
 @itemlist[
  #:style 'compact

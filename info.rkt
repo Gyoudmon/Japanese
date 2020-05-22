@@ -10,4 +10,4 @@
 (define pkg-authors '(wargrey))
 (define test-omit-paths 'all)
 
-(define typesettings '(["tamer/Japanese.scrbl" lualatex]))
+(define typesettings '(["Japanese.scrbl" lualatex]))

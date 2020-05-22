@@ -2,6 +2,8 @@
 
 @(require digimon/tamer)
 
-@handbook-story{時制}
+@handbook-story{Grammar}
+
+@include-section{grammar/tense.scrbl}
 
 @handbook-reference[]
