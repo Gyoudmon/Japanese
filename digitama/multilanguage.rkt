@@ -2,13 +2,11 @@
 
 (provide (all-defined-out))
 
-(require scribble/base)
 (require scribble/core)
 
 (require racket/list)
 (require racket/string)
 
-(require racket/draw)
 (require [except-in pict table])
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
