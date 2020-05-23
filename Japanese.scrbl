@@ -24,7 +24,7 @@ Japanese. Yes, as might be expected, comparing with Chinese is also something in
 
 @bold{Microsoft Word} is good but not the best one for writing rigorous books, one mentionable reason is
 that authors have to maintain references on their own. @bold{@latex{}} is too cumbersome to work with
-directly. @bold{Racket Scribble} just fit the case.
+directly. @bold{Racket Scribble} just fits the case.
 
 Discussions and Suggestions are welcome.
 

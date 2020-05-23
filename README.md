@@ -17,7 +17,7 @@ interesting you will find.
 **Microsoft Word** is good but not the best one for writing rigorous
 books, one mentionable reason is that authors have to maintain
 references on their own. **LaTex** is too cumbersome to work with
-directly. **Racket Scribble** just fit the case.
+directly. **Racket Scribble** just fits the case.
 
 Discussions and Suggestions are welcome.
 
