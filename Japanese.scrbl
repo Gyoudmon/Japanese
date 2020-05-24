@@ -20,11 +20,11 @@ on this project to write my own textbook.
 
 Since practicing Chinese is not so valuable for me, I therefore choose English as the writing language.
 As a result, this book targets native English speakers and anyone who are interested in English and
-Japanese. Yes, as might be expected, comparing with Chinese is also something interesting you will find.
+Japanese. Yes, as might be expected, comparing with Chinese is also something interesting one would find.
 
-@bold{Microsoft Word} is good but not the best one for writing rigorous books, one mentionable reason is
-that authors have to maintain references on their own. @bold{@latex{}} is too cumbersome to work with
-directly. @bold{Racket Scribble} just fits the case.
+Microsoft Word is good but not the best one for writing rigorous books, one mentionable reason is that
+authors have to maintain references on their own. @latex{} is too cumbersome to work with directly.
+Racket Scribble just fits the case.
 
 Discussions and Suggestions are welcome.
 

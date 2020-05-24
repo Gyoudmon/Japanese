@@ -11,3 +11,5 @@
 (define test-omit-paths 'all)
 
 (define typesettings '(["Japanese.scrbl" lualatex]))
+
+(define samples '(["literacy/lexicon/verbs.scrbl" 1 _]))
