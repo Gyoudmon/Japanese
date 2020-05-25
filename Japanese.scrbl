@@ -23,7 +23,7 @@ As a result, this book targets native English speakers and anyone who are intere
 Japanese. Yes, as might be expected, comparing with Chinese is also something interesting one would find.
 
 Microsoft Word is good but not the best one for writing rigorous books, one mentionable reason is that
-authors have to maintain references on their own. @latex{} is too cumbersome to work with directly.
+authors have to maintain references on their own. LaTex is too cumbersome to work with directly.
 Racket Scribble just fits the case.
 
 Discussions and Suggestions are welcome.
