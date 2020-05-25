@@ -1,11 +1,9 @@
 #lang scribble/book
 
-@(require digimon/tamer)
-
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{Lexicon @ruby["語彙"]{ごい}}
+@handbook-story{@chapter-title["Lexicon" "語彙"]{ごい}}
 
 @include-section{lexicon/nouns.scrbl}
 @include-section{lexicon/verbs.scrbl}

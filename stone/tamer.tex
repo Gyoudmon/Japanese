@@ -1,10 +1,10 @@
-% empty
-
-\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
 \usepackage{luatexja-ruby}
 
 \ltjsetruby{size=0.6}
 \ltjsetruby{mode=00}
+
+\newcommand{\Chinese}[2]{ \jfontspec{#1} #2 }
 
 % \setlength{\parskip}{0.5em}
 % \renewcommand{\baselinestretch}{1.0}

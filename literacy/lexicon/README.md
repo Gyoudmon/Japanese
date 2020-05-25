@@ -1,4 +1,4 @@
-# Verbs 動詞
+# Verbs | 動詞
 
 _Verb_ is a kind of word that be used to describe an action, state, or
 occurrence. Not only can Japanese verbs perform the main part of the

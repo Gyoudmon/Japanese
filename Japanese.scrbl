@@ -2,10 +2,7 @@
 
 @(require digimon/tamer)
 
-@(require scribble/latex-render)
-
-@require{digitama/multilanguage.rkt}
-@require{digitama/multirenderer.rkt}
+@require{literacy/literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-title/pkg-desc[]

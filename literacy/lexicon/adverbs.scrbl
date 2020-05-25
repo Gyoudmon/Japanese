@@ -1,10 +1,8 @@
 #lang scribble/book
 
-@(require digimon/tamer)
-
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{Adverbs @ruby["副詞" "ふくし"]}
+@handbook-story{@chapter-title["Adverbs" "副詞"]{ふくし}}
 
 @handbook-reference[]
