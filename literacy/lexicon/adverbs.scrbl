@@ -2,6 +2,9 @@
 
 @(require digimon/tamer)
 
-@handbook-story{Adverbs}
+@require{../literacy.rkt}
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story{Adverbs @ruby["副詞" "ふくし"]}
 
 @handbook-reference[]

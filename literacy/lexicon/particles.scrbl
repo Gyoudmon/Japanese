@@ -2,6 +2,9 @@
 
 @(require digimon/tamer)
 
-@handbook-story{Particles}
+@require{../literacy.rkt}
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story{Particles @ruby["接辞" "せつじ"]}
 
 @handbook-reference[]

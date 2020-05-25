@@ -2,6 +2,9 @@
 
 @(require digimon/tamer)
 
-@handbook-story{Mimetics}
+@require{../literacy.rkt}
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story{Mimetics @ruby["模倣詞" "もほうし"]}
 
 @handbook-reference[]

@@ -2,6 +2,9 @@
 
 @(require digimon/tamer)
 
-@handbook-story{Conjunctions}
+@require{../literacy.rkt}
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story{Conjunctions @ruby["接続詞" "せつぞくし"]}
 
 @handbook-reference[]

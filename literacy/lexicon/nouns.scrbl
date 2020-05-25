@@ -2,7 +2,10 @@
 
 @(require digimon/tamer)
 
-@handbook-story{Nouns}
+@require{../literacy.rkt}
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story{Nouns @ruby["名詞" "めいし"]}
 
 Nouns are substantives and used to identify any of a class of people, places, and things, or to name a particular one of these.
 In a sentence, when followed by a particle, a noun usually functions as the subject, complement, or substantive modifiers.

@@ -12,4 +12,6 @@
 
 (define typesettings '(["Japanese.scrbl" lualatex]))
 
-(define samples '(["literacy/lexicon/verbs.scrbl" 1 _]))
+(define samples '(["literacy/definitions.scrbl"]
+
+                  ["literacy/lexicon/verbs.scrbl" 1 _]))
