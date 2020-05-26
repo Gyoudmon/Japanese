@@ -1,6 +1,6 @@
 # Lexicon | 語彙
 
-Here lists technical terms that commonly seen in Japanese Grammer.
+Here lists technical terms that commonly seen in Japanese grammar.
 
 * _Independent Word_ 「自立語」
 

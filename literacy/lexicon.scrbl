@@ -5,7 +5,7 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@chapter-title["Lexicon" "語彙"]{ごい}}
 
-Here lists technical terms that commonly seen in Japanese Grammer.
+Here lists technical terms that commonly seen in Japanese grammar.
  
 @itemlist[
  @item{@define-term["Independent Word" "自立語" "じりつご"]
