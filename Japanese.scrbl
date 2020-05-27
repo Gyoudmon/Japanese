@@ -28,6 +28,7 @@ Discussions and Suggestions are welcome.
 @handbook-smart-table[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@include-section{literacy/parts.scrbl}
 @include-section{literacy/lexicon.scrbl}
 @include-section{literacy/grammar.scrbl}
 @include-section{literacy/pragmatics.scrbl}
@@ -37,7 +38,7 @@ Discussions and Suggestions are welcome.
 @handbook-appendix[#:index? #true
  (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
-            #:author   (authors "Yoko Hasegawa")
+            #:author   (editor "Yoko Hasegawa")
             #:location (book-location #:publisher "Cambridge University Press")
             #:date     "2018"
             #:is-book? #true)
@@ -57,5 +58,11 @@ Discussions and Suggestions are welcome.
             #:title    @chinese{综合日语}
             #:author   (authors @chinese{彭广陆} @chinese{守屋三千代})
             #:location @chinese[(book-location #:publisher "北京大学出版社")]
+            #:date     "2006"
+            #:is-book? #true)
+ (bib-entry #:key      "JL"
+            #:title    @chinese{日语语言学}
+            #:author   (editor @chinese{翟东娜})
+            #:location @chinese[(book-location #:publisher "高等教育出版社")]
             #:date     "2006"
             #:is-book? #true)]
