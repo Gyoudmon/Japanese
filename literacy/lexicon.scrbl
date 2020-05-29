@@ -3,7 +3,7 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@chapter-title["Lexicon" "語彙"]{ごい}}
+@handbook-story{@ja-title["Lexicon" "語彙"]{ごい}}
 
 @include-section{lexicon/mimetics.scrbl}
 

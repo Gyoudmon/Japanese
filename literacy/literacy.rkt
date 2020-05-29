@@ -27,13 +27,18 @@
            contents)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define chapter-title
+(define ja-title
   (lambda [en kenji hiragana]
     (list en ~ "|" ~
           (ruby kenji hiragana))))
 
-(define define-term
+(define ja-deftech
   (lambda [en kenji hiragana #:key [key #false]]
-    (list (deftech en #:key key)
-          ~
+    (list (deftech en #:key key) ~
           "「" (ruby kenji hiragana) "」")))
+
+(define ja-tech
+  (lambda [en kenji hiragana #:key [key #false]]
+    (list (tech #:key (or key en)
+                en ~
+                "「" (ruby kenji hiragana) "」"))))

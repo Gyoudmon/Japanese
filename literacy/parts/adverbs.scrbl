@@ -3,6 +3,6 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@chapter-title["Adverbs" "副詞"]{ふくし}}
+@handbook-story{@ja-title["Adverbs" "副詞"]{ふくし}}
 
 @handbook-reference[]

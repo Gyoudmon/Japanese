@@ -3,6 +3,6 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@chapter-title["Mimetics" "模倣詞"]{もほうし}}
+@handbook-story{@ja-title["Mimetics" "模倣詞"]{もほうし}}
 
 @handbook-reference[]

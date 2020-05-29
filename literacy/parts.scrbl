@@ -3,56 +3,45 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@chapter-title["Parts of Speech" "品詞"]{ひんし}}
+@handbook-story{@ja-title["Parts of Speech" "品詞"]{ひんし}}
 
-Japanese is an agglutinative language and has its own lexicon terms,
-some common terms may also have different semantic meanings.
- 
+@deftech[#:key "PoS"]{Part of Speech} is the category of words that have similar grammatical properties.
+More precisely, Japanese words are categorized based on their meanings, grammatical functions and inflections.
+Given that Japanese is an agglutinative language in which case words are well formed and keep consistent
+after their unions, Japanese words are well categoried into 10 - 12 schemes.
+
 @itemlist[
- @item{@define-term["Independent Words" "自立語" "じりつご"]
-
-  Any words that having lexical meaning and standing by themselves as a part of a sentence.
-        
+ @item{@ja-deftech["Independent Words" "自立語" "じりつご"]        
   @itemlist[
- @item{@define-term["Substantives" "体言" "たいげん"]
-        
-    A term used to denote @tech{nouns} and @tech{pronouns} collectively. It identifies any of a class of
-    people, places, or things, or to name a particular one of these.
-
-    It performs the main part of the @define-term["Subjects" "主語" "しゅご"]
-    or @define-term["Objects" "目的語" "もくてきご"] of a sentence.}
+ @item{@ja-deftech["Substantives" "体言" "たいげん"]
+    @itemlist[
+ @item{@ja-tech["Nouns" "名詞" "めいし"]
+      @itemlist[
+ @item{@ja-tech["Pronouns" "代名詞" "だいめいし"]}
+ @item{@ja-tech["Numerals" "数詞" "すうし"]}
+ ]}]}
   
- @item{@define-term["Conjugable Words" "用言" "ようげん"]
-
-    A term used to denote @tech{verbs} and @tech{adjectives} collectively. It describes an action,
-    state, property, or occurrence.
-
-    It performs the main part of the @define-term["Predicates" "述語" "じゅつご"] of a sentence.
-
-    It consists of a stem and a suffix.}
- 
- @item{@define-term["Prenominal Modifiers" "連体修飾語" "れんたいしゅうしょくご"]
-
-   A word that preceding and modifying a @tech{substantive}.}
-
- @item{@define-term["Adverbs" "副詞" "ふくし"]
-
-    A role that played by other words to modify a @tech{conjugable word}.
-
-    It is a subset of @ruby["連用修飾語" "れんようしゅうしょくご"].}
-
- @item{@define-term["Conjunctions" "接続詞" "せつぞくし"]}
- 
- @item{@define-term["Interjections" "感動詞" "かんどうし"]}
+ @item{@ja-deftech["Declinable Words"  "用言" "ようげん"]
+    @itemlist[
+ @item{@ja-tech["Verbs" "動詞" "どうし"]}
+ @item{@ja-tech["Adjectives" "形容詞" "けいようし"]}
+ @item{@ja-tech["Adjectival Verbs" "形容動詞" "けいようどうし"]}
  ]}
 
- @item{@define-term["Ancillary Words" "付属語" "ふぞくご"]
+ @item{@ja-deftech["Modifiers" "修飾語" "しゅうしょくご"]
+    @itemlist[
+ @item{@ja-tech["Prenominals" "連体詞" "れんたいし"]}
+ @item{@ja-tech["Adverbs" "副詞" "ふくし"]}
+]}
+ 
+ @item{@ja-tech["Conjunctions" "接続詞" "せつぞくし"]}
+ @item{@ja-tech["Interjections" "感動詞" "かんどうし"]}
+ ]}
 
-  Any words that having grammatical function and agglutinating an @tech{independent word}.
-
+ @item{@ja-deftech["Ancillary Words" "付属語" "ふぞくご"]
   @itemlist[
- @item[@define-term["Particles" "助詞" "じょし"]]
- @item[@define-term["Auxiliary Verbs" "助動詞" "じょどうし"]]
+ @item[@ja-tech["Particles" "助詞" "じょし"]]
+ @item[@ja-tech["Auxiliary Verbs" "助動詞" "じょどうし"]]
  ]}
  ]
 
