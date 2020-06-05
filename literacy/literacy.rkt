@@ -10,6 +10,20 @@
 (require scribble/latex-properties)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define-syntax (ja-thing stx)
+  (syntax-case stx []
+    [(_ ja-struct ja-type pre-flow ...)
+     #'(defthing ja-struct ja-type
+         pre-flow ...)]))
+
+(define-syntax (ja-things stx)
+  (syntax-case stx []
+    [(_ [[ja-struct ja-type] ...] pre-flow ...)
+     #'(deftogether
+         [(ja-thing ja-struct ja-type) ...]
+         pre-flow ...)]))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ruby
   (lambda [base ruy #:options [options #false]]
     (make-traverse-element
