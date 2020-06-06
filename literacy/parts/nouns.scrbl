@@ -7,10 +7,10 @@
 
 @deftech{Nouns} are @tech{substantives} and identify any of a class of
 people, places, or things, or to name a particular one of these.
-In a sentence, when followed by a particle, a noun usually functions as the subject,
-complement, or substantive modifiers. Besides, when followed by a copula,
-a noun and the whole function as a predicate.
 
-Unlike adjectives and verbs, Japanese nouns themselves do not have variation of forms.
+Grammatically, there is no distinguish between singular and plural.
+When followed by a particle, nouns usually function as the subjects,
+complements, or substantive modifiers. Besides, when followed by a copula,
+nouns and the whole function as predicates.
 
 @handbook-reference[]
