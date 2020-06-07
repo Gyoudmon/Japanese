@@ -1,10 +1,8 @@
 #lang scribble/book
 
-@(require scribble/extract)
-
 @require{../literacy.rkt}
 
-@declare-exporting{verbs.scrbl}
+@;{verbs.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title["Verbs" "動詞"]{どうし}}

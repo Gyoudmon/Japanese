@@ -56,3 +56,7 @@
     (list (tech #:key (or key en)
                 en ~
                 "「" (ruby kenji hiragana) "」"))))
+
+(define ja-form
+  (lambda contents
+    (apply math contents)))

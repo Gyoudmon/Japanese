@@ -14,4 +14,5 @@
 
 (define samples '(["literacy/parts.scrbl" 0]
 
-                  ["literacy/parts/verbs.scrbl" 1 _]))
+                  ["literacy/parts/verbs.scrbl" 1 _]
+                  ["literacy/grammar/case.scrbl" 0 _]))
