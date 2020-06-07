@@ -23,15 +23,43 @@
          [(ja-thing ja-struct ja-type) ...]
          pre-flow ...)]))
 
+(define-syntax (ja-example stx)
+  (syntax-case stx []
+    [(_ [ja ...] [ruy ...] english)
+     #'(tabular #:style 'block
+                #:column-properties '(left)
+                #:row-properties '(() top-border () bottom-border)
+                (list (list "Example")
+                      (list (ruby #:options (list "size=0.80")
+                                  (list (symbol->string 'ja) ...)
+                                  (list (ja-example-token->ruby 'ruy)
+                                        ...)))
+                      (list " ")
+                      (list english)))]))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ruby
   (lambda [base ruy #:options [options #false]]
-    (make-traverse-element
-     (λ [get set]
-       (cond [(not (handbook-latex-renderer? get)) (elem base)]
-             [(list? options) (make-multiarg-element (make-style "ruby" (list (make-command-optional (map ~a options)))) (list base ruy))]
-             [else (make-multiarg-element "ruby" (list base ruy))])))))
+    (map (λ [b r]
+           (make-traverse-element
+            (λ [get set]
+              (cond [(not (handbook-latex-renderer? get)) (elem b)]
+                    [(list? options) (make-multiarg-element (make-style "ruby" (list (make-command-optional (map ~a options)))) (list b r))]
+                    [else (make-multiarg-element "ruby" (list b r))]))))
+         (if (list? base) base (string-split base "|"))
+         (if (list? ruy)  ruy  (string-split ruy  "|")))))
 
+(define en-ruby
+  (lambda [base ruy #:options [options #false]]
+    (map (λ [b r]
+           (make-traverse-element
+            (λ [get set]
+              (cond [(not (handbook-latex-renderer? get)) (elem b)]
+                    [(list? options) (make-multiarg-element (make-style "enruby" (list (make-command-optional (map ~a options)))) (list b r))]
+                    [else (make-multiarg-element "enruby" (list b r))]))))
+         (if (list? base) base (string-split base "|"))
+         (if (list? ruy)  ruy  (string-split ruy  "|")))))
+    
 (define chinese
   (lambda [#:font [font "FandolSong"] . contents]
     (make-traverse-element
@@ -60,3 +88,12 @@
 (define ja-form
   (lambda contents
     (apply math contents)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define ja-example-token->ruby
+  (lambda [token]
+    (define content (symbol->string token))
+
+    (cond [(regexp-match? #px"\\w+" content) (tech (tt content))]
+          [(eq? token '-) ""]
+          [else content])))

@@ -11,7 +11,7 @@
                  #:style 'block
                  #:column-properties '(center center center)
                  #:row-properties '(bottom-border ())
-                 (list (list (bold (symbol->string 'head)) ... (bold (chinese (symbol->string 'head-zh-col))))
+                 (list (list (bold (symbol->string 'head)) ... (chinese (bold (symbol->string 'head-zh-col))))
                        (list (tech (symbol->string 'en-col)) (symbol->string 'col) ... (chinese (symbol->string 'zh-col)))
                        ...)))))
 
