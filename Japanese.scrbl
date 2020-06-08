@@ -34,7 +34,7 @@ Discussions and Suggestions are welcome.
 @include-section{literacy/pragmatics.scrbl}
 @include-section{literacy/phonetics.scrbl}
 
-@include-section{literacy/tables.scrbl}
+@include-section{literacy/abbreviations.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #true

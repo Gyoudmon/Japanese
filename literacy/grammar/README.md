@@ -17,7 +17,7 @@ clitics rather than nominal declensions so that other elements may
 intervene between the case particles and the marking nouns or extend the
 scope over more than one noun phrases.
 
-Example                                           
+  `Example`                                       
 太郎と花子だけが駅から歩いた                                    
                                                   
 Only Taro and Hanako walked from the train station

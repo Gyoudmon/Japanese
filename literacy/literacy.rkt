@@ -26,39 +26,27 @@
 (define-syntax (ja-example stx)
   (syntax-case stx []
     [(_ [ja ...] [ruy ...] english)
-     #'(tabular #:style 'block
-                #:column-properties '(left)
-                #:row-properties '(() top-border () bottom-border)
-                (list (list "Example")
-                      (list (ruby #:options (list "size=0.80")
-                                  (list (symbol->string 'ja) ...)
-                                  (list (ja-example-token->ruby 'ruy)
-                                        ...)))
-                      (list " ")
-                      (list english)))]))
+     #'(nested
+        (tabular #:style 'block
+                 #:column-properties '(left)
+                 #:row-properties '(bottom-border () 'bottom-border)
+                 (list (list (commandline "Example"))
+                       (list (list (let-values ([(token style) (ja-example->ruby-token 'ruy)])
+                                         (ruby (list (symbol->string 'ja)) (list token) #:style style)) ...))
+                       (list (hspace 1))
+                       (list english))))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ruby
-  (lambda [base ruy #:options [options #false]]
+  (lambda [base ruy #:options [options #false] #:style [style "ruby"]]
     (map (λ [b r]
            (make-traverse-element
             (λ [get set]
               (cond [(not (handbook-latex-renderer? get)) (elem b)]
-                    [(list? options) (make-multiarg-element (make-style "ruby" (list (make-command-optional (map ~a options)))) (list b r))]
-                    [else (make-multiarg-element "ruby" (list b r))]))))
-         (if (list? base) base (string-split base "|"))
-         (if (list? ruy)  ruy  (string-split ruy  "|")))))
-
-(define en-ruby
-  (lambda [base ruy #:options [options #false]]
-    (map (λ [b r]
-           (make-traverse-element
-            (λ [get set]
-              (cond [(not (handbook-latex-renderer? get)) (elem b)]
-                    [(list? options) (make-multiarg-element (make-style "enruby" (list (make-command-optional (map ~a options)))) (list b r))]
-                    [else (make-multiarg-element "enruby" (list b r))]))))
-         (if (list? base) base (string-split base "|"))
-         (if (list? ruy)  ruy  (string-split ruy  "|")))))
+                    [(list? options) (make-multiarg-element (make-style style (list (make-command-optional (map ~a options)))) (list b r))]
+                    [else (make-multiarg-element style (list b r))]))))
+         (ja-ruby-content base)
+         (ja-ruby-content ruy))))
     
 (define chinese
   (lambda [#:font [font "FandolSong"] . contents]
@@ -90,10 +78,16 @@
     (apply math contents)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define ja-example-token->ruby
+(define ja-example->ruby-token
   (lambda [token]
     (define content (symbol->string token))
 
-    (cond [(regexp-match? #px"\\w+" content) (tech (tt content))]
-          [(eq? token '-) ""]
-          [else content])))
+    (cond [(regexp-match? #px"[A-Z]+" content) (values (tech (tt content)) "exmptag")]
+          [(eq? token '-) (values "" "ruby")]
+          [else (values content "exmpruby")])))
+
+(define ja-ruby-content
+  (lambda [v]
+    (cond [(string? v) (string-split v "|")]
+          [(list? v) v]
+          [else (list v)])))
