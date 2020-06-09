@@ -2,7 +2,7 @@
 
 @require{literacy.rkt}
 
-@handbook-story{@ja-title["Grammar" "文法"]{ぶんぽう}}
+@handbook-story[#:index? #true]{@ja-title["Grammar" "文法"]{ぶんぽう}}
 
 @include-section{grammar/case.scrbl}
 @include-section{grammar/tense.scrbl}

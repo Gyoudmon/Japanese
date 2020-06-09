@@ -37,7 +37,7 @@ Discussions and Suggestions are welcome.
 @include-section{literacy/abbreviations.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-appendix[#:index? #true
+@handbook-appendix[#:index? #false
  (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
             #:author   (editor "Yoko Hasegawa")

@@ -11,11 +11,11 @@
               [empty-cell ""])
           (define terms
             (list (list (cond [(eq? '- 'abbr.) (aux-elem  "-")]
-                              [else (deftech (symbol->string 'abbr.))])
+                              [else (deftech (symbol->string 'abbr.) #:style? #false)])
                         (tech (symbol->string 'en-col))
                         (symbol->string 'col) ...
                         (chinese (symbol->string 'zh-col))) ...))
-          (tabular #:sep @hspace[2]
+          (tabular #:sep @hspace[1]
                    #:style 'block
                    #:column-properties '(left left left left center left left left left)
                    #:row-properties '(bottom-border ())
@@ -32,15 +32,18 @@
   
 @centered{
  @ja-deftech-table[
- [Abbr.  English                 日本語   　汉语普通话]
- [ABL    Ablative                奪格　　　　夺格]
- [ACC    Accusative　　　　　　    対格   　　宾格]
- [-      |Ancillary Words|       付属語     虚词]
- [-      Case                    格       　格]
- [-      |Independent Words|     自立語  　 实词]
- [-      Particles               助詞    　 助词]
- [NOM    Nominative　　　　　　    主格　　　　主格]
- [NP     |Noun Phrase|           名詞句     名词短语]
- [PST    Past                    過去　　　　过去时]]}
+ [Abbr.  English                   日本語   　汉语普通话]
+ [ABL    Ablative                  奪格　　　　夺格]
+ [ACC    Accusative　　　　　　      対格   　　宾格]
+ [-      |Ancillary Words|         付属語     虚词]
+ [-      Case                      格       　格]
+ [DAT    Dative                    与格       与格]
+ [-      |Independent Words|       自立語  　 实词]
+ [INSTR  ﻿instrumental              具格      工具格]
+ [-      Particles                 助詞    　 助词]
+ [NOM    Nominative　　　　　　      主格　　　　主格]
+ [NP     |Noun Phrase|             名詞句     名词短语]
+ [PST    Past                      過去　　　　过去时]
+ [SFP    |Sentence-Final Particle| 終助詞　　　语气助词]]}
 
 @handbook-reference[]

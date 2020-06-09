@@ -12,12 +12,32 @@ from cases of objects of transitive verbs.
 Japanese implements its case system by postpositional particles, which
 traditionally are also known as _case particles_ 「格助詞」. These case
 particles are phonologically bound to the preceding words as the form
-_noun + case particle_ is, nevertheless, the case particles are phrasal
-clitics rather than nominal declensions so that other elements may
-intervene between the case particles and the marking nouns or extend the
-scope over more than one noun phrases.
+_noun + case particle_ is, nevertheless, case particles are actually
+phrasal clitics rather than nominal declensions so that other elements
+may intervene between case particles and the marking nouns or extend the
+scope over more than one noun phrasesex1.1.
 
-  `Example`                                       
-太郎と花子だけが駅から歩いた                                    
-                                                  
-Only Taro and Hanako walked from the train station
+                                                   
+`Example 1.1`                                      
+太郎と花子だけが駅から歩いた.                                    
+                                                   
+Only Taro and Hanako walked from the train station.
+                                                   
+
+One of the key features of Japanese case system is based on its
+topic-prominent propertyKorean and Mandarin Chinese are also
+topic-prominent languages. Multiple nominative-marked noun phrases may
+occure within one clause so that the initial one may be considered as
+the topic and described by the remaining part of the clauseex1.2.
+
+                                                   
+`Example 1.2`                                      
+太郎が母親が評判がいい.                                       
+                                                   
+Taro is such that his mother has a good reputation.
+                                                   
+
+\#:tag cp  \[\[太郎   が  今朝 大学    に   行 った？\]   \[たろう NOM けさ だいかく DAT い
+PST\]   \[Did Taro go to university this morning?\]\]  \[\[お握り   を  外　 で
+食べる の？\]   \[おにぎり ACC そと INSTR  たべる SFP\]   \[Are we going to eat rice
+balls outside?\]\]\]

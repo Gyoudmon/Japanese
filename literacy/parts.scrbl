@@ -3,7 +3,7 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title["Parts of Speech" "品詞"]{ひんし}}
+@handbook-story[#:index? #true]{@ja-title["Parts of Speech" "品詞"]{ひんし}}
 
 @deftech[#:key "PoS"]{Part of Speech} is the category of words that have similar grammatical properties.
 More precisely, Japanese words are categorized based on their meanings, grammatical functions and inflections.
