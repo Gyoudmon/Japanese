@@ -9,11 +9,11 @@
 
 @ja-example[
  #:tag cp
- [[太郎   が  今朝 大学    に   行 った?]
+ [[太郎   が  今朝 大学    に   行った?]
   [たろう NOM けさ だいかく DAT い PST]
   [Did Taro go to university this morning?]]
- [[お握り   を  外  で     食べる の?]
-  [おにぎり ACC そと INSTR  たべる SFP]
+ [[お握り を  外  で     食べる の?]
+  [にぎ   ACC そと INSTR  た SFP]
   [Are we going to eat rice balls outside?]]]
 
 @handbook-reference[]

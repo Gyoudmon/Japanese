@@ -9,7 +9,6 @@
 (require scribble/manual)
 (require scribble/latex-properties)
 
-(require (for-syntax racket/syntax))
 (require (for-syntax syntax/parse))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -59,13 +58,13 @@
 (define-syntax (ja-example-parse stx)
   (syntax-case stx []
     [(_ [[ja ...] [ruy ...] [en ...]])
-     #'(list (list (list (let-values ([(token style) (ja-example->ruby-token 'ruy)])
-                           (ruby (list (ja-input 'ja)) (list token) #:style style)) ...))
-             ;;; NOTE:
-             ;; Rubies that displayed under kenjis do not contribute to the height of whole,
-             ;;  an empty line is required to avoid overlapping.
-             (list "")
-             (list (exec (string-join (map symbol->string '(|| en ...))))))]))
+     #'(let ([ruby.styles (list (ja-example->ruby-token 'ruy) ...)])
+         (list (list (ruby (list (ja-input 'ja) ...) (map car ruby.styles) #:style (map cdr ruby.styles)))
+               ;;; NOTE:
+               ;; Rubies that displayed under kenjis do not contribute to the height of whole,
+               ;;  an empty line is required to avoid overlapping.
+               (list "")
+               (list (exec (string-join (map symbol->string '(|| en ...)))))))]))
 
 (define-syntax (ja-example stx)
   (syntax-parse stx #:datum-literals []
@@ -133,16 +132,38 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ruby
-  (lambda [base ruy #:options [options #false] #:style [style "ruby"]]
-    (map (λ [b r]
-           (make-traverse-element
-            (λ [get set]
-              (cond [(not (handbook-latex-renderer? get)) (elem b)]
-                    [(list? options) (make-multiarg-element (make-style style (list (make-command-optional (map ~a options)))) (list b r))]
-                    [else (make-multiarg-element style (list b r))]))))
-         (ja-ruby-content base)
-         (ja-ruby-content ruy))))
+  (lambda [base ruy #:options [options #false] #:style [styles null]]
+    (define bases (ja-ruby-content base))
+    (define rubies (ja-ruby-content ruy))
+    (define rsize (length rubies))
+    (define-values (ssize slast)
+      (cond [(null? styles) (values 0 "ruby")]
+            [(list? styles) (values (length styles) (last styles))]
+            [else (values 0 styles)]))
     
+    (for/list ([b (in-list bases)]
+               [i (in-naturals 0)])
+      (define r (and (< i rsize) (list-ref rubies i)))
+      (define s0 (if (< i ssize) (list-ref styles i) slast))
+      (define s (cond [(not (eq? s0 'auto)) s0]
+                      [else (let ([eidx (sub1 (string-length b))])
+                              (cond [(= eidx 0) "exmprubyvc"] ; 'auto is designed for examples 
+                                    [else (let* ([sgana? (ja-hiragana? (string-ref b 0))]
+                                                 [egana? (ja-hiragana? (string-ref b eidx))]
+                                                 [egana? (or (and egana?)
+                                                             (and (ja-kigou? (string-ref b eidx))
+                                                                  (ja-hiragana? (string-ref b (sub1 eidx)))))])
+                                            (cond [(eq? sgana? egana?) "exmprubyvc"]
+                                                  [(not sgana?) "exmprubyvl"]
+                                                  [else "exmprubyvr"]))]))]))
+      
+      (make-traverse-element
+       (λ [get set]
+         (cond [(not (handbook-latex-renderer? get)) b]
+               [(or (not r) (equal? r "")) b]
+               [(pair? options) (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))]
+               [else (make-multiarg-element s (list b r))]))))))
+
 (define chinese
   (lambda [#:font [font "FandolSong"] #:latex? [latex? 'auto] . contents]
     (cond [(symbol? latex?)
@@ -191,15 +212,27 @@
   (lambda [token]
     (define content (ja-input token))
 
-    (cond [(regexp-match? #px"[A-Z]+" content) (values (tech (tt content)) "exmptag")]
-          [(eq? token '-) (values "" "ruby")]
-          [else (values content "exmpruby")])))
+    (cond [(regexp-match? #px"[A-Z]+" content) (cons (tech (tt content)) "exmptag")]
+          [(eq? token '-) (cons #false "ruby")]
+          [else (cons content 'auto)])))
 
 (define ja-ruby-content
   (lambda [v]
     (cond [(string? v) (string-split v "|")]
           [(list? v) v]
           [else (list v)])))
+
+(define ja-hiragana?
+  (lambda [ch]
+    (char<=? #\u3040 ch #\u309F)))
+
+(define ja-katakana?
+  (lambda [ch]
+    (char<=? #\u30A0 ch #\u30FF)))
+
+(define ja-kigou?
+  (lambda [ch]
+    (char<=? ch #\rubout)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-terminology-head 'literacy:japanese:terminology:head)

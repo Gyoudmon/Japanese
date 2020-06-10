@@ -25,7 +25,7 @@ phrases@ja-exref[interleaved-nps].
 @ja-example[
  #:tag interleaved-nps
  [太郎  と 花子  だけ が  駅  から 歩い  た.]
- [たろう - はなこ -  NOM えき ABL あるい PST]
+ [たろう - はなこ -  NOM えき ABL ある  PST]
  [Only Taro and Hanako walked from the train station.]]
 
 One of the key features of Japanese @tech{case} system is based on its @tech{topic}-prominent
@@ -36,8 +36,8 @@ clause@ja-exref[hallmark:multi-noms].
 
 @ja-example[
  #:tag hallmark:multi-noms
- [太郎  が   母親    が   評判      が　良い "."]
- [たろう NOM ははおや NOM ひょうばん NOM いい -]
+ [太郎  が   母親    が   評判      が　良い.]
+ [たろう NOM ははおや NOM ひょうばん NOM い]
  [Taro is such that his mother has a good reputation.]]
 
 @handbook-reference[]
