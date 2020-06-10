@@ -34,8 +34,6 @@ Discussions and Suggestions are welcome.
 @include-section{literacy/pragmatics.scrbl}
 @include-section{literacy/phonetics.scrbl}
 
-@include-section{literacy/abbreviations.scrbl}
-
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #false
  (bib-entry #:key      "CJLH"
@@ -68,3 +66,7 @@ Discussions and Suggestions are welcome.
             #:location @chinese[(book-location #:publisher "高等教育出版社")]
             #:date     "2006"
             #:is-book? #true)]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@include-section{literacy/terminology.scrbl}
+@include-section{literacy/abbreviation.scrbl}
