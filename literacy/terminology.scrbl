@@ -10,7 +10,7 @@
 @centered{
  @(make-delayed-block
    (λ [render% pthis infobase]
-     (define get (handbook-resolve-info-getter infobase))
+     (define get (handbook-resolved-info-getter infobase))
      (define-values (table-head terms) (ja-terminology get))
 
      (cond [(not table-head) (tabular null)]

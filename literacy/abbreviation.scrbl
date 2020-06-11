@@ -4,20 +4,31 @@
 
 @require{literacy.rkt}
 
+@(define make-abbreviation-row
+   (case-lambda
+     [(latex? abbr. en ja zh abbrs)
+      (list abbr. (tech (symbol->string en)) (symbol->string ja) (chinese (symbol->string zh) #:latex? latex?))]
+     [(latex? abbr. en abbrs)
+      (define str-en (symbol->string en))
+      (define maybe-term (hash-ref abbrs (symbol->string abbr.) (λ [] (hash-ref abbrs (singular (string-titlecase str-en))))))
+      (define-values (ja zh) (if (not maybe-term) (values "-" "-") (ja-terminology-translation maybe-term)))
+      (list abbr. (tech str-en) ja zh)]))
+
 @(define-syntax (ja-deftech-table stx)
    (syntax-case stx []
-     ([_ [head ... head-zh-col] [abbr. en-col col ... zh-col] ...]
-      #'(ja-tabular2 (list (bold (symbol->string 'head)) ... (chinese (bold (symbol->string 'head-zh-col))))
-                     (map (λ [a] (cons (deftech (symbol->string (car a)) #:style? #false) (cdr a)))
-                          (sort #:key car
-                                (list (list 'abbr.
-                                            (tech (symbol->string 'en-col))
-                                            (symbol->string 'col) ...
-                                            (chinese (symbol->string 'zh-col))) ...)
-                                symbol<?))))))
+     ([_ [head ... head-zh-col] [abbr. en-col col ...] ...]
+      #'(make-delayed-block
+         (λ [render% pthis infobase]
+           (define latex? (handbook-latex-renderer? render%))
+           (define abbreviations (ja-terminology-abbreviation (handbook-resolved-info-getter infobase)))
+           (ja-tabular2 (list (bold (symbol->string 'head)) ... (chinese (bold (symbol->string 'head-zh-col)) #:latex? latex?))
+                        (map (λ [a] (cons (deftech (symbol->string (car a)) #:style? #false) (cdr a)))
+                             (sort #:key car
+                                   (list (make-abbreviation-row latex? 'abbr. 'en-col 'col ... abbreviations) ...)
+                                   symbol<?))))))))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:style noncontent-style]{Abbreviations}
+@handbook-story[#:style noncontent-style]{Abbreviation}
   
 @centered{
  @ja-deftech-table[

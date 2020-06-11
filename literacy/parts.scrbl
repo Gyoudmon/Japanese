@@ -3,7 +3,7 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:index? #true]{@ja-title[#:key "PoS" "Parts of Speech" 品詞 ひんし 词类]}
+@handbook-story[#:index? #true]{@ja-title[#:key "PoS" "Part of Speech" 品詞 ひんし 词类]}
 
 @deftech[#:key "PoS"]{Part of Speech} is the category of words that have similar grammatical properties. More precisely,
 Japanese words are categorized based on their meanings, grammatical functions and inflections. Given that
@@ -52,7 +52,7 @@ fact that new categories may be given meaningless names, say @tech{カ変 conjug
 @tech{サ変 conjugation verb} are merged as @italic{the Type-III verb} which is an awful name
 @handbook-footnote{This might be a personal preference as what I have learnt from Software Engineering is
  that do not use meaningless words (such as @italic{a}, @italic{b}, @italic{c}, @italic{d}) to name variables
- since they make the code less readable for others and even yourself in the future}. Thus, this book follows
+ since they make the code less readable for others and even yourself in the future.}. Thus, this book follows
 the modern scheme but drops all meaningless names.
 
 @include-section{parts/nouns.scrbl}

@@ -1,7 +1,7 @@
 #lang scribble/book
 
-@(require digimon/tamer)
+@require{literacy.rkt}
 
-@handbook-story{Pragmatics}
+@handbook-story{@ja-title[Pragmatics 語用論 ごようろん 语用学]}
 
 @handbook-reference[]

@@ -1,8 +1,8 @@
 #lang scribble/book
 
-@(require digimon/tamer)
+@require{literacy.rkt}
 
-@handbook-story{Phonetics}
+@handbook-story{@ja-title[Phonetics 音声学 おんせいがく 语音学]}
 
 @itemlist[
  #:style 'compact
