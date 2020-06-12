@@ -15,25 +15,27 @@
 (define-syntax (ja-title stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))
+              (~optional (~seq #:abbr abbr) #:defaults ([abbr #'#false]))
               (~optional (~seq #:ja-term? term?) #:defaults ([term? #'#true])))
         ... en0 kenji0 hiragana0 (~optional zh #:defaults ([zh #'#false])))
      #'(let-values ([(en kenji hiragana) (ja-inputs 'en0 'kenji0 'hiragana0)])   
          (make-traverse-element
           (λ [get set!]
             (unless (not term?)
-              (ja-terminology get set! key en kenji 'zh (handbook-latex-renderer? get)))
+              (ja-terminology get set! key en kenji 'zh (handbook-latex-renderer? get) 'abbr))
             (list en ~ "|" ~ (ruby kenji hiragana)))))]))
 
 (define-syntax (ja-deftech stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))
+              (~optional (~seq #:abbr abbr) #:defaults ([abbr #'#true]))
               (~optional (~seq #:ja-term? term?) #:defaults ([term? #'#true])))
         ... en0 kenji0 hiragana0 (~optional zh #:defaults ([zh #'#false])))
      #'(let-values ([(en kenji hiragana) (ja-inputs 'en0 'kenji0 'hiragana0)])    
          (make-traverse-element
           (λ [get set!]
             (unless (not term?)
-              (ja-terminology get set! key en kenji 'zh (handbook-latex-renderer? get)))
+              (ja-terminology get set! key en kenji 'zh (handbook-latex-renderer? get) 'abbr))
             (list (deftech en #:key key) ~ "「" (ruby kenji hiragana) "」"))))]))
 
 (define-syntax (ja-tech stx)
@@ -241,15 +243,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-terminology-head 'literacy:japanese:terminology:head)
 (define ja-terminology-rows 'literacy:japanese:terminology:rows)
-
-(define ja-terminology-dictionary
-  (lambda [get]
-    (or (get ja-terminology-rows #false) (make-immutable-hash))))
+(define ja-terminology-abbrs 'literacy:japanese:terminology:abbrs)
 
 (define ja-terminology
   (case-lambda
-    [(get set! key en0 ja ch latex?)
+    [(get set! key en0 ja ch latex? abbr)
      (define en (singular (string-titlecase en0)))
+     (define term
+       (list (string->symbol en)
+             (tech #:key key en)
+             ja
+             (if (not ch)
+                 ja
+                 (chinese (ja-input ch) #:latex? latex?))))
      
      (unless (get ja-terminology-head #false)
        (set! ja-terminology-head (list (bold "English") (bold "日本語") (chinese (bold "简体中文") #:latex? latex?))))
@@ -257,27 +263,24 @@
      (set! ja-terminology-rows
            (hash-set (or (get ja-terminology-rows #false)
                          (make-immutable-hash))
-                     (or key en)
-                     (list (string->symbol en)
-                           (tech #:key key en)
-                           ja
-                           (if (not ch)
-                               ja
-                               (chinese (ja-input ch) #:latex? latex?)))))]
+                     (or key en) term))
+     
+     (when (symbol? abbr)
+       (set! ja-terminology-abbrs
+             (hash-set (or (get ja-terminology-abbrs #false)
+                           (make-immutable-hasheq))
+                       abbr (cons abbr (cdr term)))))]
     [(get)
      (values (get ja-terminology-head #false)
-             (map cdr (sort #:key car (hash-values (ja-terminology-dictionary get)) symbol<?)))]))
+             (map cdr (sort #:key car
+                            (hash-values (or (get ja-terminology-rows #false)
+                                             (make-immutable-hash)))
+                            symbol<?)))]))
 
-(define ja-terminology-abbreviation
-  (lambda [get]
-    (define dictionary (ja-terminology-dictionary get))
-    (define abbreviation (hash-copy dictionary))
-
-    (for ([term (in-hash-values dictionary)])
-      (hash-ref! abbreviation (symbol->string (car term)) term))
-    
-    abbreviation))
-
-(define ja-terminology-translation
-  (lambda [term]
-    (cddr term)))
+(define ja-terminology-abbreviations
+  (lambda [get additions]
+    (sort #:key car
+          (append additions
+                  (hash-values (or (get ja-terminology-abbrs #false)
+                                   (make-immutable-hasheq))))
+          symbol<?)))
