@@ -1,4 +1,4 @@
-# Parts of Speech | 品詞
+# Part of Speech | 品詞
 
 _Part of Speech_ is the category of words that have similar grammatical
 properties. More precisely, Japanese words are categorized based on
@@ -52,5 +52,5 @@ are merged as _the Type-III verb_ which is an awful name This might be a
 personal preference as what I have learnt from Software Engineering is
 that do not use meaningless words (such as _a_, _b_, _c_, _d_) to name
 variables since they make the code less readable for others and even
-yourself in the future. Thus, this book follows the modern scheme but
+yourself in the future.. Thus, this book follows the modern scheme but
 drops all meaningless names.

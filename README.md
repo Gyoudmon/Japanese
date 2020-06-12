@@ -2,6 +2,8 @@
 
 wargrey
 
+
+
 ## Preface
 
 I am a native Chinese who speaks Mandarin. I have been learning English
@@ -22,5 +24,7 @@ their own. LaTex is too cumbersome to work with directly. Racket
 Scribble just fits the case.
 
 Discussions and Suggestions are welcome.
+
+
 
 
