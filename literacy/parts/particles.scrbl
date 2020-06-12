@@ -5,14 +5,16 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
 
-Generally speaking, particles are function words that cannot be inflected, and must be associated
-with other words or phrases to impart meanings. How are particles used varies widely from lanaguage
-to language.
+By strictly definition, a particle is a function word that has two mandatory properties: 1) incapable
+of inflection; 2) has no specific lexical definition, and must be associated with another word or
+phrase to impart meaning@handbook-footnote{This definition should be kept in mind in order to distinguish
+the particle from other @tech[#:key "part of speech"]{parts of speech} and concepts.}.
 
-Japanese @ja-deftech[#:abbr PTCL particles 助詞 じょし 助词] are suffixed or short words agglutinating @tech{nouns},
+How do particles be used varies widely from lanaguage to language. In Japanese,
+@ja-deftech[#:abbr PTCL particles 助詞 じょし 助词] are suffixes or short words agglutinating @tech{nouns},
 @tech{verbs}, @tech{adjectives}, or sentences to indicate grammatical relations. Given that modern
 Japanese @tech{particles} are always postpositional, the term @ja-deftech[postposition 後置詞 こうちし 后置词]
-are used as the contemporary alternative to @tech{particle}.
+is seen to be used as the contemporary alternative to @tech{particle}.
 
 Japanese @tech{particles} are always written in @tech{hiragana} regardless their @tech{kenji} forms,
 and read as their phonetic transcriptions are with three irragularities@handbook-footnote{As Japanese

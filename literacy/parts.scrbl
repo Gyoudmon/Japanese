@@ -3,9 +3,9 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:index? #true]{@ja-title[#:key "PoS" "Part of Speech" 品詞 ひんし 词类]}
+@handbook-story[#:index? #true]{@ja-title[#:abbr POS "Part of Speech" 品詞 ひんし 词类]}
 
-@deftech[#:key "PoS"]{Part of Speech} is the category of words that have similar grammatical properties. More precisely,
+@deftech{Part of Speech} is the category of words that have similar grammatical properties. More precisely,
 Japanese words are categorized based on their meanings, grammatical functions and inflections. Given that
 Japanese is an agglutinative language in which case words are well formed and keep consistent after their
 unions, Japanese words are well categoried into 10 - 12 groups.

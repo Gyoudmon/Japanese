@@ -1,4 +1,4 @@
-#lang scribble/report
+#lang scribble/book
 
 @(require digimon/tamer)
 
@@ -6,6 +6,7 @@
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-title/pkg-desc[]
+@handbook-texbook-front[]
 
 @; The preface will always be displayed after the table of contents if it is `include-section`ed.
 @handbook-preface-section{Preface}
@@ -26,6 +27,7 @@ Racket Scribble just fits the case.
 Discussions and Suggestions are welcome.
 
 @handbook-smart-table[]
+@handbook-texbook-main[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @include-section{literacy/parts.scrbl}
