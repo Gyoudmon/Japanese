@@ -10,9 +10,10 @@
       (list abbr. (tech (symbol->string en)) (symbol->string ja) (chinese (symbol->string zh) #:latex? latex?))]
      [(latex? abbr. en abbrs)
       (define str-en (symbol->string en))
-      (define maybe-term (hash-ref abbrs (symbol->string abbr.) (λ [] (hash-ref abbrs (singular (string-titlecase str-en))))))
-      (define-values (ja zh) (if (not maybe-term) (values "-" "-") (ja-terminology-translation maybe-term)))
-      (list abbr. (tech str-en) ja zh)]))
+      (define maybe-term (hash-ref abbrs (symbol->string abbr.) (λ [] (hash-ref abbrs (singular (string-titlecase str-en)) (λ [] #false)))))
+      (list* abbr. (tech str-en)
+             (cond [(not maybe-term) (list "-" "-")]
+                   [else (ja-terminology-translation maybe-term)]))]))
 
 @(define-syntax (ja-deftech-table stx)
    (syntax-case stx []
@@ -29,7 +30,7 @@
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story[#:style noncontent-style]{Abbreviation}
-  
+
 @centered{
  @ja-deftech-table[
  [Abbr.  English                   日本語   　简体中文]
@@ -40,6 +41,6 @@
  [NOM    Nominative　　　　　　      主格　　　　主格]
  [NP     |Noun Phrase|             名詞句     名词短语]
  [PST    Past                      過去　　　　过去时]
- [SFP    |Sentence-Final Particle| 終助詞　　　语气助词]]}
+ [SFP    |Sentence-Final Particle|]]}
 
 @handbook-reference[]

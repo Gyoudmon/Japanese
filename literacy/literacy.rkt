@@ -280,4 +280,4 @@
 
 (define ja-terminology-translation
   (lambda [term]
-    (apply values (cddr term))))
+    (cddr term)))
