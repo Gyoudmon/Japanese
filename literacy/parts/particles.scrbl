@@ -5,16 +5,16 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
 
-By strict definition, a particle is a function word that has two mandatory properties: 1) incapable
+By a strict definition, a particle is a function word that has two mandatory properties: 1) incapable
 of inflection; 2) has no specific lexical definition, and must be associated with another word or
 phrase to impart meaning@handbook-footnote{This definition should be kept in mind in order to distinguish
 the particle from other @tech[#:key "part of speech"]{parts of speech} and concepts.}.
 
-How do particles be used varies widely from lanaguage to language. In Japanese,
+How do particles be used varies widely from one lanaguage to another. In Japanese,
 @ja-deftech[#:abbr PTCL particles 助詞 じょし 助词] are suffixes or short words agglutinating @tech{nouns},
 @tech{verbs}, @tech{adjectives}, or sentences to indicate grammatical relations. Given that modern
 Japanese @tech{particles} are always postpositional, the term @ja-deftech[postposition 後置詞 こうちし 后置词]
-is seen to be used as the contemporary alternative to @tech{particle}.
+is seen to be used as a contemporary alternative to @tech{particle} and compound particle.
 
 Japanese @tech{particles} are always written in @tech{hiragana} regardless their @tech{kenji} forms,
 and read as their phonetic transcriptions are with three irragularities@handbook-footnote{As Japanese
@@ -25,10 +25,12 @@ still persist, being a particle is nonetheless the only usage of を in modern J
 @ruby["を" @emph{o} #:style "bigruby"].
 
 Due to the fact that @tech{particles} are multifarious and disorderly, their categorization therefore
-varies from perspective to perspective, or even linguistician to linguistician. This book follows
-@cite{CJLH} and categorizes all @tech{particles} into four types depending on their formatives.
+varies among perspectives or even linguisticians. This book follows @cite{CJLH} and categorizes all
+@tech{particles} into four types depending on formatives.
 
 @handbook-scenario{@ja-title["Case Particles" 格助詞 かくじょし 格助词]}
+
+@deftech{Case Particles} are the foundation of Japanese @tech{case} system.
 
 @ja-example[
  #:tag cp

@@ -1,7 +1,5 @@
 #lang scribble/book
 
-@(require digimon/tamer)
-
 @require{literacy/literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
