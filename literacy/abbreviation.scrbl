@@ -32,11 +32,6 @@
 @centered{
  @ja-deftech-table[
  [Abbr.  English                   日本語   　简体中文]
- [ABL    Ablative                  奪格　　　　夺格]
- [ACC    Accusative　　　　　　      対格   　　宾格]
- [DAT    Dative                    与格       与格]
- [INSTR  ﻿instrumental              具格       工具格]
- [NOM    Nominative　　　　　　      主格　　　　主格]
  [NP     |Noun Phrase|             名詞句     名词短语]
  [PST    Past                      過去　　　　过去时]]}
 

@@ -30,16 +30,27 @@ varies among perspectives or even linguisticians. This book follows @cite{CJLH} 
 
 @handbook-scenario{@ja-title["Case Particles" 格助詞 かくじょし 格助词]}
 
-@deftech{Case Particles} are the foundation of Japanese @tech{case} system.
+@deftech{Case Particles} are @tech{particles} that employed by the @tech{case} system to mark @tech{substantives}.
+There are 10 prominent @tech{case particles} in the standard modern Japanese:
+が, を, に, の, へ, で, より, から, まで, and と.
 
 @ja-example[
  #:tag cp
  [[太郎   が  今朝 大学    に   行った?]
   [たろう NOM けさ だいかく DAT い PST]
   [Did Taro go to university this morning?]]
- [[お握り を  外  で     食べる の?]
+ [[お握り を   外  で      食べる の?]
   [にぎ   ACC そと INSTR  た SFP]
-  [Are we going to eat rice balls outside?]]]
+  [Are we going to eat rice balls outside?]]
+ [[太郎   の   娘]
+  [たろう GEN　むすめ]
+  [|Taro's| daughter]]
+ [[太郎   が いつも の  バス で　   帰宅し た.]
+  [たろう NOM -    GEN -   INSTR　きたく PST]
+  [Taro went home by the bus he always rode.]]
+ [[太郎   が  神社    へ   の  道   を    見つけ た.]
+  [たろう NOM じんじゃ ALL GEN みち INSTR み    PST]
+  [Taro found a way to the shrine.]]]
 
 @handbook-scenario{@ja-title["Adverbial Particles" 副助詞 ふくじょし 副助词]}
 @handbook-scenario{@ja-title["Conjective Particles" 接続助詞 せつぞくじょし 接续助词]}
