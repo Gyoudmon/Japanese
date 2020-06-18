@@ -38,6 +38,7 @@ clause@ja-exref[hallmark:multi-noms].
  #:tag hallmark:multi-noms
  [太郎  が   母親    が   評判      が　良い.]
  [たろう NOM ははおや NOM ひょうばん NOM い]
+ [Taro is such that his mother has a good reputation.]
  [Taro is such that his mother has a good reputation.]]
 
 Just as the @tech{case particles}, there are 10 prominent @tech{cases} in the standard modern

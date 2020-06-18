@@ -4,12 +4,20 @@
 (provide (all-from-out digimon/tamer))
 
 (require digimon/tamer)
+(require digimon/system)
+(require digimon/collection)
 
 (require scribble/core)
 (require scribble/manual)
 (require scribble/latex-properties)
 
 (require (for-syntax syntax/parse))
+
+(require "../digitama/realm.rkt")
+
+;;; Just in case, README.md needs access examples
+(enter-digimon-zone!)
+(default-realm-paths (list (digimon-path 'realm)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-title stx)
@@ -63,19 +71,21 @@
 
 (define-syntax (ja-example-parse stx)
   (syntax-case stx []
-    [(_ [[ja ...] [ruy ...] [en ...]])
+    [(_ [[ja ...] [ruy ...] [en ...] [trans ...] ...])
      #'(let ([ruby.styles (list (ja-example->ruby-token 'ruy) ...)])
          (list (list (ruby (list (ja-input 'ja) ...) (map car ruby.styles) #:style (map cdr ruby.styles)))
                ;;; NOTE:
                ;; Rubies that displayed under kenjis do not contribute to the height of whole,
                ;;  an empty line is required to avoid overlapping.
                (list "")
-               (list (exec (string-join (map symbol->string '(|| en ...)))))))]))
+               (list (exec (string-join (map symbol->string '(|| en ...)))))
+               (list (exec (string-join (map symbol->string '(|| trans ...)))))
+               ...))]))
 
 (define-syntax (ja-example stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:tag maybe-tag:id) #:defaults ([maybe-tag #'#false]))) ...
-        [[ja ...] [ruy ...] [en ...]] ...)
+        [[ja ...] [ruy ...] [en ...] [trans ...] ...] ...)
      #'(make-tamer-indexed-traverse-block
         (λ [type chapter-index current-index]
           (define extag (symbol->string (or 'maybe-tag (gensym 'ex))))
@@ -83,7 +93,7 @@
           (define example (format "Example ~a.~a" chapter-index current-index))
 
           (define example-rows
-            (for/list ([example-row (in-list (list (ja-example-parse [[ja ...] [ruy ...] [en ...]]) ...))]
+            (for/list ([example-row (in-list (list (ja-example-parse [[ja ...] [ruy ...] [en ...] [trans ...] ...]) ...))]
                        [sub (in-naturals 0)])
               (define subexample (string (integer->char (+ 97 sub))))
               (list (tabular #:sep (hspace 1)
@@ -96,25 +106,25 @@
           (values (string->symbol extag)
                   (tabular #:style 'block
                            #:column-properties '(left)
-                           #:row-properties (append (list '(())) (make-list (add1 (length example-rows)) (list 'bottom-border)) (list '(())))
+                           #:row-properties (append '(()) (make-list (add1 (length example-rows)) 'bottom-border) '(()))
                            (append empty-row
                                    (list (list (elemtag extag (envvar example))))
                                    example-rows
                                    empty-row))))
         'ex)]
     [(_ (~alt (~optional (~seq #:tag maybe-tag:id) #:defaults ([maybe-tag #'#false]))) ...
-        [ja ...] [ruy ...] [en ...])
+        [ja ...] [ruy ...] [en ...] [trans ...] ...)
      #'(make-tamer-indexed-traverse-block
         (λ [type chapter-index current-index]
           (define extag (or 'maybe-tag (gensym 'ex)))
           (define empty-row (list (list "")))
           (define example (format "Example ~a.~a" chapter-index current-index))
-          (define example-row (ja-example-parse [[ja ...] [ruy ...] [en ...]]))
+          (define example-row (ja-example-parse [[ja ...] [ruy ...] [en ...] [trans ...] ...]))
           
           (values extag
                   (tabular #:style 'block
                            #:column-properties '(left)
-                           #:row-properties '(() bottom-border () () 'bottom-border ())
+                           #:row-properties (append '(()) '(bottom-border) (make-list (length example-row) '()) '(top-border))
                            (append empty-row
                                    (list (list (elemtag (symbol->string extag) (tt example))))
                                    example-row

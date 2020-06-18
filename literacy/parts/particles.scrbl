@@ -50,7 +50,8 @@ There are 10 prominent @tech{case particles} in the standard modern Japanese:
   [Taro went home by the bus he always rode.]]
  [[太郎   が  神社    へ   の  道   を    見つけ た.]
   [たろう NOM じんじゃ ALL GEN みち INSTR み    PST]
-  [Taro found a way to the shrine.]]]
+  [Taro found a way to the shrine.]
+  [Taro is such that his mother has a good reputation.]]]
 
 @handbook-scenario{@ja-title["Adverbial Particles" 副助詞 ふくじょし 副助词]}
 @handbook-scenario{@ja-title["Conjective Particles" 接続助詞 せつぞくじょし 接续助词]}

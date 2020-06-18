@@ -11,11 +11,11 @@ from cases of objects of transitive verbs.
 
 Japanese implements its case system by postpositional particles, which
 traditionally are also known as case particles. These case particles are
-phonologically bound to the preceding words as the form `noun + case
-particle` is, nevertheless, case particles are actually phrasal clitics
-rather than nominal declensions so that other elements may intervene
-between case particles and the marking nouns or extend the scope over
-more than one noun phrasesex1.1.
+phonologically bound to the preceding words as the form `substantives +
+case particle` is, nevertheless, case particles are actually phrasal
+clitics rather than nominal declensions so that other elements may
+intervene between case particles and the marking substantives or extend
+the scope over more than one noun phrasesex1.1.
 
                                                       
 `Example 1.1`                                         
@@ -36,3 +36,26 @@ the topic and described by the remaining part of the clauseex1.2.
                                                       
 ` Taro is such that his mother has a good reputation.`
                                                       
+
+Just as the case particles, there are 10 prominent cases in the standard
+modern Japanese, but they are not one-to-one corresponding.
+
+* _Nominative_ 「主格」: 〜が
+
+* _Accusative_ 「対格」: 〜を
+
+* _Dative_ 「与格」: 〜に
+
+* _Instrumental_ 「具格」: 〜で
+
+* _Locative_ 「処格」: 〜で、〜に
+
+* _Allative_ 「向格」: 〜へ、〜に
+
+* _Ablative_ 「奪格」: 〜から
+
+* _Genitive_ 「属格」: 〜の
+
+* _Comitative_ 「共格」: 〜と
+
+* _Terminative_ 「到格」: 〜まで

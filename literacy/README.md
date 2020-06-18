@@ -50,7 +50,7 @@ These changes may not bad, despite the fact that new categories may be
 given meaningless names, say カ変 conjugation verb and サ変 conjugation verb
 are merged as _the Type-III verb_ which is an awful name This might be a
 personal preference as what I have learnt from Software Engineering is
-that do not use meaningless words (such as _a_, _b_, _c_, _d_) to name
+that do not use meaningless words (e.g. _a1_, _a2_, _a3_) to name
 variables since they make the code less readable for others and even
 yourself in the future.. Thus, this book follows the modern scheme but
 drops all meaningless names.

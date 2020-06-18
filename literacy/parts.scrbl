@@ -50,10 +50,10 @@ For example, the @tech{Adjectives} and @tech{Adjectival Verbs} have been merged,
 as @tech{イ-adjective} and @tech{ナ-adjective} respectively. These changes may not bad, despite the
 fact that new categories may be given meaningless names, say @tech{カ変 conjugation verb} and
 @tech{サ変 conjugation verb} are merged as @italic{the Type-III verb} which is an awful name
-@handbook-footnote{This might be a personal preference as what I have learnt from Software Engineering is
- that do not use meaningless words (such as @italic{a}, @italic{b}, @italic{c}, @italic{d}) to name variables
- since they make the code less readable for others and even yourself in the future.}. Thus, this book follows
-the modern scheme but drops all meaningless names.
+@handbook-footnote{This might be a personal preference as what I have learnt from Software
+ Engineering is that do not use meaningless words (e.g. @italic{a1}, @italic{a2}, @italic{a3})
+ to name variables since they make the code less readable for others and even yourself in the
+ future.}. Thus, this book follows the modern scheme but drops all meaningless names.
 
 @include-section{parts/nouns.scrbl}
 @include-section{parts/verbs.scrbl}
