@@ -15,9 +15,13 @@
 
 (require "../digitama/realm.rkt")
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Just in case, README.md needs access examples
 (enter-digimon-zone!)
 (default-realm-paths (list (digimon-path 'realm)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define ja-example-index-type 'ex)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-title stx)
@@ -69,67 +73,18 @@
          [(ja-thing ja-struct ja-type) ...]
          pre-flow ...)]))
 
-(define-syntax (ja-example-parse stx)
-  (syntax-case stx []
-    [(_ [[ja ...] [ruy ...] [en ...] [trans ...] ...])
-     #'(let ([ruby.styles (list (ja-example->ruby-token 'ruy) ...)])
-         (list (list (ruby (list (ja-input 'ja) ...) (map car ruby.styles) #:style (map cdr ruby.styles)))
-               ;;; NOTE:
-               ;; Rubies that displayed under kenjis do not contribute to the height of whole,
-               ;;  an empty line is required to avoid overlapping.
-               (list "")
-               (list (exec (string-join (map symbol->string '(|| en ...)))))
-               (list (exec (string-join (map symbol->string '(|| trans ...)))))
-               ...))]))
-
 (define-syntax (ja-example stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:tag maybe-tag:id) #:defaults ([maybe-tag #'#false]))) ...
-        [[ja ...] [ruy ...] [en ...] [trans ...] ...] ...)
-     #'(make-tamer-indexed-traverse-block
-        (λ [type chapter-index current-index]
-          (define extag (symbol->string (or 'maybe-tag (gensym 'ex))))
-          (define empty-row (list (list "")))
-          (define example (format "Example ~a.~a" chapter-index current-index))
-
-          (define example-rows
-            (for/list ([example-row (in-list (list (ja-example-parse [[ja ...] [ruy ...] [en ...] [trans ...] ...]) ...))]
-                       [sub (in-naturals 0)])
-              (define subexample (string (integer->char (+ 97 sub))))
-              (list (tabular #:sep (hspace 1)
-                             #:style 'block
-                             #:column-properties '(left center left)
-                             (list (list ""
-                                         (elemtag (string-append extag "." subexample) (envvar subexample))
-                                         (tabular #:style 'block example-row)))))))
-          
-          (values (string->symbol extag)
-                  (tabular #:style 'block
-                           #:column-properties '(left)
-                           #:row-properties (append '(()) (make-list (add1 (length example-rows)) 'bottom-border) '(()))
-                           (append empty-row
-                                   (list (list (elemtag extag (envvar example))))
-                                   example-rows
-                                   empty-row))))
-        'ex)]
+        [[ja0 ja ...] [ruy ...] [trans ...] ...] ...)
+     #'(let ([extag (or 'maybe-tag (gensym 'ex))])
+          (ja-exemplify extag (list (realm-example (list (ja-input 'ja0) (ja-input 'ja) ...)
+                                                   (list (ja-input 'ruy) ...)
+                                                   (list (string-join (map ja-input '(trans ...)))
+                                                         ...)) ...)))]
     [(_ (~alt (~optional (~seq #:tag maybe-tag:id) #:defaults ([maybe-tag #'#false]))) ...
-        [ja ...] [ruy ...] [en ...] [trans ...] ...)
-     #'(make-tamer-indexed-traverse-block
-        (λ [type chapter-index current-index]
-          (define extag (or 'maybe-tag (gensym 'ex)))
-          (define empty-row (list (list "")))
-          (define example (format "Example ~a.~a" chapter-index current-index))
-          (define example-row (ja-example-parse [[ja ...] [ruy ...] [en ...] [trans ...] ...]))
-          
-          (values extag
-                  (tabular #:style 'block
-                           #:column-properties '(left)
-                           #:row-properties (append '(()) '(bottom-border) (make-list (length example-row) '()) '(top-border))
-                           (append empty-row
-                                   (list (list (elemtag (symbol->string extag) (tt example))))
-                                   example-row
-                                   empty-row))))
-        'ex)]))
+        [ja0 ja ...] [ruy ...] [trans ...] ...)
+     #'(ja-example #:tag maybe-tag [[ja0 ja ...] [ruy ...] [trans ...] ...])]))
 
 (define-syntax (ja-exref stx)
   (syntax-parse stx #:datum-literals []
@@ -138,13 +93,75 @@
         (λ [type chapter-index maybe-index]
           (elemref (symbol->string 'extag)
                    (subscript (format "~a~a.~a" type chapter-index (or maybe-index '?)))))
-        'ex 'extag)]
+        ja-example-index-type 'extag)]
     [(_ extag:id subtag:id)
      #'(make-tamer-indexed-elemref
         (λ [type chapter-index maybe-index]
           (elemref (format "~a.~a" 'extag 'subtag)
                    (subscript (format "~a~a.~a~a" type chapter-index (or maybe-index '?) 'subtag))))
-        'ex 'extag)]))
+        ja-example-index-type 'extag)]))
+
+(define ja-exemplify
+  (case-lambda
+    [(id)
+     (let ([sym:extag (if (symbol? id) id (string->symbol (if (string? id) id (~a id))))])
+       (ja-exemplify sym:extag (exemplify sym:extag)))]
+    [(sym:extag examples)
+     (let ([excount (length examples)]
+           [empty-row (list (list ""))])
+       (case excount
+         [(0) (void)]
+         [(1)
+          (make-tamer-indexed-traverse-block
+           (λ [type chapter-index current-index]
+             (define example (format "Example ~a.~a" chapter-index current-index))
+             (define example-row (ja-example->table-row (car examples)))
+             
+             (values sym:extag
+                     (tabular #:style 'block
+                              #:column-properties '(left)
+                              #:row-properties (append '(()) '(bottom-border) (make-list (length example-row) '()) '(top-border))
+                              (append empty-row
+                                      (list (list (elemtag (symbol->string sym:extag) (tt example))))
+                                      example-row
+                                      empty-row))))
+           ja-example-index-type)]
+         [else
+          (make-tamer-indexed-traverse-block
+           (λ [type chapter-index current-index]
+             (define example (format "Example ~a.~a" chapter-index current-index))
+             
+             (define example-rows
+               (for/list ([example-row (in-list (map ja-example->table-row examples))]
+                          [sub (in-naturals 0)])
+                 (define subexample (string (integer->char (+ 97 sub))))
+                 (list (tabular #:sep (hspace 1)
+                                #:style 'block
+                                #:column-properties '(left center left)
+                                (list (list ""
+                                            (elemtag (format "~a.~a" sym:extag subexample) (envvar subexample))
+                                            (tabular #:style 'block example-row)))))))
+             
+             (values sym:extag
+                     (tabular #:style 'block
+                              #:column-properties '(left)
+                              #:row-properties (append '(()) (make-list (add1 (length example-rows)) 'bottom-border) '(()))
+                              (append empty-row
+                                      (list (list (elemtag (symbol->string sym:extag) (envvar example))))
+                                      example-rows
+                                      empty-row))))
+           ja-example-index-type)]))]))
+
+(define ja-example->table-row
+  (lambda [ex]
+    (define ruby.styles (map ja-example->ruby-token (realm-example-rubies ex)))
+    (list* (list (ruby (realm-example-tokens ex) (map car ruby.styles) #:style (map cdr ruby.styles)))
+           ;;; NOTE:
+           ;; Rubies that displayed under kenjis do not contribute to the height of whole,
+           ;;  an empty line is required to avoid overlapping.
+           (list "")
+           (map (λ [t] (list (exec (list ~ t))))
+                (realm-example-translations ex)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ruby
@@ -229,13 +246,13 @@
     (define content (ja-input token))
 
     (cond [(regexp-match? #px"[A-Z]+" content) (cons (tech (tt content)) "exmptag")]
-          [(eq? token '-) (cons #false "ruby")]
+          [(or (eq? token '-) (equal? token "-")) (cons #false "ruby")]
           [else (cons content 'auto)])))
 
 (define ja-ruby-content
   (lambda [v]
-    (cond [(string? v) (string-split v "|")]
-          [(list? v) v]
+    (cond [(list? v) v]
+          [(string? v) (string-split v "|")]
           [else (list v)])))
 
 (define ja-hiragana?

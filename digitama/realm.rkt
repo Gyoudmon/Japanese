@@ -8,10 +8,7 @@
 (require racket/path)
 (require racket/list)
 (require racket/string)
-(require racket/match)
 
-(require digimon/collection)
-(require digimon/system)
 (require digimon/symbol)
 (require digimon/dtrace)
 
@@ -20,7 +17,7 @@
 (define-type Realm-Fold (-> Path (Immutable-HashTable Symbol Realm-Examples) (Immutable-HashTable Symbol Realm-Examples)))
 
 (struct realm-info ([fold : Realm-Fold] [extension : Bytes]) #:type-name Realm-Info)
-(struct realm-example ([tokens : (Pairof Symbol (Listof Symbol))] [rubies : (Listof Symbol)] [translations : (Listof String)]) #:type-name Realm-Example #:transparent)
+(struct realm-example ([tokens : (Pairof String (Listof String))] [rubies : (Listof String)] [translations : (Listof String)]) #:type-name Realm-Example #:transparent)
 
 (define default-realm : (->* () (Environment-Variables) Symbol)
   (lambda [[envars (current-environment-variables)]]
@@ -45,7 +42,7 @@
         (cons (string->symbol (path->string realm.dir)) languages)))
     (sort (remove-duplicates all) symbol<?)))
 
-(define exemplify : (-> Symbol [#:in Symbol] [#:chapter (Option Symbol)] [#:reload? Boolean] (Option Realm-Examples))
+(define exemplify : (-> Symbol [#:in Symbol] [#:chapter (Option Symbol)] [#:reload? Boolean] Realm-Examples)
   (lambda [ex #:in [realm (current-realm)] #:chapter [chapter #false] #:reload? [reload? #false]]
     (when (or reload? (not (hash-has-key? realm-base realm)))
       (hash-set! realm-base realm (load-realms realm)))
@@ -54,8 +51,8 @@
             [else (for/or : (Option Realm-Examples) ([dialects (in-hash-values (hash-ref realm-base realm))])
                     (hash-ref dialects ex sorry-for-not-found))]))
     (cond [(list? maybe-examples) maybe-examples]
-          [else (and (not (eq? realm (default-fallback-realm)))
-                     (exemplify ex #:in (default-fallback-realm) #:chapter chapter #:reload? reload?))])))
+          [(eq? realm (default-fallback-realm)) null]
+          [else (exemplify ex #:in (default-fallback-realm) #:chapter chapter #:reload? reload?)])))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define topic : Symbol 'exn:read:realm)
@@ -129,21 +126,21 @@
             [(eq? maybe-next #\[) (values (reverse (cons maybe-example selpmaxe)) maybe-next)]
             [else (realm-read-example realm.tex /dev/exin (cons maybe-example selpmaxe))]))))
 
-(define realm-read-example-tokens : (-> Path Input-Port (Values (Listof Symbol) (Option Char)))
+(define realm-read-example-tokens : (-> Path Input-Port (Values (Listof String) (Option Char)))
   (lambda [realm.tex /dev/exin]
     (let read-tokens ([srahc : (Listof Char) null]
-                      [snekot : (Listof Symbol) null])
+                      [snekot : (Listof String) null])
       (define ch : (U Char EOF) (read-char /dev/exin))
       (cond [(eof-object? ch) (values (reverse snekot) #false)]
             [(or (eq? ch #\return) (eq? ch #\newline))
              (when (and (eq? ch #\return) (eq? (peek-char /dev/exin) #\newline))
                (read-char /dev/exin))
-             (cond [(pair? srahc) (values (reverse (cons (rlist->symbol srahc) snekot)) #false)]
+             (cond [(pair? srahc) (values (reverse (cons (list->string (reverse srahc)) snekot)) #false)]
                    [else (read-tokens null snekot)])]
             [(char-whitespace? ch)
              (regexp-match? #px"[[:blank:]]*" /dev/exin)
-             (read-tokens null (if (pair? srahc) (cons (rlist->symbol srahc) snekot) snekot))]
-            [(eq? ch #\[) (values (reverse (if (pair? srahc) (cons (rlist->symbol srahc) snekot) snekot)) ch)]
+             (read-tokens null (if (pair? srahc) (cons (list->string (reverse srahc)) snekot) snekot))]
+            [(eq? ch #\[) (values (reverse (if (pair? srahc) (cons (list->string (reverse srahc)) snekot) snekot)) ch)]
             [(eq? ch #\|) (read-tokens (append (realm-read-rliteral /dev/exin) srahc) snekot)]
             [else (read-tokens (cons ch srahc) snekot)]))))
 

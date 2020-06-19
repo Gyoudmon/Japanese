@@ -22,11 +22,7 @@ rather than nominal declensions so that other elements may intervene between
 @tech{case particles} and the marking @tech{substantives} or extend the scope
 over more than one noun phrases@ja-exref[interleaved-nps].
 
-@ja-example[
- #:tag interleaved-nps
- [太郎  と 花子  だけ が  駅  から 歩い  た.]
- [たろう - はなこ -  NOM えき ABL ある  PST]
- [Only Taro and Hanako walked from the train station.]]
+@ja-exemplify{interleaved-nps}
 
 One of the key features of Japanese @tech{case} system is based on its @tech{topic}-prominent
 property@handbook-footnote{Korean and Mandarin Chinese are also topic-prominent languages}.
@@ -34,12 +30,7 @@ Multiple nominative-marked noun phrases may occure within one clause so that the
 may be considered as the @tech{topic} and described by the remaining part of the
 clause@ja-exref[hallmark:multi-noms].
 
-@ja-example[
- #:tag hallmark:multi-noms
- [太郎  が   母親    が   評判      が　良い.]
- [たろう NOM ははおや NOM ひょうばん NOM い]
- [Taro is such that his mother has a good reputation.]
- [Taro is such that his mother has a good reputation.]]
+@ja-exemplify{hallmark:multi-noms}
 
 Just as the @tech{case particles}, there are 10 prominent @tech{cases} in the standard modern
 Japanese, but they are not one-to-one corresponding.
