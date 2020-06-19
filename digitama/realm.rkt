@@ -3,7 +3,7 @@
 (provide exemplify Realm-Fold)
 (provide current-realm realm-list default-realm default-fallback-realm)
 (provide default-realm-paths default-realm-extension default-fold-realm)
-(provide (struct-out realm-info))
+(provide (struct-out realm-info) (struct-out realm-example))
 
 (require racket/path)
 (require racket/list)
@@ -12,12 +12,15 @@
 
 (require digimon/collection)
 (require digimon/system)
+(require digimon/symbol)
 (require digimon/dtrace)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define-type Realm-Fold (-> Path (Immutable-HashTable Symbol Realm-Example) (Immutable-HashTable Symbol Realm-Example)))
+(define-type Realm-Examples (Listof Realm-Example))
+(define-type Realm-Fold (-> Path (Immutable-HashTable Symbol Realm-Examples) (Immutable-HashTable Symbol Realm-Examples)))
+
 (struct realm-info ([fold : Realm-Fold] [extension : Bytes]) #:type-name Realm-Info)
-(struct realm-example ([tokens : (Listof Symbol)] [rubies : (Listof Symbol)] [translations : (Listof String)]) #:type-name Realm-Example)
+(struct realm-example ([tokens : (Pairof Symbol (Listof Symbol))] [rubies : (Listof Symbol)] [translations : (Listof String)]) #:type-name Realm-Example #:transparent)
 
 (define default-realm : (->* () (Environment-Variables) Symbol)
   (lambda [[envars (current-environment-variables)]]
@@ -42,40 +45,44 @@
         (cons (string->symbol (path->string realm.dir)) languages)))
     (sort (remove-duplicates all) symbol<?)))
 
-(define exemplify : (-> Symbol [#:in Symbol] [#:dialect (Option Symbol)] [#:reload? Boolean] (Option Realm-Example))
-  (lambda [word #:in [realm (current-realm)] #:dialect [dialect #false] #:reload? [reload? #false]]
-    (when (or reload? (not (hash-has-key? dictionary-base realm)))
-      (hash-set! dictionary-base realm (load-realms realm)))
-    (define maybe-example : (Option Realm-Example)
-      (cond [(symbol? dialect) (hash-ref (hash-ref (hash-ref dictionary-base realm) dialect make-empty-dictionary) word sorry-for-not-found)]
-            [else (for/or : (Option Realm-Example) ([dialects (in-hash-values (hash-ref dictionary-base realm))])
-                    (hash-ref dialects word sorry-for-not-found))]))
-    (cond [(realm-example? maybe-example) maybe-example]
+(define exemplify : (-> Symbol [#:in Symbol] [#:chapter (Option Symbol)] [#:reload? Boolean] (Option Realm-Examples))
+  (lambda [ex #:in [realm (current-realm)] #:chapter [chapter #false] #:reload? [reload? #false]]
+    (when (or reload? (not (hash-has-key? realm-base realm)))
+      (hash-set! realm-base realm (load-realms realm)))
+    (define maybe-examples : (Option Realm-Examples)
+      (cond [(symbol? chapter) (hash-ref (hash-ref (hash-ref realm-base realm) chapter make-empty-library) ex sorry-for-not-found)]
+            [else (for/or : (Option Realm-Examples) ([dialects (in-hash-values (hash-ref realm-base realm))])
+                    (hash-ref dialects ex sorry-for-not-found))]))
+    (cond [(list? maybe-examples) maybe-examples]
           [else (and (not (eq? realm (default-fallback-realm)))
-                     (exemplify word #:in (default-fallback-realm) #:dialect dialect #:reload? reload?))])))
+                     (exemplify ex #:in (default-fallback-realm) #:chapter chapter #:reload? reload?))])))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define topic : Symbol 'exn:read:realm)
-(define dictionary-base : (HashTable Symbol (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Example))) (make-hasheq))
+(define realm-base : (HashTable Symbol (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Examples))) (make-hasheq))
 
 (define default-realm-extension : Bytes #".tex")
-(define make-empty-dictionary : (-> (Immutable-HashTable Symbol Realm-Example)) (λ [] (make-immutable-hasheq)))
+(define make-empty-library : (-> (Immutable-HashTable Symbol Realm-Examples)) (λ [] (make-immutable-hasheq)))
 (define sorry-for-not-found : (-> False) (λ [] #false))
 
 (define default-fold-realm : Realm-Fold
-  (lambda [realm.rktl library]
-    (define records : Any (with-input-from-file realm.rktl read))
-    (cond [(list? records)
-           (for/fold ([dict : (Immutable-HashTable Symbol Realm-Example) library])
-                     ([record (in-list records)])
-             (match record
-               [else (dtrace-warning #:topic topic "~a: ~s" realm.rktl record) dict]))]
-          [else (dtrace-warning #:topic topic "~a: ~s" realm.rktl records) library])))
+  (lambda [realm.tex library]
+    (call-with-input-file* realm.tex
+      (λ [[/dev/exin : Input-Port]]
+        (let realm-fold : (Immutable-HashTable Symbol Realm-Examples)
+          ([library : (Immutable-HashTable Symbol Realm-Examples) library]
+           [open? : Boolean #false])
+          (define name : (Option Symbol) (realm-read-example-name realm.tex /dev/exin open?))
+          (define-values (examples maybe-next) (realm-read-example realm.tex /dev/exin))
+          (define library++ : (Immutable-HashTable Symbol Realm-Examples) (if (not name) library (hash-set library name examples)))
 
-(define load-realms : (-> Symbol (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Example)))
+          (cond [(not maybe-next) library++]
+                [else (realm-fold library++ #true)]))))))
+
+(define load-realms : (-> Symbol (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Examples)))
   (lambda [realm]
     (define field : String (symbol->string realm))
-    (for/fold ([library : (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Example)) (make-immutable-hasheq)])
+    (for/fold ([library : (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Examples)) (make-immutable-hasheq)])
               ([realm-root (in-list (remove-duplicates (default-realm-paths)))]
                #:when (directory-exists? (build-path realm-root field)))
       (define-values (this-realm-fold this-extension)
@@ -84,13 +91,75 @@
                 [else (let ([& (dynamic-require reader.rkt 'realm-info)])
                         (cond [(realm-info? &) (values (realm-info-fold &) (realm-info-extension &))]
                               [else (values default-fold-realm default-realm-extension)]))])))
-      (for/fold ([library : (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Example)) library])
+      (for/fold ([library : (Immutable-HashTable Symbol (Immutable-HashTable Symbol Realm-Examples)) library])
                 ([examples.ext (in-list (directory-list (build-path realm-root field) #:build? #true))]
                  #:when (and (file-exists? examples.ext)
                              (equal? (path-get-extension examples.ext) this-extension)))
-        (define dialect : Symbol (string->symbol (format "~a" (file-name-from-path (path-replace-extension examples.ext #"")))))
+        (define subfield : Symbol (string->symbol (format "~a" (file-name-from-path (path-replace-extension examples.ext #"")))))
         (with-handlers ([exn:fail? (λ [[e : exn]] (dtrace-warning #:topic topic "~a: ~a" examples.ext (exn-message e)) library)])
-          (hash-update library dialect
-                       (λ [[dictionary : (Immutable-HashTable Symbol Realm-Example)]]
-                         (this-realm-fold examples.ext dictionary))
-                       make-empty-dictionary))))))
+          (hash-update library subfield
+                       (λ [[library : (Immutable-HashTable Symbol Realm-Examples)]]
+                         (this-realm-fold examples.ext library))
+                       make-empty-library))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(define realm-read-example-name : (-> Path Input-Port Boolean (Option Symbol))
+  (lambda [realm.tex /dev/exin already-start?]
+    (let read-id ([srahc : (Option (Listof Char)) (and already-start? null)])
+      (define ch : (U Char EOF) (read-char /dev/exin))
+      (cond [(eof-object? ch) (and (pair? srahc) (dtrace-warning #:topic topic "~a: ~s" realm.tex (list->string (reverse srahc))) #false)]
+            [(eq? ch #\])
+             (let ([garbage (read-line /dev/exin)])
+               (cond [(pair? srahc) (rlist->symbol srahc)]
+                     [else (dtrace-warning #:topic topic "~a: ]~a" realm.tex garbage) #false]))]
+            [(eq? ch #\[) (read-id null)]
+            [(list? srahc) (read-id (cons ch srahc))]
+            [(char-whitespace? ch) (read-id srahc)]
+            [else (read-line /dev/exin) (read-id #false)]))))
+
+(define realm-read-example : (->* (Path Input-Port) ((Listof Realm-Example)) (Values (Listof Realm-Example) (Option Char)))
+  (lambda [realm.tex /dev/exin [selpmaxe null]]
+    (let*-values ([(jatokens maybe-next) (realm-read-example-tokens realm.tex /dev/exin)]
+                  [(rubytokens maybe-next) (if (null? jatokens) (values null maybe-next) (realm-read-example-tokens realm.tex /dev/exin))]
+                  [(translations maybe-next) (if (null? rubytokens) (values null maybe-next) (realm-read-example-translations realm.tex /dev/exin))])
+      (define maybe-example : (Option Realm-Example) (and (pair? jatokens) (realm-example jatokens rubytokens translations)))
+      
+      (cond [(not maybe-example) (values (reverse selpmaxe) (and (eq? maybe-next #\[) maybe-next))]
+            [(not maybe-next) (values (reverse (cons maybe-example selpmaxe)) #false)]
+            [(eq? maybe-next #\[) (values (reverse (cons maybe-example selpmaxe)) maybe-next)]
+            [else (realm-read-example realm.tex /dev/exin (cons maybe-example selpmaxe))]))))
+
+(define realm-read-example-tokens : (-> Path Input-Port (Values (Listof Symbol) (Option Char)))
+  (lambda [realm.tex /dev/exin]
+    (let read-tokens ([srahc : (Listof Char) null]
+                      [snekot : (Listof Symbol) null])
+      (define ch : (U Char EOF) (read-char /dev/exin))
+      (cond [(eof-object? ch) (values (reverse snekot) #false)]
+            [(or (eq? ch #\return) (eq? ch #\newline))
+             (when (and (eq? ch #\return) (eq? (peek-char /dev/exin) #\newline))
+               (read-char /dev/exin))
+             (cond [(pair? srahc) (values (reverse (cons (rlist->symbol srahc) snekot)) #false)]
+                   [else (read-tokens null snekot)])]
+            [(char-whitespace? ch)
+             (regexp-match? #px"[[:blank:]]*" /dev/exin)
+             (read-tokens null (if (pair? srahc) (cons (rlist->symbol srahc) snekot) snekot))]
+            [(eq? ch #\[) (values (reverse (if (pair? srahc) (cons (rlist->symbol srahc) snekot) snekot)) ch)]
+            [(eq? ch #\|) (read-tokens (append (realm-read-rliteral /dev/exin) srahc) snekot)]
+            [else (read-tokens (cons ch srahc) snekot)]))))
+
+(define realm-read-example-translations : (-> Path Input-Port (Values (Listof String) (Option Char)))
+  (lambda [realm.tex /dev/exin]
+    (let read-translations ([snoitalsnart : (Listof String) null])
+      (define ch : (U Char EOF) (peek-char /dev/exin))
+      (cond [(eof-object? ch) (values (reverse snoitalsnart) #false)]
+            [(eq? ch #\[) (values (reverse snoitalsnart) #\[)]
+            [(or (eq? ch #\return) (eq? ch #\newline)) (regexp-match #px"\\s+" /dev/exin) (values (reverse snoitalsnart) (if (eq? (peek-char /dev/exin) #\[) #\[ #\c))]
+            [(char-whitespace? ch) (read-char /dev/exin) (read-translations snoitalsnart)]
+            [else (read-translations (cons (string-trim (assert (read-line /dev/exin) string?) #:left? #false) snoitalsnart))]))))
+
+(define realm-read-rliteral : (->* (Input-Port) ((Listof Char)) (Listof Char))
+  (lambda [/dev/exin [laretil null]]
+    (define ch : (U Char EOF) (read-char /dev/exin))
+    (cond [(eof-object? ch) laretil]
+          [(eq? ch #\|) laretil]
+          [else (realm-read-rliteral /dev/exin (cons ch laretil))])))
