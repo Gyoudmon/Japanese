@@ -22,6 +22,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-example-index-type 'ex)
+(define ja-example-style (make-style "exbox" (list 'command)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-title stx)
@@ -108,47 +109,48 @@
      (let ([sym:extag (if (symbol? id) id (string->symbol (if (string? id) id (~a id))))])
        (ja-exemplify sym:extag (exemplify sym:extag)))]
     [(sym:extag examples)
-     (let ([excount (length examples)])
-       (case excount
-         [(0) (void)]
-         [(1)
-          (make-tamer-indexed-traverse-block
-           (λ [type chapter-index current-index]
-             (define example (format "Example ~a.~a" chapter-index current-index))
-             (define example-row (ja-example->table-row (car examples)))
-             
-             (values sym:extag
-                     (nested #:style handbook-boxed-style
-                             (tabular #:style 'block
-                                      #:column-properties '(left)
-                                      #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
-                                      (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
+     (define excount (length examples))
+
+     (case excount
+       [(0) (void)]
+       [(1)
+        (make-tamer-indexed-traverse-block
+         (λ [type chapter-index current-index]
+           (define example (format "Example ~a.~a" chapter-index current-index))
+           (define example-row (ja-example->table-row (car examples)))
+           
+           (values sym:extag
+                   (nested #:style ja-example-style
+                           (tabular #:style 'block
+                                    #:column-properties '(left)
+                                    #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
+                                    (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
                                               example-row)))))
-           ja-example-index-type)]
-         [else
-          (make-tamer-indexed-traverse-block
-           (λ [type chapter-index current-index]
-             (define example (format "Example ~a.~a" chapter-index current-index))
-             
-             (define example-rows
-               (for/list ([example-row (in-list (map ja-example->table-row examples))]
-                          [sub (in-naturals 0)])
-                 (define subexample (string (integer->char (+ 97 sub))))
-                 (list (tabular #:sep (hspace 1)
-                                #:style 'block
-                                #:column-properties '(left center left)
-                                (list (list ""
-                                            (elemtag (~a sym:extag subexample) (envvar subexample))
-                                            (tabular #:style 'block example-row)))))))
-             
-             (values sym:extag
-                     (nested #:style handbook-boxed-style
-                             (tabular #:style 'block
-                                      #:column-properties '(left)
-                                      #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
-                                      (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
-                                              example-rows)))))
-           ja-example-index-type)]))]))
+         ja-example-index-type)]
+       [else
+        (make-tamer-indexed-traverse-block
+         (λ [type chapter-index current-index]
+           (define example (format "Example ~a.~a" chapter-index current-index))
+           
+           (define example-rows
+             (for/list ([example-row (in-list (map ja-example->table-row examples))]
+                        [sub (in-naturals 0)])
+               (define subexample (string (integer->char (+ 97 sub))))
+               (list (tabular #:sep (hspace 1)
+                              #:style 'block
+                              #:column-properties '(left center left)
+                              (list (list ""
+                                          (elemtag (~a sym:extag subexample) (envvar subexample))
+                                          (tabular #:style 'block example-row)))))))
+           
+           (values sym:extag
+                   (nested #:style ja-example-style
+                           (tabular #:style 'block
+                                    #:column-properties '(left)
+                                    #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
+                                    (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
+                                            example-rows)))))
+         ja-example-index-type)])]))
 
 (define ja-example-ref
   (lambda [#:elem [ex-element subscript] extag subtag]

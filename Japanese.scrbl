@@ -52,7 +52,7 @@ Typically, an example consists of four parts:
  @item{@emph{Japanese Sentence}: the mandatory part of an example, written with the primary writting
   system(a.k.a. @ja-tech{kanji}). Tokens are separated by spaces.}
  @item{@emph{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
-  @racketmetafont{-} is used as a placeholder of a non-@ja-tech{kanji} token.}
+  @racket[-] is used as a placeholder of a non-@ja-tech{kanji} token.}
  @item{@emph{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical functions.
   Note that marks and rubies share the second line of an example in the file.}
  @item{@emph{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
@@ -63,7 +63,7 @@ Below is the content of @filepath{preface.tex} which exists for illustrating:
 
 @tamer-racketbox{stone/realm/default/preface.tex}
 
-If the multi-sentence example with id @racketidfont{multi-example id} is referenced in the book, it will
+If the multi-sentence example with id @racketvarfont{multi-example id} is referenced in the book, it will
 look like @ja-exref[#:elem values]{multi-example id}.
 
 @ja-exemplify['|multi-example id|]
