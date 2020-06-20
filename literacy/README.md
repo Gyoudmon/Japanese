@@ -11,35 +11,35 @@ categoried into 10 - 12 groups.
 
   * _Substantives_ 「体言」
 
-    * Nouns 「名詞」
+    * `Nouns 「名詞」`
 
-      * Pronouns 「代名詞」
+      * `Pronouns 「代名詞」`
 
-      * Numerals 「数詞」
+      * `Numerals 「数詞」`
 
   * _Declinable Words_ 「用言」
 
-    * Verbs 「動詞」
+    * `Verbs 「動詞」`
 
-    * Adjectives 「形容詞」
+    * `Adjectives 「形容詞」`
 
-    * Adjectival Verbs 「形容動詞」
+    * `Adjectival Verbs 「形容動詞」`
 
   * _Modifiers_ 「修飾語」
 
-    * Prenominals 「連体詞」
+    * `Prenominals 「連体詞」`
 
-    * Adverbs 「副詞」
+    * `Adverbs 「副詞」`
 
-  * Conjunctions 「接続詞」
+  * `Conjunctions 「接続詞」`
 
-  * Interjections 「感動詞」
+  * `Interjections 「感動詞」`
 
 * _Ancillary Words_ 「付属語」
 
-  * Particles 「助詞」
+  * `Particles 「助詞」`
 
-  * Auxiliary Verbs 「助動詞」
+  * `Auxiliary Verbs 「助動詞」`
 
 These categories are typically taught at school in Japan. However
 categorization schemes may vary due to different grammatically

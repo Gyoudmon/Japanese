@@ -15,33 +15,33 @@ unions, Japanese words are well categoried into 10 - 12 groups.
   @itemlist[
  @item{@ja-deftech[Substantives 体言 たいげん 体言]
     @itemlist[
- @item{@ja-tech[Nouns 名詞 めいし]
+ @item{@ja-tech*[Nouns 名詞 めいし]
       @itemlist[
- @item{@ja-tech[Pronouns 代名詞 だいめいし]}
- @item{@ja-tech[Numerals 数詞 すうし]}
+ @item{@ja-tech*[Pronouns 代名詞 だいめいし]}
+ @item{@ja-tech*[Numerals 数詞 すうし]}
  ]}]}
   
  @item{@ja-deftech["Declinable Words" 用言 ようげん 用言]
     @itemlist[
- @item{@ja-tech[Verbs 動詞 どうし]}
- @item{@ja-tech[Adjectives 形容詞 けいようし]}
- @item{@ja-tech["Adjectival Verbs" 形容動詞 けいようどうし]}
+ @item{@ja-tech*[Verbs 動詞 どうし]}
+ @item{@ja-tech*[Adjectives 形容詞 けいようし]}
+ @item{@ja-tech*["Adjectival Verbs" 形容動詞 けいようどうし]}
  ]}
 
  @item{@ja-deftech[Modifiers 修飾語 しゅうしょくご 修饰语]
     @itemlist[
- @item{@ja-tech[Prenominals 連体詞 れんたいし]}
- @item{@ja-tech[Adverbs 副詞 ふくし]}
+ @item{@ja-tech*[Prenominals 連体詞 れんたいし]}
+ @item{@ja-tech*[Adverbs 副詞 ふくし]}
 ]}
  
- @item{@ja-tech[Conjunctions 接続詞 せつぞくし]}
- @item{@ja-tech[Interjections 感動詞 かんどうし]}
+ @item{@ja-tech*[Conjunctions 接続詞 せつぞくし]}
+ @item{@ja-tech*[Interjections 感動詞 かんどうし]}
  ]}
 
  @item{@ja-deftech["Ancillary Words" 付属語 ふぞくご 虚词]
   @itemlist[
- @item[@ja-tech[Particles 助詞 じょし]]
- @item[@ja-tech["Auxiliary Verbs" 助動詞 じょどうし]]
+ @item[@ja-tech*[Particles 助詞 じょし]]
+ @item[@ja-tech*["Auxiliary Verbs" 助動詞 じょどうし]]
  ]}]
 
 These categories are typically taught at school in Japan. However categorization schemes may vary due

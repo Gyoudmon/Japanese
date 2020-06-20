@@ -19,10 +19,54 @@ As a result, this book targets native English speakers and anyone who are intere
 Japanese. Yes, as might be expected, comparing with Chinese is also something interesting one would find.
 
 Microsoft Word is good but not the best one for writing rigorous books, one mentionable reason is that
-authors have to maintain references on their own. LaTex is too cumbersome to work with directly.
-Racket Scribble just fits the case.
+authors have to maintain references on their own. @handbook-latex-prefab-string{TeX} and friends are too
+cumbersome to work with directly. Racket Scribble just fits the case.
 
-Discussions and Suggestions are welcome.
+@handbook-preface-subsection{Example File Format}
+
+In order to conveniently generate different editions for different readers, the concept @deftech{Realm}
+is introduced to organize example sentences in this book. Meanwhile there are three prefabricated
+@ja-tech{realm}s:
+
+@itemlist[
+ #:style 'compact
+ @item{@emph{default}: Examples that can be seen in regular textbooks. Besides, this @ja-tech{realm} also
+  serves as the fallback in case some specific examples cannot be found in the target one.}
+ @item{@emph{STEM}: Examples in fields of science, technology, engineering, mathematics and such.}
+ @item{@emph{ACG}: Examples in fields of animation, cartoon, game and such.}
+ ]
+
+Typeseting with environment variable @envvar{JAREALM} set to @italic{realm name} to generate the
+target edition, say @exec{env JAREALM=STEM raco wisemon typeset}, and @ja-tech{realm} names are case
+sensitive.
+
+By convention, @ja-tech{realm}s are located in @filepath{stone/realm}. Within each @ja-tech{realm}s,
+@tt{.tex} suffixed plain text files, don't confused with the @handbook-latex-prefab-string{LaTeX}
+source files, are used to organize exmaples chapter by chapter. Examples are actual have no namespace
+and therefore can be freely cross referenced in other chapters.
+
+Typically, an example consists of four parts:
+
+@itemlist[
+ #:style 'compact
+ @item{@emph{Japanese Sentence}: the mandatory part of an example, written with the primary writting
+  system(a.k.a. @ja-tech{kanji}). Tokens are separated by spaces.}
+ @item{@emph{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
+  @racketmetafont{-} is used as a placeholder of a non-@ja-tech{kanji} token.}
+ @item{@emph{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical functions.
+  Note that marks and rubies share the second line of an example in the file.}
+ @item{@emph{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
+  translations are allowed.}
+ ]
+
+Below is the content of @filepath{preface.tex} which exists for illustrating:
+
+@tamer-racketbox{stone/realm/default/preface.tex}
+
+If the multi-sentence example with id @racketidfont{multi-example id} is referenced in the book, it will
+look like @ja-exref[#:elem values]{multi-example id}.
+
+@ja-exemplify['|multi-example id|]
 
 @handbook-smart-table[]
 @handbook-texbook-main[]

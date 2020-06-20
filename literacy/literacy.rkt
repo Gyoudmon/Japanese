@@ -52,12 +52,19 @@
 
 (define-syntax (ja-tech stx)
   (syntax-parse stx #:datum-literals []
-    [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false])))
-        ... en0 kenji0 hiragana0)
+    [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))) ...
+        en0)
+     #'(let ([en (ja-input 'en0)])    
+         (tech #:key (or key en) (racketkeywordfont en)))]))
+
+(define-syntax (ja-tech* stx)
+  (syntax-parse stx #:datum-literals []
+    [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))) ...
+        en0 kenji0 hiragana0)
      #'(let-values ([(en kenji hiragana) (ja-inputs 'en0 'kenji0 'hiragana0)])    
-         (list (tech #:key (or key en)
-                     en ~
-                     "「" (ruby kenji hiragana) "」")))]))
+         (tech #:key (or key en)
+               (racketkeywordfont (list en ~
+                                        "「" (ruby kenji hiragana) "」"))))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-thing stx)
@@ -81,25 +88,19 @@
           (ja-exemplify extag (list (realm-example (list (ja-input 'ja0) (ja-input 'ja) ...)
                                                    (list (ja-input 'ruy) ...)
                                                    (list (string-join (map ja-input '(trans ...)))
-                                                         ...)) ...)))]
+                                                         ...))  ...)))]
     [(_ (~alt (~optional (~seq #:tag maybe-tag:id) #:defaults ([maybe-tag #'#false]))) ...
         [ja0 ja ...] [ruy ...] [trans ...] ...)
      #'(ja-example #:tag maybe-tag [[ja0 ja ...] [ruy ...] [trans ...] ...])]))
 
 (define-syntax (ja-exref stx)
   (syntax-parse stx #:datum-literals []
-    [(_ extag:id)
-     #'(make-tamer-indexed-elemref
-        (λ [type chapter-index maybe-index]
-          (elemref (symbol->string 'extag)
-                   (subscript (format "~a~a.~a" type chapter-index (or maybe-index '?)))))
-        ja-example-index-type 'extag)]
-    [(_ extag:id subtag:id)
-     #'(make-tamer-indexed-elemref
-        (λ [type chapter-index maybe-index]
-          (elemref (format "~a.~a" 'extag 'subtag)
-                   (subscript (format "~a~a.~a~a" type chapter-index (or maybe-index '?) 'subtag))))
-        ja-example-index-type 'extag)]))
+    [(_ (~alt (~optional (~seq #:elem ex-element:id) #:defaults ([ex-element #'subscript]))) ...
+        extag)
+     #'(ja-example-ref #:elem ex-element 'extag '||)]
+    [(_ (~alt (~optional (~seq #:elem ex-element:id) #:defaults ([ex-element #'subscript]))) ...
+        extag subtag)
+     #'(ja-example-ref #:elem ex-element 'extag 'subtag)]))
 
 (define ja-exemplify
   (case-lambda
@@ -107,8 +108,7 @@
      (let ([sym:extag (if (symbol? id) id (string->symbol (if (string? id) id (~a id))))])
        (ja-exemplify sym:extag (exemplify sym:extag)))]
     [(sym:extag examples)
-     (let ([excount (length examples)]
-           [empty-row (list (list ""))])
+     (let ([excount (length examples)])
        (case excount
          [(0) (void)]
          [(1)
@@ -118,13 +118,12 @@
              (define example-row (ja-example->table-row (car examples)))
              
              (values sym:extag
-                     (tabular #:style 'block
-                              #:column-properties '(left)
-                              #:row-properties (append '(()) '(bottom-border) (make-list (length example-row) '()) '(top-border))
-                              (append empty-row
-                                      (list (list (elemtag (symbol->string sym:extag) (tt example))))
-                                      example-row
-                                      empty-row))))
+                     (nested #:style handbook-boxed-style
+                             (tabular #:style 'block
+                                      #:column-properties '(left)
+                                      #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
+                                      (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
+                                              example-row)))))
            ja-example-index-type)]
          [else
           (make-tamer-indexed-traverse-block
@@ -139,18 +138,27 @@
                                 #:style 'block
                                 #:column-properties '(left center left)
                                 (list (list ""
-                                            (elemtag (format "~a.~a" sym:extag subexample) (envvar subexample))
+                                            (elemtag (~a sym:extag subexample) (envvar subexample))
                                             (tabular #:style 'block example-row)))))))
              
              (values sym:extag
-                     (tabular #:style 'block
-                              #:column-properties '(left)
-                              #:row-properties (append '(()) (make-list (add1 (length example-rows)) 'bottom-border) '(()))
-                              (append empty-row
-                                      (list (list (elemtag (symbol->string sym:extag) (envvar example))))
-                                      example-rows
-                                      empty-row))))
+                     (nested #:style handbook-boxed-style
+                             (tabular #:style 'block
+                                      #:column-properties '(left)
+                                      #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
+                                      (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
+                                              example-rows)))))
            ja-example-index-type)]))]))
+
+(define ja-example-ref
+  (lambda [#:elem [ex-element subscript] extag subtag]
+    (make-tamer-indexed-elemref
+     (λ [type chapter-index maybe-index]
+       (elemref (~a extag subtag)
+                (if (not maybe-index)
+                    (racketerror (ex-element (~a type chapter-index #\. '? subtag)))
+                    (racketresultfont (ex-element (~a type chapter-index #\. maybe-index subtag))))))
+     ja-example-index-type extag)))
 
 (define ja-example->table-row
   (lambda [ex]

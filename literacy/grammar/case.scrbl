@@ -5,34 +5,34 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[Case 格 かく 格]}
 
-@deftech{Case} is any of the forms of a @tech{noun}, @tech{adjective}, or @tech{pronoun}
-that express the semantic relation of a word to other words, especially to @tech{verbs},
+@deftech{Case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective}, or @ja-tech{pronoun}
+that express the semantic relation of a word to other words, especially to @ja-tech{verbs},
 in a sentence.
 
-In the sense of @tech{case}, the standard modern Japanese has been categorized as an
+In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
 @ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] which means subjects of
-@tech{transitive verbs} and @tech{intransitive verbs} share the same @tech{cases},
-but are distinguished from @tech{cases} of objects of @tech{transitive verbs}.
+@ja-tech{transitive verbs} and @ja-tech{intransitive verbs} share the same @ja-tech{cases},
+but are distinguished from @ja-tech{cases} of objects of @ja-tech{transitive verbs}.
 
-Japanese implements its @tech{case} system by postpositional @tech{particles}, which
-traditionally are also known as @tech{case particles}. These @tech{case particles}
+Japanese implements its @ja-tech{case} system by postpositional @ja-tech{particles}, which
+traditionally are also known as @ja-tech{case particles}. These @ja-tech{case particles}
 are phonologically bound to the preceding words as the form @ja-form{substantives +
- case particle} is, nevertheless, @tech{case particles} are actually phrasal clitics
+ case particle} is, nevertheless, @ja-tech{case particles} are actually phrasal clitics
 rather than nominal declensions so that other elements may intervene between
-@tech{case particles} and the marking @tech{substantives} or extend the scope
+@ja-tech{case particles} and the marking @ja-tech{substantives} or extend the scope
 over more than one noun phrases@ja-exref[interleaved-nps].
 
 @ja-exemplify{interleaved-nps}
 
-One of the key features of Japanese @tech{case} system is based on its @tech{topic}-prominent
+One of the key features of Japanese @ja-tech{case} system is based on its @ja-tech{topic}-prominent
 property@handbook-footnote{Korean and Mandarin Chinese are also topic-prominent languages}.
 Multiple nominative-marked noun phrases may occure within one clause so that the initial one
-may be considered as the @tech{topic} and described by the remaining part of the
+may be considered as the @ja-tech{topic} and described by the remaining part of the
 clause@ja-exref[hallmark:multi-noms].
 
 @ja-exemplify{hallmark:multi-noms}
 
-Just as the @tech{case particles}, there are 10 prominent @tech{cases} in the standard modern
+Just as the @ja-tech{case particles}, there are 10 prominent @ja-tech{cases} in the standard modern
 Japanese, but they are not one-to-one corresponding.
  
 @itemlist[
