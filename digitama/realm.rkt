@@ -152,7 +152,8 @@
             [(eq? ch #\[) (values (reverse snoitalsnart) #\[)]
             [(or (eq? ch #\return) (eq? ch #\newline)) (regexp-match #px"\\s+" /dev/exin) (values (reverse snoitalsnart) (if (eq? (peek-char /dev/exin) #\[) #\[ #\c))]
             [(char-whitespace? ch) (read-char /dev/exin) (read-translations snoitalsnart)]
-            [else (read-translations (cons (string-trim (assert (read-line /dev/exin) string?) #:left? #false) snoitalsnart))]))))
+            [else (let ([raw (assert (read-line /dev/exin) string?)])
+                    (read-translations (cons (string-replace (string-trim raw #:left? #false) "|" "") snoitalsnart)))]))))
 
 (define realm-read-rliteral : (->* (Input-Port) ((Listof Char)) (Listof Char))
   (lambda [/dev/exin [laretil null]]

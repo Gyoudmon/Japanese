@@ -6,8 +6,8 @@
 
 @;{
  WARNING:
-  @deftech won't work in delayed blocks since all links are resolved before the render pass,
-  @tech will work in traverse blocks only if the target has already been defined before,
+  @deftech does not work in delayed blocks since all links are resolved before the render pass,
+  @tech works in traverse blocks only if the target has already been defined before,
   thus, this chapter should be place in the appendix part of a book.
 }
 
@@ -32,7 +32,10 @@
 @centered{
  @ja-deftech-table[
  [Abbr.  English                   日本語   　简体中文]
+ [COP    Copula                    -         -]
  [NP     |Noun Phrase|             名詞句     名词短语]
- [PST    Past                      過去　　　　过去时]]}
+ [NEG    Negative                  -         -]
+ [PST    Past                      過去　　　　过去时]
+ [TOP    |Topic Particle|          -         -]]}
 
 @handbook-reference[]

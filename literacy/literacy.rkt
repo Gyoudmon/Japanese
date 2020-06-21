@@ -112,7 +112,8 @@
      (define excount (length examples))
 
      (case excount
-       [(0) (void)]
+       [(0)
+        (ja-exemplify sym:extag (list (realm-example (list (ja-input sym:extag)) null null)))]
        [(1)
         (make-tamer-indexed-traverse-block
          (λ [type chapter-index current-index]

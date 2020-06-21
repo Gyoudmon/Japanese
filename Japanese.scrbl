@@ -30,10 +30,10 @@ is introduced to organize example sentences in this book. Meanwhile there are th
 
 @itemlist[
  #:style 'compact
- @item{@emph{default}: Examples that can be seen in regular textbooks. Besides, this @ja-tech{realm} also
+ @item{@bold{default}: Examples that can be seen in regular textbooks. Besides, this @ja-tech{realm} also
   serves as the fallback in case some specific examples cannot be found in the target one.}
- @item{@emph{STEM}: Examples in fields of science, technology, engineering, mathematics and such.}
- @item{@emph{ACG}: Examples in fields of animation, cartoon, game and such.}
+ @item{@bold{STEM}: Examples in fields of science, technology, engineering, mathematics and such.}
+ @item{@bold{ACG}: Examples in fields of animation, cartoon, game and such.}
  ]
 
 Typeseting with environment variable @envvar{JAREALM} set to @italic{realm name} to generate the
@@ -45,28 +45,42 @@ By convention, @ja-tech{realm}s are located in @filepath{stone/realm}. Within ea
 source files, are used to organize exmaples chapter by chapter. Examples are actual have no namespace
 and therefore can be freely cross referenced in other chapters.
 
-Typically, an example consists of four parts:
+Typically, an example in the file consists of five parts:
 
 @itemlist[
  #:style 'compact
- @item{@emph{Japanese Sentence}: the mandatory part of an example, written with the primary writting
-  system(a.k.a. @ja-tech{kanji}). Tokens are separated by spaces.}
- @item{@emph{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
+ @item{@bold{Identifier}: the name that identifies the example and be referenced in the book,
+  bracketed in @racketparenfont{[]}. Whitespaces are parts of names.}
+ @item{@bold{Japanese Sentence}: the mandatory part of an example, written with the primary writting
+  system(a.k.a. @ja-tech{kanji}). Tokens are separated by whitespaces.}
+ @item{@bold{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
   @racket[-] is used as a placeholder of a non-@ja-tech{kanji} token.}
- @item{@emph{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical functions.
-  Note that marks and rubies share the second line of an example in the file.}
- @item{@emph{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
-  translations are allowed.}
+ @item{@bold{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical or
+  pragmatical functions. Note that marks and rubies share the second line of an example in the file.}
+ @item{@bold{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
+  translations are allowed. Note that @emph{no} blank lines among translations.}
  ]
 
-Below is the content of @filepath{preface.tex} which exists for illustrating:
+For multi-sentence examples, the last four parts repeat, and sentences are separated by blank lines.
+Below is the content of @filepath{preface.tex} in which examples exist for illustrating only and
+should be placed in their own @ja-tech{realm}s:
+
+@hspace[1]
+@linebreak[]
 
 @tamer-racketbox{stone/realm/default/preface.tex}
 
-If the multi-sentence example with id @racketvarfont{multi-example id} is referenced in the book, it will
-look like @ja-exref[#:elem values]{multi-example id}.
+@hspace[1]
+@linebreak[]
 
-@ja-exemplify['|multi-example id|]
+The single-sentence example with identifier @racketvalfont{| ex ss |} looks like @ja-exref[#:elem values]{ ex ss }
+if it is referenced in the book.
+
+@ja-exemplify['| ex ss |]
+
+Similarly, @ja-exref[#:elem values]{ ex ms } illustrates the multi-sentence example @racketvalfont{| ex ms |}.
+
+@ja-exemplify['| ex ms |]
 
 @handbook-smart-table[]
 @handbook-texbook-main[]

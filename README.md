@@ -29,14 +29,14 @@ In order to conveniently generate different editions for different
 readers, the concept _Realm_ is introduced to organize example sentences
 in this book. Meanwhile there are three prefabricated `realm`s:
 
-* ​_default_​: Examples that can be seen in regular textbooks. Besides,
+* **default**: Examples that can be seen in regular textbooks. Besides,
   this `realm` also serves as the fallback in case some specific
   examples cannot be found in the target one.
 
-* ​_STEM_​: Examples in fields of science, technology, engineering,
+* **STEM**: Examples in fields of science, technology, engineering,
   mathematics and such.
 
-* ​_ACG_​: Examples in fields of animation, cartoon, game and such.
+* **ACG**: Examples in fields of animation, cartoon, game and such.
 
 Typeseting with environment variable `JAREALM` set to _realm name_ to
 generate the target edition, say `env JAREALM=STEM raco wisemon
@@ -48,51 +48,71 @@ source files, are used to organize exmaples chapter by chapter. Examples
 are actual have no namespace and therefore can be freely cross
 referenced in other chapters.
 
-Typically, an example consists of four parts:
+Typically, an example in the file consists of five parts:
 
-* ​_Japanese Sentence_​: the mandatory part of an example, written with
+* **Identifier**: the name that identifies the example and be referenced
+  in the book, bracketed in `[]`. Whitespaces are parts of names.
+
+* **Japanese Sentence**: the mandatory part of an example, written with
   the primary writting system(a.k.a. `kanji`). Tokens are separated by
-  spaces.
+  whitespaces.
 
-* ​_Ruby_​: written in `hiragana` above kanji tokens to show their
+* **Ruby**: written in `hiragana` above kanji tokens to show their
   pronunciation. `-` is used as a placeholder of a non-`kanji` token.
 
-* ​_Mark_​: written in English below `kana` tokens to show their
-  grammatical functions. Note that marks and rubies share the second
-  line of an example in the file.
+* **Mark**: written in English below `kana` tokens to show their
+  grammatical or pragmatical functions. Note that marks and rubies share
+  the second line of an example in the file.
 
-* ​_Translation_​: the meaning of the sentence, written primarily in
-  English. Zero or multi translations are allowed.
+* **Translation**: the meaning of the sentence, written primarily in
+  English. Zero or multi translations are allowed. Note that ​_no_​
+  blank lines among translations.
 
-Below is the content of `"preface.tex"` which exists for illustrating:
+For multi-sentence examples, the last four parts repeat, and sentences
+are separated by blank lines. Below is the content of `"preface.tex"` in
+which examples exist for illustrating only and should be placed in their
+own `realm`s:
+
+ 
 
 _📝 stone/realm/default/preface.tex_
 ```racket
- 1 [single-example id]
- 2 日本語   の  文         
- 3 にほんご GEN ぶん        
- 4 Japanese Sentence  
- 5                    
- 6 [multi-example id] 
- 7 第   1  文           
- 8 だい -  ぶん           
- 9 The 1st Sentence   
-10                    
-11 第   2  文           
-12 だい - ぶん            
-13 The 2nd Sentence   
+ 1 [ ex ss ]                                                    
+ 2 ねえ、どうも　由紀子　が　 返事　 を　出さ なかっ た  ようだ   よ                        
+ 3 -          ゆきこ NOM へんじ ACC  だ   NEG PST Belief Assert        
+ 4 Hey，It seems that Yukiko didn't send a reply (I tell you)    
+ 5                                                              
+ 6 [ ex ms ]                                                    
+ 7 悟空　は  クリリン  と    天下一武道会 　　  に   参加 した                        
+ 8 ごく TOP -　　　　COM　てんかいちぶどうかい　DAT さんか PST                       
+ 9 Goku participated in the Martial Arts Tournament with Krillin
+10                                                              
+11 音楽    は   感覚 　 の   数学   であり、 数学  は  理性   の  音楽  である          
+12 おんがく TOP かんかく GEN すうがく COP すうがく TOP りせい GEN おんがく COP         
+13 Music is the mathematics of sense                            
+14 Mathematics is the music of reason                           
 ```
 
-If the multi-sentence example with id `multi-example id` is referenced
-in the book, it will look like `ex0.1`.
+ 
 
-`Example 0.1`         
- `a` 第1文              
-                      
-      The 1st Sentence
- `b` 第2文              
-                      
-      The 2nd Sentence
+The single-sentence example with identifier `| ex ss |` looks like
+`ex0.1` if it is referenced in the book.
+
+`Example 0.1`                                             
+ねえ、どうも由紀子が返事を出さなかったようだよ                                   
+                                                          
+ Hey，It seems that Yukiko didn't send a reply (I tell you)
+
+Similarly, `ex0.2` illustrates the multi-sentence example `| ex ms |`.
+
+`Example 0.2`                                                      
+ `a` 悟空はクリリンと天下一武道会に参加した                                           
+                                                                   
+      Goku participated in the Martial Arts Tournament with Krillin
+ `b` 音楽は感覚の数学であり、数学は理性の音楽である                                       
+                                                                   
+      Music is the mathematics of sense                            
+      Mathematics is the music of reason                           
 
 
 
