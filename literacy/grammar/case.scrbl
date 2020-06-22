@@ -16,11 +16,10 @@ but are distinguished from @ja-tech{cases} of objects of @ja-tech{transitive ver
 
 Japanese implements its @ja-tech{case} system by postpositional @ja-tech{particles}, which
 traditionally are also known as @ja-tech{case particles}. These @ja-tech{case particles}
-are phonologically bound to the preceding words as the form @ja-form{substantives +
- case particle} is, nevertheless, @ja-tech{case particles} are actually phrasal clitics
-rather than nominal declensions so that other elements may intervene between
-@ja-tech{case particles} and the marking @ja-tech{substantives} or extend the scope
-over more than one noun phrases@ja-exref[interleaved-nps].
+are phonologically bound to the preceding words, nevertheless, @ja-tech{case particles}
+are actually phrasal clitics rather than nominal declensions so that other elements
+may intervene between @ja-tech{case particles} and the marking @ja-tech{substantives}
+or extend the scope over more than one noun phrases@ja-exref[interleaved-nps].
 
 @ja-exemplify{interleaved-nps}
 

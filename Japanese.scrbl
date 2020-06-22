@@ -22,7 +22,7 @@ Microsoft Word is good but not the best one for writing rigorous books, one ment
 authors have to maintain references on their own. @handbook-latex-prefab-string{TeX} and friends are too
 cumbersome to work with directly. Racket Scribble just fits the case.
 
-@handbook-preface-subsection{Example File Format}
+@handbook-preface-subsection{Example Realm}
 
 In order to conveniently generate different editions for different readers, the concept @deftech{Realm}
 is introduced to organize example sentences in this book. Meanwhile there are three prefabricated
@@ -42,15 +42,15 @@ sensitive.
 
 By convention, @ja-tech{realm}s are located in @filepath{stone/realm}. Within each @ja-tech{realm}s,
 @tt{.tex} suffixed plain text files, don't confused with the @handbook-latex-prefab-string{LaTeX}
-source files, are used to organize exmaples chapter by chapter. Examples are actual have no namespace
-and therefore can be freely cross referenced in other chapters.
+source files, are used to organize exmaples chapter by chapter. Examples are virtually have no
+namespace and therefore can be freely cross referenced in other chapters.
 
 Typically, an example in the file consists of five parts:
 
 @itemlist[
  #:style 'compact
- @item{@bold{Identifier}: the name that identifies the example and be referenced in the book,
-  bracketed in @racketparenfont{[]}. Whitespaces are parts of names.}
+ @item{@bold{Identifier}: the name that identifies the example, bracketed in @racketparenfont{[]}.
+  Whitespaces are parts of names.}
  @item{@bold{Japanese Sentence}: the mandatory part of an example, written with the primary writting
   system(a.k.a. @ja-tech{kanji}). Tokens are separated by whitespaces.}
  @item{@bold{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
@@ -74,11 +74,13 @@ should be placed in their own @ja-tech{realm}s:
 @linebreak[]
 
 The single-sentence example with identifier @racketvalfont{| ex ss |} looks like @ja-exref[#:elem values]{ ex ss }
-if it is referenced in the book.
+if it is exemplified in the book.
 
 @ja-exemplify['| ex ss |]
 
-Similarly, @ja-exref[#:elem values]{ ex ms } illustrates the multi-sentence example @racketvalfont{| ex ms |}.
+Similarly, @ja-exref[#:elem values]{ ex ms } exemplifies the multi-sentence example @racketvalfont{| ex ms |},
+besides, each sentence can be referenced independently: @ja-exref[#:elem values " ex ms " a],
+@ja-exref[#:elem values " ex ms " b], @etc
 
 @ja-exemplify['| ex ms |]
 

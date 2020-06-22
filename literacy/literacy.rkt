@@ -184,32 +184,34 @@
       (cond [(null? styles) (values 0 "ruby")]
             [(list? styles) (values (length styles) (last styles))]
             [else (values 0 styles)]))
-    
-    (for/list ([b (in-list bases)]
-               [i (in-naturals 0)])
-      (define r (and (< i rsize) (list-ref rubies i)))
-      (define s0 (if (< i ssize) (list-ref styles i) slast))
-      (define s (cond [(not (eq? s0 'auto)) s0]
-                      [else (let ([eidx (sub1 (string-length b))])
-                              (cond [(= eidx 0) "exmprubyvc"] ; 'auto is designed for examples 
-                                    [else (let* ([sgana? (ja-hiragana? (string-ref b 0))]
-                                                 [egana? (ja-hiragana? (string-ref b eidx))]
-                                                 [egana? (or (and egana?)
-                                                             (and (ja-kigou? (string-ref b eidx))
-                                                                  (ja-hiragana? (string-ref b (sub1 eidx)))))])
-                                            (cond [(eq? sgana? egana?) "exmprubyvc"]
-                                                  [(not sgana?) "exmprubyvl"]
-                                                  [else "exmprubyvr"]))]))]))
-      
-      (make-traverse-element
-       (λ [get set]
+
+    (make-traverse-element
+     (λ [get set]
+       (define latex? (handbook-latex-renderer? get))
+       (for/list ([b (in-list bases)]
+                  [i (in-naturals 0)])
+         (define r (and (< i rsize) (list-ref rubies i)))
+         (define s0 (if (< i ssize) (list-ref styles i) slast))
+         (define s (cond [(not (eq? s0 'auto)) s0]
+                         [else (let ([eidx (sub1 (string-length b))])
+                                 (cond [(= eidx 0) "exmprubyvc"] ; 'auto is designed for examples 
+                                       [else (let* ([sgana? (ja-hiragana? (string-ref b 0))]
+                                                    [egana? (ja-hiragana? (string-ref b eidx))]
+                                                    [egana? (or (and egana?)
+                                                                (and (ja-kigou? (string-ref b eidx))
+                                                                     (ja-hiragana? (string-ref b (sub1 eidx)))))])
+                                               (cond [(eq? sgana? egana?) "exmprubyvc"]
+                                                     [(not sgana?) "exmprubyvl"]
+                                                     [else "exmprubyvr"]))]))]))
+         
          (cond [(or (not r) (equal? r "")) b]
-               [(handbook-latex-renderer? get)
-                (if (pair? options)
-                    (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))
-                    (make-multiarg-element s (list b r)))]
-               [(and (string? b) (ja-hiragana? (string-ref b 0))) (list b (superscript r))]
-               [else (list b (subscript r))]))))))
+               [else (if (not latex?)
+                         (if (and (string? b) (ja-hiragana? (string-ref b 0)))
+                             (list b (superscript r))
+                             (list b (subscript r)))
+                         (if (pair? options)
+                             (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))
+                             (make-multiarg-element s (list b r))))]))))))
 
 (define chinese
   (lambda [#:font [font "FandolSong"] #:latex? [latex? 'auto] . contents]

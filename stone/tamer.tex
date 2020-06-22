@@ -1,3 +1,5 @@
+% NOTE: spaces inside command body matters
+
 \usepackage[total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot]{geometry}
 
 \usepackage{luatexja-fontspec}
@@ -6,19 +8,15 @@
 \ltjsetruby{size=0.6}
 \ltjsetruby{mode=00}
 
-\newcommand{\exbox}[1]{ \PlainBox{#1} }
+\newcommand{\exbox}[1]{\PlainBox{#1}}
 
-\newcommand{\Chinese}[2]{ \jfontspec{#1} #2 }
+\newcommand{\Chinese}[2]{\jfontspec{#1} #2}
 
-% \setlength{\parskip}{0.5em}
-% \renewcommand{\baselinestretch}{1.0}
-
-\newcommand{\bigruby}[2]{ \ruby[size=0.75]{#1}{#2} }
-
-\newcommand{\exmptag}[2]{ \ruby[size=0.85,intergap=-2.0,rubysmash=false]{#1}{#2} }
-\newcommand{\exmpruby}[3]{ \ruby[size=0.75,intergap=0.1,stretchruby=#3]{#1}{#2} }
+\newcommand{\bigruby}[2]{\ruby[size=0.75]{#1}{#2}}
+\newcommand{\exmptag}[2]{\ruby[size=0.75,intergap=-2.0,rubysmash=false]{#1}{#2}}
+\newcommand{\exmpruby}[3]{\ruby[size=0.75,intergap=0.1,stretchruby=#3]{#1}{#2}}
 
 % stupid latex as its commands' names can only contain letters
-\newcommand{\exmprubyvl}[2]{ \exmpruby{#1}{#2}{001} }
-\newcommand{\exmprubyvc}[2]{ \exmpruby{#1}{#2}{101} }
-\newcommand{\exmprubyvr}[2]{ \exmpruby{#1}{#2}{100} }
+\newcommand{\exmprubyvl}[2]{\exmpruby{#1}{#2}{001}}
+\newcommand{\exmprubyvc}[2]{\exmpruby{#1}{#2}{101}}
+\newcommand{\exmprubyvr}[2]{\exmpruby{#1}{#2}{100}}

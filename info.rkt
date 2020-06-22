@@ -7,7 +7,7 @@
 (define build-deps '("digimon" "scribble-lib" "racket-doc"))
 
 (define version "0.1")
-(define pkg-authors '(wargrey))
+(define pkg-authors '("WarGrey Gyoudmon Ju"))
 (define test-omit-paths 'all)
 
 (define typesettings '(["Japanese.scrbl" lualatex]))
