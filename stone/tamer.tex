@@ -1,16 +1,13 @@
-% NOTE: spaces inside command body matters
+%%% NOTE: spaces inside command body matters
 
 \usepackage[total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot]{geometry}
 
+%%% Ruby Styles
 \usepackage{luatexja-fontspec}
 \usepackage{luatexja-ruby}
 
 \ltjsetruby{size=0.6}
 \ltjsetruby{mode=00}
-
-\newcommand{\exbox}[1]{\PlainBox{#1}}
-
-\newcommand{\Chinese}[2]{\jfontspec{#1} #2}
 
 \newcommand{\bigruby}[2]{\ruby[size=0.75]{#1}{#2}}
 \newcommand{\exmptag}[2]{\ruby[size=0.75,intergap=-2.0,rubysmash=false]{#1}{#2}}
@@ -20,3 +17,9 @@
 \newcommand{\exmprubyvl}[2]{\exmpruby{#1}{#2}{001}}
 \newcommand{\exmprubyvc}[2]{\exmpruby{#1}{#2}{101}}
 \newcommand{\exmprubyvr}[2]{\exmpruby{#1}{#2}{100}}
+
+\newcommand{\Chinese}[2]{\jfontspec{#1} #2}
+
+%%% Literacy Styles
+\newcommand{\jaexbox}[1]{\PlainBox{#1}}
+\newcommand{\jatech}[1]{\color{Black}{#1}}

@@ -22,7 +22,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-example-index-type 'ex)
-(define ja-example-style (make-style "exbox" (list 'command)))
+(define ja-example-style (make-style "jaexbox" (list 'command)))
+(define ja-tech-style (make-style "jatech" null))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-title stx)
@@ -55,17 +56,18 @@
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))) ...
         en0)
-     #'(let ([en (ja-input 'en0)])    
-         (tech #:key (or key en) (racketkeywordfont en)))]))
+     #'(let ([en (ja-input 'en0)])
+         (tech #:key (or key en)
+               (elem #:style ja-tech-style en)))]))
 
 (define-syntax (ja-tech* stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))) ...
         en0 kenji0 hiragana0)
-     #'(let-values ([(en kenji hiragana) (ja-inputs 'en0 'kenji0 'hiragana0)])    
+     #'(let-values ([(en kenji hiragana) (ja-inputs 'en0 'kenji0 'hiragana0)])
          (tech #:key (or key en)
-               (racketkeywordfont (list en ~
-                                        "「" (ruby kenji hiragana) "」"))))]))
+               (elem #:style ja-tech-style
+                     en ~ "「" (ruby kenji hiragana) "」")))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-thing stx)
@@ -205,13 +207,8 @@
                                                      [else "exmprubyvr"]))]))]))
          
          (cond [(or (not r) (equal? r "")) b]
-               [else (if (not latex?)
-                         (if (and (string? b) (ja-hiragana? (string-ref b 0)))
-                             (list b (superscript r))
-                             (list b (subscript r)))
-                         (if (pair? options)
-                             (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))
-                             (make-multiarg-element s (list b r))))]))))))
+               [(not latex?) (list b ((if (and (string? b) (ja-hiragana? (string-ref b 0)))superscript subscript) r))]
+               [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s) (list b r))]))))))
 
 (define chinese
   (lambda [#:font [font "FandolSong"] #:latex? [latex? 'auto] . contents]
