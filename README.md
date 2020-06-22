@@ -1,6 +1,6 @@
 # Japanese Language
 
-wargrey
+WarGrey Gyoudmon Ju
 
 
 
@@ -45,13 +45,13 @@ typeset`, and `realm` names are case sensitive.
 By convention, `realm`s are located in `"stone/realm"`. Within each
 `realm`s, `.tex` suffixed plain text files, don’t confused with the
 source files, are used to organize exmaples chapter by chapter. Examples
-are actual have no namespace and therefore can be freely cross
+are virtually have no namespace and therefore can be freely cross
 referenced in other chapters.
 
 Typically, an example in the file consists of five parts:
 
-* **Identifier**: the name that identifies the example and be referenced
-  in the book, bracketed in `[]`. Whitespaces are parts of names.
+* **Identifier**: the name that identifies the example, bracketed in
+  `[]`. Whitespaces are parts of names.
 
 * **Japanese Sentence**: the mandatory part of an example, written with
   the primary writting system(a.k.a. `kanji`). Tokens are separated by
@@ -96,23 +96,25 @@ _📝 stone/realm/default/preface.tex_
  
 
 The single-sentence example with identifier `| ex ss |` looks like
-`ex0.1` if it is referenced in the book.
+`ex0.1` if it is exemplified in the book.
 
-`Example 0.1`                                             
-ねえ、どうも由紀子が返事を出さなかったようだよ                                   
-                                                          
- Hey，It seems that Yukiko didn't send a reply (I tell you)
+`Example 0.1`                                                     
+ねえ、どうも由紀子ゆきこが`NOM`返事へんじを`ACC`出さだなかっ`NEG`た`PST`ようだ`Belief`よ`Assert`
+                                                                  
+ Hey，It seems that Yukiko didn't send a reply (I tell you)        
 
-Similarly, `ex0.2` illustrates the multi-sentence example `| ex ms |`.
+Similarly, `ex0.2` exemplifies the multi-sentence example `| ex ms |`,
+besides, each sentence can be referenced independently: `ex0.2a`,
+`ex0.2b`, etc.
 
-`Example 0.2`                                                      
- `a` 悟空はクリリンと天下一武道会に参加した                                           
-                                                                   
-      Goku participated in the Martial Arts Tournament with Krillin
- `b` 音楽は感覚の数学であり、数学は理性の音楽である                                       
-                                                                   
-      Music is the mathematics of sense                            
-      Mathematics is the music of reason                           
+`Example 0.2`                                                                    
+ `a` 悟空ごくは`TOP`クリリンと`COM`天下一武道会てんかいちぶどうかいに`DAT`参加さんかした`PST`                      
+                                                                                 
+      Goku participated in the Martial Arts Tournament with Krillin              
+ `b` 音楽おんがくは`TOP`感覚かんかくの`GEN`数学すうがくであり、`COP`数学すうがくは`TOP`理性りせいの`GEN`音楽おんがくである`COP`
+                                                                                 
+      Music is the mathematics of sense                                          
+      Mathematics is the music of reason                                         
 
 
 

@@ -203,10 +203,13 @@
       
       (make-traverse-element
        (λ [get set]
-         (cond [(not (handbook-latex-renderer? get)) b]
-               [(or (not r) (equal? r "")) b]
-               [(pair? options) (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))]
-               [else (make-multiarg-element s (list b r))]))))))
+         (cond [(or (not r) (equal? r "")) b]
+               [(handbook-latex-renderer? get)
+                (if (pair? options)
+                    (make-multiarg-element (make-style s (list (make-command-optional (map ~a options)))) (list b r))
+                    (make-multiarg-element s (list b r)))]
+               [(and (string? b) (ja-hiragana? (string-ref b 0))) (list b (superscript r))]
+               [else (list b (subscript r))]))))))
 
 (define chinese
   (lambda [#:font [font "FandolSong"] #:latex? [latex? 'auto] . contents]

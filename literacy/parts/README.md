@@ -1,4 +1,4 @@
-# Verbs | 動詞
+# Verbs | 動詞どうし
 
 _Verbs_ are conjugable words, They consist of stems and suffixes and
 describe actions, states, properties or occurrences.   but they can also

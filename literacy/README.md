@@ -1,4 +1,4 @@
-# Part of Speech | 品詞
+# Part of Speech | 品詞ひんし
 
 _Part of Speech_ is the category of words that have similar grammatical
 properties. More precisely, Japanese words are categorized based on
@@ -7,39 +7,39 @@ Japanese is an agglutinative language in which case words are well
 formed and keep consistent after their unions, Japanese words are well
 categoried into 10 - 12 groups.
 
-* _Independent Words_ 「自立語」
+* _Independent Words_ 「自立語じりつご」
 
-  * _Substantives_ 「体言」
+  * _Substantives_ 「体言たいげん」
 
-    * `Nouns 「名詞」`
+    * `Nouns 「名詞めいし」`
 
-      * `Pronouns 「代名詞」`
+      * `Pronouns 「代名詞だいめいし」`
 
-      * `Numerals 「数詞」`
+      * `Numerals 「数詞すうし」`
 
-  * _Declinable Words_ 「用言」
+  * _Declinable Words_ 「用言ようげん」
 
-    * `Verbs 「動詞」`
+    * `Verbs 「動詞どうし」`
 
-    * `Adjectives 「形容詞」`
+    * `Adjectives 「形容詞けいようし」`
 
-    * `Adjectival Verbs 「形容動詞」`
+    * `Adjectival Verbs 「形容動詞けいようどうし」`
 
-  * _Modifiers_ 「修飾語」
+  * _Modifiers_ 「修飾語しゅうしょくご」
 
-    * `Prenominals 「連体詞」`
+    * `Prenominals 「連体詞れんたいし」`
 
-    * `Adverbs 「副詞」`
+    * `Adverbs 「副詞ふくし」`
 
-  * `Conjunctions 「接続詞」`
+  * `Conjunctions 「接続詞せつぞくし」`
 
-  * `Interjections 「感動詞」`
+  * `Interjections 「感動詞かんどうし」`
 
-* _Ancillary Words_ 「付属語」
+* _Ancillary Words_ 「付属語ふぞくご」
 
-  * `Particles 「助詞」`
+  * `Particles 「助詞じょし」`
 
-  * `Auxiliary Verbs 「助動詞」`
+  * `Auxiliary Verbs 「助動詞じょどうし」`
 
 These categories are typically taught at school in Japan. However
 categorization schemes may vary due to different grammatically
