@@ -11,35 +11,35 @@ categoried into 10 - 12 groups.
 
   * _Substantives_ 「体言たいげん」
 
-    * `Nouns 「名詞めいし」`
+    * Nouns 「名詞めいし」
 
-      * `Pronouns 「代名詞だいめいし」`
+      * Pronouns 「代名詞だいめいし」
 
-      * `Numerals 「数詞すうし」`
+      * Numerals 「数詞すうし」
 
   * _Declinable Words_ 「用言ようげん」
 
-    * `Verbs 「動詞どうし」`
+    * Verbs 「動詞どうし」
 
-    * `Adjectives 「形容詞けいようし」`
+    * Adjectives 「形容詞けいようし」
 
-    * `Adjectival Verbs 「形容動詞けいようどうし」`
+    * Adjectival Verbs 「形容動詞けいようどうし」
 
   * _Modifiers_ 「修飾語しゅうしょくご」
 
-    * `Prenominals 「連体詞れんたいし」`
+    * Prenominals 「連体詞れんたいし」
 
-    * `Adverbs 「副詞ふくし」`
+    * Adverbs 「副詞ふくし」
 
-  * `Conjunctions 「接続詞せつぞくし」`
+  * Conjunctions 「接続詞せつぞくし」
 
-  * `Interjections 「感動詞かんどうし」`
+  * Interjections 「感動詞かんどうし」
 
 * _Ancillary Words_ 「付属語ふぞくご」
 
-  * `Particles 「助詞じょし」`
+  * Particles 「助詞じょし」
 
-  * `Auxiliary Verbs 「助動詞じょどうし」`
+  * Auxiliary Verbs 「助動詞じょどうし」
 
 These categories are typically taught at school in Japan. However
 categorization schemes may vary due to different grammatically
@@ -48,9 +48,9 @@ scheme. For example, the Adjectives and Adjectival Verbs have been
 merged, with being named as イ-adjective and ナ-adjective respectively.
 These changes may not bad, despite the fact that new categories may be
 given meaningless names, say カ変 conjugation verb and サ変 conjugation verb
-are merged as _the Type-III verb_ which is an awful name This might be a
-personal preference as what I have learnt from Software Engineering is
-that do not use meaningless words (e.g. _a1_, _a2_, _a3_) to name
+are merged as _the Type-III verb_ which is an awful name. Thus, this
+book follows the modern scheme but drops all meaningless namesThis might
+be a personal preference as what I have learnt from Software Engineering
+is that do not use meaningless words (e.g. _a1_, _a2_, _a3_) to name
 variables since they make the code less readable for others and even
-yourself in the future.. Thus, this book follows the modern scheme but
-drops all meaningless names.
+yourself in the future..

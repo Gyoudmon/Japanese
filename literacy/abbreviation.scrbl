@@ -32,9 +32,12 @@
 @centered{
  @ja-deftech-table[
  [Abbr.  English                   日本語   　简体中文]
+ [ATT    Attributive               -         -]
  [COP    Copula                    -         -]
  [NP     |Noun Phrase|             名詞句     名词短语]
  [NEG    Negative                  -         -]
+ [POL    |Polite Form|             -         -]
+ [PLN    |Plain Form|              -         -]
  [PST    Past                      過去　　　　过去时]
  [TOP    |Topic Particle|          -         -]]}
 

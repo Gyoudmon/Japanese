@@ -74,7 +74,7 @@ should be placed in their own @ja-tech{realm}s:
 @linebreak[]
 
 The single-sentence example with identifier @racketvalfont{| ex ss |} looks like @ja-exref[#:elem values]{ ex ss }
-if it is exemplified in the book.
+if it is exemplified in the book. The example counter autoincrements chapter by chapter.
 
 @ja-exemplify['| ex ss |]
 

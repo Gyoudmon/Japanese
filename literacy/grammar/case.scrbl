@@ -31,6 +31,9 @@ clause@ja-exref[hallmark:multi-noms].
 
 @ja-exemplify{hallmark:multi-noms}
 
+There are 10 prominent @ja-tech{case particles} in the standard modern Japanese:
+  が, を, に, の, へ, で, より, から, まで, and と.
+
 Just as the @ja-tech{case particles}, there are 10 prominent @ja-tech{cases} in the standard modern
 Japanese, but they are not one-to-one corresponding.
  

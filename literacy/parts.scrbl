@@ -46,14 +46,14 @@ unions, Japanese words are well categoried into 10 - 12 groups.
 
 These categories are typically taught at school in Japan. However categorization schemes may vary due
 to different grammatically perspectives. Nowadays, textbooks tend to use modern categorization scheme.
-For example, the @tech{Adjectives} and @tech{Adjectival Verbs} have been merged, with being named
-as @tech{イ-adjective} and @tech{ナ-adjective} respectively. These changes may not bad, despite the
-fact that new categories may be given meaningless names, say @tech{カ変 conjugation verb} and
-@tech{サ変 conjugation verb} are merged as @italic{the Type-III verb} which is an awful name
-@handbook-footnote{This might be a personal preference as what I have learnt from Software
- Engineering is that do not use meaningless words (e.g. @italic{a1}, @italic{a2}, @italic{a3})
- to name variables since they make the code less readable for others and even yourself in the
- future.}. Thus, this book follows the modern scheme but drops all meaningless names.
+For example, the @tech{Adjectives} and @tech{Adjectival Verbs} have been merged, with being named as
+@tech{イ-adjective} and @tech{ナ-adjective} respectively. These changes may not bad, despite the fact
+that new categories may be given meaningless names, say @tech{カ変 conjugation verb} and
+@tech{サ変 conjugation verb} are merged as @italic{the Type-III verb} which is an awful name. Thus,
+this book follows the modern scheme but drops all meaningless names@handbook-footnote{This might be
+ a personal preference as what I have learnt from Software Engineering is that do not use meaningless
+ words (e.g. @italic{a1}, @italic{a2}, @italic{a3}) to name variables since they make the code less
+ readable for others and even yourself in the future.}.
 
 @include-section{parts/nouns.scrbl}
 @include-section{parts/verbs.scrbl}

@@ -188,27 +188,26 @@
             [else (values 0 styles)]))
 
     (make-traverse-element
-     (λ [get set]
+     (λ [get set!]
        (define latex? (handbook-latex-renderer? get))
-       (for/list ([b (in-list bases)]
+       (for/list ([b0 (in-list bases)]
                   [i (in-naturals 0)])
+         (define-values (b p) (ja-split b0))
          (define r (and (< i rsize) (list-ref rubies i)))
          (define s0 (if (< i ssize) (list-ref styles i) slast))
          (define s (cond [(not (eq? s0 'auto)) s0]
                          [else (let ([eidx (sub1 (string-length b))])
                                  (cond [(= eidx 0) "exmprubyvc"] ; 'auto is designed for examples 
-                                       [else (let* ([sgana? (ja-hiragana? (string-ref b 0))]
-                                                    [egana? (ja-hiragana? (string-ref b eidx))]
-                                                    [egana? (or (and egana?)
-                                                                (and (ja-kigou? (string-ref b eidx))
-                                                                     (ja-hiragana? (string-ref b (sub1 eidx)))))])
+                                       [else (let ([sgana? (ja-hiragana? (string-ref b 0))]
+                                                   [egana? (ja-hiragana? (string-ref b eidx))])
                                                (cond [(eq? sgana? egana?) "exmprubyvc"]
                                                      [(not sgana?) "exmprubyvl"]
                                                      [else "exmprubyvr"]))]))]))
          
-         (cond [(or (not r) (equal? r "")) b]
-               [(not latex?) (list b ((if (and (string? b) (ja-hiragana? (string-ref b 0)))superscript subscript) r))]
-               [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s) (list b r))]))))))
+         (cond [(or (not r) (equal? r "")) b0]
+               [(not latex?) (list b ((if (and (string? b) (ja-hiragana? (string-ref b 0)))superscript subscript) r) (or p null))]
+               [else (let ([br (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s) (list b r))])
+                       (if (not p) br (list br p)))]))))))
 
 (define chinese
   (lambda [#:font [font "FandolSong"] #:latex? [latex? 'auto] . contents]
@@ -258,9 +257,20 @@
   (lambda [token]
     (define content (ja-input token))
 
-    (cond [(regexp-match? #px"[A-Z]+" content) (cons (tech (tt content)) "exmptag")]
-          [(or (eq? token '-) (equal? token "-")) (cons #false "ruby")]
-          [else (cons content 'auto)])))
+    (cond [(or (eq? token '-) (equal? token "-")) (cons #false "ruby")]
+          [(not (regexp-match? #px"[A-Za-z]+" content)) (cons content 'auto)]
+          [(not (regexp-match? #px"\\." content)) (cons (tech (tt content)) "exmptag")]
+          [else (cons (add-between (map (compose1 tech tt) (string-split content ".")) ".") "exmptag")])))
+
+(define ja-split
+  (lambda [token]
+    (define size (string-length token))
+
+    (let search ([pos size])
+      (cond [(<= pos 0) (values token #false)]
+            [(ja-special-punctuation? (string-ref token (sub1 pos))) (search (sub1 pos))]
+            [(= pos size) (values token #false)]
+            [else (values (substring token 0 pos) (substring token pos size))]))))
 
 (define ja-ruby-content
   (lambda [v]
@@ -275,6 +285,11 @@
 (define ja-katakana?
   (lambda [ch]
     (char<=? #\u30A0 ch #\u30FF)))
+
+(define ja-special-punctuation?
+  (lambda [ch]
+    (and (memv ch '(#\？ #\、 #\。 #\， #\? #\. #\, #\! #\！))
+         #true)))
 
 (define ja-kigou?
   (lambda [ch]
