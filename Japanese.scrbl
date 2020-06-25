@@ -50,13 +50,14 @@ Typically, an example in the file consists of five parts:
 @itemlist[
  #:style 'compact
  @item{@bold{Identifier}: the name that identifies the example, bracketed in @racketparenfont{[]}.
-  Whitespaces are parts of names.}
+  Note that whitespaces are parts of names.}
  @item{@bold{Japanese Sentence}: the mandatory part of an example, written with the primary writting
   system(a.k.a. @ja-tech{kanji}). Tokens are separated by whitespaces.}
  @item{@bold{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
   @racket[-] is used as a placeholder of a non-@ja-tech{kanji} token.}
  @item{@bold{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical or
-  pragmatical functions. Note that marks and rubies share the second line of an example in the file.}
+  pragmatical functions. Multi-marks for one token are separated by period(@racketparenfont[@._]).
+  Note that marks and rubies share the second line of an example in the file.}
  @item{@bold{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
   translations are allowed. Note that @emph{no} blank lines among translations.}
  ]
