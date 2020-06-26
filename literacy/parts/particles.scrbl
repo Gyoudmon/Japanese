@@ -14,8 +14,8 @@ the @ja-tech{particle} from other @PoS and concepts.}.
 
 How do particles be used varies widely from one lanaguage to another. In Japanese,
 @ja-deftech[#:abbr PTCL particles 助詞 じょし 助词] are suffixes or short words agglutinating @ja-tech{nouns},
-@ja-tech{verbs}, @ja-tech{adjectives}, or sentences to indicate grammatical relations. Given that modern
-Japanese @ja-tech{particles} are always postpositional, the term @ja-deftech[postposition 後置詞 こうちし 后置词]
+@ja-tech{verbs}, @ja-tech{adjectives}, or @ja-tech{sentence}s to indicate grammatical relations. Given that
+modern Japanese @ja-tech{particles} are always postpositional, the term @ja-deftech[postposition 後置詞 こうちし 后置词]
 is seen to be used as a contemporary alternative to @ja-tech{particle} and compound particle.
 
 Japanese @ja-tech{particles} are always written in @ja-tech{hiragana} regardless their @ja-tech{kanji} forms,

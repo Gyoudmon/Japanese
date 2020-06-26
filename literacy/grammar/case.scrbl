@@ -7,9 +7,10 @@
 
 Generally speaking, @deftech{Case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective},
 or @ja-tech{pronoun} that express the semantic relation of a word to other words, especially to
-@ja-tech{verbs}, in a phrase, clause, or sentence. Given that Japanese is an agglutinative language
-with a rigid @ja-tech{SOV} topological structure, @ja-tech{cases} therefore play a prominent role
-in marking grammatical structure as well as information structure and thematic role.
+@ja-tech{verbs}, in a phrase, @ja-tech{clause}, or @ja-tech{sentence}. Given that Japanese is
+an agglutinative language with a rigid @ja-tech{SOV} topological structure, @ja-tech{cases}
+therefore play a prominent role in marking grammatical structure as well as information
+structure and thematic role.
 
 In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
 @ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] in which case subjects of
@@ -35,27 +36,30 @@ Japanese @ja-tech{case} system.
 
 @ja-exemplify{hallmark:multi-noms}
 
-@handbook-scenario{@ja-title[#:ja-term? #false Heirarchy 階層構造 かいそうこうぞう 层次结构]}
+@handbook-scenario{@ja-title[#:ja-term? #false "Case and Sentence Component" "格|と|文|の|成分" "かく|-|ぶん|-|せいぶん" 格与句子成分]}
 
-
-There are 10 prominent @ja-tech{case particles} in the standard modern Japanese:
-  が, を, に, の, へ, で, より, から, まで, and と.
-
-Just as the @ja-tech{case particles}, there are 10 prominent @ja-tech{cases} in the standard modern
-Japanese, but they are not one-to-one corresponding.
+There are 10 prominent @ja-tech{case particles} and 10 prominent @ja-tech{cases} in the standard
+modern Japanese, but they are not one-to-one corresponding.
  
-@itemlist[
- #:style 'compact
- @item{@ja-deftech[#:abbr NOM Nominative 主格 しゅかく 主格]: 〜が}
- @item{@ja-deftech[#:abbr ACC Accusative 対格 たいかく 宾格]: 〜を}
- @item{@ja-deftech[#:abbr DAT Dative 与格 よかく 与格]: 〜に}
- @item{@ja-deftech[#:abbr INSTR Instrumental 具格 ごかく 工具格]: 〜で}
- @item{@ja-deftech[#:abbr LOC Locative 処格 しょかく 场所格]: 〜で、〜に}
- @item{@ja-deftech[#:abbr ALL Allative 向格 こうかく 方向格]: 〜へ、〜に}
- @item{@ja-deftech[#:abbr ABL Ablative 奪格 だっかく 夺格]: 〜から}
- @item{@ja-deftech[#:abbr GEN Genitive 属格 ぞっかく 领格]: 〜の}
- @item{@ja-deftech[#:abbr COM Comitative 共格 きょうかく 共格]: 〜と}
- @item{@ja-deftech[#:abbr TERM Terminative 到格 とうかく 到格]: 〜まで}]
+@centered{
+ @tabular[
+ #:sep (hspace 2)
+ #:style 'block
+ #:row-properties '(bottom-border ())
+ #:column-properties '(left)
+ 
+ (list (list (bold "Name") (bold "Particle Form") (bold "Grammatical Function"))
+       (list @ja-deftech[#:abbr NOM Nominative 主格 しゅかく 主格] "〜が" 'cont)
+       (list @ja-deftech[#:abbr ACC Accusative 対格 たいかく 宾格] "〜を" 'cont)
+       (list @ja-deftech[#:abbr DAT Dative 与格 よかく 与格] "〜に" 'cont)
+       (list @ja-deftech[#:abbr INSTR Instrumental 具格 ごかく 工具格] "〜で" 'cont)
+       (list @ja-deftech[#:abbr LOC Locative 処格 しょかく 场所格] "〜で、〜に" 'cont)
+       (list @ja-deftech[#:abbr ALL Allative 向格 こうかく 方向格] "〜へ、〜に" 'cont)
+       (list @ja-deftech[#:abbr ABL Ablative 奪格 だっかく 夺格] "〜から" 'cont)
+       (list @ja-deftech[#:abbr GEN Genitive 属格 ぞっかく 领格] "〜の" 'cont)
+       (list @ja-deftech[#:abbr COM Comitative 共格 きょうかく 共格] "〜と" 'cont)
+       (list @ja-deftech[#:abbr TERM Terminative 到格 とうかく 到格] "〜まで" 'cont))]
+}
 
 @handbook-scenario{@ja-title[Valency 結合価 けつごうか 配价]}
 
