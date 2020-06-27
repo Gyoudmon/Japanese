@@ -1,16 +1,17 @@
 #lang scribble/book
 
 @require{../literacy.rkt}
+@require{../token.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[Case 格 かく 格]}
 
-Generally speaking, @deftech{Case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective},
+Generally speaking, A @deftech{case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective},
 or @ja-tech{pronoun} that express the semantic relation of a word to other words, especially to
-@ja-tech{verbs}, in a phrase, @ja-tech{clause}, or @ja-tech{sentence}. Given that Japanese is
-an agglutinative language with a rigid @ja-tech{SOV} topological structure, @ja-tech{cases}
-therefore play a prominent role in marking grammatical structure as well as information
-structure and thematic role.
+@ja-tech{verbs}, in a @ja-tech{phrase}, @ja-tech{clause}, or @ja-tech{sentence}. Given that
+Japanese is an agglutinative language with a rigid @ja-tech{SOV} topological structure,
+@ja-tech{cases} therefore play a prominent role in marking grammatical structure as well
+as information structure and thematic role.
 
 In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
 @ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] in which case subjects of
@@ -23,14 +24,14 @@ are phonologically bound to the preceding words as the form @ja-form{@ja-tech{Su
  + @ja-tech{Case Particle}} is, nevertheless, @ja-tech{case particles} are actually phrasal
 clitics rather than nominal declensions so that other elements may intervene between
 @ja-tech{case particles} and the marking @ja-tech{substantives} or extend the scope
-over more than one noun phrases@ja-exref[interleaved-nps].
+over more than one @|NP|s@ja-exref[interleaved-nps].
 
 @ja-exemplify{interleaved-nps}
 
 One of the key features of Japanese @ja-tech{case} system is based on its @ja-tech{topic}-prominent
 nature@handbook-footnote{Korean and Mandarin Chinese are also topic-prominent languages}.
-Multiple nominative-marked noun phrases may occure within one clause so that the initial one
-may be considered as the @ja-tech{topic} and described by the remaining part of the
+Multiple nominative-marked noun @ja-tech{phrase}s may occure within one clause so that the
+initial one may be considered as the @ja-tech{topic} and described by the remaining part of the
 clause@ja-exref[hallmark:multi-noms]. This phenomenon has become a major problem for describing
 Japanese @ja-tech{case} system.
 

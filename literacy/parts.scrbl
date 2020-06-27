@@ -1,6 +1,7 @@
 #lang scribble/book
 
 @require{literacy.rkt}
+@require{token.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story[#:index? #true]{@ja-title[#:abbr POS "Part of Speech" 品詞 ひんし 词类]}
@@ -47,13 +48,20 @@ unions, Japanese words are well categoried into 10 - 12 groups.
 These categories are typically taught at school in Japan. However categorization schemes may vary due
 to different grammatically perspectives. Nowadays, textbooks tend to use modern categorization scheme.
 For example, the @tech{Adjectives} and @tech{Adjectival Verbs} have been merged, with being named as
-@ja-tech{イ-adjective} and @ja-tech{ナ-adjective} respectively. These changes may not bad, despite the fact
-that new categories may be given meaningless names, say @tech{カ変 conjugation verb} and
+@ja-tech{イ-adjective} and @ja-tech{ナ-adjective} respectively. These changes may not bad, despite the
+fact that new categories may be given meaningless names, say @tech{カ変 conjugation verb} and
 @ja-tech{サ変 conjugation verb} are merged as @italic{the Type-III verb} which is an awful name. Thus,
 this book follows the modern scheme but drops all meaningless names@handbook-footnote{This might be
  a personal preference as what I have learnt from Software Engineering is that do not use meaningless
  words (e.g. @italic{a1}, @italic{a2}, @italic{a3}) to name variables since they make the code less
  readable for others and even yourself in the future.}.
+
+Besides, a @ja-deftech[phrase 句 く 词组] is a small group of words standing together as a conceptual unit,
+and typically forming a component of a @ja-tech{clause} or containing a @ja-tech{clause} within it. As a
+kind of lexical item, @ja-tech{phrase}s can also be categorized as @PoS like
+@ja-deftech[#:abbr NP |noun phrase| 名詞句 めいしく 名词词组],
+@ja-deftech[#:abbr VP |verb phrase| 動詞句 どうしく 动词词组],
+@etc and behaves as the corresponding @|PoS|.
 
 @include-section{parts/nouns.scrbl}
 @include-section{parts/verbs.scrbl}

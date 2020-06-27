@@ -1,16 +1,15 @@
 #lang scribble/book
 
 @require{../literacy.rkt}
-
-@(define PoS @ja-tech[#:key "part of speech"]{parts of speech})
+@require{../token.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
 
 By a strict definition, a particle is a function word that has two mandatory properties: 1) incapable
 of inflection; 2) has no specific lexical definition, and must be associated with another word or
-phrase to impart meaning@handbook-footnote{This definition should be kept in mind in order to distinguish
-the @ja-tech{particle} from other @PoS and concepts.}.
+@ja-tech{phrase} to impart meaning@handbook-footnote{This definition should be kept in mind in order
+to distinguish the @ja-tech{particle} from other @PoS and concepts.}.
 
 How do particles be used varies widely from one lanaguage to another. In Japanese,
 @ja-deftech[#:abbr PTCL particles 助詞 じょし 助词] are suffixes or short words agglutinating @ja-tech{nouns},
@@ -36,16 +35,16 @@ belong to more than one types.
  #:style 'compact
 
  @item{@ja-deftech["Case Particles" 格助詞 かくじょし 格助词]: @ja-tech{particles} that employed by Japanese
-  @ja-tech{case} system to mark @ja-tech{substantives}. Also contains
+  @ja-tech{case} system to mark @ja-tech{substantives}. Also containing
   @ja-deftech["Parallel Particles" 并列助詞 へいりつじょし 并列助詞].}
 
  @item{@ja-deftech["Adverbial Particles" 副助詞 ふくじょし 副助词]: @ja-tech{particles} that indicate relationships
-  between the noun phrase and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}.
-  Also contains @ja-deftech["Binding Particles" 係助詞 かかりじょし 系助词] and known as
+  between the noun @ja-tech{phrase} and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}.
+  Also containing @ja-deftech["Binding Particles" 係助詞 かかりじょし 系助词] and known as
   @ja-deftech["Indicative Particles" "取|り|立|て|助詞" "と|-|た|-|じょし" 提示助词].}
  
- @item{@ja-deftech["Conjective Particles" 接続助詞 せつぞくじょし 接续助词]: @ja-tech{particles} that join phrases
-  or clauses to indicate their coherent relations.}
+ @item{@ja-deftech["Conjective Particles" 接続助詞 せつぞくじょし 接续助词]: @ja-tech{particles} that join
+  @ja-tech{phrase}s or @ja-tech{clause}s to indicate their coherent relations.}
  
  @item{@ja-deftech[#:abbr SFP "Sentence-Final Particles" 終助詞 しゅうじょし 语气助词]: @ja-tech{particles} that
   play a particularly important role in spoken Japanese and indicate the speaker's mannar or modal related to

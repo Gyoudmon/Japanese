@@ -34,7 +34,6 @@
  [Abbr.  English                   日本語   　简体中文]
  [ATT    Attributive               -         -]
  [COP    Copula                    -         -]
- [NP     |Noun Phrase|             名詞句     名词短语]
  [NEG    Negative                  -         -]
  [PASS   Passive                   -         -]
  [PLN    |Plain Form|              -         -]

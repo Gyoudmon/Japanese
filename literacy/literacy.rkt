@@ -222,7 +222,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-form
   (lambda contents
-    (apply tt contents)))
+    (apply racketmetafont contents)))
 
 (define ja-tabular2
   (lambda [table-head table-rows [empty-cols (list "" "")] [gap 1]]
@@ -308,8 +308,8 @@
        (list (string->symbol en)
              (tech #:key key en)
              (if (not (string-contains? kanji "|"))
-                 (make-multiarg-element "ruby" (list kanji ruby))
-                 (map (λ [k h] (if (or (string=? h "") (string=? h "-")) k (make-multiarg-element "ruby" (list k h))))
+                 (make-multiarg-element "rubyterm" (list kanji ruby))
+                 (map (λ [k h] (if (or (string=? h "") (string=? h "-")) k (make-multiarg-element "rubyterm" (list k h))))
                       (string-split kanji "|")
                       (string-split ruby "|")))
              (if (not ch)
