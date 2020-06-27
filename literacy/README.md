@@ -54,3 +54,10 @@ be a personal preference as what I have learnt from Software Engineering
 is that do not use meaningless words (e.g. _a1_, _a2_, _a3_) to name
 variables since they make the code less readable for others and even
 yourself in the future..
+
+Besides, a _phrase_ 「句く」 is a small group of words standing together as
+a conceptual unit, and typically forming a component of a clause or
+containing a clause within it. As a kind of lexical item, phrases can
+also be categorized as parts of speech like _noun phrase_ 「名詞句めいしく」,
+_verb phrase_ 「動詞句どうしく」, etc. and behaves as the corresponding parts of
+speech.
