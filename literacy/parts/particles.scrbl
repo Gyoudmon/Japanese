@@ -29,14 +29,14 @@ In the sense of formatives that are invariant in form and do not belong to other
 @ja-tech{particles} can be categorized into four types@handbook-footnote{@ja-tech{Particles} are
  multifarious and disorderly, their categorization therefore varies among perspectives or even
  linguisticians. Four of them are worthy of their own discussions.}, and many @ja-tech{particles}
-belong to more than one types.
+belong to more than one groups.
 
 @itemlist[
  #:style 'compact
 
  @item{@ja-deftech["Case Particles" 格助詞 かくじょし 格助词]: @ja-tech{particles} that employed by Japanese
   @ja-tech{case} system to mark @ja-tech{substantives}. Also containing
-  @ja-deftech["Parallel Particles" 并列助詞 へいりつじょし 并列助詞].}
+  @ja-deftech["Parallel Particles" 并列助詞 へいりつじょし 并列助詞]. See @Secref{case}.}
 
  @item{@ja-deftech["Adverbial Particles" 副助詞 ふくじょし 副助词]: @ja-tech{particles} that indicate relationships
   between the @NP and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}. Also
@@ -53,7 +53,5 @@ belong to more than one types.
 
  @;item{準体助詞}
  ]
-
-@handbook-scenario{が}
 
 @handbook-reference[]

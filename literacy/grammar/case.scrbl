@@ -13,18 +13,13 @@ Japanese is an agglutinative language with a rigid @ja-tech{SOV} topological str
 @ja-tech{cases} therefore play a prominent role in marking grammatical structure as well
 as information structure and thematic role.
 
-In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
-@ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] in which case subjects of
-@ja-tech{transitive verbs} and @ja-tech{intransitive verbs} share the same @ja-tech{cases},
-but are distinguished from @ja-tech{cases} of objects of @ja-tech{transitive verbs}.
-
 Japanese implements its @ja-tech{case} system by postpositional @ja-tech{particles} which
 more precisely are also known as @ja-tech{case particles}. These @ja-tech{case particles}
 are phonologically bound to the preceding words as the form @ja-form{@ja-tech{Substantive}
  + @ja-tech{Case Particle}} is, nevertheless, @ja-tech{case particles} are actually phrasal
-clitics rather than nominal declensions so that other elements may intervene between
-@ja-tech{case particles} and the marking @ja-tech{substantives} or extend the scope
-over more than one @|NP|s@ja-exref[interleaved-nps].
+clitics rather than nominal declensions so that other elements (e.g. @ja-tech{adverbial particles})
+may intervene between @ja-tech{case particles} and the marking @ja-tech{substantives} or
+extend the scope over more than one @|NP|s@ja-exref[interleaved-nps].
 
 @ja-exemplify{interleaved-nps}
 
@@ -37,22 +32,26 @@ Japanese @ja-tech{case} system.
 
 @ja-exemplify{hallmark:multi-noms}
 
-@handbook-scenario{@ja-title[#:ja-term? #false "Case and Sentence Component" "格|と|文|の|成分" "かく|-|ぶん|-|せいぶん" 格与句子成分]}
+@handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Case and Sentence Component" "格|と|文|の|成分" "かく|-|ぶん|-|せいぶん" 格与句子成分]}
 
-There are 10 prominent @ja-tech{case particles} and 10 prominent @ja-tech{cases} in the standard
-modern Japanese, but they are not one-to-one corresponding.
- 
-@centered{
- @tabular[
- #:sep (hspace 2)
- #:style 'block
- #:row-properties '(bottom-border ())
- #:column-properties '(left)
- 
- (list (list (bold "Name") (bold "Particle Form") (bold "Grammatical Function"))
-       (list @ja-deftech[#:abbr NOM Nominative 主格 しゅかく 主格] "〜が" 'cont)
-       (list @ja-deftech[#:abbr ACC Accusative 対格 たいかく 宾格] "〜を" 'cont)
-       (list @ja-deftech[#:abbr DAT Dative 与格 よかく 与格] "〜に" 'cont)
+In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
+@ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] in which case the @ja-tech{subject}
+of the @ja-tech{transitive verb} and the @ja-tech{intransitive verb} share the same @ja-tech{case},
+but are distinguished from the @ja-tech{case} of object of the @ja-tech{transitive verbs}.
+
+There are 10 prominent @ja-tech{case particle}s and 10 prominent @ja-tech{case}s in the standard modern Japanese,
+desipte the fact that they are not one-to-one corresponding.
+
+@handbook-action[#:tag "ga:nominative"]{が @ja-title[#:abbr NOM Nominative 主格 しゅかく 主格]}
+
+The @deftech{nominative} is used for marking the @ja-tech{subject} of a @ja-tech{verb} as well as a @ja-tech{predicate}.
+
+@handbook-action[#:tag "o:accusative"]{を @ja-title[#:abbr ACC Accusative 対格 たいかく 宾格]}
+
+The @deftech{accusative} is used for marking the direct @ja-tech{object} of a @ja-tech{transitive verb}.
+
+@;{
+(list  (list @ja-deftech[#:abbr DAT Dative 与格 よかく 与格] "〜に" 'cont)
        (list @ja-deftech[#:abbr INSTR Instrumental 具格 ごかく 工具格] "〜で" 'cont)
        (list @ja-deftech[#:abbr LOC Locative 処格 しょかく 场所格] "〜で、〜に" 'cont)
        (list @ja-deftech[#:abbr ALL Allative 向格 こうかく 方向格] "〜へ、〜に" 'cont)

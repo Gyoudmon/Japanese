@@ -225,7 +225,7 @@
     (apply racketmetafont (list "「" contents "」"))))
 
 (define ja-tabular2
-  (lambda [table-head table-rows [empty-cols (list "" "")] [gap 1]]
+  (lambda [table-head table-rows [empty-cols (list "")] [gap 3]]
     (define col-size (length table-head))
     (define col-properties (make-list col-size 'left))
     (define cel-properties (make-list col-size '()))

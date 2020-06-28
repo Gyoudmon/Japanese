@@ -27,7 +27,7 @@ and one or more @ja-tech{subordinate clause}s; and
 @ja-tech{main clause}s linked by @ja-tech{conjective particles} or other @ja-tech{conjections}.
 
 Japanese @ja-tech{sentence} has its special properties that worthy of their own sections, here only
-briefly listing some common components of a @ja-tech{clause} or @ja-tech{sentence}.
+briefly listing some common components of a @ja-tech{clause}.
 
 @itemlist[
  #:style 'compact
@@ -63,11 +63,11 @@ briefly listing some common components of a @ja-tech{clause} or @ja-tech{sentenc
    its definition used here is the one taught at school.}:
   An optional component of a @ja-tech{clause}, typically formed by nounal element that other than the
   @ja-tech{object} and @ja-tech{adverbial modifier}, to complete the meaning of the @ja-tech{predicate}.}
- ]
 
-Besides, a @ja-tech{sentence} may also contain some other components that absolutely independent yet
-contributing to expression, typically formed by address, parenthesis, @ja-tech{interjection}, @ja-tech{mimetics},
-and so on.
+ @item{@ja-deftech[Independent 独立語 どくりつご 独立语]@handbook-footnote{What is the offical name of this term in English?}:
+  An optional component of a @ja-tech{sentence} that absolutely independent of other components yet contributing
+  to expression, typically containing address, parenthesis, @ja-tech{interjection}, @ja-tech{mimetics}.}
+ ]
 
 @include-section{grammar/case.scrbl}
 @include-section{grammar/tense.scrbl}
