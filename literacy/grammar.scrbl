@@ -1,20 +1,21 @@
 #lang scribble/book
 
 @require{literacy.rkt}
+@require{token.rkt}
 
 @handbook-story[#:index? #true]{@ja-title[Grammar 文法 ぶんぽう 语法]}
 
 A @ja-deftech[clause 節 せつ 分句]@handbook-footnote{Don't be confused with the 文節 which is
  the smallest unit of words that sounds natural in a @ja-tech{sentence}. A 文節 consists of
- words but is not a @ja-tech{clause}.} is a unit of grammatical organization that typically
-consists of a @ja-tech[#:key "predicate"]{predication structure} along with a @ja-tech{subject}.
-If a @ja-tech{clause} can stand alone as a @ja-tech{sentence}, it is a
+ words but is not a @ja-tech{clause}. It is useful in the @italic{Natural Language Processing}.}
+is a unit of grammatical organization that typically consists of a
+@ja-tech[#:key "predicate"]{predication structure} along with a @ja-tech{subject}. If a
+@ja-tech{clause} can stand alone as a @ja-tech{sentence}, it is a
 @ja-deftech["main clause" 主節 しゅせつ 主句], otherwise it is a
 @ja-deftech["subordinate clause" 従属節 じゅうぞくせつ 从句].
 
 By the definition taught at school, a @ja-deftech[sentence 文 ぶん 句子] typically contains
 a @ja-tech{subject}, a @ja-tech{predicate}, and other components as well as punctuation marks.
-The @ja-tech{predicate} plays the central role and determines the number of other components.
 A @ja-tech{sentence} can be any one of@handbook-footnote{This category of @ja-tech{sentences}
  is controversial, but it's not a big thing since other grammatical categories (eg. @ja-tech{case}
  and @ja-tech{topic}) are much more prominent and native than @ja-tech{sentence} itself. Besides,
@@ -23,7 +24,50 @@ A @ja-tech{sentence} can be any one of@handbook-footnote{This category of @ja-te
 2) a @ja-deftech["complex sentence" 複文 ふくぶん 复合句] if it consists of one @ja-tech{main clause}
 and one or more @ja-tech{subordinate clause}s; and
 3) a @ja-deftech["compound sentence" 重文 じゅうぶん 并列句] if it consists of two or more
-@ja-tech{main clause}s linked by @ja-tech{conjective particles} or other conjectives.
+@ja-tech{main clause}s linked by @ja-tech{conjective particles} or other @ja-tech{conjections}.
+
+Japanese @ja-tech{sentence} has its special properties that worthy of their own sections, here only
+briefly listing some common components of a @ja-tech{clause} or @ja-tech{sentence}.
+
+@itemlist[
+ #:style 'compact
+
+ @item{@ja-deftech[Subject 主語 しゅご 主语]:
+  One of the two basic components of a @ja-tech{clause}, typically acted by @ja-tech{substantive},
+  and being the element about which the rest of the clause is predicated. In many situations, the
+  @ja-tech{subject} is omittable in Japanese.}
+ 
+ @item{@ja-deftech[Predicate 述語 じゅつご 谓语]:
+  The essential component of a @ja-tech{clause} that state something about the @ja-tech{subject}, acted
+  by @ja-tech{verb}, @ja-tech{adjective} or form of @ja-form{@ja-tech{noun} + @ja-tech{copula}}, followed
+  by a vast multifarious content (e.g. @ja-tech{auxiliary verb}, @ja-tech{sentence-final particle}).
+  In manay situations, @ja-tech{predicate} can stand alone on its own in Japanese.}
+ 
+ @item{@ja-deftech[Object 目的語 もくてきご 宾语]:
+  The basic component of a @ja-tech{clause} for any @ja-tech{predicate} that acted by a
+  @ja-tech{transitive verb}, typically acted by @ja-tech{substantive}, and being the target of that
+  @ja-tech{predicate}.}
+ 
+ @item{@ja-deftech["Attributive Modifier" 連体修飾語 れんたいしゅうしょくご 定语]:
+  An optional component of a @ja-tech{clause}, typically acted by @ja-form{case の}, @ja-tech{adjective},
+  and the @ja-tech{attributive form}, modifying the @ja-tech{substantive}. Japanese makes heavy use of
+  @ja-tech{attributive modifier}s and some of them may have complicated structures.}
+ 
+ @item{@ja-deftech["Adverbial Modifier" 連用修飾語 れんようしゅうしょくご 状语]:
+  An optional component of a @ja-tech{clause}, typically acted by @ja-tech{adverb}, @ja-tech{numeral},
+  some @ja-tech{case particles} and the @ja-tech{continuative form}, modifying the @ja-tech{declinable word}
+  as well as the @ja-tech{predicate} or entire @ja-tech{sentence} to make them more detailed by expressing
+  place, time, circumstance, manner, cause, degree, @etc}
+ 
+ @item{@ja-deftech[Complement 補語 ほご 补语]@handbook-footnote{The @ja-tech{complement} is a controversial term,
+   its definition used here is the one taught at school.}:
+  An optional component of a @ja-tech{clause}, typically formed by nounal element that other than the
+  @ja-tech{object} and @ja-tech{adverbial modifier}, to complete the meaning of the @ja-tech{predicate}.}
+ ]
+
+Besides, a @ja-tech{sentence} may also contain some other components that absolutely independent yet
+contributing to expression, typically formed by address, parenthesis, @ja-tech{interjection}, @ja-tech{mimetics},
+and so on.
 
 @include-section{grammar/case.scrbl}
 @include-section{grammar/tense.scrbl}

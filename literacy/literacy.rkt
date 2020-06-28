@@ -222,7 +222,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-form
   (lambda contents
-    (apply racketmetafont contents)))
+    (apply racketmetafont (list "「" contents "」"))))
 
 (define ja-tabular2
   (lambda [table-head table-rows [empty-cols (list "" "")] [gap 1]]

@@ -6,7 +6,7 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
 
-By a strict definition, a particle is a function word that has two mandatory properties: 1) incapable
+By a strict definition, a particle is a function word that has two essential properties: 1) incapable
 of inflection; 2) has no specific lexical definition, and must be associated with another word or
 @ja-tech{phrase} to impart meaning@handbook-footnote{This definition should be kept in mind in order
 to distinguish the @ja-tech{particle} from other @PoS and concepts.}.
@@ -39,8 +39,8 @@ belong to more than one types.
   @ja-deftech["Parallel Particles" 并列助詞 へいりつじょし 并列助詞].}
 
  @item{@ja-deftech["Adverbial Particles" 副助詞 ふくじょし 副助词]: @ja-tech{particles} that indicate relationships
-  between the noun @ja-tech{phrase} and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}.
-  Also containing @ja-deftech["Binding Particles" 係助詞 かかりじょし 系助词] and known as
+  between the @NP and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}. Also
+  containing @ja-deftech["Binding Particles" 係助詞 かかりじょし 系助词] and collectively known as
   @ja-deftech["Indicative Particles" "取|り|立|て|助詞" "と|-|た|-|じょし" 提示助词].}
  
  @item{@ja-deftech["Conjective Particles" 接続助詞 せつぞくじょし 接续助词]: @ja-tech{particles} that join
