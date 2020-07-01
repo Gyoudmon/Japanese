@@ -52,28 +52,27 @@ marked by 10 @ja-tech{case particle}s in the standard modern Japanese.
 
 @handbook-action[#:tag "NOM:ga"]{@ja-title[#:abbr NOM Nominative 主格 しゅかく 主格] 「~が」}
 
-The @deftech{nominative} is the @ja-tech{subject} of a @ja-tech{verb} as well as of a @ja-tech{predicate},
-and usually be marked by the @ja-tech{case particle} が@ja-exref[nom:ga]. Despite the fact that は-marked
+The @deftech{nominative} is usually the @ja-tech{subject} of a @ja-tech{verb} or a @ja-tech{predicate},
+and be marked by the @ja-tech{case particle} が@ja-exref[nom:ga]. Despite the fact that は-marked
 @ja-tech{topic} may also be interpreted as the @ja-tech{subject}, the mainstream suggests that Japanese
-@ja-tech{subject} refers to the logical @ja-tech{subject} instead of the @ja-tech{topic}@ja-exref[nom:ga e].
+@ja-tech{subject} refers to the logical @ja-tech{subject} instead of the @ja-tech{topic}@ja-exref[nom:ga d].
 
 @ja-exemplify{nom:ga}
 
 What is triky here is that が-marked @ja-tech{nominative}s may have no corresponding grammatical function.
-が marks @ja-tech{subject}s as well as non-@ja-tech{subject}s@ja-exref[nom:ga:nsub], especially for multi
-@ja-tech{nominative}-marked @ja-tech{clause}s where the initial @ja-tech{nominative} is considered as the
+が marks @ja-tech{subject} arguments as well as non-@ja-tech{subject} arguments@ja-exref[nom:ga:nsub], especially
+for multi @ja-tech{nominative}-marked @ja-tech{clause}s where the initial @ja-tech{nominative} is considered as the
 @ja-tech{subject} but the rest may just be left undefined in the sense of grammar@ja-exref[hallmark:multi-noms].
 
 @ja-exemplify{nom:ga:nsub}
 
 In @ja-ExRef[nom:ga:nsub], those が-marked @ja-tech{nominative}s are typically considered as
-@ja-deftech[targets 対象語 たいしょうご]@handbook-footnote{A subtype of the @ja-tech{object} or @ja-tech{complement},
- usually being the direct object of an emotion, feeling, wish or ability. As mentioned in the preamble of this
- chapter, there is no significant difference between the @ja-tech{object} and @ja-tech{complement} in Japanese.}.
+@ja-deftech[targets 対象語 たいしょうご], which is a subtype of the @ja-tech{object} or @ja-tech{complement},
+ usually being the target of emotion, wishes or ability.
 
 @ja-exemplify{nom:ga:ambiguity}
 
-Note the difference between @ja-ExRef[nom:ga e] and @ja-ExRef[nom:ga:ambiguity] both of which start with a
+Note the difference between @ja-ExRef[nom:ga d] and @ja-ExRef[nom:ga:ambiguity] both of which start with a
 @ja-tech{topic}. The @ja-tech{topic} of the former is actually an @ja-tech{object} placed before the
 @ja-tech{subject}, whereas the @ja-tech{topic} of the latter is the whole containing the part characterized
 by its @ja-tech{predicate}. It's still not clear whether the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity]

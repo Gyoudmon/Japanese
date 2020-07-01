@@ -31,26 +31,43 @@
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))
               (~optional (~seq #:abbr abbr) #:defaults ([abbr #'#false]))
               (~optional (~seq #:ja-term? term?) #:defaults ([term? #'#true])))
-        ... en0 kanji0 hiragana0 (~optional zh #:defaults ([zh #'#false])))
+        ... en0 kanji0 (~optional hiragana0 #:defaults ([hiragana0 #'-])) (~optional zh #:defaults ([zh #'#false])))
      #'(let-values ([(en kanji hiragana) (ja-inputs 'en0 'kanji0 'hiragana0)])   
          (make-traverse-element
           (λ [get set!]
-            (unless (not term?)
-              (ja-terminology get set! key en kanji hiragana 'zh (handbook-latex-renderer? get) 'abbr))
-            (list en ~ "|" ~ (ruby kanji hiragana)))))]))
+            (if (list? term?)
+                (for ([t? (in-list term?)]
+                      [t (if key (in-list (string-split key "|")) (in-cycle (in-value #false)))]
+                      [e (in-list (string-split en "|"))]
+                      [k (in-list (string-split kanji "|"))]
+                      [h (in-cycle (in-list (string-split hiragana "|")))]
+                      [a (if 'abbr (in-list (string-split 'abbr "|")) (in-cycle (in-value #false)))]
+                      [z (if 'zh (in-list (string-split 'zh "|")) (in-cycle (in-value #false)))]
+                      #:when t?)
+                  (ja-terminology get set! t e k h z (handbook-latex-renderer? get) (and a (string->symbol a))))
+                (unless (not term?)
+                  (ja-terminology get set! key en kanji hiragana 'zh (handbook-latex-renderer? get) 'abbr)))
+            (list (if (list? term?) (string-replace en "|" " ") en)
+                  ~ "|" ~
+                  (cond [(or (eq? 'hiragana0 '-) (equal? 'hiragana0 "-")) kanji]
+                        [else (ruby kanji hiragana)])))))]))
 
 (define-syntax (ja-deftech stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))
               (~optional (~seq #:abbr abbr) #:defaults ([abbr #'#true]))
               (~optional (~seq #:ja-term? term?) #:defaults ([term? #'#true])))
-        ... en0 kanji0 hiragana0 (~optional zh #:defaults ([zh #'#false])))
+        ... en0 kanji0 (~optional hiragana0 #:defaults ([hiragana0 #'-])) (~optional zh #:defaults ([zh #'#false])))
      #'(let-values ([(en kanji hiragana) (ja-inputs 'en0 'kanji0 'hiragana0)])    
          (make-traverse-element
           (λ [get set!]
             (unless (not term?)
               (ja-terminology get set! key en kanji hiragana 'zh (handbook-latex-renderer? get) 'abbr))
-            (list (deftech en #:key key) ~ "「" (ruby kanji hiragana) "」"))))]))
+            (list (deftech en #:key key)
+                  ~ "「"
+                  (cond [(or (eq? 'hiragana0 '-) (equal? 'hiragana0 "-")) kanji]
+                        [else (ruby kanji hiragana)])
+                  "」"))))]))
 
 (define-syntax (ja-tech stx)
   (syntax-parse stx #:datum-literals []
@@ -334,11 +351,11 @@
      (define term
        (list (string->symbol en)
              (tech #:key key en)
-             (if (not (string-contains? kanji "|"))
-                 (make-multiarg-element "rubyterm" (list kanji ruby))
-                 (map (λ [k h] (if (or (string=? h "") (string=? h "-")) k (make-multiarg-element "rubyterm" (list k h))))
-                      (string-split kanji "|")
-                      (string-split ruby "|")))
+             (cond [(or (eq? ruby '-) (equal? ruby "-")) kanji]
+                   [(not (string-contains? kanji "|")) (make-multiarg-element "rubyterm" (list kanji ruby))]
+                   [else (map (λ [k h] (if (or (string=? h "") (string=? h "-")) k (make-multiarg-element "rubyterm" (list k h))))
+                              (string-split kanji "|")
+                              (string-split ruby "|"))])
              (if (not ch)
                  kanji
                  (chinese (ja-input ch) #:latex? latex?))))
