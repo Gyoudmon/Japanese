@@ -1,7 +1,6 @@
 #lang scribble/book
 
 @require{literacy.rkt}
-@require{token.rkt}
 
 @handbook-story[#:index? #true]{@ja-title[Grammar 文法 ぶんぽう 语法]}
 
@@ -34,19 +33,25 @@ briefly listing some common components of a @ja-tech{clause}.
 
  @item{@ja-deftech[Subject 主語 しゅご 主语]:
   One of the two basic components of a @ja-tech{clause}, typically acted by @ja-tech{substantive},
-  and being the element about which the rest of the clause is predicated. In many situations, the
-  @ja-tech{subject} is omittable in Japanese.}
+  and being the element about which the rest of the clause is predicated. Japanese @ja-tech{subject}
+  is ususally refered to the @deftech{logical subject} which is the actual agent of the @ja-tech{predicate}.}
  
  @item{@ja-deftech[Predicate 述語 じゅつご 谓语]:
   The essential component of a @ja-tech{clause} that state something about the @ja-tech{subject}, acted
-  by @ja-tech{verb}, @ja-tech{adjective} or form of @ja-form{@ja-tech{noun} + @ja-tech{copula}}, followed
-  by a vast multifarious content (e.g. @ja-tech{auxiliary verb}, @ja-tech{sentence-final particle}).
+  by @ja-tech{verb}, @ja-tech{adjective} or form of @ja-form{@ja-tech{substantive} + @ja-tech{copula}},
+  followed by a vast multifarious content (e.g. @ja-tech{auxiliary verb}, @ja-tech{sentence-final particle}).
   In manay situations, @ja-tech{predicate} can stand alone on its own in Japanese.}
  
  @item{@ja-deftech[Object 目的語 もくてきご 宾语]:
   The basic component of a @ja-tech{clause} for any @ja-tech{predicate} that acted by a
   @ja-tech{transitive verb}, typically acted by @ja-tech{substantive}, and being the target of that
-  @ja-tech{predicate}.}
+  @ja-tech{predicate}. There is no clear boundary between the @ja-tech{object} and @ja-tech{complement}
+  in Japanese.}
+ 
+ @item{@ja-deftech[Complement 補語 ほご 补语]@handbook-footnote{The @ja-tech{complement} is a controversial term,
+   its definition used here is the one taught at school.}:
+  An optional component of a @ja-tech{clause}, typically formed by nounal element that other than the
+  @ja-tech{object} and @ja-tech{adverbial modifier}, to complete the meaning of the @ja-tech{predicate}.}
  
  @item{@ja-deftech["Attributive Modifier" 連体修飾語 れんたいしゅうしょくご 定语]:
   An optional component of a @ja-tech{clause}, typically acted by @ja-form{case の}, @ja-tech{adjective},
@@ -58,11 +63,6 @@ briefly listing some common components of a @ja-tech{clause}.
   some @ja-tech{case particles} and the @ja-tech{continuative form}, modifying the @ja-tech{declinable word}
   as well as the @ja-tech{predicate} or entire @ja-tech{sentence} to make them more detailed by expressing
   place, time, circumstance, manner, cause, degree, @etc}
- 
- @item{@ja-deftech[Complement 補語 ほご 补语]@handbook-footnote{The @ja-tech{complement} is a controversial term,
-   its definition used here is the one taught at school.}:
-  An optional component of a @ja-tech{clause}, typically formed by nounal element that other than the
-  @ja-tech{object} and @ja-tech{adverbial modifier}, to complete the meaning of the @ja-tech{predicate}.}
 
  @item{@ja-deftech[Independent 独立語 どくりつご 独立语]@handbook-footnote{What is the offical name of this term in English?}:
   An optional component of a @ja-tech{sentence} that absolutely independent of other components yet contributing
@@ -70,6 +70,7 @@ briefly listing some common components of a @ja-tech{clause}.
  ]
 
 @include-section{grammar/case.scrbl}
+@include-section{grammar/topic.scrbl}
 @include-section{grammar/tense.scrbl}
 
 @handbook-reference[]

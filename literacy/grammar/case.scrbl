@@ -3,15 +3,24 @@
 @require{../literacy.rkt}
 @require{../token.rkt}
 
+@(define-book-bib ToC "The Handbook of Case" "Martin Haspelmath" "Oxford University Press"
+   #:chapter "Terminology of Case"
+   #:date 2006
+   #:url "https://www.eva.mpg.de/fileadmin/content_files/staff/haspelmt/pdf/CaseTerminology.pdf")
+
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[Case 格 かく 格]}
 
-Generally speaking, A @deftech{case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective},
-or @ja-tech{pronoun} that express the semantic relation of a word to other words, especially to
-@ja-tech{verbs}, in a @ja-tech{phrase}, @ja-tech{clause}, or @ja-tech{sentence}. Given that
-Japanese is an agglutinative language with a rigid @ja-tech{SOV} topological structure,
-@ja-tech{cases} therefore play a prominent role in marking grammatical structure as well
-as information structure and thematic role.
+A @deftech{case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective}, or @ja-tech{pronoun}
+that express the semantic relation of a word to other words, especially to @ja-tech{verbs}, in a
+@ja-tech{phrase}, @ja-tech{clause}, or @ja-tech{sentence}. Given that Japanese is an agglutinative
+language with a rigid @ja-tech{SOV} topological structure, @ja-tech{cases} therefore play a prominent
+role in marking grammatical structure as well as information structure and thematic role.
+
+In the sense of the @ja-tech{case} category, the standard modern Japanese has been categorized as an
+@ja-deftech["nominative-accusative language" 対格言語 たいかくげんご 宾格语言] in which case the @ja-tech{subject}
+of the @ja-tech{transitive verb} and the @ja-tech{intransitive verb} share the same @ja-tech{case},
+but are distinguished from the @ja-tech{case} of object of the @ja-tech{transitive verbs}.
 
 Japanese implements its @ja-tech{case} system by postpositional @ja-tech{particles} which
 more precisely are also known as @ja-tech{case particles}. These @ja-tech{case particles}
@@ -19,47 +28,75 @@ are phonologically bound to the preceding words as the form @ja-form{@ja-tech{Su
  + @ja-tech{Case Particle}} is, nevertheless, @ja-tech{case particles} are actually phrasal
 clitics rather than nominal declensions so that other elements (e.g. @ja-tech{adverbial particles})
 may intervene between @ja-tech{case particles} and the marking @ja-tech{substantives} or
-extend the scope over more than one @|NP|s@ja-exref[interleaved-nps].
+extend the scope over more than one @|NP|@ja-exref[interleaved-nps].
 
 @ja-exemplify{interleaved-nps}
 
 One of the key features of Japanese @ja-tech{case} system is based on its @ja-tech{topic}-prominent
-nature@handbook-footnote{Korean and Mandarin Chinese are also topic-prominent languages}.
-Multiple nominative-marked noun @ja-tech{phrase}s may occure within one clause so that the
-initial one may be considered as the @ja-tech{topic} and described by the remaining part of the
-clause@ja-exref[hallmark:multi-noms]. This phenomenon has become a major problem for describing
-Japanese @ja-tech{case} system.
+nature. Multiple nominative-marked noun @ja-tech{phrase}s may occure within one clause so that the
+initial one may be considered as being characterized by the remaining part of the clause@ja-exref[hallmark:multi-noms].
+This phenomenon has become a major problem for describing Japanese @ja-tech{case} system.
 
 @ja-exemplify{hallmark:multi-noms}
 
-@handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Case and Sentence Component" "格|と|文|の|成分" "かく|-|ぶん|-|せいぶん" 格与句子成分]}
+@handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Standard Cases" "標準格" "ひょうじゅんかく" 标准格]}
 
-In the sense of @ja-tech{case}, the standard modern Japanese has been categorized as an
-@ja-deftech["accusative language" 対格言語 たいかくげんご 宾格语言] in which case the @ja-tech{subject}
-of the @ja-tech{transitive verb} and the @ja-tech{intransitive verb} share the same @ja-tech{case},
-but are distinguished from the @ja-tech{case} of object of the @ja-tech{transitive verbs}.
+@ja-tech{Case}s are language-specific entity@subscript{@~cite[ToC]} which means @ja-tech{case} labels are only
+valid for particular languages. For convenience, similar @ja-tech{case} labels are used for different languages,
+nonetheless, it is still senseless to compare @ja-tech{case}s that share same names among languages. Besides,
+linguists with different backgrounds use same terms for different concepts, or use different terms for very
+similar or identical concepts. This issue is even majorer in the @ja-tech{case} category.
 
-There are 10 prominent @ja-tech{case particle}s and 10 prominent @ja-tech{case}s in the standard modern Japanese,
-desipte the fact that they are not one-to-one corresponding.
+As agglutinative language tends to have a bigger @ja-tech{case} system, there are 10 primary @ja-tech{case}s
+marked by 10 @ja-tech{case particle}s in the standard modern Japanese.
 
-@handbook-action[#:tag "ga:nominative"]{が @ja-title[#:abbr NOM Nominative 主格 しゅかく 主格]}
+@handbook-action[#:tag "NOM:ga"]{@ja-title[#:abbr NOM Nominative 主格 しゅかく 主格] 「~が」}
 
-The @deftech{nominative} is used for marking the @ja-tech{subject} of a @ja-tech{verb} as well as a @ja-tech{predicate}.
+The @deftech{nominative} is the @ja-tech{subject} of a @ja-tech{verb} as well as of a @ja-tech{predicate},
+and usually be marked by the @ja-tech{case particle} が@ja-exref[nom:ga]. Despite the fact that は-marked
+@ja-tech{topic} may also be interpreted as the @ja-tech{subject}, the mainstream suggests that Japanese
+@ja-tech{subject} refers to the logical @ja-tech{subject} instead of the @ja-tech{topic}@ja-exref[nom:ga e].
 
-@handbook-action[#:tag "o:accusative"]{を @ja-title[#:abbr ACC Accusative 対格 たいかく 宾格]}
+@ja-exemplify{nom:ga}
 
-The @deftech{accusative} is used for marking the direct @ja-tech{object} of a @ja-tech{transitive verb}.
+What is triky here is that が-marked @ja-tech{nominative}s may have no corresponding grammatical function.
+が marks @ja-tech{subject}s as well as non-@ja-tech{subject}s@ja-exref[nom:ga:nsub], especially for multi
+@ja-tech{nominative}-marked @ja-tech{clause}s where the initial @ja-tech{nominative} is considered as the
+@ja-tech{subject} but the rest may just be left undefined in the sense of grammar@ja-exref[hallmark:multi-noms].
 
-@;{
-(list  (list @ja-deftech[#:abbr DAT Dative 与格 よかく 与格] "〜に" 'cont)
-       (list @ja-deftech[#:abbr INSTR Instrumental 具格 ごかく 工具格] "〜で" 'cont)
-       (list @ja-deftech[#:abbr LOC Locative 処格 しょかく 场所格] "〜で、〜に" 'cont)
-       (list @ja-deftech[#:abbr ALL Allative 向格 こうかく 方向格] "〜へ、〜に" 'cont)
-       (list @ja-deftech[#:abbr ABL Ablative 奪格 だっかく 夺格] "〜から" 'cont)
-       (list @ja-deftech[#:abbr GEN Genitive 属格 ぞっかく 领格] "〜の" 'cont)
-       (list @ja-deftech[#:abbr COM Comitative 共格 きょうかく 共格] "〜と" 'cont)
-       (list @ja-deftech[#:abbr TERM Terminative 到格 とうかく 到格] "〜まで" 'cont))]
-}
+@ja-exemplify{nom:ga:nsub}
+
+In @ja-ExRef[nom:ga:nsub], those が-marked @ja-tech{nominative}s are typically considered as
+@ja-deftech[targets 対象語 たいしょうご]@handbook-footnote{A subtype of the @ja-tech{object} or @ja-tech{complement},
+ usually being the direct object of an emotion, feeling, wish or ability. As mentioned in the preamble of this
+ chapter, there is no significant difference between the @ja-tech{object} and @ja-tech{complement} in Japanese.}.
+
+@ja-exemplify{nom:ga:ambiguity}
+
+Note the difference between @ja-ExRef[nom:ga e] and @ja-ExRef[nom:ga:ambiguity] both of which start with a
+@ja-tech{topic}. The @ja-tech{topic} of the former is actually an @ja-tech{object} placed before the
+@ja-tech{subject}, whereas the @ja-tech{topic} of the latter is the whole containing the part characterized
+by its @ja-tech{predicate}. It's still not clear whether the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity]
+should be considered as the @ja-tech{subject}.
+
+More about @ja-tech{subject} and @ja-tech{topic} is discussed in @secref{grammar/topic.scrbl}.
+
+@handbook-action[#:tag "ACC:o"]{@ja-title[#:abbr ACC Accusative 対格 たいかく 宾格] 「~を」}
+
+The @deftech{accusative} is the direct @ja-tech{object} of a @ja-tech{transitive verb}.
+
+@handbook-action[#:tag "GEN:no"]{@ja-title[#:abbr GEN Genitive 属格 ぞっかく 领格] 「~の」}
+
+@handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
+
+@handbook-action[#:tag "LOC:de/ni"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」/「~に」}
+@handbook-action[#:tag "ALL:e/ni"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」/「~に」}
+
+@handbook-action[#:tag "INSTR:de"]{@ja-title[#:abbr INSTR Instrumental 具格 ごかく 工具格] 「~で」}
+@handbook-action[#:tag "ABL:kara"]{@ja-title[#:abbr ABL Ablative 奪格 だっかく 夺格] 「~から」}
+@handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
+@handbook-action[#:tag "TERM:made"]{@ja-title[#:abbr TERM Terminative 到格 とうかく 到格] 「~まで」}
+@handbook-action[#:tag "COMP:yori"]{@ja-title[#:abbr COMP Comparative 比較格 ひかくかく 比较格] 「~より」}
 
 @handbook-scenario{@ja-title[Valency 結合価 けつごうか 配价]}
 

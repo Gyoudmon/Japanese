@@ -92,8 +92,8 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @include-section{literacy/parts.scrbl}
 @include-section{literacy/lexicon.scrbl}
 @include-section{literacy/grammar.scrbl}
-@include-section{literacy/pragmatics.scrbl}
-@include-section{literacy/phonetics.scrbl}
+@;include-section{literacy/pragmatics.scrbl}
+@;include-section{literacy/phonetics.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #false

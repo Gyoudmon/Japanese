@@ -61,7 +61,7 @@ and typically forming a component of a @ja-tech{clause} or containing a @ja-tech
 kind of lexical item, @ja-tech{phrase}s can also be categorized as @PoS like
 @ja-deftech[#:abbr NP |noun phrase| 名詞句 めいしく 名词词组],
 @ja-deftech[#:abbr VP |verb phrase| 動詞句 どうしく 动词词组],
-@etc and behaves as the corresponding @|PoS|.
+@etc and behave as the corresponding @|PoS|.
 
 @include-section{parts/nouns.scrbl}
 @include-section{parts/verbs.scrbl}

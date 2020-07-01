@@ -103,7 +103,19 @@
      #'(ja-example-ref #:elem ex-element 'extag '||)]
     [(_ (~alt (~optional (~seq #:elem ex-element:id) #:defaults ([ex-element #'subscript]))) ...
         extag subtag)
-     #'(ja-example-ref #:elem ex-element 'extag 'subtag)]))
+     #'(ja-example-ref #:elem ex-element 'extag 'subtag)]
+    [(_ (~alt (~optional (~seq #:elem ex-element:id) #:defaults ([ex-element #'subscript]))) ...
+        extag subtag0 subtagn)
+     #'(ja-example-ref* #:elem ex-element 'extag 'subtag0 'subtagn)]))
+
+(define-syntax (ja-ExRef stx)
+  (syntax-parse stx #:datum-literals []
+    [(_ extag)
+     #'(ja-example-ref #:elem values 'extag '||)]
+    [(_ extag subtag)
+     #'(ja-example-ref #:elem values 'extag 'subtag)]
+    [(_ extag subtag0 subtagn)
+     #'(ja-example-ref* #:elem values 'extag 'subtag0 'subtagn)]))
 
 (define ja-exemplify
   (case-lambda
@@ -159,10 +171,20 @@
   (lambda [#:elem [ex-element subscript] extag subtag]
     (make-tamer-indexed-elemref
      (λ [type chapter-index maybe-index]
-       (elemref (~a extag subtag)
-                (if (not maybe-index)
-                    (racketerror (ex-element (~a type chapter-index #\. '? subtag)))
-                    (racketresultfont (ex-element (~a type chapter-index #\. maybe-index subtag))))))
+       (if (not maybe-index)
+           (racketerror (ex-element (~a type chapter-index #\. '? subtag)))
+           (elemref (~a extag subtag) (racketresultfont (ex-element (~a type chapter-index #\. maybe-index subtag))))))
+     ja-example-index-type extag)))
+
+(define ja-example-ref*
+  (lambda [#:elem [ex-element subscript] extag subtag0 subtagn]
+    (make-tamer-indexed-elemref
+     (λ [type chapter-index maybe-index]
+       (if (not maybe-index)
+           (racketerror (ex-element (~a type chapter-index #\. '? subtag0 #\- subtagn)))
+           (ex-element (elemref (~a extag subtag0) (racketresultfont (~a type chapter-index #\. maybe-index subtag0)))
+                       "-"
+                       (elemref (~a extag subtagn) (racketresultfont (~a subtagn))))))
      ja-example-index-type extag)))
 
 (define ja-example->table-row
@@ -198,10 +220,10 @@
          (define s (cond [(not (eq? s0 'auto)) s0]
                          [else (let ([eidx (sub1 (string-length b))])
                                  (cond [(= eidx 0) "exmprubyvc"] ; 'auto is designed for examples 
-                                       [else (let ([sgana? (ja-hiragana? (string-ref b 0))]
-                                                   [egana? (ja-hiragana? (string-ref b eidx))])
-                                               (cond [(eq? sgana? egana?) "exmprubyvc"]
-                                                     [(not sgana?) "exmprubyvl"]
+                                       [else (let ([skana? (ja-kana? (string-ref b 0))]
+                                                   [ekana? (ja-kana? (string-ref b eidx))])
+                                               (cond [(eq? skana? ekana?) "exmprubyvc"]
+                                                     [(not skana?) "exmprubyvl"]
                                                      [else "exmprubyvr"]))]))]))
          
          (cond [(or (not r) (equal? r "") (equal? r "-")) b0]
@@ -225,13 +247,13 @@
     (apply racketmetafont (list "「" contents "」"))))
 
 (define ja-tabular2
-  (lambda [table-head table-rows [empty-cols (list "")] [gap 3]]
+  (lambda [table-head table-rows [gap 1] [empty-cols (list "")]]
     (define col-size (length table-head))
     (define col-properties (make-list col-size 'left))
     (define cel-properties (make-list col-size '()))
      
     (tabular #:sep (hspace gap)
-             #:style 'block
+             #:style 'centered
              #:row-properties '(bottom-border ())
              #:column-properties (append col-properties '(center) col-properties)
              #:cell-properties (list (append cel-properties '(left-border) cel-properties))
@@ -285,6 +307,11 @@
 (define ja-katakana?
   (lambda [ch]
     (char<=? #\u30A0 ch #\u30FF)))
+
+(define ja-kana?
+  (lambda [ch]
+    (or (ja-hiragana? ch)
+        (ja-katakana? ch))))
 
 (define ja-special-punctuation?
   (lambda [ch]

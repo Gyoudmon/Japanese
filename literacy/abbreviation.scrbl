@@ -24,7 +24,8 @@
                                                                        (tech (symbol->string 'en-col))
                                                                        (symbol->string 'col) ...
                                                                        (chinese (symbol->string 'zh-col) #:latex? latex?))
-                                                                 ...)))))))))
+                                                                 ...)))
+                        3))))))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story[#:style noncontent-style]{Abbreviation}
