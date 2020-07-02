@@ -63,12 +63,12 @@ kind of lexical item, @ja-tech{phrase}s can also be categorized as @PoS like
 @ja-deftech[#:abbr VP |verb phrase| 動詞句 どうしく 动词词组],
 @etc and behave as the corresponding @|PoS|.
 
-@include-section{parts/nouns.scrbl}
-@include-section{parts/verbs.scrbl}
-@include-section{parts/adjectives.scrbl}
-@include-section{parts/adverbs.scrbl}
-@include-section{parts/particles.scrbl}
-@include-section{parts/interjections.scrbl}
-@include-section{parts/conjunctions.scrbl}
+@include-section{pos/nouns.scrbl}
+@include-section{pos/verbs.scrbl}
+@include-section{pos/adjectives.scrbl}
+@include-section{pos/adverbs.scrbl}
+@include-section{pos/particles.scrbl}
+@include-section{pos/interjections.scrbl}
+@include-section{pos/conjunctions.scrbl}
 
 @handbook-reference[]

@@ -61,14 +61,14 @@ and be marked by the @ja-tech{case particle} が@ja-exref[nom:ga]. Despite the f
 
 What is triky here is that が-marked @ja-tech{nominative}s may have no corresponding grammatical function.
 が marks @ja-tech{subject} arguments as well as non-@ja-tech{subject} arguments@ja-exref[nom:ga:nsub], especially
-for multi @ja-tech{nominative}-marked @ja-tech{clause}s where the initial @ja-tech{nominative} is considered as the
-@ja-tech{subject} but the rest may just be left undefined in the sense of grammar@ja-exref[hallmark:multi-noms].
+for multiple @ja-tech{nominative}-marked @ja-tech{clause}s where the initial @ja-tech{nominative} is considered as
+the @ja-tech{subject} but the rest may just be left undefined in the sense of grammar@ja-exref[hallmark:multi-noms].
 
 @ja-exemplify{nom:ga:nsub}
 
 In @ja-ExRef[nom:ga:nsub], those が-marked @ja-tech{nominative}s are typically considered as
 @ja-deftech[targets 対象語 たいしょうご], which is a subtype of the @ja-tech{object} or @ja-tech{complement},
- usually being the target of emotion, wishes or ability.
+ usually being the target of emotion, feeling, wishes or ability.
 
 @ja-exemplify{nom:ga:ambiguity}
 
@@ -78,7 +78,7 @@ Note the difference between @ja-ExRef[nom:ga d] and @ja-ExRef[nom:ga:ambiguity] 
 by its @ja-tech{predicate}. It's still not clear whether the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity]
 should be considered as the @ja-tech{subject}.
 
-More about @ja-tech{subject} and @ja-tech{topic} is discussed in @secref{grammar/topic.scrbl}.
+More about @ja-tech{subject} and @ja-tech{topic} is discussed in @secref{category/topic.scrbl}.
 
 @handbook-action[#:tag "ACC:o"]{@ja-title[#:abbr ACC Accusative 対格 たいかく 宾格] 「~を」}
 

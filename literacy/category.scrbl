@@ -2,7 +2,7 @@
 
 @require{literacy.rkt}
 
-@handbook-story[#:index? #true]{@ja-title[Grammar 文法 ぶんぽう 语法]}
+@handbook-story[#:index? #true]{@ja-title["Grammar Category" 文法範疇 ぶんぽうはんちゅう 语法范畴]}
 
 A @ja-deftech[clause 節 せつ 分句]@handbook-footnote{Don't be confused with the 文節 which is
  the smallest unit of words that sounds natural in a @ja-tech{sentence}. A 文節 consists of
@@ -69,8 +69,8 @@ briefly listing some common components of a @ja-tech{clause}.
   to expression, typically containing address, parenthesis, @ja-tech{interjection}, @ja-tech{mimetics}.}
  ]
 
-@include-section{grammar/case.scrbl}
-@include-section{grammar/topic.scrbl}
-@include-section{grammar/tense.scrbl}
+@include-section{category/case.scrbl}
+@include-section{category/topic.scrbl}
+@include-section{category/tense.scrbl}
 
 @handbook-reference[]
