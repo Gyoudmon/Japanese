@@ -39,7 +39,6 @@
  [PASS   Passive                   -         -]
  [PLN    |Plain Form|              -         -]
  [POL    |Polite Form|             -         -]
- [PST    Past                      過去　　　　过去时]
  [TOP    |Topic Particle|          -         -]]}
 
 @handbook-reference[]

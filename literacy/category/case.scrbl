@@ -52,7 +52,7 @@ marked by 10 @ja-tech{case particle}s in the standard modern Japanese.
 
 @handbook-action[#:tag "NOM:ga"]{@ja-title[#:abbr NOM Nominative 主格 しゅかく 主格] 「~が」}
 
-The @deftech{nominative} is usually the @ja-tech{subject} of a @ja-tech{verb} or a @ja-tech{predicate},
+The @deftech{nominative} usually functions as the @ja-tech{subject} of a @ja-tech{verb} or a @ja-tech{predicate},
 and be marked by the @ja-tech{case particle} が@ja-exref[nom:ga]. Despite the fact that は-marked
 @ja-tech{topic} may also be interpreted as the @ja-tech{subject}, the mainstream suggests that Japanese
 @ja-tech{subject} refers to the logical @ja-tech{subject} instead of the @ja-tech{topic}@ja-exref[nom:ga d].
@@ -66,8 +66,8 @@ the @ja-tech{subject} but the rest may just be left undefined in the sense of gr
 
 @ja-exemplify{nom:ga:nsub}
 
-In @ja-ExRef[nom:ga:nsub], those が-marked @ja-tech{nominative}s are typically considered as
-@ja-deftech[targets 対象語 たいしょうご], which is a subtype of the @ja-tech{object} or @ja-tech{complement},
+Those @ja-tech{nominative}s in @ja-ExRef[nom:ga:nsub] are typically considered as the
+@ja-deftech[target 対象語 たいしょうご], which is a subtype of the @ja-tech{object} or @ja-tech{complement},
  usually being the target of emotion, feeling, wishes or ability.
 
 @ja-exemplify{nom:ga:ambiguity}
@@ -78,11 +78,21 @@ Note the difference between @ja-ExRef[nom:ga d] and @ja-ExRef[nom:ga:ambiguity] 
 by its @ja-tech{predicate}. It's still not clear whether the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity]
 should be considered as the @ja-tech{subject}.
 
-More about @ja-tech{subject} and @ja-tech{topic} is discussed in @secref{category/topic.scrbl}.
+For more about @ja-tech{subject} and @ja-tech{topic}, see @secref{category/topic.scrbl}.
 
 @handbook-action[#:tag "ACC:o"]{@ja-title[#:abbr ACC Accusative 対格 たいかく 宾格] 「~を」}
 
-The @deftech{accusative} is the direct @ja-tech{object} of a @ja-tech{transitive verb}.
+The @deftech{accusative} may function as the direct @ja-tech{object} of a @ja-tech{transitive verb}, or the
+@ja-tech{complement} of an @ja-tech{intransitive verb}, and be marked by the @ja-tech{case particle} を@ja-exref[acc:o].
+
+@ja-exemplify{acc:o}
+
+More precisely, を-marked @ja-tech{complement}s specify the source@ja-exref[acc:o b] or path@ja-exref[acc:o c] arguments
+of motion @ja-tech{verb}s. When source arguments are provided, they can also be marked by @ja-tech{ablative} particle,
+but note that not all source arguments can be marked by @ja-tech{accusative} particle@ja-exref[acc:o:inanimate]. That is,
+@ja-tech{accusative}s only work with animate @ja-tech{subject}s that are volitional.
+
+@ja-exemplify{acc:o:inanimate}
 
 @handbook-action[#:tag "GEN:no"]{@ja-title[#:abbr GEN Genitive 属格 ぞっかく 领格] 「~の」}
 

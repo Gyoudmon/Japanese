@@ -59,7 +59,15 @@ belong to more than one groups.
 @itemlist[
  #:style 'compact
 
- @item{The @ja-tech{nominent} marker が is introduced in @Secref{NOM:ga}.}
+ @item{The @ja-tech{nominative} marker が is introduced in @secref{NOM:ga}.}
+]
+
+@handbook-scenario{を}
+
+@itemlist[
+ #:style 'compact
+
+ @item{The @ja-tech{accusative} marker を is introduced in @secref{ACC:o}.}
 ]
 
 @handbook-reference[]
