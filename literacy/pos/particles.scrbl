@@ -70,4 +70,14 @@ belong to more than one groups.
  @item{The @ja-tech{accusative} marker を is introduced in @secref{ACC:o}.}
 ]
 
+@handbook-scenario{の}
+
+@itemlist[
+ #:style 'compact
+
+ @item{The @ja-tech{genitive} marker の is introduced in @secref{GEN:no}.}
+ @item{The adnominal modifier の is also introduced in @secref{GEN:no}.}
+ @item{The nominalizer and pro-form の is also introduced in @secref{GEN:no}.}
+]
+
 @handbook-reference[]

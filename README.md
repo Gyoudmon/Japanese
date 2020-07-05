@@ -89,7 +89,7 @@ _📝 stone/realm/default/preface.tex_
  9 Goku participated in the World Martial Arts Tournament with Krillin
 10                                                                    
 11 音楽    は   感覚 　 の   数学  であり、 数学    は  理性   の  音楽  である               
-12 おんがく TOP かんかく GEN すうがく COP すうがく TOP りせい GEN おんがく COP               
+12 おんがく TOP かんかく GEN すうがく COP すうがく TOP りせい GEN おんがく COP.POL           
 13 Music is the mathematics of sense                                  
 14 Mathematics is the music of reason                                 
 ```
@@ -109,14 +109,14 @@ Similarly, `ex0.2` exemplifies the multi-sentence example `| ex ms |`,
 besides, each sentence can be referenced independently: `ex0.2a`,
 `ex0.2b`, etc.
 
-`Example 0.2`                                                                    
- `a` 悟空ごくうは`TOP`クリリンと`COM`天下一武道会てんかいちぶどうかいに`DAT`参加さんかした`PST`                     
-                                                                                 
-      Goku participated in the World Martial Arts Tournament with Krillin        
- `b` 音楽おんがくは`TOP`感覚かんかくの`GEN`数学すうがくであり`COP`、数学すうがくは`TOP`理性りせいの`GEN`音楽おんがくである`COP`
-                                                                                 
-      Music is the mathematics of sense                                          
-      Mathematics is the music of reason                                         
+`Example 0.2`                                                                          
+ `a` 悟空ごくうは`TOP`クリリンと`COM`天下一武道会てんかいちぶどうかいに`DAT`参加さんかした`PST`                           
+                                                                                       
+      Goku participated in the World Martial Arts Tournament with Krillin              
+ `b` 音楽おんがくは`TOP`感覚かんかくの`GEN`数学すうがくであり`COP`、数学すうがくは`TOP`理性りせいの`GEN`音楽おんがくである`COP`.`POL`
+                                                                                       
+      Music is the mathematics of sense                                                
+      Mathematics is the music of reason                                               
 
 
 

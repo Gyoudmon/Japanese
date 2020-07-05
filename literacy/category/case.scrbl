@@ -20,7 +20,7 @@ role in marking grammatical structure as well as information structure and thema
 In the sense of the @ja-tech{case} category, the standard modern Japanese has been categorized as an
 @ja-deftech["nominative-accusative language" 対格言語 たいかくげんご 宾格语言] in which case the @ja-tech{subject}
 of the @ja-tech{transitive verb} and the @ja-tech{intransitive verb} share the same @ja-tech{case},
-but are distinguished from the @ja-tech{case} of object of the @ja-tech{transitive verbs}.
+but are distinguished from the @ja-tech{case} of @ja-tech{object} of the @ja-tech{transitive verbs}.
 
 Japanese implements its @ja-tech{case} system by postpositional @ja-tech{particles} which
 more precisely are also known as @ja-tech{case particles}. These @ja-tech{case particles}
@@ -37,9 +37,9 @@ nature. Multiple nominative-marked noun @ja-tech{phrase}s may occure within one 
 initial one may be considered as being characterized by the remaining part of the clause@ja-exref[hallmark:multi-noms].
 This phenomenon has become a major problem for describing Japanese @ja-tech{case} system.
 
-@ja-exemplify{hallmark:multi-noms}
+@ja-exemplify{hallmark:multi-noms} 
 
-@handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Standard Cases" "標準格" "ひょうじゅんかく" 标准格]}
+@handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Surface Cases" "表層格" "ひょうそうかく" 表层格]}
 
 @ja-tech{Case}s are language-specific entity@subscript{@~cite[ToC]} which means @ja-tech{case} labels are only
 valid for particular languages. For convenience, similar @ja-tech{case} labels are used for different languages,
@@ -68,45 +68,104 @@ the @ja-tech{subject} but the rest may just be left undefined in the sense of gr
 
 Those @ja-tech{nominative}s in @ja-ExRef[nom:ga:nsub] are typically considered as the
 @ja-deftech[target 対象語 たいしょうご], which is a subtype of the @ja-tech{object} or @ja-tech{complement},
- usually being the target of emotion, feeling, wishes or ability.
+usually being the target of emotion, feeling, wishes or ability.
 
 @ja-exemplify{nom:ga:ambiguity}
 
-Note the difference between @ja-ExRef[nom:ga d] and @ja-ExRef[nom:ga:ambiguity] both of which start with a
-@ja-tech{topic}. The @ja-tech{topic} of the former is actually an @ja-tech{object} placed before the
-@ja-tech{subject}, whereas the @ja-tech{topic} of the latter is the whole containing the part characterized
-by its @ja-tech{predicate}. It's still not clear whether the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity]
-should be considered as the @ja-tech{subject}.
+Note the difference between @ja-ExRef[nom:ga d] and @ja-ExRef[nom:ga:ambiguity] both of which start with
+a @ja-tech{topic}. The @ja-tech{topic} of the former actually acts as an @ja-tech{object} placed before the
+@ja-tech{subject}, whereas the @ja-tech{topic} of the latter refers to the whole that containing the part
+referred by the @ja-tech{nominative} and characterized by its @ja-tech{predicate}. It's still not clear whether
+the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity] should be analyzed as the @ja-tech{subject}.
 
 For more about @ja-tech{subject} and @ja-tech{topic}, see @secref{category/topic.scrbl}.
 
 @handbook-action[#:tag "ACC:o"]{@ja-title[#:abbr ACC Accusative 対格 たいかく 宾格] 「~を」}
 
-The @deftech{accusative} may function as the direct @ja-tech{object} of a @ja-tech{transitive verb}, or the
-@ja-tech{complement} of an @ja-tech{intransitive verb}, and be marked by the @ja-tech{case particle} を@ja-exref[acc:o].
+The @deftech{accusative} functions as the direct @ja-tech{object} of a @ja-tech{transitive verb}@ja-exref[acc:o a],
+or the @ja-tech{complement} of an @ja-tech{intransitive verb}, and be marked by the @ja-tech{case particle} を.
 
 @ja-exemplify{acc:o}
 
-More precisely, を-marked @ja-tech{complement}s specify the source@ja-exref[acc:o b] or path@ja-exref[acc:o c] arguments
-of motion @ja-tech{verb}s. When source arguments are provided, they can also be marked by @ja-tech{ablative} particle,
-but note that not all source arguments can be marked by @ja-tech{accusative} particle@ja-exref[acc:o:inanimate]. That is,
-@ja-tech{accusative}s only work with animate @ja-tech{subject}s that are volitional.
+More precisely, を-marked @ja-tech{complement}s identify the source@ja-exref[acc:o b] or path@ja-exref[acc:o c] arguments
+of motion @ja-tech{verb}s. For path arguments, they can only be marked by the @ja-tech{accusative} particle; while for
+source arguments, they can also be marked by the @ja-tech{ablative} particle, but note that not all source arguments can
+be marked by the @ja-tech{accusative} particle@ja-exref[acc:o:inanimate]. That is, @ja-tech{accusative}s only work with
+animate @ja-tech{subject}s that are volitional.
 
 @ja-exemplify{acc:o:inanimate}
 
 @handbook-action[#:tag "GEN:no"]{@ja-title[#:abbr GEN Genitive 属格 ぞっかく 领格] 「~の」}
 
+The @deftech{genitive} relates the possessor @ja-tech{substantive} to the head @ja-tech{substantive}, or indicates the
+appositive of another @ja-tech{substantive} that sharing the same referent, and typically be marked by the
+@ja-tech{particle} の@handbook-footnote{It has been a standard practice to treat の as a @ja-tech{case particle}.
+ @ruby["連体助詞" "れんたいじょし"] might be more appreciate.}.
+
+The possession has a much wider interpretation than ownership. Property, material, quantity, time, place, @|etc|
+All these asymmetric relationships are counted on. So that のs may not appear exactly in the translated sentences.
+Besides, as the form @ja-form{substantiveのsubstantive} is also a @ja-tech{substantive}, the @ja-tech{genitive}s
+therefore might be linked or composed straightforwardly@ja-exref[gen:no].
+
+@ja-exemplify{gen:no}
+
+Nonetheless, in order to avoid ambiguities, the appositive is only allowed to be followed by a @ja-tech{substantive}
+that not containing another @ja-tech{genitive}@ja-exref[gen:no].
+
+@ja-exemplify{gen:no:apposition}
+
+Revisiting @ja-ExRef[nom:ga:ambiguity] which is ambiguity in analysing its sentence structure. What has already been
+learnt is that the @ja-tech{topic} refers to the whole that containing the part referred by the @ja-tech{nominative},
+it is a good chance to transform that @ja-tech{complex sentence} into a @ja-tech[#:key "simple sentence"]{simple one}
+with @ja-tech{genitive}@ja-exref[gen:no:transform].
+
+@ja-exemplify{gen:no:transform}
+
+Historically speaking, the @ja-tech{particle} の is a marker of adnominal modification, and turns the word or
+@ja-tech{phrase} it attached into an @ja-tech{attributive modifier}@ja-exref[gen:no:attributive]. But it remains
+an open question whether the use of の as @ja-tech{genitive} marker should be analyzed as a subtype of adnominal
+modification marker.
+
+@ja-exemplify{gen:no:attributive}
+
+Further more, の may also function as a nominalizer@ja-exref[gen:no:nominalizer a] or a pro-form@ja-exref[gen:no:nominalizer b]
+that refers back to an entity that is recoverable from the discourse context. In these situations, the の and the marking word
+or phrase as a whole becomes a @ja-tech{substantive}, and no other @ja-tech{substantive} is following it.
+
+@ja-exemplify{gen:no:nominalizer}
+
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
 
+@deftech{dative}
+
 @handbook-action[#:tag "LOC:de/ni"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」/「~に」}
+
+@deftech{locative}
+
 @handbook-action[#:tag "ALL:e/ni"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」/「~に」}
 
+@deftech{allative}
+
 @handbook-action[#:tag "INSTR:de"]{@ja-title[#:abbr INSTR Instrumental 具格 ごかく 工具格] 「~で」}
+
+@deftech{instrumental}
+
 @handbook-action[#:tag "ABL:kara"]{@ja-title[#:abbr ABL Ablative 奪格 だっかく 夺格] 「~から」}
+
+@deftech{ablative}
+
 @handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
+
+@deftech{comitative}
+
 @handbook-action[#:tag "TERM:made"]{@ja-title[#:abbr TERM Terminative 到格 とうかく 到格] 「~まで」}
+
+@deftech{terminative}
+
 @handbook-action[#:tag "COMP:yori"]{@ja-title[#:abbr COMP Comparative 比較格 ひかくかく 比较格] 「~より」}
 
-@handbook-scenario{@ja-title[Valency 結合価 けつごうか 配价]}
+@deftech{comparative}
+
+@handbook-scenario[#:tag "valence"]{@ja-title[Valence　結合価 けつごうか 配价]}
 
 @handbook-reference[]
