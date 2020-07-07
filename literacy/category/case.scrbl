@@ -8,6 +8,11 @@
    #:date 2006
    #:url "https://www.eva.mpg.de/fileadmin/content_files/staff/haspelmt/pdf/CaseTerminology.pdf")
 
+@(define-book-bib Hyphen "The Element of Style" (authors "William Strunk Jr." "E. B. White") "Allyn & Bacon"
+   #:chapter "A Few Matters of Form"
+   #:pages (list 41 42)
+   #:date 1959)
+
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[Case 格 かく 格]}
 
@@ -41,8 +46,8 @@ This phenomenon has become a major problem for describing Japanese @ja-tech{case
 
 @handbook-scenario[#:tag "case"]{@ja-title[#:ja-term? #false "Surface Cases" "表層格" "ひょうそうかく" 表层格]}
 
-@ja-tech{Case}s are language-specific entity@subscript{@~cite[ToC]} which means @ja-tech{case} labels are only
-valid for particular languages. For convenience, similar @ja-tech{case} labels are used for different languages,
+@ja-tech{Case}s are language-specific entity@~subcite[ToC] which means @ja-tech{case} labels are only valid
+for particular languages. For convenience, similar @ja-tech{case} labels are used for different languages,
 nonetheless, it is still senseless to compare @ja-tech{case}s that share same names among languages. Besides,
 linguists with different backgrounds use same terms for different concepts, or use different terms for very
 similar or identical concepts. This issue is even majorer in the @ja-tech{case} category.
@@ -102,37 +107,51 @@ appositive of another @ja-tech{substantive} that sharing the same referent, and 
 @ja-tech{particle} の@handbook-footnote{It has been a standard practice to treat の as a @ja-tech{case particle}.
  @ruby["連体助詞" "れんたいじょし"] might be more appreciate.}.
 
-The possession has a much wider interpretation than ownership. Property, material, quantity, time, place, @|etc|
+The possession has a much broader interpretation than ownership. Property, material, quantity, time, place, @|etc|
 All these asymmetric relationships are counted on. So that のs may not appear exactly in the translated sentences.
-Besides, as the form @ja-form{substantiveのsubstantive} is also a @ja-tech{substantive}, the @ja-tech{genitive}s
-therefore might be linked or composed straightforwardly@ja-exref[gen:no].
 
 @ja-exemplify{gen:no}
 
-Nonetheless, in order to avoid ambiguities, the appositive is only allowed to be followed by a @ja-tech{substantive}
-that not containing another @ja-tech{genitive}@ja-exref[gen:no].
+@ja-tech{Genitives} are the source of ambiguities when they are linked together@ja-exref[gen:no:ambiguity] as the
+form @ja-form{SubstantiveのSubstantive} also identifies a @ja-tech{substantive}. Usually the @ja-tech{genitive}
+chain is interpreted from left to right, but this convention seems not to be guaranted by any rules.
+
+@ja-exemplify{gen:no:ambiguity}
+
+Nonetheless, the appositive is only allowed to be followed by a @ja-tech{substantive} that does not contain another
+@ja-tech{genitive}@ja-exref[gen:no:apposition a], and to do a complete enumerating, the sentence has to be constructed
+in another way@ja-exref[gen:no:apposition b].
 
 @ja-exemplify{gen:no:apposition}
 
-Revisiting @ja-ExRef[nom:ga:ambiguity] which is ambiguity in analysing its sentence structure. What has already been
-learnt is that the @ja-tech{topic} refers to the whole that containing the part referred by the @ja-tech{nominative},
-it is a good chance to transform that @ja-tech{complex sentence} into a @ja-tech[#:key "simple sentence"]{simple one}
-with @ja-tech{genitive}@ja-exref[gen:no:transform].
+Revisiting @ja-ExRef[nom:ga:ambiguity]. What has already been learnt is that the @ja-tech{topic} refers to the whole
+that containing the part referred by the @ja-tech{nominative}, it is a good chance to transform that @ja-tech{complex sentence},
+whose @ja-tech{predicate} is also a @ja-tech{subject}-@ja-tech{predicate} @ja-tech{clause}, into a
+@ja-tech[#:key "simple sentence"]{simple one} with @ja-tech{genitive}@ja-exref[gen:no:transform].
 
 @ja-exemplify{gen:no:transform}
 
 Historically speaking, the @ja-tech{particle} の is a marker of adnominal modification, and turns the word or
 @ja-tech{phrase} it attached into an @ja-tech{attributive modifier}@ja-exref[gen:no:attributive]. But it remains
-an open question whether the use of の as @ja-tech{genitive} marker should be analyzed as a subtype of adnominal
+to be seen whether the use of の as @ja-tech{genitive} marker should be analyzed as a subtype of adnominal
 modification marker.
 
 @ja-exemplify{gen:no:attributive}
 
-Further more, の may also function as a nominalizer@ja-exref[gen:no:nominalizer a] or a pro-form@ja-exref[gen:no:nominalizer b]
-that refers back to an entity that is recoverable from the discourse context. In these situations, the の and the marking word
-or phrase as a whole becomes a @ja-tech{substantive}, and no other @ja-tech{substantive} is following it.
+Further more, の may also function as a nominalizer@ja-exref[gen:no:nominalizer a] or a pro-form that refers back
+to an entity that is recoverable from the discourse context@ja-exref[gen:no:nominalizer b]. In these situations,
+the の and the marking word or phrase as a whole becomes a @ja-tech{substantive}, and no other @ja-tech{substantive}
+is following it.
 
 @ja-exemplify{gen:no:nominalizer}
+
+Anyway, in both English and Chinese, a @ja-tech{noun} can be modified by another @ja-tech{noun} directly, whereas
+Japanese does so with @ja-tech{genitive}s. As mentioned in @~cite[Hyphen], two words tend to be combined as a union,
+which eventually becomes a new word, usually after a period of hyphenation. To illustrate: @tt{wild life} ⇒ @tt{wild-life}
+⇒ @tt{wildlife}. It is reasonable to consider Japanese compound @ja-tech{noun}s the same way, as this pattern has already
+been seen not rarely, such as @ja-word["math book" 数学本 すうがくほん], @ja-word["wild animal" 野生動物 やせいどうぶつ].
+As expected, some cases may collide with existing words, or change both meanings and/or spells, like
+@ja-word["girl" "女|の|子" "おんな|-|こ"] and @ja-word["woman/girl" "女子" "じょし"].
 
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
 

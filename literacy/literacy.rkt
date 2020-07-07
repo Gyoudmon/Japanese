@@ -80,11 +80,22 @@
 (define-syntax (ja-tech* stx)
   (syntax-parse stx #:datum-literals []
     [(_ (~alt (~optional (~seq #:key key) #:defaults ([key #'#false]))) ...
+        en kanji hiragana)
+     #'(tech #:key (or key (ja-inputs 'en))
+             (ja-word #:style ja-tech-style
+                      en kanji hiragana))]))
+
+(define-syntax (ja-word stx)
+  (syntax-parse stx #:datum-literals []
+    [(_ (~alt (~optional (~seq #:style style) #:defaults ([style #''tt]))) ...
         en0 kanji0 hiragana0)
      #'(let-values ([(en kanji hiragana) (ja-inputs 'en0 'kanji0 'hiragana0)])
-         (tech #:key (or key en)
-               (elem #:style ja-tech-style
-                     en ~ "「" (ruby kanji hiragana) "」")))]))
+         (elem #:style style
+               en ~
+               "「"
+               (cond [(or (eq? 'hiragana0 '-) (equal? 'hiragana0 "-")) kanji]
+                     [else (ruby kanji hiragana)])
+               "」"))]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-thing stx)
