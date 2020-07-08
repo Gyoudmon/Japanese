@@ -13,6 +13,12 @@
    #:pages (list 41 42)
    #:date 1959)
 
+@(define-journal-bib TCH "The Case Hierarchy" "Barry Blake" "La Trobe Working Papers in Linguistics"
+   #:volume 5
+   #:pages (list 1 6)
+   #:date 1992
+   #:url "https://web.archive.org/web/20070929161614/http://www.latrobe.edu.au/linguistics/LaTrobePapersinLinguistics/Vol%2005/01Blake.pdf")
+
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title[Case 格 かく 格]}
 
@@ -114,7 +120,7 @@ All these asymmetric relationships are counted on. So that のs may not appear e
 
 @ja-tech{Genitives} are the source of ambiguities when they are linked together@ja-exref[gen:no:ambiguity] as the
 form @ja-form{SubstantiveのSubstantive} also identifies a @ja-tech{substantive}. Usually the @ja-tech{genitive}
-chain is interpreted from left to right, but this convention seems not to be guaranted by any rules.
+chain is interpreted from left to right, but this convention seems not to be guaranteed by any rules.
 
 @ja-exemplify{gen:no:ambiguity}
 
@@ -145,17 +151,26 @@ is following it.
 
 @ja-exemplify{gen:no:nominalizer}
 
-Anyway, in both English and Chinese, a @ja-tech{noun} can be modified by another @ja-tech{noun} directly, whereas
-Japanese does so with @ja-tech{genitive}s. As mentioned in @~cite[Hyphen], two words tend to be combined as a union,
-which eventually becomes a new word, usually after a period of hyphenation. To illustrate: @tt{wild life} ⇒ @tt{wild-life}
-⇒ @tt{wildlife}. It is reasonable to consider Japanese compound @ja-tech{noun}s the same way, as this pattern has already
-been seen not rarely, such as @ja-word["math book" 数学本 すうがくほん], @ja-word["wild animal" 野生動物 やせいどうぶつ].
-As expected, some cases may collide with existing words, or change both meanings and/or spells, like
-@ja-word["girl" "女|の|子" "おんな|-|こ"] and @ja-word["woman/girl" "女子" "じょし"].
+Anyway, in both English and Mandarin Chinese, a @ja-tech{noun} can be modified by another @ja-tech{noun} directly,
+whereas Japanese does so with @ja-tech{genitive}s. As mentioned in @~cite[Hyphen], two words tend to be combined
+as a union, which eventually becomes a new word, usually after a period of hyphenation. To illustrate: @tt{wild life}
+⇒ @tt{wild-life} ⇒ @tt{wildlife}. It is reasonable to consider Japanese compound @ja-tech{noun}s the same way, as
+this pattern has already been seen not rarely, such as @ja-word["wild animal" 野生動物 やせいどうぶつ],
+@ja-word["math book" 数学本 すうがくほん]. As expected, some cases may collide with existing words,
+or change both meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|-|こ"] and
+@ja-word["woman/girl" "女子" "じょし"].
 
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
 
-@deftech{dative}
+The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be
+marked by the @ja-tech{case particle} に@ja-exref[dat:ni:give].
+
+@ja-exemplify{dat:ni:give}
+
+The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving}, which identifies its indirect
+@ja-tech{object} with the preposition @ja-quote{to}, which also be used to identify the direction by motion @ja-tech{verb}s
+coincidentally. Thus, in some languages influenced by English, the uses of @ja-tech{dative} overlaps those of @ja-tech{locative},
+@ja-tech{allative} and alike@handbook-footnote{You might be also interested in the case hierarchy, see @~cite[TCH].}.
 
 @handbook-action[#:tag "LOC:de/ni"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」/「~に」}
 
