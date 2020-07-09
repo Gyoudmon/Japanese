@@ -111,7 +111,7 @@ animate @ja-tech{subject}s that are volitional.
 The @deftech{genitive} relates the possessor @ja-tech{substantive} to the head @ja-tech{substantive}, or indicates the
 appositive of another @ja-tech{substantive} that sharing the same referent, and typically be marked by the
 @ja-tech{particle} の@handbook-footnote{It has been a standard practice to treat の as a @ja-tech{case particle}.
- @ruby["連体助詞" "れんたいじょし"] might be more appreciate.}.
+ @ruby["連体助詞" "れんたいじょし"] might be more appropriately.}.
 
 The possession has a much broader interpretation than ownership. Property, material, quantity, time, place, @|etc|
 All these asymmetric relationships are counted on. So that のs may not appear exactly in the translated sentences.
@@ -157,26 +157,40 @@ as a union, which eventually becomes a new word, usually after a period of hyphe
 ⇒ @tt{wild-life} ⇒ @tt{wildlife}. It is reasonable to consider Japanese compound @ja-tech{noun}s the same way, as
 this pattern has already been seen not rarely, such as @ja-word["wild animal" 野生動物 やせいどうぶつ],
 @ja-word["math book" 数学本 すうがくほん]. As expected, some cases may collide with existing words,
-or change both meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|-|こ"] and
+or change meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|-|こ"] and
 @ja-word["woman/girl" "女子" "じょし"].
 
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
 
-The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be
-marked by the @ja-tech{case particle} に@ja-exref[dat:ni:give].
+The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be marked
+by the @ja-tech{case particle} に. In another words, に indicates the target of an action @ja-tech{verb} usually with a
+direct @ja-tech{object}@ja-exref[dat:ni].
 
-@ja-exemplify{dat:ni:give}
+@ja-exemplify{dat:ni}
 
-The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving}, which identifies its indirect
-@ja-tech{object} with the preposition @ja-quote{to}, which also be used to identify the direction by motion @ja-tech{verb}s
-coincidentally. Thus, in some languages influenced by English, the uses of @ja-tech{dative} overlaps those of @ja-tech{locative},
-@ja-tech{allative} and alike@handbook-footnote{You might be also interested in the case hierarchy, see @~cite[TCH].}.
+The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving}@ja-exref[dat:ni a], which
+identifies its indirect @ja-tech{object} with the preposition @ja-quote{to}, which also be used to identify the
+destination or purpose by motion @ja-tech{verb}s coincidentally. Thus, in some languages influenced by English,
+directly or indirectly, use of @ja-tech{dative} overlaps use of @ja-tech{allative}@ja-exref[dat:ni:all].
 
-@handbook-action[#:tag "LOC:de/ni"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」/「~に」}
+@ja-exemplify{dat:ni:all}
+
+When the purpose argument is provided, it must precede the motion @ja-tech{verb} immediately, and its に-marking word is
+@ja-tech{the continuative form} of a @ja-tech{verb}@ja-exref[dat:ni:all b] or a @ja-tech{verbal noun}@ja-exref[dat:ni:all c].
+Note that @ja-tech{the continuative form} of the verbalized @ja-tech{verbal noun} should be し-suffixed, but
+if so the sentence would sound like an oriental curse, @ja-word["go to die" "死|に|行|く" "し|-|い|"]. Thus,
+@ja-tech{verbal noun}s tend to be used directly instead, though the し-suffixed versions work as well.
+
+As mentioned in @~cite[TCH], @ja-tech{case}s in a particular language tends to be defined in order. Given that
+uses of the @ja-tech{dative} has already overlapped uses of the @ja-tech{allative}, it is reasonable to give the
+@ja-tech{locative} a chance to try@handbook-footnote{The concept @ja-tech{case} hierarchy does not deserve its
+ position here. But who knows, it might help some readers to chain all multifarious uses of @ja-tech{dative}.}.
+
+@handbook-action[#:tag "LOC:de"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」}
 
 @deftech{locative}
 
-@handbook-action[#:tag "ALL:e/ni"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」/「~に」}
+@handbook-action[#:tag "ALL:e"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」}
 
 @deftech{allative}
 
@@ -188,13 +202,13 @@ coincidentally. Thus, in some languages influenced by English, the uses of @ja-t
 
 @deftech{ablative}
 
-@handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
-
-@deftech{comitative}
-
 @handbook-action[#:tag "TERM:made"]{@ja-title[#:abbr TERM Terminative 到格 とうかく 到格] 「~まで」}
 
 @deftech{terminative}
+
+@handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
+
+@deftech{comitative}
 
 @handbook-action[#:tag "COMP:yori"]{@ja-title[#:abbr COMP Comparative 比較格 ひかくかく 比较格] 「~より」}
 

@@ -80,4 +80,12 @@ belong to more than one groups.
  @item{The nominalizer and pro-form の is also introduced in @secref{GEN:no}.}
 ]
 
+@handbook-scenario{に}
+
+@itemlist[
+ #:style 'compact
+
+ @item{The @ja-tech{dative} marker に is introduced in @secref{DAT:ni}.}
+]
+
 @handbook-reference[]
