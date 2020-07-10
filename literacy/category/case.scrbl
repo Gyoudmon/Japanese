@@ -181,14 +181,31 @@ Note that @ja-tech{the continuative form} of the verbalized @ja-tech{verbal noun
 if so the sentence would sound like an oriental curse, @ja-word["go to die" "死|に|行|く" "し|-|い|"]. Thus,
 @ja-tech{verbal noun}s tend to be used directly instead, though the し-suffixed versions work as well.
 
+@; timeに and frequencyに
+@; more about targetに
+
 As mentioned in @~cite[TCH], @ja-tech{case}s in a particular language tends to be defined in order. Given that
 uses of the @ja-tech{dative} has already overlapped uses of the @ja-tech{allative}, it is reasonable to give the
-@ja-tech{locative} a chance to try@handbook-footnote{The concept @ja-tech{case} hierarchy does not deserve its
- position here. But who knows, it might help some readers to chain all multifarious uses of @ja-tech{dative}.}.
+@ja-tech{locative}@ja-exref[dat:ni:loc] a visit@handbook-footnote{The concept @ja-tech{case} hierarchy
+ does not deserve its position here. But who knows, it might help some readers to chain all multifarious uses
+ of @ja-tech{dative}. By the way, the order that the book using to introduce @ja-tech{case}s follows the
+ @ja-tech{case} hierarchy}.
+
+@ja-exemplify{dat:ni:loc}
+
+The に-marked dative can indicate the place that someone or something existing. It is no doubt to link いる/います
+with animate entities@ja-exref[dat:ni:loc a] and ある/あります with ianimate entities@ja-exref[dat:ni:loc b];
+What if the entity is made by another action @ja-tech{verb} like in @ja-ExRef[dat:ni:loc c]? Literally translating,
+it should be the second one, which is actually ambiguity and indistinguishable from the @ja-ExRef[loc:de]. What
+really should be concerned here is the existence of the entity eventually made by the action rather than the
+action itself producing the entity, so both the first and third ones are accurate despite the verboseness of
+the third one. 
 
 @handbook-action[#:tag "LOC:de"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」}
 
 @deftech{locative}
+
+@ja-exemplify{loc:de}
 
 @handbook-action[#:tag "ALL:e"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」}
 
