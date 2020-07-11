@@ -100,7 +100,7 @@
 (define-syntax (ja-quote stx)
   (syntax-parse stx #:datum-literals []
     [(_ origin:str)
-     #'(emph (tt origin))]))
+     #'(emph "「" (tt origin) "」")]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-syntax (ja-thing stx)

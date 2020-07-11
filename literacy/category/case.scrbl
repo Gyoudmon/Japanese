@@ -139,8 +139,7 @@ whose @ja-tech{predicate} is also a @ja-tech{subject}-@ja-tech{predicate} @ja-te
 
 Historically speaking, the @ja-tech{particle} の is a marker of adnominal modification, and turns the word or
 @ja-tech{phrase} it attached into an @ja-tech{attributive modifier}@ja-exref[gen:no:attributive]. But it remains
-to be seen whether the use of の as @ja-tech{genitive} marker should be analyzed as a subtype of adnominal
-modification marker.
+to be seen whether the use of の as possessive marker should be analyzed as a subtype of adnominal modification marker.
 
 @ja-exemplify{gen:no:attributive}
 
@@ -163,15 +162,21 @@ or change meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
 
 The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be marked
-by the @ja-tech{case particle} に. In another words, に indicates the target of an action @ja-tech{verb} usually with a
-direct @ja-tech{object}@ja-exref[dat:ni].
+by the @ja-tech{case particle} に@handbook-footnote{From now on, things become disorder as uses of @ja-tech{dative}
+ overlap uses of many other @ja-tech{case particle}s, it is reasonable to consider this phenomenon from the perspective
+ of the @ja-tech{case} hierarchy introduced in @~cite[TCH]. That is, @ja-tech{dative} is the last core @ja-tech{case}
+ after @ja-tech{nominative}, @ja-tech{accusative}, and @ja-tech{genitive}, later on more @ja-tech{case}s are defined
+ to make expressions more detailed. By the way, the order that this book using to introduce @ja-tech{case}s follows
+ the @ja-tech{case} hierarchy.}. The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving},
+which semantics can be phrased as @ja-form{give B to A}@ja-exref[dat:ni:give a] or @ja-form{make (B) for A}@ja-exref[dat:ni:give b],
+where @ja-form{A} is the indirect @ja-tech{object}, someone or something, should be marked by に.
 
-@ja-exemplify{dat:ni}
+@ja-exemplify{dat:ni:give}
 
-The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving}@ja-exref[dat:ni a], which
-identifies its indirect @ja-tech{object} with the preposition @ja-quote{to}, which also be used to identify the
-destination or purpose by motion @ja-tech{verb}s coincidentally. Thus, in some languages influenced by English,
-directly or indirectly, use of @ja-tech{dative} overlaps use of @ja-tech{allative}@ja-exref[dat:ni:all].
+For pattern A as exemplified in @ja-ExRef[dat:ni:give a], the indirect @ja-tech{object} follows the preposition
+@ja-quote{to}, which also be used to identify the destination or purpose by motion @ja-tech{verb}s coincidentally.
+Thus, in some languages influenced by English, directly or indirectly, use of @ja-tech{dative} overlaps use of
+@ja-tech{allative}@ja-exref[dat:ni:all].
 
 @ja-exemplify{dat:ni:all}
 
@@ -184,22 +189,24 @@ if so the sentence would sound like an oriental curse, @ja-word["go to die" "死
 @; timeに and frequencyに
 @; more about targetに
 
-As mentioned in @~cite[TCH], @ja-tech{case}s in a particular language tends to be defined in order. Given that
-uses of the @ja-tech{dative} has already overlapped uses of the @ja-tech{allative}, it is reasonable to give the
-@ja-tech{locative}@ja-exref[dat:ni:loc] a visit@handbook-footnote{The concept @ja-tech{case} hierarchy
- does not deserve its position here. But who knows, it might help some readers to chain all multifarious uses
- of @ja-tech{dative}. By the way, the order that the book using to introduce @ja-tech{case}s follows the
- @ja-tech{case} hierarchy}.
+For pattern B as exemplified in @ja-ExRef[dat:ni:give b], it can be semantically extended to express the existence
+of @ja-form{B} in place @ja-form{A}. This use overlaps the use of @ja-tech{locative}@ja-exref[dat:ni:loc].
 
 @ja-exemplify{dat:ni:loc}
 
-The に-marked dative can indicate the place that someone or something existing. It is no doubt to link いる/います
-with animate entities@ja-exref[dat:ni:loc a] and ある/あります with ianimate entities@ja-exref[dat:ni:loc b];
-What if the entity is made by another action @ja-tech{verb} like in @ja-ExRef[dat:ni:loc c]? Literally translating,
-it should be the second one, which is actually ambiguity and indistinguishable from the @ja-ExRef[loc:de]. What
-really should be concerned here is the existence of the entity eventually made by the action rather than the
-action itself producing the entity, so both the first and third ones are accurate despite the verboseness of
-the third one. 
+Literally translating, the resulting @ja-tech{sentence} would be the second one, which is actually ambiguity and
+yet indistinguishable from @ja-ExRef[loc:de]. What really should be concerned here is the existence of the entity
+eventually made by the action rather than the action itself producing the entity, so both the first and third ones
+are accurate despite the verboseness of the third one.
+
+Particularly, there are two shortcuts to express existence, one is いる/います for animate entities@ja-exref[dat:ni:exist a],
+the other is ある/あります for ianimate entities@ja-exref[dat:ni:exist b].
+
+@ja-exemplify{dat:ni:exist}
+
+By deriving these two patterns, the @ja-tech{dative} has been adapted to a wide range of uses@ja-exref[dat:ni].
+
+@ja-exemplify{dat:ni}
 
 @handbook-action[#:tag "LOC:de"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」}
 
