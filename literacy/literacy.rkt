@@ -314,8 +314,11 @@
 
     (cond [(or (eq? token '-) (equal? token "-")) (cons #false "ruby")]
           [(not (regexp-match? #px"[A-Za-z]+" content)) (cons content 'auto)]
-          [(not (regexp-match? #px"\\." content)) (cons (tech (tt content)) "exmptag")]
-          [else (cons (add-between (map (compose1 tech tt) (string-split content ".")) ".") "exmptag")])))
+          [(not (regexp-match? #px"[./]" content)) (cons (tech (tt content)) "exmptag")]
+          [else (cons (add-between (for/list ([subtoken (in-list (string-split content "."))])
+                                     (cond [(not (string-contains? subtoken "/")) (tech (tt subtoken))]
+                                           [else (add-between (map (compose1 tech tt) (string-split content "/")) "/")])) ".")
+                      "exmptag")])))
 
 (define ja-split
   (lambda [token]

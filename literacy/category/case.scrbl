@@ -89,6 +89,7 @@ a @ja-tech{topic}. The @ja-tech{topic} of the former actually acts as an @ja-tec
 referred by the @ja-tech{nominative} and characterized by its @ja-tech{predicate}. It's still not clear whether
 the @ja-tech{nominative} in @ja-ExRef[nom:ga:ambiguity] should be analyzed as the @ja-tech{subject}.
 
+For more uses of @ja-tech{nominative}, see @secref{valence}.
 For more about @ja-tech{subject} and @ja-tech{topic}, see @secref{category/topic.scrbl}.
 
 @handbook-action[#:tag "ACC:o"]{@ja-title[#:abbr ACC Accusative 対格 たいかく 宾格] 「~を」}
@@ -164,7 +165,7 @@ or change meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|
 The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be marked
 by the @ja-tech{case particle} に@handbook-footnote{From now on, things become disorder as uses of @ja-tech{dative}
  overlap uses of many other @ja-tech{case particle}s, it is reasonable to consider this phenomenon from the perspective
- of the @ja-tech{case} hierarchy introduced in @~cite[TCH]. That is, @ja-tech{dative} is the last core @ja-tech{case}
+ of the @ja-tech{case} hierarchy introduced in @~cite[TCH]. More precisely, @ja-tech{dative} is the last core @ja-tech{case}
  after @ja-tech{nominative}, @ja-tech{accusative}, and @ja-tech{genitive}, later on more @ja-tech{case}s are defined
  to make expressions more detailed. By the way, the order that this book using to introduce @ja-tech{case}s follows
  the @ja-tech{case} hierarchy.}. The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving},
@@ -174,7 +175,7 @@ where @ja-form{A} is the indirect @ja-tech{object}, someone or something, should
 @ja-exemplify{dat:ni:give}
 
 For pattern A as exemplified in @ja-ExRef[dat:ni:give a], the indirect @ja-tech{object} follows the preposition
-@ja-quote{to}, which also be used to identify the destination or purpose by motion @ja-tech{verb}s coincidentally.
+@ja-quote{to}, which also be used to identify the destination of motion @ja-tech{verb}s or purpose coincidentally.
 Thus, in some languages influenced by English, directly or indirectly, use of @ja-tech{dative} overlaps use of
 @ja-tech{allative}@ja-exref[dat:ni:all].
 
@@ -186,11 +187,8 @@ Note that @ja-tech{the continuative form} of the verbalized @ja-tech{verbal noun
 if so the sentence would sound like an oriental curse, @ja-word["go to die" "死|に|行|く" "し|-|い|"]. Thus,
 @ja-tech{verbal noun}s tend to be used directly instead, though the し-suffixed versions work as well.
 
-@; timeに and frequencyに
-@; more about targetに
-
 For pattern B as exemplified in @ja-ExRef[dat:ni:give b], it can be semantically extended to express the existence
-of @ja-form{B} in place @ja-form{A}. This use overlaps the use of @ja-tech{locative}@ja-exref[dat:ni:loc].
+of @ja-form{B} in place @ja-form{A}. This use@ja-exref[dat:ni:loc] overlaps the use of @ja-tech{locative}.
 
 @ja-exemplify{dat:ni:loc}
 
@@ -199,22 +197,49 @@ yet indistinguishable from @ja-ExRef[loc:de]. What really should be concerned he
 eventually made by the action rather than the action itself producing the entity, so both the first and third ones
 are accurate despite the verboseness of the third one.
 
-Particularly, there are two shortcuts to express existence, one is いる/います for animate entities@ja-exref[dat:ni:exist a],
-the other is ある/あります for ianimate entities@ja-exref[dat:ni:exist b].
+Particularly, there are two shortcuts to express existence, one is いる for animate entities@ja-exref[dat:ni:exist a],
+the other is ある for ianimate entities@ja-exref[dat:ni:exist b].
 
 @ja-exemplify{dat:ni:exist}
 
-By deriving these two patterns, the @ja-tech{dative} has been adapted to a wide range of uses@ja-exref[dat:ni].
+By far, the @ja-tech{dative} has been adapted to a wide range of uses in addition to those two basic patterns.
+Nonetheless, it is reasonable to only mention distinct uses here@ja-exref[dat:ni], and some reorganization
+might be performed.
 
 @ja-exemplify{dat:ni}
 
-@handbook-action[#:tag "LOC:de"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」}
+For special uses of @ja-tech{dative}, see @secref{valence}.
 
-@deftech{locative}
+@handbook-action[#:tag "LOC:de/ni"]{@ja-title[#:abbr LOC Locative 処格 しょかく 场所格] 「~で」「~に」}
+
+The @deftech{locative} specifies a location where events or actions take place, and be marked by the
+@ja-tech{case particle} で or に. Be careful, the term @ja-tech{locative} is a little tricky. As
+@deftech{spatial relation}s can be expressed in 4 directional ways: location @ja-form{at}, destination
+@ja-form{to}, source @ja-form{from}, and path @ja-form{along, through}. In a broad sense, all these
+four cases are associated with a place as its location, but the @ja-tech{locative} identified location
+only stands for the first one.
+
+So that the overlap among uses of @ja-tech{dative} and @ja-tech{locative} is all around the semantics of
+existence. に indicates the location where someone or something exists in which case the way to arrive or
+to be made is not important@ja-exref[dat:ni:loc], whereas で indicates the location that some events or
+actions occur in which case the side effects of the events or actions are not important@ja-exref[loc:de].
 
 @ja-exemplify{loc:de}
 
-@handbook-action[#:tag "ALL:e"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」}
+Despite the fact that @ja-tech{locative} is actually where で started as a @ja-tech{case particle}, now
+で has been considered as the @ja-tech{instrumental}, and the location has been categorized as an instrument.
+Based on this fact, で-marked @ja-tech{locative} can be better explained: the location as an instrument
+provides some particular functions that benefit the event or action and eventually be chosen by the agents.
+
+Take it easy, and don't hang on these explainations. で and に as the @ja-tech{locative} marker are virtually
+interchangeable since additional information can be inferred from contexts.
+
+By the way, some @ja-tech{substantive}s marked by で may look like locations, but they actually represent
+ranges or collections@ja-exref[instr:de:range].
+
+@ja-exemplify{instr:de:range}
+
+@handbook-action[#:tag "ALL:e"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」「~に」}
 
 @deftech{allative}
 
