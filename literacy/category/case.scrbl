@@ -112,7 +112,7 @@ animate @ja-tech{subject}s that are volitional.
 The @deftech{genitive} relates the possessor @ja-tech{substantive} to the head @ja-tech{substantive}, or indicates the
 appositive of another @ja-tech{substantive} that sharing the same referent, and typically be marked by the
 @ja-tech{particle} の@handbook-footnote{It has been a standard practice to treat の as a @ja-tech{case particle}.
- @ruby["連体助詞" "れんたいじょし"] might be more appropriately.}.
+ @ruby["並立助詞" "へいりつじょし"] or @ruby["連体助詞" "れんたいじょし"] might be more appropriate.}.
 
 The possession has a much broader interpretation than ownership. Property, material, quantity, time, place, @|etc|
 All these asymmetric relationships are counted on. So that のs may not appear exactly in the translated sentences.
@@ -126,7 +126,7 @@ chain is interpreted from left to right, but this convention seems not to be gua
 @ja-exemplify{gen:no:ambiguity}
 
 Nonetheless, the appositive is only allowed to be followed by a @ja-tech{substantive} that does not contain another
-@ja-tech{genitive}@ja-exref[gen:no:apposition a], and to do a complete enumerating, the sentence has to be constructed
+@ja-tech{genitive}@ja-exref[gen:no:apposition a], and to do a exhaustive enumerating, the sentence has to be constructed
 in another way@ja-exref[gen:no:apposition b].
 
 @ja-exemplify{gen:no:apposition}
@@ -144,6 +144,10 @@ to be seen whether the use of の as possessive marker should be analyzed as a s
 
 @ja-exemplify{gen:no:attributive}
 
+@ja-tech{Case} instances are regualr seen as the postpositional @ja-tech{phrase} attached by の. What irregular here
+is that there are no such formatives like @ja-form{がの}, @ja-form{をの}, and @ja-form{にの}, where the first two turn
+into just @ja-form{の}s and the third one turns into @ja-form{への}@ja-exref[gen:no:attributive c].
+
 Further more, の may also function as a nominalizer@ja-exref[gen:no:nominalizer a] or a pro-form that refers back
 to an entity that is recoverable from the discourse context@ja-exref[gen:no:nominalizer b]. In these situations,
 the の and the marking word or phrase as a whole becomes a @ja-tech{substantive}, and no other @ja-tech{substantive}
@@ -157,7 +161,7 @@ as a union, which eventually becomes a new word, usually after a period of hyphe
 ⇒ @tt{wild-life} ⇒ @tt{wildlife}. It is reasonable to consider Japanese compound @ja-tech{noun}s the same way, as
 this pattern has already been seen not rarely, such as @ja-word["wild animal" 野生動物 やせいどうぶつ],
 @ja-word["math book" 数学本 すうがくほん]. As expected, some cases may collide with existing words,
-or change meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|-|こ"] and
+or change meanings and/or spells, including @ja-word["girl" "女|の|子" "おんな|-|こ"] and
 @ja-word["woman/girl" "女子" "じょし"].
 
 @handbook-action[#:tag "DAT:ni"]{@ja-title[#:abbr DAT Dative 与格 よかく 与格] 「~に」}
@@ -165,17 +169,16 @@ or change meanings and/or spells, like @ja-word["girl" "女|の|子" "おんな|
 The @deftech{dative} usually functions as the indirect @ja-tech{object} of a @ja-tech{ditransitive verb}, and be marked
 by the @ja-tech{case particle} に@handbook-footnote{From now on, things become disorder as uses of @ja-tech{dative}
  overlap uses of many other @ja-tech{case particle}s, it is reasonable to consider this phenomenon from the perspective
- of the @ja-tech{case} hierarchy introduced in @~cite[TCH]. More precisely, @ja-tech{dative} is the last core @ja-tech{case}
+ of the @ja-tech{case} hierarchy introduced in @~cite[TCH]. For short, @ja-tech{dative} is the last core @ja-tech{case}
  after @ja-tech{nominative}, @ja-tech{accusative}, and @ja-tech{genitive}, later on more @ja-tech{case}s are defined
- to make expressions more detailed. By the way, the order that this book using to introduce @ja-tech{case}s follows
- the @ja-tech{case} hierarchy.}. The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving},
+ to make expressions more detailed.}. The word @ja-tech{dative} itself is derived from the Latin @ja-quote{(case) of giving},
 which semantics can be phrased as @ja-form{give B to A}@ja-exref[dat:ni:give a] or @ja-form{make (B) for A}@ja-exref[dat:ni:give b],
 where @ja-form{A} is the indirect @ja-tech{object}, someone or something, should be marked by に.
 
 @ja-exemplify{dat:ni:give}
 
 For pattern A as exemplified in @ja-ExRef[dat:ni:give a], the indirect @ja-tech{object} follows the preposition
-@ja-quote{to}, which also be used to identify the destination of motion @ja-tech{verb}s or purpose coincidentally.
+@ja-form{to}, which also be used to identify the destination of motion @ja-tech{verb}s or purpose coincidentally.
 Thus, in some languages influenced by English, directly or indirectly, use of @ja-tech{dative} overlaps use of
 @ja-tech{allative}@ja-exref[dat:ni:all].
 
@@ -184,7 +187,7 @@ Thus, in some languages influenced by English, directly or indirectly, use of @j
 When the purpose argument is provided, it must precede the motion @ja-tech{verb} immediately, and its に-marking word is
 @ja-tech{the continuative form} of a @ja-tech{verb}@ja-exref[dat:ni:all b] or a @ja-tech{verbal noun}@ja-exref[dat:ni:all c].
 Note that @ja-tech{the continuative form} of the verbalized @ja-tech{verbal noun} should be し-suffixed, but
-if so the sentence would sound like an oriental curse, @ja-word["go to die" "死|に|行|く" "し|-|い|"]. Thus,
+if so the sentence would sound like an oriental curse: @ja-word["go to die" "死|に|行|く" "し|-|い|"]. Thus,
 @ja-tech{verbal noun}s tend to be used directly instead, though the し-suffixed versions work as well.
 
 For pattern B as exemplified in @ja-ExRef[dat:ni:give b], it can be semantically extended to express the existence
@@ -214,22 +217,23 @@ For special uses of @ja-tech{dative}, see @secref{valence}.
 
 The @deftech{locative} specifies a location where events or actions take place, and be marked by the
 @ja-tech{case particle} で or に. Be careful, the term @ja-tech{locative} is a little tricky. As
-@deftech{spatial relation}s can be expressed in 4 directional ways: location @ja-form{at}, destination
-@ja-form{to}, source @ja-form{from}, and path @ja-form{along, through}. In a broad sense, all these
-four cases are associated with a place as its location, but the @ja-tech{locative} identified location
-only stands for the first one.
+@deftech{spatial relation}s can be grouped into 4 directional classes: location @ja-word{at}, goal
+@ja-word{to, toward}, source @ja-word{from}, and path @ja-word{along, through}. In a broad sense,
+each of these four classes is associated with a place as its location, but the @ja-tech{locative}
+identified location only stands for the first class.
 
 So that the overlap among uses of @ja-tech{dative} and @ja-tech{locative} is all around the semantics of
 existence. に indicates the location where someone or something exists in which case the way to arrive or
-to be made is not important@ja-exref[dat:ni:loc], whereas で indicates the location that some events or
-actions occur in which case the side effects of the events or actions are not important@ja-exref[loc:de].
+to be made is trivial@ja-exref[dat:ni:loc], whereas で indicates the location that some events or actions
+occur in which case the side effects of the events or actions are trivail@ja-exref[loc:de].
 
 @ja-exemplify{loc:de}
 
 Despite the fact that @ja-tech{locative} is actually where で started as a @ja-tech{case particle}, now
 で has been considered as the @ja-tech{instrumental}, and the location has been categorized as an instrument.
 Based on this fact, で-marked @ja-tech{locative} can be better explained: the location as an instrument
-provides some particular functions that benefit the event or action and eventually be chosen by the agents.
+provides some particular functions that benefit the event or action, independent of the goal, and eventually
+be chosen by the agents.
 
 Take it easy, and don't hang on these explainations. で and に as the @ja-tech{locative} marker are virtually
 interchangeable since additional information can be inferred from contexts.
@@ -241,7 +245,19 @@ ranges or collections@ja-exref[instr:de:range].
 
 @handbook-action[#:tag "ALL:e"]{@ja-title[#:abbr ALL Allative 向格 こうかく 方向格] 「~へ」「~に」}
 
-@deftech{allative}
+The @deftech{allative} specifies the goal of a motion @ja-tech{verb} and stands for the second class of the
+@ja-tech{spatial relation}, and typically be marked by the @ja-tech{case particle} へ or に@ja-exref[all:e].
+
+@ja-exemplify{all:e}
+
+Similar to で and に as the @ja-tech{locative} marker, へ and に as the @ja-tech{allative} marker are also
+virtually interchangeable. へ tends to be used when the direction is more emphasized, whereas に pays more
+attention to the destination or purpose@ja-exref[all:e b].
+
+@ja-exemplify{all:e:standalone}
+
+Besides, に-marked @ja-tech{allative} can stand alone without an explicit action@ja-exref[all:e:standalone],
+especially when combined with の to form an adnominal modifier@ja-exref[gen:no:attributive c].
 
 @handbook-action[#:tag "INSTR:de"]{@ja-title[#:abbr INSTR Instrumental 具格 ごかく 工具格] 「~で」}
 
@@ -257,7 +273,30 @@ ranges or collections@ja-exref[instr:de:range].
 
 @handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
 
-@deftech{comitative}
+The @deftech{comitative} encodes the relationship of accompaniment between two participants in an event,
+and be marked by the @ja-tech{case particle} と@ja-exref[com:to]. Both of the participants are agents of
+the action, this is the key point for distinguishing between the @ja-tech{comitative} and the
+@ja-tech{instrumental}.
+
+@ja-exemplify{com:to}
+
+The @ja-tech{adverb} 一緒に is often used together if one of the participants is already adequate to the
+event or action@ja-exref[com:to a].
+
+@ja-exemplify{com:to:and}
+
+Like の, と can also be used as the @ja-tech{parallel particle} to combine @ja-tech{substantive}s in which
+case the compound @ja-tech{substantive} does not introduce new @ja-tech{sentence} component@ja-exref[com:to:and a],
+whereas と-marked @ja-tech{comitative} functions as the @ja-tech{complement}@ja-exref[com:to b].
+Nonetheless, such a subtle difference usually does not make sense.
+
+と as the @ja-tech{parallel particle} implies the exhaustive emueration. That is, all @ja-tech{substantive}s
+in the same collection must be combined one by one explicitly@ja-exref[com:to:enum a]. For non-exhaustive
+enumeration, the @ja-tech{parallel particle} や @ja-word{and} and the @ja-tech{adverbial particle} など
+@ja-word{@etc} are combined as is@ja-exref[com:to:enum b].
+
+@ja-exemplify{com:to:enum}
+
 
 @handbook-action[#:tag "COMP:yori"]{@ja-title[#:abbr COMP Comparative 比較格 ひかくかく 比较格] 「~より」}
 

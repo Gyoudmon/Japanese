@@ -36,7 +36,7 @@ belong to more than one groups.
 
  @item{@ja-deftech["Case Particles" 格助詞 かくじょし 格助词]: @ja-tech{particles} that employed by Japanese
   @ja-tech{case} system to mark @ja-tech{substantives}. Also containing
-  @ja-deftech["Parallel Particles" 并列助詞 へいりつじょし 并列助詞]. See @secref{case}.}
+  @ja-deftech["Parallel Particles" 並立助詞 へいりつじょし 并列助词]. See @secref{case}.}
 
  @item{@ja-deftech["Adverbial Particles" 副助詞 ふくじょし 副助词]: @ja-tech{particles} that indicate relationships
   between the @NP and the @ja-tech{predicate} to substitute or combine with @ja-tech{case particles}. Also

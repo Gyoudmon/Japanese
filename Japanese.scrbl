@@ -92,7 +92,8 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @include-section{literacy/pos.scrbl}
 @include-section{literacy/lexicon.scrbl}
 @include-section{literacy/category.scrbl}
-@;include-section{literacy/pragmatics.scrbl}
+@include-section{literacy/semantics.scrbl}
+@include-section{literacy/pragmatics.scrbl}
 @;include-section{literacy/phonetics.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -95,7 +95,10 @@
                "「"
                (cond [(or (eq? 'hiragana0 '-) (equal? 'hiragana0 "-")) kanji]
                      [else (ruby kanji hiragana)])
-               "」"))]))
+               "」"))]
+    [(_ (~alt (~optional (~seq #:style style) #:defaults ([style #''tt]))) ...
+        word)
+     #'(racketcommentfont (elem #:style style "「" word "」"))]))
 
 (define-syntax (ja-quote stx)
   (syntax-parse stx #:datum-literals []
@@ -277,7 +280,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-form
   (lambda contents
-    (apply racketmetafont (list "「" contents "」"))))
+    (racketmetafont "「" contents "」")))
 
 (define ja-tabular2
   (lambda [table-head table-rows [gap 1] [empty-cols (list "")]]
