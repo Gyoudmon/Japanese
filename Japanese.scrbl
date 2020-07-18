@@ -110,12 +110,6 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
             #:location (book-location #:publisher "懶鬼子英日語")
             #:date     "2018"
             #:is-book? #true)
- (bib-entry #:key      "GJP"
-            #:title    "図解日本語の原理"
-            #:author   (authors "王苡晴" "井上清美")
-            #:location (book-location #:publisher "懶鬼子英日語")
-            #:date     "2013"
-            #:is-book? #true)
  (bib-entry #:key      "CJL"
             #:title    @chinese{综合日语}
             #:author   (authors @chinese{彭广陆} @chinese{守屋三千代})

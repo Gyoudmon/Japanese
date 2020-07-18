@@ -50,7 +50,7 @@ different concepts, or use different terms for very similar or identical
 concepts. This issue is even majorer in the case category.
 
 As agglutinative language tends to have a bigger case system, there are
-10 primary cases marked by 10 case particles in the standard modern
+11 primary cases marked by 10 case particles in the standard modern
 Japanese.
 
 ### 1.1. Nominative | 主格しゅかく 「~が」
@@ -462,35 +462,76 @@ already adequate to the event or action`ex1.23a`.
       My sister and I quarrel (violently) all the time.
  `b` 猫ねこと`PTCL`犬いぬ、どっちが`NOM`好きすです`COP`.`POL`か`SFP`。    
                                                        
-      Cats or dogs, which one do you like better?      
+      Cats or dogs, which one do you like?             
 
-Like の, と can also be used as the parallel particle to combine
-substantives in which case the compound substantive does not introduce
+Like の, と can also be used as a parallel particle to combine
+substantives, in which case the compound substantive does not introduce
 new sentence component`ex1.24a`, whereas と-marked comitative functions
-as the complement`ex1.23b`. Nonetheless, such a subtle difference
-usually does not make sense.
+as the complement`ex1.23b` of the action. Nonetheless, such a subtle
+difference usually does not make sense.
 
-と as the parallel particle implies the exhaustive emueration. That is,
-all substantives in the same collection must be combined one by one
-explicitly`ex1.25a`. For non-exhaustive enumeration, the parallel
-particle や `「and」` and the adverbial particle など `「etc.」` are combined
-as is`ex1.25b`.
+と as a parallel particle implies the exhaustive emueration. That is, all
+substantives in the mentioned collection must be combined one by one
+explicitly`ex1.25a`. For non-exhaustive enumeration, alternatives are
+available, such as combining the parallel particle や `「and, or」` and the
+adverbial particle など `「etc.」ex1.25b`.
 
 `Example 1.25`                                                                           
  `a` 私わたしたちは`TOP`田中たなかさんと`PTCL`中村なかむらさんと`PTCL`花子はなこさんと`PTCL`由紀子ゆきこに`DAT`お礼れいを`ACC`お言いたいい。
                                                                                          
       We want to thank Mr. Tanaka, Mr. Nakamura, Mrs. Hanoko, and Mrs.                   
      Yukiko.                                                                             
- `b` 駅えきの`GEN`周辺しゅうへんは`TOP`居酒屋いざかやや喫茶店きっさてんや果物屋くだものやなどが`NOM`あります`POL`。                   
+ `b` 駅えきの`GEN`周辺しゅうへんは`TOP`居酒屋いざかやや`PTCL`喫茶店きっさてんや`PTCL`果物屋くだものやなど`PTCL`が`NOM`あります`POL`。 
                                                                                          
-      There are many bar, café, fruit store, and the like around the railway             
-     station                                                                             
+      There are bar, café, fruit store, and the like around the railway                  
+     station.                                                                            
       There are many shops around the railway station, such as bar, café and             
      fruit store.                                                                        
 
+Note that や and など combination is not a set collocation. That is, both
+of them can be used without the other as long as their literal meanings
+are appropreciate and not redundant.
+
+Another alternative is the parallel particle とか which sounds more
+colloquial than や. とか should mark all enumerated items including the
+last one`ex1.26`.
+
+`Example 1.26`                                                                              
+休やすみの`GEN`日ひは`TOP`テレビを`ACC`見るみとか`PTCL`、買かい物ものを`ACC`するとか`PTCL`、猫ねこと`COM`遊あそぶとか`PTCL`します`POL`。
+                                                                                            
+ On my days off, I watch TV, shop or play with cat.                                         
+
+As one can see, the enumerated items are not restricted to substantives,
+the stem-form verbs, adjectives, and quotations are also acceptable.
+
+For more uses of と, see \[missing\].
+
 ### 1.11. Comparative | 比較格ひかくかく 「~より」
 
-_comparative_
+The _comparative_ specifies the standard of comparison of inequality,
+and be marked by the case particle より`ex1.27`. Since the comparative can
+be considered as a special case of ablative, and より do have some
+overlapping uses with から, some grammer books may merge these two cases.
+
+`Example 1.27`                                   
+花子はなこが`NOM`太郎たろうより`CMP`その仕事しごとに`DAT`適任てきにんだ`COP`。
+                                                 
+ Hanako is more qualified for the job than Taro. 
+
+Both similative and superlative are unavailable in Japanese,
+nonetheless, these two semantics can be expressed easily with or without
+comparative`ex1.28`.
+
+`Example 1.28`                                                                        
+ `a` 彼女かのじょは`TOP`私わたしと`COM`同おなじくらい速はやく泳およげる。                                          
+                                                                                      
+      She can swim as fast as I (can). \[similative\]                                 
+ `b` 彼かれは`TOP`どの生徒よりせいとも`CMP`足があし速`NOM`いはや。                                           
+                                                                                      
+      He runs faster than any other students. \[superlative\]                         
+ `c` 彼かれは`TOP`彼女かのじょが`NOM`それまでに`DAT`出会であった中じゅうで`INSTR`一番いちばん厳きびしい先生せんせいだった`COP`.`PST`。
+                                                                                      
+      He was the strictest teacher she had ever met. \[superlative\]                  
 
 ## 2. Valence | 結合価けつごうか
 

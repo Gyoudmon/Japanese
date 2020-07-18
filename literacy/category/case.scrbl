@@ -58,7 +58,7 @@ nonetheless, it is still senseless to compare @ja-tech{case}s that share same na
 linguists with different backgrounds use same terms for different concepts, or use different terms for very
 similar or identical concepts. This issue is even majorer in the @ja-tech{case} category.
 
-As agglutinative language tends to have a bigger @ja-tech{case} system, there are 10 primary @ja-tech{case}s
+As agglutinative language tends to have a bigger @ja-tech{case} system, there are 11 primary @ja-tech{case}s
 marked by 10 @ja-tech{case particle}s in the standard modern Japanese.
 
 @handbook-action[#:tag "NOM:ga"]{@ja-title[#:abbr NOM Nominative 主格 しゅかく 主格] 「~が」}
@@ -285,22 +285,44 @@ event or action@ja-exref[com:to a].
 
 @ja-exemplify{com:to:and}
 
-Like の, と can also be used as the @ja-tech{parallel particle} to combine @ja-tech{substantive}s in which
+Like の, と can also be used as a @ja-tech{parallel particle} to combine @ja-tech{substantive}s, in which
 case the compound @ja-tech{substantive} does not introduce new @ja-tech{sentence} component@ja-exref[com:to:and a],
-whereas と-marked @ja-tech{comitative} functions as the @ja-tech{complement}@ja-exref[com:to b].
+whereas と-marked @ja-tech{comitative} functions as the @ja-tech{complement}@ja-exref[com:to b] of the action.
 Nonetheless, such a subtle difference usually does not make sense.
 
-と as the @ja-tech{parallel particle} implies the exhaustive emueration. That is, all @ja-tech{substantive}s
-in the same collection must be combined one by one explicitly@ja-exref[com:to:enum a]. For non-exhaustive
-enumeration, the @ja-tech{parallel particle} や @ja-word{and} and the @ja-tech{adverbial particle} など
-@ja-word{@etc} are combined as is@ja-exref[com:to:enum b].
+と as a @ja-tech{parallel particle} implies the exhaustive emueration. That is, all @ja-tech{substantive}s
+in the mentioned collection must be combined one by one explicitly@ja-exref[com:to:enum a]. For non-exhaustive
+enumeration, alternatives are available, such as combining the @ja-tech{parallel particle} や @ja-word{and, or}
+and the @ja-tech{adverbial particle} など @ja-word{@etc}@ja-exref[com:to:enum b].
 
 @ja-exemplify{com:to:enum}
 
+Note that や and など combination is not a set collocation. That is, both of them can be used without
+the other as long as their literal meanings are appropreciate and not redundant.
 
-@handbook-action[#:tag "COMP:yori"]{@ja-title[#:abbr COMP Comparative 比較格 ひかくかく 比较格] 「~より」}
+Another alternative is the @ja-tech{parallel particle} とか which sounds more colloquial than や. とか
+should mark all enumerated items including the last one@ja-exref[com:to:enum:toka].
 
-@deftech{comparative}
+@ja-exemplify{com:to:enum:toka}
+
+As one can see, the enumerated items are not restricted to @ja-tech{substantive}s, the stem-form
+@ja-tech{verb}s, @ja-tech{adjective}s, and @ja-tech{quotation}s are also acceptable.
+
+For more uses of と, see @secref{semantics/quotation.scrbl}.
+
+@handbook-action[#:tag "CMP:yori"]{@ja-title[#:abbr CMP Comparative 比較格 ひかくかく 比较格] 「~より」}
+
+The @deftech{comparative} specifies the standard of comparison of inequality, and be marked by the
+@ja-tech{case particle} より@ja-exref[cmp:yori]. Since the @ja-tech{comparative} can be considered
+as a special case of @ja-tech{ablative}, and より do have some overlapping uses with から, some grammer
+books may merge these two @ja-tech{case}s. 
+
+@ja-exemplify{cmp:yori}
+
+Both similative and superlative are unavailable in Japanese, nonetheless, these two semantics can be
+expressed easily with or without @ja-tech{comparative}@ja-exref{cmp:yori:similative+superlative}.
+
+@ja-exemplify{cmp:yori:similative+superlative}
 
 @handbook-scenario[#:tag "valence"]{@ja-title[Valence　結合価 けつごうか 配价]}
 
