@@ -263,14 +263,6 @@ especially when combined with の to form an adnominal modifier@ja-exref[gen:no:
 
 @deftech{instrumental}
 
-@handbook-action[#:tag "ABL:kara"]{@ja-title[#:abbr ABL Ablative 奪格 だっかく 夺格] 「~から」}
-
-@deftech{ablative}
-
-@handbook-action[#:tag "TERM:made"]{@ja-title[#:abbr TERM Terminative 到格 とうかく 到格] 「~まで」}
-
-@deftech{terminative}
-
 @handbook-action[#:tag "COM:to"]{@ja-title[#:abbr COM Comitative 共格 きょうかく 共格] 「~と」}
 
 The @deftech{comitative} encodes the relationship of accompaniment between two participants in an event,
@@ -310,17 +302,32 @@ As one can see, the enumerated items are not restricted to @ja-tech{substantive}
 
 For more uses of と, see @secref{semantics/quotation.scrbl}.
 
+@handbook-action[#:tag "ABL:kara"]{@ja-title[#:abbr ABL Ablative 奪格 だっかく 夺格] 「~から」}
+
+The @deftech{ablative} originally specifies the source of a motion @ja-tech{verb} and stands for the
+third class of the @ja-tech{spatial relation}, and typically be marked by the @ja-tech{case particle}
+から@handbook-footnote{より is an alternative to から when being used to mark the source of motion, now
+ modern Japanese tends to restrict より to the marker of @ja-tech{comparative}.}. The word @ja-tech{ablative}
+itself is derived from the Latin @ja-quote{ablatus, be carried away from}. From this semantics, the uses
+of @ja-tech{ablative} can be extended to specify the source of any @ja-tech{predicate} that appropreciated@ja-exref[abl:kara].
+
+@ja-exemplify{abl:kara}
+
+@handbook-action[#:tag "TERM:made"]{@ja-title[#:abbr TERM Terminative 到格 とうかく 到格] 「~まで」}
+
+@deftech{terminative}
+
 @handbook-action[#:tag "CMP:yori"]{@ja-title[#:abbr CMP Comparative 比較格 ひかくかく 比较格] 「~より」}
 
 The @deftech{comparative} specifies the standard of comparison of inequality, and be marked by the
 @ja-tech{case particle} より@ja-exref[cmp:yori]. Since the @ja-tech{comparative} can be considered
-as a special case of @ja-tech{ablative}, and より do have some overlapping uses with から, some grammer
-books may merge these two @ja-tech{case}s. 
+as a special case of @ja-tech{ablative}, and より does have some overlapping uses with から, they
+might be merged as @ja-tech{ablative} in some grammer books. 
 
 @ja-exemplify{cmp:yori}
 
-Both similative and superlative are unavailable in Japanese, nonetheless, these two semantics can be
-expressed easily with or without @ja-tech{comparative}@ja-exref{cmp:yori:similative+superlative}.
+Both similative and superlative are grammatically undefined in Japanese, nonetheless, they can be
+semantically expressed easily with or without @ja-tech{comparative}@ja-exref{cmp:yori:similative+superlative}.
 
 @ja-exemplify{cmp:yori:similative+superlative}
 
