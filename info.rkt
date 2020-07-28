@@ -10,7 +10,8 @@
 (define pkg-authors '("WarGrey Gyoudmon Ju"))
 (define test-omit-paths 'all)
 
-(define typesettings '(["Japanese.scrbl" lualatex #px#"realm/\\w+/\\w+[.]tex$"]))
+(define typesettings '(["Japanese.scrbl" lualatex #px#"realm/\\w+/\\w+[.]tex$"]
+                       ["English.scrbl" lualatex]))
 
 (define samples '(["literacy/pos.scrbl" 0]
 

@@ -22,10 +22,15 @@
 \newcommand{\exmprubyvc}[2]{\exmpruby{#1}{#2}{101}}
 \newcommand{\exmprubyvr}[2]{\exmpruby{#1}{#2}{100}}
 
-\newcommand{\Chinese}[2]{\jfontspec{#1} #2}
+\newcommand{\Font}[2]{\jfontspec{#1} #2}
 
 %%% Literacy Styles
 \renewcommand{\boxed}[1]{\ColorBox{\textsmaller{#1}}{AliceBlue}}
 
 \newcommand{\jaexbox}[1]{\PlainBox{#1}}
 \newcommand{\jatech}[1]{\color{Black}{#1}}
+
+% For typesetting IPA Phonetical Symbols
+\usepackage{tipa}
+\newcommand{\iparuby}[2]{\ruby[size=0.75,intergap=0.3]{#1}{#2}}
+

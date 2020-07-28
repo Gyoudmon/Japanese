@@ -262,7 +262,7 @@
                                                      [(not skana?) "exmprubyvl"]
                                                      [else "exmprubyvr"]))]))]))
          
-         (cond [(or (not r) (equal? r "") (equal? r "-")) b0]
+         (cond [(or (not r) (eq? r '-) (eq? r '||) (equal? r "") (equal? r "-")) b0]
                [(not latex?) (list b (if (and (string? b) (ja-hiragana? (string-ref b 0))) (subscript r) #|<= why interchanged =>|# (superscript r)) (or p null))]
                [else (let ([br (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s) (list b r))])
                        (if (not p) br (list br p)))]))))))
@@ -274,7 +274,17 @@
             (λ [get set!]
               (chinese #:font font #:latex? (handbook-latex-renderer? get)
                        contents)))]
-          [(and latex?) (make-multiarg-element "Chinese" (list font contents))]
+          [(and latex?) (make-multiarg-element "Font" (list font contents))]
+          [else contents])))
+
+(define IPA
+  (lambda [#:latex? [latex? 'auto] . contents]
+    (cond [(symbol? latex?)
+           (make-traverse-element
+            (λ [get set!]
+              (IPA #:latex? (handbook-latex-renderer? get)
+                   contents)))]
+          [(and latex?) (make-element "textipa" contents)]
           [else contents])))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
