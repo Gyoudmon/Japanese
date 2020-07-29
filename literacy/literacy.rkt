@@ -287,6 +287,17 @@
           [(and latex?) (make-element "textipa" contents)]
           [else contents])))
 
+(define tone
+  (lambda [#:latex? [latex? 'auto] #:tone [latex-tone "tone"] pitch]
+    (define pitch-seqs (~a pitch))
+    (cond [(symbol? latex?)
+           (make-traverse-element
+            (λ [get set!]
+              (tone #:latex? (handbook-latex-renderer? get) #:tone latex-tone
+                    pitch-seqs)))]
+          [(and latex?) (make-element latex-tone pitch-seqs)]
+          [else (racketerror (format "\\~a{~a}" latex-tone pitch-seqs))])))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-form
   (lambda contents

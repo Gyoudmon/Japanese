@@ -63,7 +63,7 @@ briefly listing some common components of a @ja-tech{clause}.
   as well as the @ja-tech{predicate} or entire @ja-tech{sentence} to make them more detailed by expressing
   place, time, circumstance, manner, cause, degree, @etc}
 
- @item{@ja-deftech[Independent 独立語 どくりつご 独立语]@handbook-footnote{What is the offical name of this term in English?}:
+ @item{@ja-deftech[Independent 独立語 どくりつご 独立语]@handbook-footnote{What is the official name of this term in English?}:
   An optional component of a @ja-tech{sentence} that absolutely independent of other components yet contributing
   to expression, typically containing address, parenthesis, @ja-tech{interjection}, @ja-tech{mimetics}.}
  ]

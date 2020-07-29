@@ -10,7 +10,9 @@
 @handbook-texbook-main[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@include-section{literacy/gwen/single-vowels.scrbl}
+@include-section{literacy/gwen/vowels.scrbl}
+@include-section{literacy/gwen/consonants.scrbl}
+@include-section{literacy/gwen/miracle-cats.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #false]
