@@ -5,9 +5,9 @@
 (require "../ipa.rkt")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define /t/ (en-sym "/t/"))
-(define /d/ (en-sym "/d/"))
+(define /t/ (ipa-sym "/t/"))
+(define /d/ (ipa-sym "/d/"))
 
-(define /s/ (en-sym "/s/"))
+(define /s/ (ipa-sym "/s/"))
 
-(define /l/ (en-sym "/l/"))
+(define /l/ (ipa-sym "/l/"))

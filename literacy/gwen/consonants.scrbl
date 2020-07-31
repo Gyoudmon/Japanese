@@ -35,6 +35,4 @@ going through the middle of the mouth, and has to pass through the sides of tong
  @item{Sometimes the @tech[@/l/] does not contribute to the pronuciation at all.}
 ]
 
-@tone{15253545}
-
 @handbook-reference[]
