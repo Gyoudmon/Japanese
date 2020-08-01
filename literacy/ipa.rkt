@@ -13,8 +13,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-group-style (make-style #false (list (make-color-property "Crimson") (make-background-color-property "MistyRose"))))
+(define ipa-link-style (make-style "textbottomtiebar" (style-properties ipa-group-style)))
 (define ipa-doublebar-style (make-style "ipadoublebar" (list (make-color-property "DeepSkyBlue"))))
 (define ipa-weak-style (make-style #false (list (make-color-property "DarkKhaki"))))
+
+(define ipa-link-element (elem #:style ipa-link-style ""))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-ruby
@@ -32,22 +35,30 @@
      (λ [get set!]
        (define latex? (handbook-latex-renderer? get))
 
-       (for/list ([b0 (in-list bases)]
-                  [i (in-naturals 0)])
-         (define-values (b terminate?) (ipa-word b0))
-         (define r (and (< i rsize) (list-ref rubies i)))
-         (define s (if (< i ssize) (list-ref styles i) slast))
-         (define-values (xheight? small-asc?) (ipa-word-xheight? (content->string b)))
-         (define intergap (if (not xheight?) (if (not small-asc?) 0.2 0.3) 0.5))
+       (let make-sentence ([bases bases]
+                           [i 0]
+                           [ecnetnes null]
+                           [$? #false])
+         (cond [(null? bases) (reverse ecnetnes)]
+               [else (let-values ([(b $?) (ipa-word (car bases) $?)])
+                       (define r (and (< i rsize) (list-ref rubies i)))
+                       (define s (if (< i ssize) (list-ref styles i) slast))
+                       (define-values (xheight? small-asc?) (ipa-word-xheight? (content->string b)))
+                       (define intergap (if (not xheight?) (if (not small-asc?) 0.2 0.3) 0.5))
+                       (define continue? (eq? $? #\/))
+                       
+                       (define token-element
+                         (cond [(or (not r) (eq? r '-) (eq? r '||) (equal? r "") (equal? r "-")) b]
+                               [(not latex?) (list b (superscript (ipa-symbol r)))]
+                               [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s)
+                                                            (list b (ipa-symbol r) (number->string intergap)))]))
 
-         (define token-element
-           (cond [(or (not r) (eq? r '-) (eq? r '||) (equal? r "") (equal? r "-")) b]
-                 [(not latex?) (list b (superscript (ipa-symbol r)))]
-                 [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s)
-                                              (list b (ipa-symbol r) (number->string intergap)))]))
-         
-         (cond [(>= i bimax) token-element]
-               [else (list token-element " ")]))))))
+                       (make-sentence (cdr bases)
+                                      (add1 i)
+                                      (cond [(null? (cdr bases)) (cons token-element ecnetnes)]
+                                            [(not continue?) (list* " " token-element ecnetnes)]
+                                            [else (list* " " ipa-link-element " " token-element ecnetnes)])
+                                      continue?))]))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-phonetics
@@ -72,17 +83,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-word
-  (lambda [word]
-    (ipa-word-tokenize (~a word))))
+  (lambda [word [$? #false]]
+    (ipa-word-tokenize (~a word) $?)))
 
 (define ipa-sym
   (lambda [symbols]
-    (define-values (s ?) (ipa-symbol-tokenize (~a symbols)))
+    (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
     (IPA s)))
 
 (define ipa-/sym/
   (lambda [symbols]
-    (define-values (s ?) (ipa-symbol-tokenize (~a symbols)))
+    (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
     (IPA (list "/" s "/"))))
 
 (define ipa-ruby-content
@@ -121,48 +132,52 @@
                   [else (tokenize (cdr chars) (cons self nekot) snekot)]))))))
 
 (define ipa-word-tokenize
-  (lambda [word]
+  (lambda [word [continue? #false]]
     (let tokenize ([chars (string->list word)]
                    [nekot null]
                    [snekot null]
-                   [terminated? #true])
-      (if (null? chars)
-          (let ([last-token (list->string (reverse nekot))])
-            (values (cond [(null? snekot) last-token]
-                          [(string=? last-token "") (reverse snekot)]
-                          [else (reverse (cons last-token snekot))])
-                    terminated?))
-          (let ([self (car chars)])
-            (case self
-              [(#\^) (tokenize (cdr chars) (cons #\' nekot) snekot terminated?)]
-              [(#\=) (let-values ([(token++ rest ?) (ipa-chars-token++ chars ipa-puncture-element nekot snekot)]) (tokenize rest null token++ ?))]
-              [(#\/) (let-values ([(token++ rest ?) (ipa-chars-token++ chars #\/ ipa-phonetics nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ ?))]
-              [(#\+) (let-values ([(token++ rest ?) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++ ?))]
-              [(#\_) (let-values ([(token++ rest ?) (ipa-chars-token++ chars #\_ ipa-weak-element nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ ?))]
-              [else (tokenize (cdr chars) (cons self nekot) snekot terminated?)]))))))
+                   [unterminated? #false])
+      (cond [(null? chars)
+             (let ([last-token (list->string (reverse nekot))])
+               (values (cond [(null? snekot) last-token]
+                             [(string=? last-token "") (reverse snekot)]
+                             [else (reverse (cons last-token snekot))])
+                       unterminated?))]
+            [(or (pair? nekot) (pair? snekot) (not continue?))
+             (let ([self (car chars)])
+               (case self
+                 [(#\^) (tokenize (cdr chars) (cons #\' nekot) snekot unterminated?)]
+                 [(#\=) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-puncture-element nekot snekot)]) (tokenize rest null token++ $?))]
+                 [(#\/) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\/ ipa-phonetics nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
+                 [(#\+) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++ $?))]
+                 [(#\_) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\_ ipa-weak-element nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
+                 [else (tokenize (cdr chars) (cons self nekot) snekot unterminated?)]))]
+            [else ; only checked `continue?` for the first time
+             (let-values ([(token++ rest $?) (ipa-chars-token++ (cons #\/ chars) #\/ ipa-phonetics nekot snekot ipa-word-tokenize)])
+               (tokenize rest null token++ $?))]))))
 
 (define ipa-chars-take
   (lambda [chars $ [make-element values] [subtake #false]]
     (define term-idx (index-of (cdr chars) $ eq?))
     (define ipa-size (or term-idx (sub1 (length chars))))
-    (cond [(< ipa-size 1) (values #false null)]
+    (cond [(< ipa-size 1) (values #false null #false)]
           [else (let* ([word (list->string (take (cdr chars) ipa-size))])
                   (values (make-element (if (not subtake) word (let-values ([(e ?) (subtake word)]) e)))
                           (take-right chars (max (- (length chars) ipa-size 2) 0))
-                          (and term-idx #true)))])))
+                          (if term-idx #false $)))])))
 
 (define ipa-chars-token++
   (case-lambda
     [(chars make-element nekot snekot)
-     (define-values (maybe-token rest terminated?)
+     (define-values (maybe-token rest $?)
        (cond [(null? (cdr chars)) (values #false null #false)]
-             [else (values (make-element (string (cadr chars))) (cddr chars) #true)]))
-     (values (ipa-chars-token++ maybe-token nekot snekot) rest terminated?)]
+             [else (values (make-element (string (cadr chars))) (cddr chars) #false)]))
+     (values (ipa-chars-token++ maybe-token nekot snekot) rest $?)]
     [(chars $ make-element nekot snekot)
      (ipa-chars-token++ chars $ make-element nekot snekot #false)]
     [(chars $ make-element nekot snekot subtake)
-     (define-values (maybe-token rest terminated?) (ipa-chars-take chars $ make-element subtake))
-     (values (ipa-chars-token++ maybe-token nekot snekot) rest terminated?)]
+     (define-values (maybe-token rest $?) (ipa-chars-take chars $ make-element subtake))
+     (values (ipa-chars-token++ maybe-token nekot snekot) rest $?)]
     [(maybe-token nekot snekot)
      (define prev-tokens
        (let ([prev-token (list->string (reverse nekot))])
