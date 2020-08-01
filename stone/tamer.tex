@@ -30,8 +30,9 @@
 \newcommand{\jaexbox}[1]{\PlainBox{#1}}
 \newcommand{\jatech}[1]{\color{Black}{#1}}
 
-% For typesetting IPA Phonetical Symbols
+% For typesetting IPA Phonetic Symbols
+\usepackage[tone,extra]{tipa}
 \usepackage{tipx}
-\usepackage{tone}
 
 \newcommand{\iparuby}[3]{\ruby[size=0.75,intergap=#3]{#1}{#2}}
+\newcommand{\ipadoublebar}[1]{\ipabar{#1}{0.618ex}{1.2}{}{}}
