@@ -3,6 +3,8 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Mimetics 模倣詞 もほうし 象声词]}
+@handbook-story{@ja-title[#:ja-term? #false "Moras and Syllables" "モラと|音節" "-|おんせつ" 莫拉和音节]}
+
+.
 
 @handbook-reference[]

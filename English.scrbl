@@ -12,7 +12,8 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @include-section{literacy/gwen/vowels.scrbl}
 @include-section{literacy/gwen/consonants.scrbl}
-@include-section{literacy/gwen/miracle-cats.scrbl}
+
+@include-section{literacy/gwen/materials.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-appendix[#:index? #false]

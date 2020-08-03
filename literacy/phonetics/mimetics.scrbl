@@ -1,8 +1,10 @@
 #lang scribble/book
 
-@require{literacy.rkt}
+@require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:index? #true]{@ja-title[Lexicon 語彙 ごい 词汇]}
+@handbook-story{@ja-title[Mimetics 模倣詞 もほうし 象声词]}
+
+.
 
 @handbook-reference[]

@@ -1,8 +1,10 @@
 #lang scribble/book
 
-@require{literacy.rkt}
+@require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:index? #true]{@ja-title[Lexicon 語彙 ごい 词汇]}
+@handbook-story{@ja-title["Variation" 音変異 おんへんい 语流音变]}
+
+.
 
 @handbook-reference[]

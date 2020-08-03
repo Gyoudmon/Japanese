@@ -87,9 +87,9 @@
     (ipa-word-tokenize (~a word) $?)))
 
 (define ipa-sym
-  (lambda [symbols]
+  (lambda [symbols [latex? 'auto]]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
-    (IPA s)))
+    (IPA s #:latex? latex?)))
 
 (define ipa-/sym/
   (lambda [symbols]
