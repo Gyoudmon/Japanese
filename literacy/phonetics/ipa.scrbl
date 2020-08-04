@@ -1,7 +1,6 @@
 #lang scribble/book
 
 @require{../literacy.rkt}
-@require{../ipa.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{@ja-title["International Phonetic Alphabet" 国際音標文字 こくさいおんぴょうもじ 国际音标]}
@@ -18,6 +17,8 @@ The @ja-tech{IPA} provides notations for both @ja-tech{phone} and @ja-tech{phone
 @deftech{Vowel}s are produced with an open vocal tract, which means the airflow will not be disturbed
 from vocal cords to lips, and vary in quality, loudness, and length depend on the shape or positions
 of the tongue, teeth and lips.
+
+@handbook-latex-command0{vowels}
 
 @handbook-scenario{@ja-title[Consonants 子音 しいん 辅音]}
 
