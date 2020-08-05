@@ -4,12 +4,17 @@
 @require{../ipa.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:style noncontent-style]{Appendix}
+@(define gapsize (hspace 2))
 
-@handbook-scenario[#:style noncontent-style]{The Miracle Cat}
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@handbook-story[#:style noncontent-style]{English Phonetics}
+
+@handbook-scenario[#:style noncontent-style]{Intonation Materials}
+
+@handbook-action[#:style noncontent-style]{The Miracle Cat}
 
 @tabular[
- #:sep (hspace 2)
+ #:sep gapsize
 
  (list (list @ipa-ruby['(Wha=t do  you call yourself?)
                        '(w6t   du: ju: kO:l jO:^self)]
@@ -50,5 +55,25 @@
        (list @ipa-ruby['(_Bu=t that^s th/e +je/n/d of i/t.)
                        '(b@t   D&ae$ts Di:   end  *v It)]
              @tone{334455555544332345544332211}))]
+
+@handbook-action[#:style noncontent-style]{The Big Blue Whale}
+
+@tabular[
+ #:sep gapsize
+
+ (list (list @ipa-ruby['(The  open  ocean.)
+                       '(Di: ^*Up*n *UpS*n)]
+             @tone{333445534335544332211})
+
+       (list @ipa-ruby['(It covers more than half the surface o/f our/ planet.)
+                       '(It k2v*z  mO:  D*n  hA:f D*  ^s3:fIs *v  aU* ^pl&ae$nIt)]
+             @tone{22233443322334455443323444334555443333223443322334})
+
+       (list @ipa-ruby['(Yet|,| for the mos=t part|,| it^s a  watery  desert|,| empty of life.)
+                       '(jet    f*  D*  m*Ust pA:t    Its  * ^wO:t*ri ^dez*t   ^empti *v laIf)]
+             (list @tone{5555} gapsize
+                   @tone{333344554433432} gapsize
+                   @tone{333322344332212344332211} gapsize
+                   @tone{5554433223455544332211})))]
 
 @handbook-reference[]

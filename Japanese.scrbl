@@ -126,3 +126,5 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @include-section{literacy/terminology.scrbl}
 @include-section{literacy/abbreviation.scrbl}
+
+@include-section{literacy/phonetics/English.scrbl}

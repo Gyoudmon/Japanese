@@ -1,8 +1,5 @@
-\newcommand{\vowels}[0]{
-    \begin{tikzpicture}
-        \node[circle,draw,minimum size=3cm,label=120:{\textipa{i:k@"nOmIks}}] at (0,0) {};
-        \node[circle,draw,minimum size=3cm,label=60:{\textipa{s2I"kOl@dZi}}] at (1,0) {};
-        \node (i) at (0.5,-1) {};
-        \node at (0.6,-2.5) {\textipa{bI"heIvj@r@l i:k@"nOmIks}} edge[->,thick, out=60,in=-60] (i);
-    \end{tikzpicture}
-}
+\usepackage{tikz}
+
+\newcommand{\ipanode}[4]{\path (#1,#2) node (#3) {#4}}
+\newcommand{\ipadot}[2][black]{\fill[color=#1] (node cs:name=#2) circle[radius=1pt]}
+\newcommand{\ipaedge}[2]{\draw (node cs:name=#1) -- (node cs:name=#2)}

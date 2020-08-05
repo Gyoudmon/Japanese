@@ -77,6 +77,13 @@
   (lambda [word]
     (elem #:style ipa-weak-style word)))
 
+(define ipa-named-element
+  (lambda [word]
+    (define tokens (string-split word "."))
+    (multiarg-element (car tokens)
+                      (map (λ [sym] (let-values ([(s $?) (ipa-symbol-tokenize sym)]) s))
+                           (cdr tokens)))))
+
 (define ipa-symbol
   (lambda [sym]
     (racketcommentfont (ipa-/sym/ sym))))
@@ -128,7 +135,7 @@
             (cond [(eq? self #\^) (tokenize (cdr chars) (cons #\" nekot) snekot)]
                   [(eq? self #\*) (tokenize (cdr chars) (cons #\@ nekot) snekot)]
                   [(eq? self #\.) (tokenize (cdr chars) (cons #\" (cons #\" nekot)) snekot)]
-                  [(eq? self #\&) (let-values ([(token++ rest _) (ipa-chars-token++ chars #\$ handbook-latex-command0 nekot snekot)]) (tokenize rest null token++))]
+                  [(eq? self #\&) (let-values ([(token++ rest _) (ipa-chars-token++ chars #\$ ipa-named-element nekot snekot)]) (tokenize rest null token++))]
                   [else (tokenize (cdr chars) (cons self nekot) snekot)]))))))
 
 (define ipa-word-tokenize
