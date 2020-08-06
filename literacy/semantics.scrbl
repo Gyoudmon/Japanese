@@ -2,7 +2,7 @@
 
 @require{literacy.rkt}
 
-@handbook-story{@ja-title[#:ja-term? #false "Text Construction" "テクストの|構造" "-|こうぞう" 语篇结构]}
+@handbook-story[#:index? #true]{@ja-title[#:ja-term? #false "Text Construction" "テクストの|構造" "-|こうぞう" 语篇结构]}
 
 @include-section{semantics/coherence.scrbl}
 @include-section{semantics/information.scrbl}

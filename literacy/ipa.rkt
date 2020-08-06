@@ -16,16 +16,19 @@
 (define ipa-link-style (make-style "textbottomtiebar" (style-properties ipa-group-style)))
 (define ipa-doublebar-style (make-style "ipadoublebar" (list (make-color-property "DeepSkyBlue"))))
 (define ipa-weak-style (make-style #false (list (make-color-property "DarkKhaki"))))
+(define ipa-tone-style (make-style #false (list (make-color-property "Aquamarine"))))
 
 (define ipa-link-element (elem #:style ipa-link-style ""))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-ruby
-  (lambda [base ruy #:options [options #false] #:style [styles null]]
+  (lambda [base ruy [pitch null] #:options [options #false] #:style [styles null]]
     (define bases (ipa-ruby-content base))
     (define bimax (sub1 (length bases)))
     (define rubies (ipa-ruby-content ruy))
+    (define pitches (ipa-ruby-content pitch))
     (define rsize (length rubies))
+    (define psize (length pitches))
     (define-values (ssize slast)
       (cond [(null? styles) (values 0 "iparuby")]
             [(list? styles) (values (length styles) (last styles))]
@@ -42,22 +45,30 @@
          (cond [(null? bases) (reverse ecnetnes)]
                [else (let-values ([(b $?) (ipa-word (car bases) $?)])
                        (define r (and (< i rsize) (list-ref rubies i)))
+                       (define p (and (< i psize) (list-ref pitches i)))
                        (define s (if (< i ssize) (list-ref styles i) slast))
                        (define-values (xheight? small-asc?) (ipa-word-xheight? (content->string b)))
                        (define intergap (if (not xheight?) (if (not small-asc?) 0.2 0.3) 0.5))
                        (define continue? (eq? $? #\/))
-                       
+
                        (define token-element
                          (cond [(or (not r) (eq? r '-) (eq? r '||) (equal? r "") (equal? r "-")) b]
                                [(not latex?) (list b (superscript (ipa-symbol r)))]
                                [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s)
                                                             (list b (ipa-symbol r) (number->string intergap)))]))
 
+                       (define toned-element
+                         (cond [(or (not p) (not latex?)) token-element]
+                               [else (make-multiarg-element "ipaclap"
+                                                            (list (make-element ipa-tone-style
+                                                                                (tone #:latex? #true (~a p)))
+                                                                  token-element))]))
+
                        (make-sentence (cdr bases)
                                       (add1 i)
-                                      (cond [(null? (cdr bases)) (cons token-element ecnetnes)]
-                                            [(not continue?) (list* " " token-element ecnetnes)]
-                                            [else (list* " " ipa-link-element " " token-element ecnetnes)])
+                                      (cond [(null? (cdr bases)) (cons toned-element ecnetnes)]
+                                            [(not continue?) (list* " " toned-element ecnetnes)]
+                                            [else (list* " " ipa-link-element " " toned-element ecnetnes)])
                                       continue?))]))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

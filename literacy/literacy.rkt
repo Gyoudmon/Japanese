@@ -171,13 +171,13 @@
            (define example-row (ja-example->table-row (car examples)))
            
            (values sym:extag
-                   (nested #:style ja-example-style
-                           (tabular #:style 'block
-                                    #:column-properties '(left)
-                                    #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
-                                    (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
-                                              example-row)))))
-         ja-example-index-type)]
+                   (tabular #:style 'block
+                            #:column-properties '(left)
+                            #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
+                            (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
+                                    example-row))))
+         ja-example-index-type
+         ja-example-style)]
        [else
         (make-tamer-indexed-traverse-block
          (λ [type chapter-index current-index]
@@ -195,13 +195,13 @@
                                           (tabular #:style 'block example-row)))))))
            
            (values sym:extag
-                   (nested #:style ja-example-style
-                           (tabular #:style 'block
-                                    #:column-properties '(left)
-                                    #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
-                                    (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
-                                            example-rows)))))
-         ja-example-index-type)])]))
+                   (tabular #:style 'block
+                            #:column-properties '(left)
+                            #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
+                            (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
+                                    example-rows))))
+         ja-example-index-type
+         ja-example-style)])]))
 
 (define ja-example-ref
   (lambda [#:elem [ex-element subscript] extag subtag]

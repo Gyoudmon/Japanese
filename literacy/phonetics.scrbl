@@ -2,7 +2,7 @@
 
 @require{literacy.rkt}
 
-@handbook-story{@ja-title[Phonetics 音声学 おんせいがく 语音学]}
+@handbook-story[#:index? #true]{@ja-title[Phonetics 音声学 おんせいがく 语音学]}
 
 There were voices, then languages follow. Languages are nothing but voices produced by human beings.
 The @ja-deftech["speech sound" 音声 おんせい 语音] is a sound carrier produced by vocal organs to transfer
@@ -13,7 +13,7 @@ meanings are usually only shared by a particular group of people@handbook-footno
 
 Physiologically speaking, human beings have no specialized vocal organs, @ja-tech{speech sound} are
 actually produced by parts of respiratory organ and digestive organ. When we are not speaking, the
-air expelled from lungs will not be blocked, and that is a normal breathing; When we are speaking,
+air expelled from lungs will not be blocked, and that is the normal breathing; When we are speaking,
 the two vocal cords at throat will close then repeatedly open and close forced by breath like doors.
 Raw voices accompany the vibrating of vocal cords, then are articulated inside the month, and
 eventually be turned into @ja-tech{speech sound}s.
