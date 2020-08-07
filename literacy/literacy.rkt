@@ -166,6 +166,7 @@
         (ja-exemplify sym:extag (list (realm-example (list (ja-input sym:extag)) null null)))]
        [(1)
         (make-tamer-indexed-traverse-block
+         #:latex-anchor 'example
          (λ [type chapter-index current-index]
            (define example (format "Example ~a.~a" chapter-index current-index))
            (define example-row (ja-example->table-row (car examples)))
@@ -180,6 +181,7 @@
          ja-example-style)]
        [else
         (make-tamer-indexed-traverse-block
+         #:latex-anchor 'example
          (λ [type chapter-index current-index]
            (define example (format "Example ~a.~a" chapter-index current-index))
            
@@ -198,14 +200,16 @@
                    (tabular #:style 'block
                             #:column-properties '(left)
                             #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
-                            (append (list (list (elemtag (symbol->string sym:extag) (envvar example))))
+                            (append (list (list (list (texbook-phantomsection)
+                                                      (elemtag (symbol->string sym:extag)
+                                                               (envvar example)))))
                                     example-rows))))
          ja-example-index-type
          ja-example-style)])]))
 
 (define ja-example-ref
   (lambda [#:elem [ex-element subscript] extag subtag]
-    (make-tamer-indexed-elemref
+    (make-tamer-indexed-block-ref
      (λ [type chapter-index maybe-index]
        (if (not maybe-index)
            (racketerror (ex-element (~a type chapter-index #\. '? subtag)))
@@ -214,7 +218,7 @@
 
 (define ja-example-ref*
   (lambda [#:elem [ex-element subscript] extag subtag0 subtagn]
-    (make-tamer-indexed-elemref
+    (make-tamer-indexed-block-ref
      (λ [type chapter-index maybe-index]
        (if (not maybe-index)
            (racketerror (ex-element (~a type chapter-index #\. '? subtag0 #\- subtagn)))

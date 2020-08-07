@@ -5,6 +5,11 @@
 %% NOTE: Scribble does not number sections whose depth is larger than 3
 \setcounter{tocdepth}{4} % it seems that this line is redundant
 
+%% By default, hyperref drops positions of tags and jumps to the containing section
+%%  or where the nearest `refstepcounter{...}` put.
+%% All examples are anchored with the counter "example" though latex counter itself is useless.
+\newcounter{example}
+
 %%% Ruby Styles
 \usepackage{luatexja-fontspec}
 \usepackage{luatexja-ruby}
