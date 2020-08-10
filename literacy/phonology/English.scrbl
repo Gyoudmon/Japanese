@@ -7,8 +7,35 @@
 @(define gap (hspace 1))
 @(define gap2 (hspace 2))
 
+@(define en-sentence
+   (lambda [bases symbols]
+     @nested[#:style tamer-boxed-style]{@ipa-ruby[bases symbols].}))
+
+@(define en-words
+   (lambda [bases symbols [cols 4]]
+     (define bsize (length bases))
+     (define ssize (length symbols))
+     
+     @nested[#:style tamer-boxed-style
+             (tabular #:sep (hspace 4)
+                      #:column-properties (make-list cols 'center)
+                      (let tabulize ([ws bases]
+                                               [ss (cond [(< ssize bsize) (append symbols (make-list (- bsize ssize) '-))]
+                                                         [(> ssize bsize) (take symbols bsize)]
+                                                         [else symbols])]
+                                               [sowr null])
+                        (cond [(< (length ws) cols)
+                               (reverse (cons (append (map ipa-ruby ws ss)
+                                                      (make-list (- cols (length ws)) ""))
+                                              sowr))]
+                              [else (let-values ([(wrow wrest) (split-at ws cols)]
+                                                 [(srow srest) (split-at ss cols)])
+                                                (tabulize wrest srest
+                                                          (cons (map ipa-ruby wrow srow)
+                                                                sowr)))])))]))
+
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-root-story{British English Phonology}
+@handbook-root-story{(British) English Phonology}
 
 @handbook-scenario{Prosody}
 
@@ -22,23 +49,75 @@ other syllables are considered unstressed@handbook-footnote{Here only described 
 
 In the @ja-tech{IPA} transcriptions, the primary stress and secondary stress are denoted with
 @ipa-phonetics{@ipa-sym{^}} and @ipa-phonetics{@ipa-sym{.}}@handbook-footnote{Tranditionally,
- English words may be acuted and graved for stresses: @emph{pronùnciátion}.}, respectively,
-like in @ipa-phonetics{@ipa-/sym/{.6p*^tju:n*ti}}.
+ English words may be acuted and graved for stresses: @emph{pronùnciátion}.} before the target
+syllables, respectively, like in @ipa-phonetics{@ipa-/sym/{.6p*^tju:n*ti}}.
 
 The positions of stressed syllables of English words are generally unpredictable, nonetheless, some
 cheatsheets can be made for heuristic before looking up dictionaries.
 
-@handbook-event{disyllables}
+@handbook-event{Disyllables}
 
-@handbook-event{polysyllables}
+@itemlist[
+ @item{A @ja-tech{noun} or a @ja-tech{adjective} tends to stress on the first syllable.
 
-@handbook-event{compound words}
+  @en-sentence['(The artist^s most famous  picture shows some women and children in a lovely  forest with a  purple mountain behind)
+               '(-   ^A:tIsts -   ^feIm*s  ^pIktS* -     -   ^wImIn -  ^tSIldr*n -  - ^l2vli ^f6rIst -    - ^p*:p*l ^maUntIn -)]}
+
+ @item{A @ja-tech{verb} tends to stress on the second syllable, or on the one identified with its stem.
+
+  @en-words['(contrast    export   present  rebel  remove dislike   rebuild recycle)
+            '(k*n^trA:st Ik^spO:t prI^zent rI^bel rI^mu:v dis^laIk ri:^bIld ri:^saIk6l)
+            4]
+
+  Note that these two principles give an hint of how to speak a word if it can serve as
+  both a @ja-tech{noun} and a @ja-tech{verb}, and also note that the pronunciations may
+  be slightly different.
+  
+  @en-words['(record  "" record   contrast  "" contrast   export  "" export  present "" present  rebel "" rebel)
+            '(^rekO:d -  rI^kO:d ^k6ntra:st - k*n^trA:st ^ekspO:t - Ik^spO:t ^prez*nt - prI^zent ^reb*l - rI^bel)
+            6]}
+                                                                   
+ @item{Deriving a disyllabic word ususlly does not change the position of its stressed syllable.
+
+  @en-words['(happy    ⇒  unhappy   depart   ⇒ departure)
+            '(^h&ae$pi - 2n^h&ae$pi dI^pA:t  -  dI^pA:tS*)
+            6]}
+
+ @item{Irregularities:
+
+  @itemlist[
+ @item{@ja-tech{Nouns} and @ja-tech{adjectives} that stressing on the second syllable:
+    @litchar{asleep}, @litchar{mistake}, @litchar{machine}, @litchar{alone}, @etc}
+
+ @item{Words that serving as both @ja-tech{nouns} and @ja-tech{verbs} consistently stress
+    on the first syllable despite the @ja-tech[#:key "PoS"]{parts of speech}: @litchar{promise},
+    @litchar{answer}, @litchar{travel}, @litchar{visit}, @litchar{picture}, @etc}]}
+ ]
+
+@handbook-event{Polysyllable}
+
+@itemlist[
+ @item{Irregularities:
+
+  @itemlist[
+ @item{@litchar{-y}-suffiexed polysyllabic words tend to stress on the last third syllable:
+    @en-words['(public  ⇒ publicity  photograph   ⇒ photography)
+              '(^p2blIc - p2b^lIcIti ^f*Ut*grA:f  -  f*^t6gr*fi)
+              6]}]
+  }
+ ]
+
+@handbook-event{Compound Words}
+
+@en-words['(airport lipstick  newspaper  Thanksgiving   driving  licence  unforgettable)
+          '(^e*pO:t ^lIpstIk ^nju:zpeIp* T&ae$NksgIvIN ^draIvIN ^laIs*ns 2nf*^get*bl)
+          8]
 
 @handbook-action{Prosodic Stress}
 
 .
 
-@handbook-scenario{Intonation Materials}
+@handbook-scenario{Materials for Practice}
 
 @handbook-action{The Miracle Cat}
 
