@@ -4,7 +4,7 @@
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-title/pkg-desc[]
-@texbook-front[]
+@texbook-frontmatter[]
 
 @; The preface will always be displayed after the table of contents if it is `include-section`ed.
 @handbook-preface-section{Preface}
@@ -87,7 +87,7 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 
 @handbook-smart-table[]
 
-@texbook-main[]
+@texbook-mainmatter[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @include-section{literacy/pos.scrbl}
@@ -97,12 +97,17 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @include-section{literacy/pragmatics.scrbl}
 @include-section{literacy/phonology.scrbl}
 
-@texbook-appendix[]
+@texbook-appendix{Appendices}
 @include-section{literacy/phonology/English.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@; TODO: fixed the headers of unnumbered sections
-@handbook-appendix[#:backmatter? #true #:index-section? #false
+@texbook-backmatter[]
+
+@include-section{literacy/terminology.scrbl}
+@include-section{literacy/abbreviation.scrbl}
+
+@; `texbook-back` will unnumber following sections without affecting the header
+@handbook-appendix[#:index-section? #true #:numbered? #true
  (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
             #:author   (editor "Yoko Hasegawa")
@@ -127,7 +132,3 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
             #:location @chinese[(book-location #:publisher "高等教育出版社")]
             #:date     "2006"
             #:is-book? #true)]
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@include-section{literacy/terminology.scrbl}
-@include-section{literacy/abbreviation.scrbl}
