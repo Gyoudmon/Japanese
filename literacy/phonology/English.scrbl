@@ -8,11 +8,39 @@
 @(define gap2 (hspace 2))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:style noncontent-style]{English Phonetics}
+@handbook-root-story{British English Phonology}
 
-@handbook-scenario[#:style noncontent-style]{Intonation Materials}
+@handbook-scenario{Prosody}
 
-@handbook-action[#:style noncontent-style]{The Miracle Cat}
+@handbook-action{Lexical Stress}
+
+English employs the @ja-tech{stress accent} system to cue its prominent syllable in a word.
+A word contains one or more syllables, among those there always is a primary stress; for some words,
+especially for ones that conntain multiple syllables, a secondary stress might be identified; the
+other syllables are considered unstressed@handbook-footnote{Here only described the phonemic stress
+ despite the phonetic tertiary stress along with treating the unstressed as the quaternary one.}.
+
+In the @ja-tech{IPA} transcriptions, the primary stress and secondary stress are denoted with
+@ipa-phonetics{@ipa-sym{^}} and @ipa-phonetics{@ipa-sym{.}}@handbook-footnote{Tranditionally,
+ English words may be acuted and graved for stresses: @emph{pronùnciátion}.}, respectively,
+like in @ipa-phonetics{@ipa-/sym/{.6p*^tju:n*ti}}.
+
+The positions of stressed syllables of English words are generally unpredictable, nonetheless, some
+cheatsheets can be made for heuristic before looking up dictionaries.
+
+@handbook-event{disyllables}
+
+@handbook-event{polysyllables}
+
+@handbook-event{compound words}
+
+@handbook-action{Prosodic Stress}
+
+.
+
+@handbook-scenario{Intonation Materials}
+
+@handbook-action{The Miracle Cat}
 
 @tabular[
  #:sep gap2
@@ -57,7 +85,7 @@
                        '(b@t   D&ae$ts Di:   end  *v  It)
                        '(334   45555  543  355430   42 221)]))]
 
-@handbook-action[#:style noncontent-style]{The Blue Whale}
+@handbook-action{The Blue Whale}
 
 @tabular[
  #:sep gap

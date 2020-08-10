@@ -104,6 +104,11 @@
   (lambda [word [$? #false]]
     (ipa-word-tokenize (~a word) $?)))
 
+(define ipa-word*
+  (lambda [word]
+    (define-values (w $?) (ipa-word-tokenize (~a word) #false))
+    w))
+
 (define ipa-sym
   (lambda [symbols [latex? 'auto]]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))

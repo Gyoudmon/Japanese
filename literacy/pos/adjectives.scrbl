@@ -3,6 +3,6 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Adjectives 形容詞 けいようし 形容词]}
+@handbook-root-story{@ja-title[Adjectives 形容詞 けいようし 形容词]}
 
 @handbook-reference[]

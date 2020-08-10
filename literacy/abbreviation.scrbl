@@ -28,7 +28,7 @@
                         3))))))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:style noncontent-style]{Abbreviation}
+@handbook-story{Abbreviation}
 
 @centered{
  @ja-deftech-table[

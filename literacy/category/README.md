@@ -261,10 +261,10 @@ is reasonable to consider this phenomenon from the perspective of the
 case hierarchy introduced in Blake \[1:TCH\]. For short, dative is the
 last core case after nominative, accusative, and genitive, later on more
 cases are defined to make expressions more detailed.. The word dative
-itself is derived from the Latin ​_「`(case) of giving`」_​, which
-semantics can be phrased as `「give B to A」ex1.14a` or `「make (B) for
-A」ex1.14b`, where `「A」` is the indirect object, someone or something,
-should be marked by に.
+itself is derived from the Latin `「(case) of giving」`, which semantics
+can be phrased as `「give B to A」ex1.14a` or `「make (B) for A」ex1.14b`,
+where `「A」` is the indirect object, someone or something, should be
+marked by に.
 
 `Example 1.14`                                                                                   
  `a` 七夕たなばた、鵲かささぎが`NOM`牽牛けんぎゅうと織女おりめに`DAT`会うあ機会きかいを`ACC`与あたえます`POL`。                             
@@ -429,15 +429,7 @@ modifier`ex1.12c`.
 
 _instrumental_
 
-### 1.8. Ablative | 奪格だっかく 「~から」
-
-_ablative_
-
-### 1.9. Terminative | 到格とうかく 「~まで」
-
-_terminative_
-
-### 1.10. Comitative | 共格きょうかく 「~と」
+### 1.8. Comitative | 共格きょうかく 「~と」
 
 The _comitative_ encodes the relationship of accompaniment between two
 participants in an event, and be marked by the case particle と`ex1.23`.
@@ -506,29 +498,56 @@ the stem-form verbs, adjectives, and quotations are also acceptable.
 
 For more uses of と, see \[missing\].
 
+### 1.9. Ablative | 奪格だっかく 「~から」
+
+The _ablative_ originally specifies the source of a motion verb and
+stands for the third class of the spatial relation, and typically be
+marked by the case particle からより is an alternative to から when being used
+to mark the source of motion, now modern Japanese tends to restrict より
+to the marker of comparative.. The word ablative itself is derived from
+the Latin `「ablatus, be carried away from」`. From this semantics, the
+uses of ablative can be extended to specify the source of any predicate
+that appropreciated`ex1.27`.
+
+`Example 1.27`                                        
+ `a` これは`TOP`アメリカから`ABL`輸入ゆにゅうしました`POL`.`PST`。        
+                                                      
+      This is imported from the USA. \[spatial\]      
+ `b` 朝あさから`ABL`暑あついです`COP`.`POL`。                     
+                                                      
+      It has been hot since morning. \[temporal\]     
+ `c` 彼かれは`TOP`好奇心こうきしんから`ABL`煙草たばこを`ACC`吸いす始はじめた`COP`。
+                                                      
+      He began to smoke out of curiosity. \[cause\]   
+
+### 1.10. Terminative | 到格とうかく 「~まで」
+
+_terminative_
+
 ### 1.11. Comparative | 比較格ひかくかく 「~より」
 
 The _comparative_ specifies the standard of comparison of inequality,
-and be marked by the case particle より`ex1.27`. Since the comparative can
-be considered as a special case of ablative, and より do have some
-overlapping uses with から, some grammer books may merge these two cases.
+and be marked by the case particle より`ex1.28`. Since the comparative can
+be considered as a special case of ablative, and より does have some
+overlapping uses with から, they might be merged as ablative in some
+grammer books.
 
-`Example 1.27`                                   
+`Example 1.28`                                   
 花子はなこが`NOM`太郎たろうより`CMP`その仕事しごとに`DAT`適任てきにんだ`COP`。
                                                  
  Hanako is more qualified for the job than Taro. 
 
-Both similative and superlative are unavailable in Japanese,
-nonetheless, these two semantics can be expressed easily with or without
-comparative`ex1.28`.
+Both similative and superlative are grammatically undefined in Japanese,
+nonetheless, they can be semantically expressed easily with or without
+comparative`ex1.29`.
 
-`Example 1.28`                                                                        
+`Example 1.29`                                                                        
  `a` 彼女かのじょは`TOP`私わたしと`COM`同おなじくらい速はやく泳およげる。                                          
                                                                                       
       She can swim as fast as I (can). \[similative\]                                 
- `b` 彼かれは`TOP`どの生徒よりせいとも`CMP`足があし速`NOM`いはや。                                           
+ `b` 彼かれは`TOP`どの生徒せいとより`CMP`も足あしが`NOM`速はやい。                                           
                                                                                       
-      He runs faster than any other students. \[superlative\]                         
+      He runs faster than any other students. \[superlative via comparative\]         
  `c` 彼かれは`TOP`彼女かのじょが`NOM`それまでに`DAT`出会であった中じゅうで`INSTR`一番いちばん厳きびしい先生せんせいだった`COP`.`PST`。
                                                                                       
       He was the strictest teacher she had ever met. \[superlative\]                  

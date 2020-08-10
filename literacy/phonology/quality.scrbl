@@ -3,8 +3,6 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Mimetics 模倣詞 もほうし 象声词]}
-
-.
+@handbook-root-story{@ja-title[#:ja-term? #false "Phonation Quality" "音色|と|声質" "おんしょく|-|せいしつ" 音色与声质]}
 
 @handbook-reference[]

@@ -2,7 +2,7 @@
 
 @require{../literacy.rkt}
 
-@handbook-story{@ja-title[#:ja-term? (list #true #false #true) "Tense|and|Aspect" "時制|と|相" "じせい|-|そう" "时态|与|体"]}
+@handbook-root-story{@ja-title[#:ja-term? (list #true #false #true) "Tense|and|Aspect" "時制|と|相" "じせい|-|そう" "时态|与|体"]}
 
 A basic function of @ja-tech{predicate}s in natural language is to position events and situations in time with two ways:
 1): @deftech{tense}, the category of being past, present, or future by ordering one event or situation in time with respect

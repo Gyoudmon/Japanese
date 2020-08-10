@@ -5,7 +5,7 @@
 @require{literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:style noncontent-style]{Terminology}
+@handbook-story{Terminology}
 
 @centered{
  @(make-delayed-block

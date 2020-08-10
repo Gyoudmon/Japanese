@@ -4,7 +4,7 @@
 @require{../token.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
+@handbook-root-story{@ja-title[#:ja-term? #false "Postpositional Particles" 後置助詞 こうちじょし 后置助词]}
 
 By a strict definition, a particle is a function word that has two essential properties: 1) incapable
 of inflection; 2) has no specific lexical definition, and must be associated with another word or

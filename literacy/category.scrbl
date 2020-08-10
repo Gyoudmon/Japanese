@@ -2,7 +2,7 @@
 
 @require{literacy.rkt}
 
-@handbook-story[#:index? #true]{@ja-title[#:ja-term? #false "Grammatical Category" 文法範疇 ぶんぽうはんちゅう 语法范畴]}
+@handbook-part{@ja-title[#:ja-term? #false "Grammatical Category" 文法範疇 ぶんぽうはんちゅう 语法范畴]}
 
 A @ja-deftech[clause 節 せつ 分句]@handbook-footnote{Don't be confused with the 文節 which is
  the smallest unit of words that sounds natural in a @ja-tech{sentence}. A 文節 consists of

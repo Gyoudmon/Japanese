@@ -19,7 +19,7 @@ As a result, this book targets native English speakers and anyone who are intere
 Japanese. Yes, as might be expected, comparing with Chinese is also something interesting one would find.
 
 Microsoft Word is good but not the best one for writing rigorous books, one mentionable reason is that
-authors have to maintain references on their own. @handbook-latex-prefab-string{TeX} and friends are too
+authors have to maintain references on their own. @texbook-prefab-name{TeX} and friends are too
 cumbersome to work with directly. Racket Scribble just fits the case.
 
 @handbook-preface-subsection{Example Realm}
@@ -41,7 +41,7 @@ target edition, say @exec{env JAREALM=STEM raco wisemon typeset}, and @ja-tech{r
 sensitive.
 
 By convention, @ja-tech{realm}s are located in @filepath{stone/realm}. Within each @ja-tech{realm}s,
-@tt{.tex} suffixed plain text files, don't confused with the @handbook-latex-prefab-string{LaTeX}
+@tt{.tex} suffixed plain text files, don't confused with the @texbook-prefab-name{LaTeX}
 source files, are used to organize exmaples chapter by chapter. Examples are virtually have no
 namespace and therefore can be freely cross referenced in other chapters.
 
@@ -86,6 +86,7 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @ja-exemplify['| ex ms |]
 
 @handbook-smart-table[]
+
 @texbook-main[]
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -94,10 +95,14 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @include-section{literacy/category.scrbl}
 @include-section{literacy/semantics.scrbl}
 @include-section{literacy/pragmatics.scrbl}
-@include-section{literacy/phonetics.scrbl}
+@include-section{literacy/phonology.scrbl}
+
+@texbook-appendix[]
+@include-section{literacy/phonology/English.scrbl}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-appendix[#:index? #false
+@; TODO: fixed the headers of unnumbered sections
+@handbook-appendix[#:backmatter? #true #:index-section? #false
  (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
             #:author   (editor "Yoko Hasegawa")
@@ -126,5 +131,3 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @include-section{literacy/terminology.scrbl}
 @include-section{literacy/abbreviation.scrbl}
-
-@include-section{literacy/phonetics/English.scrbl}

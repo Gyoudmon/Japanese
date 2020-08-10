@@ -4,7 +4,7 @@
 @require{token.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story[#:index? #true]{@ja-title[#:abbr POS "Part of Speech" 品詞 ひんし 词类]}
+@handbook-part{@ja-title[#:abbr POS "Part of Speech" 品詞 ひんし 词类]}
 
 @deftech{Part of Speech} is the category of words that have similar grammatical properties. More precisely,
 Japanese words are categorized based on their meanings, grammatical functions and inflections. Given that

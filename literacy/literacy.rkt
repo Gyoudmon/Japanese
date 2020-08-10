@@ -156,7 +156,7 @@
 (define ja-exemplify
   (case-lambda
     [(id)
-     (let ([sym:extag (if (symbol? id) id (string->symbol (if (string? id) id (~a id))))])
+     (let ([sym:extag (tamer-indexed-block-id->symbol id)])
        (ja-exemplify sym:extag (exemplify sym:extag)))]
     [(sym:extag examples)
      (define excount (length examples))
@@ -168,14 +168,13 @@
         (make-tamer-indexed-traverse-block
          #:latex-anchor 'example
          (λ [type chapter-index current-index]
-           (define example (format "Example ~a.~a" chapter-index current-index))
            (define example-row (ja-example->table-row (car examples)))
            
            (values sym:extag
                    (tabular #:style 'block
                             #:column-properties '(left)
                             #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
-                            (append (list (list (elemtag (symbol->string sym:extag) (tt example))))
+                            (append (list (list (tamer-indexed-block-elemtag #:type type #:separator #false sym:extag "Example" chapter-index current-index)))
                                     example-row))))
          ja-example-index-type
          ja-example-style)]
@@ -183,8 +182,6 @@
         (make-tamer-indexed-traverse-block
          #:latex-anchor 'example
          (λ [type chapter-index current-index]
-           (define example (format "Example ~a.~a" chapter-index current-index))
-           
            (define example-rows
              (for/list ([example-row (in-list (map ja-example->table-row examples))]
                         [sub (in-naturals 0)])
@@ -193,16 +190,15 @@
                               #:style 'block
                               #:column-properties '(left center left)
                               (list (list ""
-                                          (elemtag (~a sym:extag subexample) (envvar subexample))
+                                          (tamer-elemtag #:type type (~a sym:extag subexample) (envvar subexample))
                                           (tabular #:style 'block example-row)))))))
            
            (values sym:extag
                    (tabular #:style 'block
                             #:column-properties '(left)
                             #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
-                            (append (list (list (list (texbook-phantomsection)
-                                                      (elemtag (symbol->string sym:extag)
-                                                               (envvar example)))))
+                            (append (list (list (list ($tex:phantomsection)
+                                                      (tamer-indexed-block-elemtag #:type type #:separator #false sym:extag "Example" chapter-index current-index))))
                                     example-rows))))
          ja-example-index-type
          ja-example-style)])]))
@@ -213,7 +209,7 @@
      (λ [type chapter-index maybe-index]
        (if (not maybe-index)
            (racketerror (ex-element (~a type chapter-index #\. '? subtag)))
-           (elemref (~a extag subtag) (racketresultfont (ex-element (~a type chapter-index #\. maybe-index subtag))))))
+           (tamer-elemref #:type type (~a extag subtag) (racketresultfont (ex-element (~a type chapter-index #\. maybe-index subtag))))))
      ja-example-index-type extag)))
 
 (define ja-example-ref*
@@ -222,9 +218,9 @@
      (λ [type chapter-index maybe-index]
        (if (not maybe-index)
            (racketerror (ex-element (~a type chapter-index #\. '? subtag0 #\- subtagn)))
-           (ex-element (elemref (~a extag subtag0) (racketresultfont (~a type chapter-index #\. maybe-index subtag0)))
+           (ex-element (tamer-elemref #:type type (~a extag subtag0) (racketresultfont (~a type chapter-index #\. maybe-index subtag0)))
                        "-"
-                       (elemref (~a extag subtagn) (racketresultfont (~a subtagn))))))
+                       (tamer-elemref #:type type (~a extag subtagn) (racketresultfont (~a subtagn))))))
      ja-example-index-type extag)))
 
 (define ja-example->table-row

@@ -20,7 +20,7 @@
    #:url "https://web.archive.org/web/20070929161614/http://www.latrobe.edu.au/linguistics/LaTrobePapersinLinguistics/Vol%2005/01Blake.pdf")
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Case 格 かく 格]}
+@handbook-root-story{@ja-title[Case 格 かく 格]}
 
 A @deftech{case} is any of the forms of a @ja-tech{noun}, @ja-tech{adjective}, or @ja-tech{pronoun}
 that express the semantic relation of a word to other words, especially to @ja-tech{verbs}, in a

@@ -3,7 +3,7 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Prosody 韻律 いんりつ 韵律]}
+@handbook-root-story{@ja-title[Prosody 韻律 いんりつ 韵律]}
 
 .
 

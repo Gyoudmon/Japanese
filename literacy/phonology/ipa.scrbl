@@ -65,7 +65,7 @@
                                                 (list vn1 vn2 vn3)))))))))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title["International Phonetic Alphabet" 国際音標文字 こくさいおんぴょうもじ 国际音标]}
+@handbook-root-story{@ja-title[#:key "IPA" "International Phonetic Alphabet" 国際音標文字 こくさいおんぴょうもじ 国际音标]}
 
 The @deftech[#:key "IPA"]{International Phonetic Alphabet(IPA)} is an alphabetic system of phonetic
 notation based primarily on the Latin alphabet. It was devised the International Phonetic Association
@@ -129,7 +129,7 @@ roundedness of lips and position of the tongue root.
   })
 }
 
-@Tamer-Figure-ref{ipa:vowels} is the classification of almost all vowels defined in the @ja-tech{IPA}.
+@Tamer-Figure-ref{ipa:vowels} is the classification of almost all phonetic vowels defined in the @ja-tech{IPA}.
 
 @handbook-scenario{@ja-title[Consonants 子音 しいん 辅音]}
 

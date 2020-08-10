@@ -3,6 +3,6 @@
 @require{../literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-story{@ja-title[Genre 体裁 ていさい 题材]}
+@handbook-root-story{@ja-title[Genre 体裁 ていさい 题材]}
 
 @handbook-reference[]
