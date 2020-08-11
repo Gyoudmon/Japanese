@@ -6,10 +6,13 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @(define gap (hspace 1))
 @(define gap2 (hspace 2))
+@(define gap4 (hspace 4))
 
 @(define en-sentence
-   (lambda [bases symbols]
-     @nested[#:style tamer-boxed-style]{@ipa-ruby[bases symbols].}))
+   (lambda [bases symbols . contents]
+     @nested[#:style tamer-boxed-style
+             @|gap4| @ipa-ruby[bases symbols] "."
+             contents]))
 
 @(define en-words
    (lambda [bases symbols [cols 4]]
@@ -17,22 +20,22 @@
      (define ssize (length symbols))
      
      @nested[#:style tamer-boxed-style
-             (tabular #:sep (hspace 4)
+             (tabular #:sep gap4
                       #:column-properties (make-list cols 'center)
                       (let tabulize ([ws bases]
-                                               [ss (cond [(< ssize bsize) (append symbols (make-list (- bsize ssize) '-))]
-                                                         [(> ssize bsize) (take symbols bsize)]
-                                                         [else symbols])]
-                                               [sowr null])
-                        (cond [(< (length ws) cols)
-                               (reverse (cons (append (map ipa-ruby ws ss)
-                                                      (make-list (- cols (length ws)) ""))
+                                     [ss (cond [(< ssize bsize) (append symbols (make-list (- bsize ssize) '-))]
+                                               [(> ssize bsize) (take symbols bsize)]
+                                               [else symbols])]
+                                     [sowr null])
+                        (cond [(null? ws) (reverse sowr)]
+                              [(< (length ws) cols)
+                               (reverse (cons (append (map ipa-ruby ws ss) (make-list (- cols (length ws)) ""))
                                               sowr))]
                               [else (let-values ([(wrow wrest) (split-at ws cols)]
                                                  [(srow srest) (split-at ss cols)])
-                                                (tabulize wrest srest
-                                                          (cons (map ipa-ruby wrow srow)
-                                                                sowr)))])))]))
+                                      (tabulize wrest srest
+                                                (cons (map ipa-ruby wrow srow)
+                                                      sowr)))])))]))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-root-story{(British) English Phonology}
@@ -49,11 +52,11 @@ other syllables are considered unstressed@handbook-footnote{Here only described 
 
 In the @ja-tech{IPA} transcriptions, the primary stress and secondary stress are denoted with
 @ipa-phonetics{@ipa-sym{^}} and @ipa-phonetics{@ipa-sym{.}}@handbook-footnote{Tranditionally,
- English words may be acuted and graved for stresses: @emph{pronùnciátion}.} before the target
-syllables, respectively, like in @ipa-phonetics{@ipa-/sym/{.6p*^tju:n*ti}}.
+ English words may be acuted and graved for stresses: @emph{pronùnciátion}.} before target
+syllables, respectively, like in @ipa-phonetics{@ipa-/sym/{pr*.n2nsI^eIS*n}}.
 
-The positions of stressed syllables of English words are generally unpredictable, nonetheless, some
-cheatsheets can be made for heuristic before looking up dictionaries.
+Stressed syllables of English words are generally unpredictable, nonetheless, some cheatsheets
+can be made for heuristic before looking up dictionaries.
 
 @handbook-event{Disyllables}
 
@@ -67,21 +70,26 @@ cheatsheets can be made for heuristic before looking up dictionaries.
 
   @en-words['(contrast    export   present  rebel  remove dislike   rebuild recycle)
             '(k*n^trA:st Ik^spO:t prI^zent rI^bel rI^mu:v dis^laIk ri:^bIld ri:^saIk6l)
-            4]
+            8]
 
   Note that these two principles give an hint of how to speak a word if it can serve as
-  both a @ja-tech{noun} and a @ja-tech{verb}, and also note that the pronunciations may
-  be slightly different.
-  
-  @en-words['(record  "" record   contrast  "" contrast   export  "" export  present "" present  rebel "" rebel)
-            '(^rekO:d -  rI^kO:d ^k6ntra:st - k*n^trA:st ^ekspO:t - Ik^spO:t ^prez*nt - prI^zent ^reb*l - rI^bel)
-            6]}
-                                                                   
- @item{Deriving a disyllabic word ususlly does not change the position of its stressed syllable.
+  both a @ja-tech{noun} and a @ja-tech{verb},
 
-  @en-words['(happy    ⇒  unhappy   depart   ⇒ departure)
-            '(^h&ae$pi - 2n^h&ae$pi dI^pA:t  -  dI^pA:tS*)
-            6]}
+  @en-words['(insult  insult ""  transfer     transfer  "" discount  discount  "")
+            '(^Ins2lt I^s2lt - ^tr&ae$nsf3: tr&ae$sn^f3: - ^dIskaUnt dIs^kaUnt - )
+            9]
+  
+  and also note that the pronunciations may be slightly different.
+  
+  @en-words['(record  record  "" contrast   contrast ""  export   export "" present  present ""  rebel rebel "" project   project "")
+            '(^rekO:d rI^kO:d - ^k6ntra:st k*n^trA:st - ^ekspO:t Ik^spO:t - ^prez*nt prI^zent - ^reb*l rI^bel - ^pr6dZekt pr*^dZekt -)
+            9]}
+                                                                   
+ @item{Deriving a disyllabic word ususlly does not change its stressed syllable.
+
+  @en-words['(happy    ⇒  unhappy   "" depart   ⇒ departure)
+            '(^h&ae$pi - 2n^h&ae$pi  - dI^pA:t  -  dI^pA:tS*)
+            8]}
 
  @item{Irregularities:
 
@@ -90,28 +98,91 @@ cheatsheets can be made for heuristic before looking up dictionaries.
     @litchar{asleep}, @litchar{mistake}, @litchar{machine}, @litchar{alone}, @etc}
 
  @item{Words that serving as both @ja-tech{nouns} and @ja-tech{verbs} consistently stress
-    on the first syllable despite the @ja-tech[#:key "PoS"]{parts of speech}: @litchar{promise},
+    on the first syllable despite their @ja-tech[#:key "PoS"]{parts of speech}: @litchar{promise},
     @litchar{answer}, @litchar{travel}, @litchar{visit}, @litchar{picture}, @etc}]}
  ]
 
+As irregularities are regular in language, mastering exact lexical accent of words therefore
+is indispensable for high quality communicating with native speakers.
+
+@en-sentence['(I must tell you|,| I^m /unique/)
+             '(-  -    -    -      -  ju:^ni:k)]
+
+@en-sentence['(I must tell you|,| I^m a /eunuch/)
+             '(-  -    -    -      -  - ^ju:n*k)]
+
 @handbook-event{Polysyllable}
 
-@itemlist[
- @item{Irregularities:
+A polysyllabic word is usually derived from a shorter word by adding prefixes and/or suffixes:
 
-  @itemlist[
- @item{@litchar{-y}-suffiexed polysyllabic words tend to stress on the last third syllable:
-    @en-words['(public  ⇒ publicity  photograph   ⇒ photography)
-              '(^p2blIc - p2b^lIcIti ^f*Ut*grA:f  -  f*^t6gr*fi)
-              6]}]
-  }
+@itemlist[
+ @item{@litchar{-ion}/@litchar{-ian}/@litchar{-tion}/@litchar{-cian}: stressed on the syllable
+  previous to the suffix(the second last syllable).
+  
+  @en-words['(educate  ⇒ education    "" electric   ⇒  electrician "" decorate   ⇒ decoration "" communicate   ⇒ communication)
+            '(^edjUkeIt - edjU^keIS*n  - I^lektrIk  -  .Ilek^trIS*n -  ^dek*reIt -  dek*^reIS*n - k*^mju:nIkeIt - k*.mju:^nIkeIS*n)
+            8]
+
+  By the way, @litchar{-tion} is realized as @ipa-phonetics{@ipa-/sym/{tS*n}} if following a
+  @litchar{s}, or @ipa-phonetics{@ipa-/sym/{S*n}} otherwise; @litchar{-sion} is realized as
+  @ipa-phonetics{@ipa-/sym/{S*n}} if following a @ja-tech{consonant}, or
+  @ipa-phonetics{@ipa-/sym/{Z*n}} if following a @ja-tech{vowel}; specifically, @litchar{-ssion}
+  is realized as @ipa-phonetics{@ipa-/sym/{S*n}}, that is, the leading @litchar{s} does not
+  contribute to the pronunciation.
+  
+  @en-words['(suggestion  adoption extension  decision possession)
+            '(s*^dZestS*n *^d6pS*n Iks^tenS*n dI^sIZ*n p*^zenS*n)
+            8]}
+
+@item{@litchar{-ic}/@litchar{-ial}/@litchar{-ive}: stressed on the syllable previous to the suffix.
+       
+  @en-words['(scientist  ⇒ scientific  "" economy   ⇒  economic ""    atom   ⇒ atomic  "" instinct ⇒ instinc/tive/)
+            '(^saI*ntIst - s2I*n^tIfik  - I^c6n*mi  -  I:c*^n6mik -  ^&ae$t*m -  *^t6mik - ^InstINkt - In^stINktIv)
+            8]}
+
+@item{@litchar{-able}/@litchar{-al}: usually unchanged, or unpredictable (true irregular).
+       
+  @en-words['(admire  ⇒ admirable   "" prefer ⇒  preferable "" medicine ⇒ medicinal "" agriculture   ⇒ agricultural)
+            '(*d^maIe - ^&ae$m*r*b*l - prI^f3: - ^pref*r*b*l - ^meds*n  -  mI^dIsIn*l - ^&ae$grIk2ltS* - &ae$grI^k2ltS*r*l)
+            8]}
+
+ @item{@litchar{-ious}/@litchar{-ulous}/@litchar{-orous}/@litchar{-eous}: stressed on the syllable
+  previous to the suffix. Note that these suffixes will never be realized with @ipa-phonetics{@ipa-/sym/{r}}. 
+       
+  @en-words['(industry  ⇒ industrious "" mystery  ⇒ mysterious "" miracle ⇒   miraculous  ""  outrage  ⇒ outrageous)
+            '(^Ind*stri - In^d2strI*s  - ^mIst*ri - mI^stI*rI*s - ^mIr*k*l - mI^r&ae$kjUl*s - ^aUtreIdZ - aUt^reIdZ*s)
+            8]}
+ 
+ @item{@litchar{-ee}/@litchar{-eer}/@litchar{-ese}/@litchar{-ette}: stressed on suffix itself.
+  These suffixes are typically loaned from French, and their own stressed syllables shadow the ones of word stems. 
+       
+  @en-words['(engineer  cigarette  refugee   Chinese)
+            '(endZI^nIe sIg*^ret  refjU^dZi: tSaI'ni:z)
+            4]}
+
+ @item{@litchar{-y}: stressed on the third last syllable.
+  @en-words['(public  ⇒ publicity  "" photograph   ⇒ photography "" national   ⇒ nationality     "" author ⇒ authority)
+            '(^p2blIc - p2b^lIcIti  - ^f*Ut*grA:f  -  f*^t6gr*fi - ^n&ae$S*n*l - n&ae$S*^n&ae$lIti - ^O:T* -  ^O:T6rIti)
+            8]}
  ]
+
+Otherwise, the stressed syllable tends to be remained:
+
+@en-words['(economic   ⇒ economical  "" author ⇒ authorize "" regard  ⇒ regardless)
+          '(I:c*^n6mik - I:c*^n6mik*l - ^O:T* - O:^T6raIz   - rI^gA:d - rI^gA:dl*s)
+          8]
+
+with irregularities:
+
+@en-words['(advertise    ⇒   advertisement)
+          '(^&ae$dv*taIz - &ae$d^v*taIzm*nt)
+          8]
 
 @handbook-event{Compound Words}
 
-@en-words['(airport lipstick  newspaper  Thanksgiving   driving  licence  unforgettable)
-          '(^e*pO:t ^lIpstIk ^nju:zpeIp* T&ae$NksgIvIN ^draIvIN ^laIs*ns 2nf*^get*bl)
-          8]
+@en-words['(airport lipstick  newspaper  Thanksgiving   |driving  licence|  unforgettable)
+          '(^e*pO:t ^lIpstIk ^nju:zpeIp* T&ae$NksgIvIN  |^draIvIN ^laIs*ns| 2nf*^get*bl)
+          6]
 
 @handbook-action{Prosodic Stress}
 
