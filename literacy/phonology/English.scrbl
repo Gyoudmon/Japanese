@@ -111,9 +111,9 @@ is indispensable for high quality communicating with native speakers.
 @en-sentence['(I must tell you|,| I^m a /eunuch/)
              '(-  -    -    -      -  - ^ju:n*k)]
 
-@handbook-event{Polysyllable}
+@handbook-event{Polysyllables}
 
-A polysyllabic word is usually derived from a shorter word by adding prefixes and/or suffixes:
+A polysyllabic word is usually derived from a shorter one by adding prefixes and/or suffixes:
 
 @itemlist[
  @item{@litchar{-ion}/@litchar{-ian}/@litchar{-tion}/@litchar{-cian}: stressed on the syllable
@@ -157,32 +157,82 @@ A polysyllabic word is usually derived from a shorter word by adding prefixes an
   These suffixes are typically loaned from French, and their own stressed syllables shadow the ones of word stems. 
        
   @en-words['(engineer  cigarette  refugee   Chinese)
-            '(endZI^nIe sIg*^ret  refjU^dZi: tSaI'ni:z)
+            '(endZI^nIe sIg*^ret  refjU^dZi: tSaI^ni:z)
             4]}
 
  @item{@litchar{-y}: stressed on the third last syllable.
   @en-words['(public  ⇒ publicity  "" photograph   ⇒ photography "" national   ⇒ nationality     "" author ⇒ authority)
-            '(^p2blIc - p2b^lIcIti  - ^f*Ut*grA:f  -  f*^t6gr*fi - ^n&ae$S*n*l - n&ae$S*^n&ae$lIti - ^O:T* -  ^O:T6rIti)
+            '(^p2blIc - p2b^lIcIti  - ^f*Ut*grA:f  -  f*^t6gr*fi - ^n&ae$S*n*l - n&ae$S*^n&ae$lIti - ^O:T* -  O:^T6rIti)
             8]}
  ]
 
 Otherwise, the stressed syllable tends to be remained:
 
-@en-words['(economic   ⇒ economical  "" author ⇒ authorize "" regard  ⇒ regardless)
-          '(I:c*^n6mik - I:c*^n6mik*l - ^O:T* - O:^T6raIz   - rI^gA:d - rI^gA:dl*s)
+@en-words['(forget ⇒ unforgettable ""  economic  ⇒ economical  "" author ⇒ authorize ""  regard ⇒ regardless)
+          '(f*^get -  2nf*^get*bl   - I:c*^n6mik - I:c*^n6mik*l -  ^O:T* - ^O:T6raIz   - rI^gA:d - rI^gA:dl*s)
           8]
 
 with irregularities:
 
-@en-words['(advertise    ⇒   advertisement)
-          '(^&ae$dv*taIz - &ae$d^v*taIzm*nt)
+@en-words['(advertise    ⇒  advertisement)
+          '(^&ae$dv*taIz - &ae$d^v*tIzm*nt)
           8]
 
 @handbook-event{Compound Words}
 
-@en-words['(airport lipstick  newspaper  Thanksgiving   |driving  licence|  unforgettable)
-          '(^e*pO:t ^lIpstIk ^nju:zpeIp* T&ae$NksgIvIN  |^draIvIN ^laIs*ns| 2nf*^get*bl)
+A compound word is the word composed of two or more single words and represents a new word. Compound
+words can be written in any of the three forms: 1). a single word; 2). a hyphenated long word; or
+3) raw form as if they were not compound.
+
+@en-words['(airport lipstick  newspaper   Thanksgiving   |driving  licence| wil=d-life)
+          '(^e*pO:t ^lIpstIk ^nju:zpeIp* T&ae$Nks^gIvIN  |^draIvIN laIs*ns| ^waildlaif)
           6]
+
+The stress accent of a compound word depends on the @ja-tech{information}@handbook-footnote{This is
+ really the key point for all prosody categories, not only for the lexical stress or compound word.}
+either can be plausibly influenced or intended to emphasize. The stressed syllable of a compound word
+is the syllable of the selected stressed word. For two-word compound word, not all two words should be
+selected as stressed, if so they are not compounded and behave like two words in the sentence; For
+longer compound word, no stressed word should be selected next to another stressed word, if so it is
+an error.
+
+Native speakers have made themselves very sensible to the stress accent patterns of compound words.
+
+@en-words['(|green house| |[two words, a house colorzied with green]|)
+          '(|^gri:n ^haUs|  -)
+          2]
+
+@en-words['(greenhouse |[plausibly inflenced, greenhouse is rarer than house]|)
+          '(^gri:nhaUs  -)
+          2]
+
+@en-words['(|Italian Teacher| |[The teacher is an Italian]|)
+          '(|I^t&ae$lj*n ti:tS*| -)
+          2]
+
+@en-words['(|Italian Teacher|  |[The teacher teaches Italian]|)
+          '(|It&ae$lj*n ^ti:tS*| - )
+          2]
+
+Besides, some compound words may have more than one stressed words, these words may not be considered
+as irregular, they are just not that into a single word.
+
+@handbook-event{Reading: A Sad Birthday}
+
+@tabular[
+ #:sep gap
+
+ (list (list @ipa-ruby['(It^s   my        birthday         _to_day.)
+                       '(Its    maI       ^b3:TdeI         t*^deI)
+                       '(6665 554433 357999887766554433 33445566554433)])
+
+       (list @ipa-ruby['(An/d  I^m  e/xpecting    lo/ts a/n=d lo/ts    o/f cards.)
+                       '(^nd   aIm  Ik^spektIN    l6ts  *nd   l6ts     *v  kA:dz)
+                       '(34555 5554 3456788776655 57987 6556  78877665 56  6777665544)])
+
+       (list @ipa-ruby['(Okay|,| here  we     go|.|    Newspaper|,|  a  letter  _to_  my     mum|,| fas=t food|,|  pizza|,| a letter _to_ my  dad|,| newspaper|!|)
+                       '(.*U^keI hI*   wi     g*U      ^nju:s.peIp*  *  ^let*    t*   maI     m2m    fa:st fu:d    ^pi:ts*  * ^let*   t* maI  d&ae$d ^nju:z.peIp*)
+                       '(999987 776655 443345 56776655 777777654357 545 6789998 7766 554433 445566  5555  56655443 88997755 54 567777 432 234 677654 8888877665544)]))]
 
 @handbook-action{Prosodic Stress}
 
