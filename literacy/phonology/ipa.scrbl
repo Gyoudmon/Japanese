@@ -6,6 +6,11 @@
 @require{../../digitama/ipa.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@(define-url-bib CardinalVowels "Cardinal Vowels" "https://en.wikipedia.org/wiki/Cardinal_vowels"
+   #:author "Daniel Jones"
+   #:date 1967)
+
+@;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @(define full-space (string (integer->char #x3000)))
 @(define broad-style (make-style #false (list (make-color-property "DodgerBlue"))))
 @(define narrow-style (make-style #false (list (make-color-property "SandyBrown"))))
@@ -81,7 +86,7 @@ The @ja-tech{IPA} provides notations for both @ja-tech{phone} and @ja-tech{phone
 from vocal cords to lips to outside, and vary in quality, loudness, and length depending on the
 roundedness of lips and position of the tongue root.
 
-@tamer-figure*["ipa:vowels" "IPA Vowels"]{
+@tamer-figure["ipa:vowels" "IPA Vowels"]{
  @(let*-values ([(width height) (values 10 6)]
                 [(xunit) (* width 1/6)]
                 [(dx) (values (* xunit 2))])
@@ -129,7 +134,27 @@ roundedness of lips and position of the tongue root.
   })
 }
 
-@Tamer-Figure-ref{ipa:vowels} is the classification of almost all phonetic vowels defined in the @ja-tech{IPA}.
+@Tamer-Figure-ref{ipa:vowels} is the well known vowel chart defined by @ja-tech{IPA}, which similar to
+@~cite[CardinalVowels], a measuring system of vowels that well trained phoneticians can produce and
+recognize. That is, vowels defined in @tamer-figure-ref{ipa:vowels} are just abstract references, instead
+of exactly mappings, of real vowels, although for some languages, some of their vowels may happen to
+coincide with the cardinal vowels. Nonetheless, @tamer-figure-ref{ipa:vowels} still deserves its place
+for beginners due to the intuitiveness.
+
+A @ja-deftech["cardinal vowel" 基本母音 きほんぼいん 定位元音] is defined to be produced when the tongue
+is in an extreme position, either front or back, high or low. The three corner vowels @ipa-/sym/[#:phonetical? #true]{i},
+@ipa-/sym/[#:phonetical? #true]{A}, and @ipa-/sym/[#:phonetical? #true]{u} have articulatory
+definitions, other vowels@handbook-footnote{Note that IPA defines more vowels than cardinal vowels.
+ In this paragraph, we are talking about cardinal vowels.} are auditorily equidistant amongst them.
+More precisely, @ipa-/sym/[#:phonetical? #true]{i} is produced with the tongue as far forward and as
+high in the mouth as possible without producing friction; @ipa-/sym/[#:phonetical? #true]{u} is produced
+with the tongue as far back and as high in the mouth as possible with protruded lips, like blowing
+out a candle; and @ipa-/sym/[#:phonetical? #true]{A} is produced with the tongue as low and as far
+back in the mouth as possible. With four vowels at quarters @ipa-/sym/[#:phonetical? #true]{e},
+@ipa-/sym/[#:phonetical? #true]{E}, @ipa-/sym/[#:phonetical? #true]{O}, and @ipa-/sym/[#:phonetical? #true]{o},
+plus the front-open vowel @ipa-/sym/[#:phonetical? #true]{a}, these eight vowels are common in the
+natural languages, and therefore be considered as @ja-deftech["primary cardinal vowel" 第一次基本母音 だいいちじきほんぼいん 主定位元音],
+the rest are @ja-deftech["primary cardinal vowel" 第二次基本母音 だいにじきほんぼいん 次定位元音].
 
 @handbook-scenario{@ja-title[Consonants 子音 しいん 辅音]}
 

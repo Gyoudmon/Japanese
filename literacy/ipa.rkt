@@ -53,9 +53,9 @@
 
                        (define token-element
                          (cond [(or (not r) (eq? r '-) (eq? r '||) (equal? r "") (equal? r "-")) b]
-                               [(not latex?) (list b (superscript (ipa-symbol r)))]
+                               [(not latex?) (list b (superscript (ipa-symbol-element r)))]
                                [else (make-multiarg-element (if (pair? options) (make-style s (list (make-command-optional (map ~a options)))) s)
-                                                            (list b (ipa-symbol r) (number->string intergap)))]))
+                                                            (list b (ipa-symbol-element r) (number->string intergap)))]))
 
                        (define toned-element
                          (cond [(or (not p) (not latex?)) token-element]
@@ -95,7 +95,7 @@
                       (map (λ [sym] (let-values ([(s $?) (ipa-symbol-tokenize sym)]) s))
                            (cdr tokens)))))
 
-(define ipa-symbol
+(define ipa-symbol-element
   (lambda [sym]
     (racketcommentfont (ipa-/sym/ sym))))
 
@@ -115,9 +115,10 @@
     (IPA s #:latex? latex?)))
 
 (define ipa-/sym/
-  (lambda [symbols]
+  (lambda [symbols #:phonetical? [phonetical? #false]]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
-    (IPA (list "/" s "/"))))
+    (IPA (cond [(not phonetical?) (list "/" s "/")]
+               [else (list "[" s "]")]))))
 
 (define ipa-ruby-content
   (lambda [v]
@@ -174,6 +175,7 @@
                  [(#\/) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\/ ipa-phonetics nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
                  [(#\+) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++ $?))]
                  [(#\_) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\_ ipa-weak-element nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
+                 [(#\&) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\$ ipa-named-element nekot snekot)]) (tokenize rest null token++ $?))]
                  [else (tokenize (cdr chars) (cons self nekot) snekot unterminated?)]))]
             [else ; only checked `continue?` for the first time
              (let-values ([(token++ rest $?) (ipa-chars-token++ (cons #\/ chars) #\/ ipa-phonetics nekot snekot ipa-word-tokenize)])

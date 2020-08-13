@@ -45,10 +45,10 @@
 @handbook-action{Lexical Stress}
 
 English employs the @ja-tech{stress accent} system to cue its prominent syllable in a word.
-A word contains one or more syllables, among those there always is a primary stress; for some words,
-especially for ones that conntain multiple syllables, a secondary stress might be identified; the
-other syllables are considered unstressed@handbook-footnote{Here only described the phonemic stress
- despite the phonetic tertiary stress along with treating the unstressed as the quaternary one.}.
+A word contains one or more syllables, among those there always is a primary stress; for some
+polysyllabic words, a secondary stress might be identified; the other syllables are considered
+unstressed@handbook-footnote{Here only described the phonemic stress despite the  phonetic
+ tertiary stress along with treating the unstressed as the quaternary one.}.
 
 In the @ja-tech{IPA} transcriptions, the primary stress and secondary stress are denoted with
 @ipa-phonetics{@ipa-sym{^}} and @ipa-phonetics{@ipa-sym{.}}@handbook-footnote{Tranditionally,
@@ -131,7 +131,7 @@ A polysyllabic word is usually derived from a shorter one by adding prefixes and
   contribute to the pronunciation.
   
   @en-words['(suggestion  adoption extension  decision possession)
-            '(s*^dZestS*n *^d6pS*n Iks^tenS*n dI^sIZ*n p*^zenS*n)
+            '(s*^dZestS*n *^d6pS*n Iks^tenS*n dI^sIZ*n p*^zeS*n)
             8]}
 
 @item{@litchar{-ic}/@litchar{-ial}/@litchar{-ive}: stressed on the syllable previous to the suffix.
@@ -230,9 +230,25 @@ as irregular, they are just not that into a single word.
                        '(^nd   aIm  Ik^spektIN    l6ts  *nd   l6ts     *v  kA:dz)
                        '(34555 5554 3456788776655 57987 6556  78877665 56  6777665544)])
 
-       (list @ipa-ruby['(Okay|,| here  we     go|.|    Newspaper|,|  a  letter  _to_  my     mum|,| fas=t food|,|  pizza|,| a letter _to_ my  dad|,| newspaper|!|)
-                       '(.*U^keI hI*   wi     g*U      ^nju:s.peIp*  *  ^let*    t*   maI     m2m    fa:st fu:d    ^pi:ts*  * ^let*   t* maI  d&ae$d ^nju:z.peIp*)
-                       '(999987 776655 443345 56776655 777777654357 545 6789998 7766 554433 445566  5555  56655443 88997755 54 567777 432 234 677654 8888877665544)]))]
+       (list @ipa-ruby['(Okay|,| here  we     go.    Newspaper|,|  a  letter  _to_  my     mum|,| fas=t food|,|  pizza|,| a letter _to_ my  dad|,| newspaper!)
+                       '(.*U^keI hI*   wi     g*U    ^nju:s.peIp*  *  ^let*    t*   maI     m2m    fa:st fu:d    ^pi:ts*  * ^let*   t* maI  d&ae$d ^nju:z.peIp*)
+                       '(999987 776655 443345 56776655 777777654357 545 6789998 7766 554433 445566  5555  56655443 88997755 54 567777 432 234 677654 8888877665544)])
+
+       (list @ipa-ruby['(Bu=t  where +rare my    birthday   cards? I^_ve_ go=t no   cards.)
+                       '(b*t    we*    A:  maI   ^b3:TdeI   kA:dz    aIv   g6t n*U  kA:dz)
+                       '(65556 556677 776 65445 5678998767 788765 6666   6544 4565 56654)])
+       
+       (list @ipa-ruby['(Even    my     dog   ha=d  more   cards  than  m/e  +jon  =hi/s birthday.)
+                       '(^i:ven  maI    d6g  h&ae$d mO:    kA:dz  D*n   mi:   6n    hIz   ^b3:TdeI)
+                       '(6677876 6556 678998 98766 665544 444454 43334 4565 54456 678998 76543222)])
+       
+       (list @ipa-ruby['(Maybe   my       do/g     a/=t=e     my      cards.)
+                       '(^meIbi  maI      d6g       eIt       maI     kA:dz)
+                       '(5566776 654456 677766 6789988776655 56677 776655443322)])
+       
+       (list @ipa-ruby['(_But_|,| I don^/t a/ctually   ha/ve       a/    dog.)
+                       '(b*t     aI doUnt  ^&ae$ktS*li h&ae$v      *     d6g)
+                       '(6666   555 55676  67887766554 45678987 876788 888776655443322)]))]
 
 @handbook-action{Prosodic Stress}
 
