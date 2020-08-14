@@ -532,10 +532,11 @@ be considered as a special case of ablative, and より does have some
 overlapping uses with から, they might be merged as ablative in some
 grammer books.
 
-`Example 1.28`                                   
-花子はなこが`NOM`太郎たろうより`CMP`その仕事しごとに`DAT`適任てきにんだ`COP`。
-                                                 
- Hanako is more qualified for the job than Taro. 
+`Example 1.28`                                             
+花子はなこが`NOM`太郎たろうより`CMP`その仕事しごとに`DAT`適任てきにんだ`COP`。          
+                                                           
+ Hanako is more qualified for the job than Taro.           
+ In contrast to Taro, Hanako is more qualified for the job.
 
 Both similative and superlative are grammatically undefined in Japanese,
 nonetheless, they can be semantically expressed easily with or without

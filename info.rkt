@@ -15,4 +15,5 @@
 (define samples '(["literacy/pos.scrbl" 0]
 
                   ["literacy/pos/verb.scrbl" 1 _]
-                  ["literacy/category/case.scrbl" 0 _]))
+                  ["literacy/category/case.scrbl" 0 _]
+                  ["literacy/phonology/ipa.scrbl" 0 _]))
