@@ -40,6 +40,8 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-root-story{(British) English Phonology}
 
+@handbook-scenario[#:tag "EnPhonetics"]{Phonetics}
+
 @handbook-scenario{Prosody}
 
 @handbook-action{Lexical Stress}

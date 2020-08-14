@@ -115,10 +115,9 @@
     (IPA s #:latex? latex?)))
 
 (define ipa-/sym/
-  (lambda [symbols #:phonetical? [phonetical? #false]]
+  (lambda [symbols]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
-    (IPA (cond [(not phonetical?) (list "/" s "/")]
-               [else (list "[" s "]")]))))
+    (IPA (list "/" s "/"))))
 
 (define ipa-ruby-content
   (lambda [v]
