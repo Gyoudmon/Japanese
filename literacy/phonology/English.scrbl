@@ -8,6 +8,14 @@
 @(define gap2 (hspace 2))
 @(define gap4 (hspace 4))
 
+@(define en-letters
+   (lambda [lttr]
+     (litchar lttr)))
+
+@(define en-phonetics
+   (lambda [sym]
+     (ipa-phonetics (ipa-/sym/ sym))))
+
 @(define en-sentence
    (lambda [bases symbols . contents]
      @nested[#:style tamer-boxed-style
@@ -40,22 +48,82 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-root-story{(British) English Phonology}
 
-@handbook-scenario[#:tag "EnPhonetics"]{Phonetics}
+@handbook-scenario{Phones}
+
+@handbook-scenario{Phonemes}
+
+@handbook-action{Voiceless and Voiced Morphological Suffixes}
+
+@itemlist[
+ @item{@en-letters{-ed} that of an inflected @ja-tech{verb} is realized as @en-phonetics{t} if
+  following a @ja-tech{voiceless consonant}, and realized as @en-phonetics{d} if following a
+  @ja-tech{voiced consonant} or a @ja-tech{vowel}. Specifically, @en-letters{-ed} is realized
+  as @en-phonetics{Id} if following another @en-phonetics{t} or @en-phonetics{d}.
+
+ @en-words['(asked finished helped passed reached talked launched watched)
+           '(A:skt ^fInISt  helpt  pA:st  ri:tSt  tO:kt  lO:ntSt  w6tSt)
+           8]
+
+ @en-words['(called borrowed moved enjoyed  welcomed answered bridged shared)
+           '(kO:ld  ^b6r*Ud  mu:vd In^dZOId ^welk*md ^A:ns*d  brIdZd  Se*d)
+           8]
+ 
+ @en-words['(wanted doubted concentrated  ended  decided    acted  counted sided)
+           '(w6ntId daUtId  ^k6nsntreItId endId dI^saIdId &ae$ktId kaUntId SaIdId)
+           8]
+
+  Some @ja-tech{adjective}s may just end with @en-letters{ed}s, which are realized as @en-phonetics{Id}s.
+  Do not be confused with the suffix @en-letters{-ed} of an inflected @ja-tech{verb}.
+  
+ @en-words['(beloved  wretched wicked  sacred    ragged   naked  krooked dogged cursed  learned -legged aged)
+           '(bI^l2vId ^retSId  ^wIkId ^seIkrId ^r&ae$gId ^neIkId ^krUkId ^d6gId ^k3:sId 'l3:nId -legId ^eIdZId)
+           6]}
+
+ @item{@en-letters{-s}/@en-letters{-es} that of an inflected @ja-tech{noun} or @ja-tech{verb} is
+  realized as @en-phonetics{s} if following a @ja-tech{voiceless consonant}, and realized as
+  @en-phonetics{z} if following a @ja-tech{voiced consonant} or a @ja-tech{vowel}. Specifically,
+  when following another @en-phonetics{t} or @en-phonetics{d}, they are combined as the consonant
+  pair @en-phonetics{ts} or @en-phonetics{dz}. When following another @en-phonetics{s}, @en-phonetics{z},
+  @en-phonetics{S}, @en-phonetics{Z}, @en-phonetics{tS}, or @en-phonetics{dZ},
+  @en-letters{-s}/@en-letters{-es} is realized as @en-phonetics{Iz}; When inflected from
+  @en-letters{f}/@en-letters{fe}, @en-letters{-s}/@en-letters{-es} is realized as @en-phonetics{vz}.
+  
+  
+ @en-words['(dates pets books hopes talks asks  laughs cloth/s/)
+           '(deIts pets bUks  heUps tO:ks A:sks  lA:fs  kl6Ts)
+           8]
+
+ @en-words['(codes tells sides teams turns breathe/s/ goods cloth/es/)
+           '(k*Udz tellz saIds ti:mz t3:nz   bri:Dz   gUdz  kl*UDz)
+           8]
+ 
+ @en-words['(bushes     garages   surprises  |the witch's watches| |the nurse's purses|    |Max's faxes|)
+           '(bUSIz  ^g&ae$rA:dZIz s*^praIzIz  |D* wItSIz w6tSIz|    |D* n3:sIs p3:sIs| |m&ae$ksIs f&ae$ksIs|)
+           6]
+ 
+ @en-words['(knife ⇒ knives leaf ⇒ leaves)
+           '(kaIf  - kaIvz li:f - li:vz)
+           6]}
+ ]
+
+@handbook-action{Aspiration}
 
 @handbook-scenario{Prosody}
 
 @handbook-action{Lexical Stress}
 
-English employs the @ja-tech{stress accent} system to cue its prominent syllable in a word.
-A word contains one or more syllables, among those there always is a primary stress; for some
-polysyllabic words, a secondary stress might be identified; the other syllables are considered
+English employs the @ja-tech{stress accent} system@handbook-footnote{Linguistic terms are always
+ the first source of chaos. In practice, English syllables might be emphasized in any way of:
+ 1). longer period; 2). heavier stress; or 3) higher pitch.} to cue its prominent syllable in a
+word. A word contains one or more syllables, among those there always is a primary stress; for
+some polysyllabic words, a secondary stress might be identified; the other syllables are considered
 unstressed@handbook-footnote{Here only described the phonemic stress despite the  phonetic
  tertiary stress along with treating the unstressed as the quaternary one.}.
 
 In the @ja-tech{IPA} transcriptions, the primary stress and secondary stress are denoted with
 @ipa-phonetics{@ipa-sym{^}} and @ipa-phonetics{@ipa-sym{.}}@handbook-footnote{Tranditionally,
  English words may be acuted and graved for stresses: @emph{pronùnciátion}.} before target
-syllables, respectively, like in @ipa-phonetics{@ipa-/sym/{pr*.n2nsI^eIS*n}}.
+syllables, respectively, like in @en-phonetics{pr*.n2nsI^eIS*n}.
 
 Stressed syllables of English words are generally unpredictable, nonetheless, some cheatsheets
 can be made for heuristic before looking up dictionaries.
@@ -66,7 +134,7 @@ can be made for heuristic before looking up dictionaries.
  @item{A @ja-tech{noun} or a @ja-tech{adjective} tends to stress on the first syllable.
 
   @en-sentence['(The artist^s most famous  picture shows some women and children in a lovely  forest with a  purple mountain behind)
-               '(-   ^A:tIsts -   ^feIm*s  ^pIktS* -     -   ^wImIn -  ^tSIldr*n -  - ^l2vli ^f6rIst -    - ^p*:p*l ^maUntIn -)]}
+               '(-   ^A:tIsts -   ^feIm*s  ^pIktS* -     -   ^wImIn -  ^tSIldr*n -  - ^l2vli ^f6rIst -    - ^p3:p*l ^maUntIn -)]}
 
  @item{A @ja-tech{verb} tends to stress on the second syllable, or on the one identified with its stem.
 
@@ -97,11 +165,11 @@ can be made for heuristic before looking up dictionaries.
 
   @itemlist[
  @item{@ja-tech{Nouns} and @ja-tech{adjectives} that stressing on the second syllable:
-    @litchar{asleep}, @litchar{mistake}, @litchar{machine}, @litchar{alone}, @etc}
+    @en-letters{asleep}, @en-letters{mistake}, @en-letters{machine}, @en-letters{alone}, @etc}
 
  @item{Words that serving as both @ja-tech{nouns} and @ja-tech{verbs} consistently stress
-    on the first syllable despite their @ja-tech[#:key "PoS"]{parts of speech}: @litchar{promise},
-    @litchar{answer}, @litchar{travel}, @litchar{visit}, @litchar{picture}, @etc}]}
+    on the first syllable despite their @ja-tech[#:key "PoS"]{parts of speech}: @en-letters{promise},
+    @en-letters{answer}, @en-letters{travel}, @en-letters{visit}, @en-letters{picture}, @etc}]}
  ]
 
 As irregularities are regular in language, mastering exact lexical accent of words therefore
@@ -118,51 +186,50 @@ is indispensable for high quality communicating with native speakers.
 A polysyllabic word is usually derived from a shorter one by adding prefixes and/or suffixes:
 
 @itemlist[
- @item{@litchar{-ion}/@litchar{-ian}/@litchar{-tion}/@litchar{-cian}: stressed on the syllable
+ @item{@en-letters{-ion}/@en-letters{-ian}/@en-letters{-tion}/@en-letters{-cian}: stressed on the syllable
   previous to the suffix(the second last syllable).
   
   @en-words['(educate  ⇒ education    "" electric   ⇒  electrician "" decorate   ⇒ decoration "" communicate   ⇒ communication)
             '(^edjUkeIt - edjU^keIS*n  - I^lektrIk  -  .Ilek^trIS*n -  ^dek*reIt -  dek*^reIS*n - k*^mju:nIkeIt - k*.mju:^nIkeIS*n)
             8]
 
-  By the way, @litchar{-tion} is realized as @ipa-phonetics{@ipa-/sym/{tS*n}} if following a
-  @litchar{s}, or @ipa-phonetics{@ipa-/sym/{S*n}} otherwise; @litchar{-sion} is realized as
-  @ipa-phonetics{@ipa-/sym/{S*n}} if following a @ja-tech{consonant}, or
-  @ipa-phonetics{@ipa-/sym/{Z*n}} if following a @ja-tech{vowel}; specifically, @litchar{-ssion}
-  is realized as @ipa-phonetics{@ipa-/sym/{S*n}}, that is, the leading @litchar{s} does not
-  contribute to the pronunciation.
+  By the way, @en-letters{-tion} is realized as @en-phonetics{tS*n} if following a @en-letters{s},
+  or @en-phonetics{S*n} otherwise; @en-letters{-sion} is realized as @en-phonetics{S*n} if following
+  a @ja-tech{consonant}, or @en-phonetics{Z*n} if following a @ja-tech{vowel}; specifically,
+  @en-letters{-ssion} is realized as @en-phonetics{S*n}, that is, the leading @en-letters{s}
+  does not contribute to the pronunciation.
   
   @en-words['(suggestion  adoption extension  decision possession)
             '(s*^dZestS*n *^d6pS*n Iks^tenS*n dI^sIZ*n p*^zeS*n)
             8]}
 
-@item{@litchar{-ic}/@litchar{-ial}/@litchar{-ive}: stressed on the syllable previous to the suffix.
+@item{@en-letters{-ic}/@en-letters{-ial}/@en-letters{-ive}: stressed on the syllable previous to the suffix.
        
   @en-words['(scientist  ⇒ scientific  "" economy   ⇒  economic ""    atom   ⇒ atomic  "" instinct ⇒ instinc/tive/)
             '(^saI*ntIst - s2I*n^tIfik  - I^c6n*mi  -  I:c*^n6mik -  ^&ae$t*m -  *^t6mik - ^InstINkt - In^stINktIv)
             8]}
 
-@item{@litchar{-able}/@litchar{-al}: usually unchanged, or unpredictable (true irregular).
+@item{@en-letters{-able}/@en-letters{-al}: usually unchanged, or unpredictable (true irregular).
        
   @en-words['(admire  ⇒ admirable   "" prefer ⇒  preferable "" medicine ⇒ medicinal "" agriculture   ⇒ agricultural)
             '(*d^maIe - ^&ae$m*r*b*l - prI^f3: - ^pref*r*b*l - ^meds*n  -  mI^dIsIn*l - ^&ae$grIk2ltS* - &ae$grI^k2ltS*r*l)
             8]}
 
- @item{@litchar{-ious}/@litchar{-ulous}/@litchar{-orous}/@litchar{-eous}: stressed on the syllable
-  previous to the suffix. Note that these suffixes will never be realized with @ipa-phonetics{@ipa-/sym/{r}}. 
+ @item{@en-letters{-ious}/@en-letters{-ulous}/@en-letters{-orous}/@en-letters{-eous}: stressed on the syllable
+  previous to the suffix. Note that these suffixes will never be realized with @en-phonetics{r}. 
        
   @en-words['(industry  ⇒ industrious "" mystery  ⇒ mysterious "" miracle ⇒   miraculous  ""  outrage  ⇒ outrageous)
             '(^Ind*stri - In^d2strI*s  - ^mIst*ri - mI^stI*rI*s - ^mIr*k*l - mI^r&ae$kjUl*s - ^aUtreIdZ - aUt^reIdZ*s)
             8]}
  
- @item{@litchar{-ee}/@litchar{-eer}/@litchar{-ese}/@litchar{-ette}: stressed on suffix itself.
+ @item{@en-letters{-ee}/@en-letters{-eer}/@en-letters{-ese}/@en-letters{-ette}: stressed on suffix itself.
   These suffixes are typically loaned from French, and their own stressed syllables shadow the ones of word stems. 
        
   @en-words['(engineer  cigarette  refugee   Chinese)
             '(endZI^nIe sIg*^ret  refjU^dZi: tSaI^ni:z)
             4]}
 
- @item{@litchar{-y}: stressed on the third last syllable.
+ @item{@en-letters{-y}: stressed on the third last syllable.
   @en-words['(public  ⇒ publicity  "" photograph   ⇒ photography "" national   ⇒ nationality     "" author ⇒ authority)
             '(^p2blIc - p2b^lIcIti  - ^f*Ut*grA:f  -  f*^t6gr*fi - ^n&ae$S*n*l - n&ae$S*^n&ae$lIti - ^O:T* -  O:^T6rIti)
             8]}
