@@ -108,6 +108,8 @@
 
 @handbook-action{Aspiration}
 
+@handbook-action{Lateral Release and Nasal Release}
+
 @handbook-scenario{Prosody}
 
 @handbook-action{Lexical Stress}

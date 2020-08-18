@@ -173,7 +173,7 @@ precisely, @ipa-sym{[i]} is produced with the tongue as far forward and as high 
 without producing friction; @ipa-sym{[u]} is produced with the tongue as far back and as high in the
 mouth as possible with protruded lips, similar to blowing out a candle; and @ipa-sym{[A]} is produced
 with the tongue as low and as far back in the mouth as possible. Along with four vowels at trisection
-points, @ipa-sym{[e]}, @ipa-sym{[E]}, @ipa-sym{[O]}, and @ipa-sym{[o]}, plus the front-open vowel
+points, @ipa-sym{[e]}, @ipa-sym{[E]}, @ipa-sym{[O]}, and @ipa-sym{[o]}, plus the @tt{front-open} vowel
 @ipa-sym{[a]}, these eight vowels are common in natural languages, and therefore be categorized as
 the @ja-deftech["primary cardinal vowel" 第一次基本母音 だいいちじきほんぼいん 主定位元音], the rest,
 whose numerical labels range from 9 to 18, are categorized as the
@@ -186,17 +186,24 @@ ones are placed at the right side. The two counterexamples, @ipa-sym{[*]} and @i
 definitions in sense of the roundedness, and are more often unrounded than rounded.
 
 Generally speaking, there are 5 @ja-tech{vowel}s in Japanese. In a broad sense, these @ja-tech{vowel}s
-can simply notated as the five blue notations in @Tamer-Figure-ref{ipa:vowels}, while in a narrow sense,
-if compared to similar @ja-tech{vowel}s in other languages, they should be notated as the orange ones(plus
-the blue @ipa-sym{[i]}). In other words, the orange notations represent the true @ja-tech{vowel}s of
-Japanese, but the blue ones are also acceptable for easy writing and typesetting@handbook-footnote{@ipa-sym{[W]}
- can be written as @ipa-sym{[u]} for same reason.} because there is no phonemic distinction between the
-orange notation and the blue counterpart within Japanese. Besides, the @tt{close near-back} @ja-tech{vowel}
-@ipa-sym{[W]} is the most notable one among the five due to its special roundedness: it can be unrounded
-or compressed, which is the other type of roundedness in addition to the protrusion@handbook-footnote{The
- @ja-tech{IPA} does not define specialized diacritics for the two types of roundedness, the superscript
- letter @ipa-sym{&textsuperscript.B} can be used for compression, and the @ipa-sym{&textsuperscript.w},
- usually omitted, for protrusion.}. 
+can be simply transcribed as the five blue symbols in @Tamer-Figure-ref{ipa:vowels}, while in a
+narrow sense, if compared to similar @ja-tech{vowel}s in other languages, they should be transcribed
+as the orange ones(plus the blue @ipa-sym{[i]}). In other words, the orange symbols represent the
+true @ja-tech{vowel}s of Japanese, but the blue ones are also acceptable for easy transcribing@handbook-footnote{@ipa-sym{[W]}
+ can be transcribed as @ipa-sym{[u]} for same reason.} because there is no phonemic distinction
+between the orange symbol and the blue counterpart within Japanese.
+
+In contrast to English and Mandarin Chinese, the extreme positions of Japanese vowels, benchmarked with
+the @tt{open central unrounded vowel} @ipa-sym{[&ipacentrialized.a]}, the @tt{close front unrounded vowel}
+@ipa-sym{[i]}, and the @tt{close near-back vowel} @ipa-sym{[&textsubplus.W$]}, are actually less extreme
+in both height and width dimension, which measures the other position of lips for an unrounded
+@ja-tech{vowel}@handbook-footnote{The vowel chart gives no information about the "vowel width".
+ For short, the extremely unrounded vowel is categorized as @emph{spread}, like smiling.}. The @ipa-sym{[W]}
+is the most notable one among the five due to its special roundedness: it can be unrounded(@ipa-sym{[&textsubplus.W$]})
+or compressed(@ipa-sym{[W&textsuperscript.B$]}), which is the other type of roundedness in addition to
+the protrusion@handbook-footnote{The @ja-tech{IPA} does not define specialized diacritics for the two
+ types of roundedness, the superscript letter @ipa-sym{&textsuperscript.B} can be used for compression,
+ and the @ipa-sym{&textsuperscript.w}, usually omitted, for protrusion.}.
 
 Last but most important, @emph{never} learn pronunciation from its written description, unless you have
 already mastered the pronunciation of at least one foreign language with a rich set of phonetic features
