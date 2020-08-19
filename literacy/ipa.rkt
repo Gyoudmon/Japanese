@@ -78,7 +78,7 @@
 
 (define ipa-diacritic-element
   (lambda [word]
-    (elem #:style "super" word)))
+    (elem #:style "textsuperscript" word)))
 
 (define ipa-puncture-element
   (lambda [word]
@@ -151,6 +151,7 @@
             (cond [(eq? self #\^) (tokenize (cdr chars) (cons #\" nekot) snekot)]
                   [(eq? self #\*) (tokenize (cdr chars) (cons #\@ nekot) snekot)]
                   [(eq? self #\.) (tokenize (cdr chars) (cons #\" (cons #\" nekot)) snekot)]
+                  [(eq? self #\+) (let-values ([(token++ rest _) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++))]
                   [(eq? self #\&) (let-values ([(token++ rest _) (ipa-chars-token++ chars #\$ ipa-named-element nekot snekot)]) (tokenize rest null token++))]
                   [else (tokenize (cdr chars) (cons self nekot) snekot)]))))))
 

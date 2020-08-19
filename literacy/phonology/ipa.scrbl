@@ -110,7 +110,7 @@ from vocal cords to lips to outside, and vary in quality, loudness, and length.
     @nested[#:style "tikzpicture"]{
   @(ipa-line dx width height 'Open
              (vnode 'a '&OE 'aoe #:ja-vowel 'left #:dot (cons 4 12))
-             (vnode '&ipacentrialized.a #false 'ca #:ja-vowel 'left #:narrow? #true)
+             (vnode '&ipacentralized.a #false 'ca #:ja-vowel 'left #:narrow? #true)
              (vnode 'A '6 #:dot (cons 5 13)))
   @(ipa-line dx width height 'Near-Open #:draw-line? #false
              (vnode '&ae #false 'ae)
@@ -131,7 +131,7 @@ from vocal cords to lips to outside, and vary in quality, loudness, and length.
   @(ipanode width height 'Near-Front 'Near-Close dx (vnode 'I 'Y))
   @(ipanode width height 'Near-Back 'Near-Close dx (vnode #false 'U))
   
-  @(ipanode width height 'Near-Back 'Close dx (vnode '&textsubplus.W 'W&textsuperscript.B 'nbW #:ja-vowel 'both #:narrow? #true))
+  @(ipanode width height 'Near-Back 'Close dx (vnode '&textsubplus.W 'W+B 'nbW #:ja-vowel 'both #:narrow? #true))
   
   @(ipa-line dx width height 'Close
              (vnode 'i 'y #:ja-vowel 'left #:dot (cons 1 9))
@@ -188,22 +188,23 @@ definitions in sense of the roundedness, and are more often unrounded than round
 Generally speaking, there are 5 @ja-tech{vowel}s in Japanese. In a broad sense, these @ja-tech{vowel}s
 can be simply transcribed as the five blue symbols in @Tamer-Figure-ref{ipa:vowels}, while in a
 narrow sense, if compared to similar @ja-tech{vowel}s in other languages, they should be transcribed
-as the orange ones(plus the blue @ipa-sym{[i]}). In other words, the orange symbols represent the
-true @ja-tech{vowel}s of Japanese, but the blue ones are also acceptable for easy transcribing@handbook-footnote{@ipa-sym{[W]}
+as the orange ones@handbook-footnote{Thay are marked with diacritics. @ipa-sym{[&textlowering.◌$]} means
+ @emph{lowered}, @ipa-sym{[&textsubplus.◌$]} means @emph{advanced}, and @ipa-sym{[&ipacentralized.◌$]}
+ means @emph{centralized}.}(plus the blue @ipa-sym{[i]}). In other words, the orange symbols represent
+the true @ja-tech{vowel}s of Japanese, but the blue ones are also acceptable for easy transcribing@handbook-footnote{@ipa-sym{[W]}
  can be transcribed as @ipa-sym{[u]} for same reason.} because there is no phonemic distinction
 between the orange symbol and the blue counterpart within Japanese.
 
 In contrast to English and Mandarin Chinese, the extreme positions of Japanese vowels, benchmarked with
-the @tt{open central unrounded vowel} @ipa-sym{[&ipacentrialized.a]}, the @tt{close front unrounded vowel}
+the @tt{open central unrounded vowel} @ipa-sym{[&ipacentralized.a]}, the @tt{close front unrounded vowel}
 @ipa-sym{[i]}, and the @tt{close near-back vowel} @ipa-sym{[&textsubplus.W$]}, are actually less extreme
 in both height and width dimension, which measures the other position of lips for an unrounded
-@ja-tech{vowel}@handbook-footnote{The vowel chart gives no information about the "vowel width".
+@ja-tech{vowel}@handbook-footnote{The vowel chart gives no information about the ``vowel width''.
  For short, the extremely unrounded vowel is categorized as @emph{spread}, like smiling.}. The @ipa-sym{[W]}
-is the most notable one among the five due to its special roundedness: it can be unrounded(@ipa-sym{[&textsubplus.W$]})
-or compressed(@ipa-sym{[W&textsuperscript.B$]}), which is the other type of roundedness in addition to
-the protrusion@handbook-footnote{The @ja-tech{IPA} does not define specialized diacritics for the two
- types of roundedness, the superscript letter @ipa-sym{&textsuperscript.B} can be used for compression,
- and the @ipa-sym{&textsuperscript.w}, usually omitted, for protrusion.}.
+is the most notable one among the five due to its special roundedness: it can be either unrounded(@ipa-sym{[&textsubplus.W$]})
+or compressed(@ipa-sym{[W+B]}), which is the other type of roundedness in addition to the protrusion@handbook-footnote{The
+ @ja-tech{IPA} does not define specialized diacritics for the two types of roundedness, the superscript
+ letter @ipa-sym{+B} can be used for compression, and the @ipa-sym{+w}, usually omitted, for protrusion.}.
 
 Last but most important, @emph{never} learn pronunciation from its written description, unless you have
 already mastered the pronunciation of at least one foreign language with a rich set of phonetic features

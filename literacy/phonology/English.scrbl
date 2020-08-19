@@ -393,8 +393,50 @@ as irregular, they are just not that into a single word.
                        '(^h2nt*z hI*  spend  De*   laIz   In *  ^k6nst*nt  s3:tS   f*  ske*s  *nd  I^lu:sIv preI)
                        '(999987  765  567776 6545  678887 67 765 5677765  5777653 4554 468887 4333 35776544 567531)])
 
-       (list (para @ipa-ruby['(Remarkably|,| _this seemingly   barren  wilderness _is home  _to _the larges=t hunter  _of the/m a/ll --- _The blue whale.)
-                             '(rI^mA:k*bli    DIs  ^si:mINli ^b&ae$r*n ^wIld*n*s  Iz  h*Um   t*  D*  lA:dZIst  ^h2nt* *v   D*m  O:l   -   D*  blu: weIl)
-                             '(55678876543   55556 78877667   78999876 67766555   45 5566776 44 456  788888   8987654 55  557   987  654 2223 5677 76543210)])))]
+       (list @ipa-ruby['(Remarkably|,| _this seemingly   barren  wilderness _is home  _to _the larges=t hunter  _of the/m a/ll --- _The blue whale.)
+                       '(rI^mA:k*bli    DIs  ^si:mINli ^b&ae$r*n ^wIld*n*s  Iz  h*Um   t*  D*  lA:dZIst  ^h2nt* *v   D*m  O:l   -   D*  blu: weIl)
+                       '(55678876543   55556 78877667   78999876 67766555   45 5566776 44 456  788888   8987654 55  557   987  654 2223 5677 76543210)]))]
+
+
+@handbook-action{Peppa Pig}
+
+@tabular[
+ #:sep gap
+
+ (list (list @ipa-ruby['(It^s   Gran=dda=d    Dog  _with_  Danny      Dog.)
+                       '(Its  gr&ae$nd&ae$d   d6g   wID   ^d&ae$ni    d6g)
+                       '(44445 5678886688867 77765  5556  678999758 88887654)])
+
+       (list @ipa-ruby['(Hello|,| Peppa.)
+                       '(h*^l*U   pep*)
+                       '(99998765 655556789)])
+
+       (list @ipa-ruby['(Hello|,| Danny.   _We_^re lost.)
+                       '(h*^l*U  ^d&ae$ni    wI*   l6st)
+                       '(99998765 655556789 555666 666543)])
+
+       (list @ipa-ruby['(Lost?     I/s   y/our    sa=tnav    broken?     Satnav?)
+                       '(l6st       Iz    jO:  ^s&ae$tn&ae$v ^br*Uk*n ^s&ae$tn&ae$v)
+                       '(667898765 5555 569987    777777     7666679   99998765567)])
+
+       (list @ipa-ruby['(You^re    drivi/ng   a/   camper    van    T   thirty  two hundred|,| sa=tnav    come/s a/ standard.)
+                       '(jO:       ^draIvIN   *  ^k&ae$mp*   v&ae$n tI: ^T3:ti  tu: ^h2ndrId ^s&ae$tn&ae$v k2mz  *  ^st&ae$nd*d)
+                       '(667776555  678998765 56  7888876557 76678 877 7899987 777 7899999753 899975334  456666 655 57998765)])
+
+       (list @ipa-ruby['(Welcome  to  the  car   of the future.)
+                       '(^welk*m  t*  D*   kA:   *v D* ^fju:tS*)
+                       '(77776556 677 7776 65445 67  78 899876543)])
+
+       (list @ipa-ruby['(Ah....  So  that^s  wha=t tha=t  button does.)
+                       '(A:     s*U  D&ae$ts  w6t  D&ae$ ^b2t+nn d2z)
+                       '(899996 5445 5678999 98876 655567 899998 76543)])
+
+       (list @ipa-ruby['(Where   are we  going  today?)
+                       '(we*     A:  wi  ^g*UIN t*^deI)
+                       '(7999987 777 777 55555  55556789)])
+
+       (list @ipa-ruby['(Tha=t    camper    va/n  i/s talking.)
+                       '(D&ae$t ^k&ae$mp*  v&ae$n Iz  tO:kIN)
+                       '(3344556 678998765  54445 579 9876543210)]))]
 
 @handbook-reference[]

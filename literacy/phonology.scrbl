@@ -15,8 +15,9 @@ Physiologically speaking, human beings have no specialized vocal organs, @ja-tec
 actually produced by parts of respiratory organ and digestive organ. When we are not speaking, the
 air expelled from lungs will not be blocked, and that is the normal breathing; When we are speaking,
 the two vocal cords at throat will close then repeatedly open and close forced by breath like doors.
-Raw voices accompany the vibrating of vocal cords, then are articulated inside the month, and
-eventually be turned into @ja-tech{speech sound}s.
+Raw voices accompany the vibrating of vocal cords, along with the airflow, are articulated by lips,
+teeth, tongue, @etc then escape through the mouth or nose, and eventually be turned into
+@ja-tech{speech sound}s.
 
 @$tex:phantomsection[]
 
