@@ -1,9 +1,7 @@
 #lang scribble/book
 
 @require{../literacy.rkt}
-@require{../ipa.rkt}
-
-@require{../../digitama/ipa.rkt}
+@require{../chart.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @(define-url-bib CardinalVowels "Cardinal Vowels" "https://en.wikipedia.org/wiki/Cardinal_vowels"
@@ -11,25 +9,20 @@
    #:date 1967)
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@(define full-space (string (integer->char #x3000)))
 @(define broad-style (make-style #false (list (make-color-property "DodgerBlue"))))
 @(define narrow-style (make-style #false (list (make-color-property "SandyBrown"))))
 @(define index-style (make-style 'subscript (list (make-color-property "DimGray"))))
 
-@(define phone-elem
-   (lambda [phones]
-     (larger (larger (ipa-sym phones)))))
-
 @(define vnode
-   (lambda [unrounded [rounded #false] [name #false] #:ja-vowel [ja-vowel 'none] #:narrow? [narrow? #false] #:dot [dot #true] #:elem [ipa-elem phone-elem]]
+   (lambda [unrounded [rounded #false] [name #false] #:ja-vowel [vowel 'none] #:narrow? [narrow? #false] #:dot [dot #true] #:elem [ipa-elem phone-elem]]
      (define uv-elem
        (and unrounded
-            (elem #:style (and (memq ja-vowel '(both left)) (if (not narrow?) broad-style narrow-style))
+            (elem #:style (and (memq vowel '(both left)) (if (not narrow?) broad-style narrow-style))
                   (ipa-elem (~a unrounded)))))
      
      (define rv-elem
        (and rounded
-            (elem #:style (and (memq ja-vowel '(both right)) (if (not narrow?) broad-style narrow-style))
+            (elem #:style (and (memq vowel '(both right)) (if (not narrow?) broad-style narrow-style))
                   (ipa-elem (~a rounded)))))
 
      (define notation
@@ -46,47 +39,6 @@
            notation
            (and dot #true))))
 
-@(define ipanode
-   (case-lambda
-     [(x y node)
-      (and (list? node)
-           (let ([path-node (multiarg-element "ipanode"
-                                              (list (number->string x) (number->string y)
-                                                    (car node) (cadr node)))])
-             (cond [(not (caddr node)) (list path-node ";")]
-                   [else (list path-node ";" (elem #:style "ipadot" (car node)) ";")])))]
-     [(width height vowel-backness vowel-height dx node)
-      (ipanode width height vowel-backness vowel-height dx 0 node)]
-     [(width height vowel-backness vowel-height dx dy node)
-      (define-values (x y) (ipa-vowel-position width height vowel-backness vowel-height dx dy))
-      (ipanode x y node)]))
-
-@(define ipa-edge
-   (lambda names
-     (cond [(null? names) null]
-           [else (let draw ([head (car names)]
-                            [rest (cdr names)]
-                            [sward null])
-                   (cond [(null? rest) (reverse sward)]
-                         [else (draw (car rest) (cdr rest)
-                                     (list* ";"
-                                            (multiarg-element "ipaedge" (map ~a (list head (car rest))))
-                                            sward))]))])))
-
-@(define ipa-line
-   (lambda [offset width height vowel-height vn1 vn2 [vn3 #false] #:draw-line? [draw-line? #true] #:dy [dy 0]]
-     (define-values (xs y) (ipa-vowel-positions width height vowel-height offset dy))
-     
-     (filter values
-             (list (ipanode (car xs) y vn1)
-                   (ipanode (cadr xs) y vn2)
-                   (ipanode (caddr xs) y vn3)
-                   
-                   (and draw-line?
-                        (apply ipa-edge
-                               (map car (filter values
-                                                (list vn1 vn2 vn3)))))))))
-
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-root-story{@ja-title[#:key "IPA" "International Phonetic Alphabet" 国際音標文字 こくさいおんぴょうもじ 国际音标]}
 
@@ -96,9 +48,9 @@ notation based primarily on the Latin alphabet. It was devised the International
 for all (spoken) languages since 19th century.
 
 The @ja-tech{IPA} provides notations for both @ja-tech{phone} and @ja-tech{phoneme}. By convention,
-@ja-tech{phone}s and @ja-tech{phoneme}s are represented in @IPA{[ ]} and @IPA{/ /}, respectively.
+@ja-tech{phone}s and @ja-tech{phoneme}s are represented in @ipa-phone{ } and @ipa-phoneme{ }, respectively.
 
-@handbook-scenario{@ja-title[Vowels 母音 ぼいん 元音]}
+@handbook-scenario[#:tag "CardinalVowels"]{@ja-title[Vowels 母音 ぼいん 元音]}
 
 @deftech{Vowel}s are produced with an open vocal tract, which means the airflow will not be disturbed
 from vocal cords to lips to outside, and vary in quality, loudness, and length.
@@ -167,14 +119,14 @@ is in an extreme position, either front or back, high or low@handbook-footnote{T
  the mouth will lower the tongue from the viewpoint of the palate, moving the tongue vertically can
  be simplified to opening and closing the mouth, which adjusts the aperture of the jaw. As is in
  @tamer-figure-ref{ipa:vowels}, the @ja-tech{IPA} prefers the @tt{open}/@tt{close} model, which inverts
- the @tt{high}/@tt{low} model.}. The three corner vowels, @ipa-sym{[i]}, @ipa-sym{[A]}, and @ipa-sym{[u]},
+ the @tt{high}/@tt{low} model.}. The three corner vowels, @ipa-phone{i}, @ipa-phone{A}, and @ipa-phone{u},
 have articulatory definitions, other cardinal vowels are auditorily equidistant amongst them. More
-precisely, @ipa-sym{[i]} is produced with the tongue as far forward and as high in the mouth as possible
-without producing friction; @ipa-sym{[u]} is produced with the tongue as far back and as high in the
-mouth as possible with protruded lips, similar to blowing out a candle; and @ipa-sym{[A]} is produced
+precisely, @ipa-phone{i} is produced with the tongue as far forward and as high in the mouth as possible
+without producing friction; @ipa-phone{u} is produced with the tongue as far back and as high in the
+mouth as possible with protruded lips, similar to blowing out a candle; and @ipa-phone{A} is produced
 with the tongue as low and as far back in the mouth as possible. Along with four vowels at trisection
-points, @ipa-sym{[e]}, @ipa-sym{[E]}, @ipa-sym{[O]}, and @ipa-sym{[o]}, plus the @tt{front-open} vowel
-@ipa-sym{[a]}, these eight vowels are common in natural languages, and therefore be categorized as
+points, @ipa-phone{e}, @ipa-phone{E}, @ipa-phone{O}, and @ipa-phone{o}, plus the @tt{front-open} vowel
+@ipa-phone{a}, these eight vowels are common in natural languages, and therefore be categorized as
 the @ja-deftech["primary cardinal vowel" 第一次基本母音 だいいちじきほんぼいん 主定位元音], the rest,
 whose numerical labels range from 9 to 18, are categorized as the
 @ja-deftech["secondary cardinal vowel" 第二次基本母音 だいにじきほんぼいん 次定位元音].
@@ -182,27 +134,28 @@ whose numerical labels range from 9 to 18, are categorized as the
 For each pair of vowels at the same position, they differ in roundedness of lips. By some phonetic
 correlation between rounding and backness@handbook-footnote{Acoustical speaking, rounding tends to be
  make the second formant decrease.}, the unrounded vowels are placed at the left side, while the rounded
-ones are placed at the right side. The two counterexamples, @ipa-sym{[*]} and @ipa-sym{[5]}, do not have
+ones are placed at the right side. The two counterexamples, @ipa-phone{*} and @ipa-phone{5}, do not have
 definitions in sense of the roundedness, and are more often unrounded than rounded.
 
-Generally speaking, there are 5 @ja-tech{vowel}s in Japanese. In a broad sense, these @ja-tech{vowel}s
-can be simply transcribed as the five blue symbols in @Tamer-Figure-ref{ipa:vowels}, while in a
-narrow sense, if compared to similar @ja-tech{vowel}s in other languages, they should be transcribed
-as the orange ones@handbook-footnote{Thay are marked with diacritics. @ipa-sym{[&textlowering.◌$]} means
- @emph{lowered}, @ipa-sym{[&textsubplus.◌$]} means @emph{advanced}, and @ipa-sym{[&ipacentralized.◌$]}
- means @emph{centralized}.}(plus the blue @ipa-sym{[i]}). In other words, the orange symbols represent
-the true @ja-tech{vowel}s of Japanese, but the blue ones are also acceptable for easy transcribing@handbook-footnote{@ipa-sym{[W]}
- can be transcribed as @ipa-sym{[u]} for same reason.} because there is no phonemic distinction
-between the orange symbol and the blue counterpart within Japanese.
+Generally speaking, there are only 5 @ja-tech{vowel}s in Japanese. In a broad sense, these @ja-tech{vowel}s
+can be simply transcribed as the five blue symbols in @Tamer-Figure-ref{ipa:vowels}, while in a narrow
+sense, if compared to similar @ja-tech{vowel}s in other languages, they should be transcribed as the
+orange ones@handbook-footnote{Thay are marked with diacritics whose meanings can be observed in the
+ chart directly. @ipa-phone{&textlowering.◌$} means @emph{lowered}, @ipa-phone{&textsubplus.◌$} means
+ @emph{advanced}, and @ipa-phone{&ipacentralized.◌$} means @emph{centralized}.}(plus the blue @ipa-phone{i}).
+In other words, the orange symbols represent the true @ja-tech{vowel}s of Japanese, but the blue ones
+are also acceptable for easy transcribing@handbook-footnote{@ipa-phone{W} can be transcribed as @ipa-phone{u}
+ for same reason.} because there is no phonemic distinction between the orange symbol and the blue
+counterpart within Japanese.
 
 In contrast to English and Mandarin Chinese, the extreme positions of Japanese vowels, benchmarked with
-the @tt{open central unrounded vowel} @ipa-sym{[&ipacentralized.a]}, the @tt{close front unrounded vowel}
-@ipa-sym{[i]}, and the @tt{close near-back vowel} @ipa-sym{[&textsubplus.W$]}, are actually less extreme
+the @tt{open central unrounded vowel} @ipa-phone{&ipacentralized.a}, the @tt{close front unrounded vowel}
+@ipa-phone{i}, and the @tt{close near-back vowel} @ipa-phone{&textsubplus.W$}, are actually less extreme
 in both height and width dimension, which measures the other position of lips for an unrounded
 @ja-tech{vowel}@handbook-footnote{The vowel chart gives no information about the ``vowel width''.
- For short, the extremely unrounded vowel is categorized as @emph{spread}, like smiling.}. The @ipa-sym{[W]}
-is the most notable one among the five due to its special roundedness: it can be either unrounded(@ipa-sym{[&textsubplus.W$]})
-or compressed(@ipa-sym{[W+B]}), which is the other type of roundedness in addition to the protrusion@handbook-footnote{The
+ For short, the extremely unrounded vowel is categorized as @emph{spread}, like smiling.}. The @ipa-phone{W}
+is the most notable one among the five due to its special roundedness: it can be either unrounded(@ipa-phone{&textsubplus.W$})
+or compressed(@ipa-phone{W+B}), which is the other type of roundedness in addition to the protrusion@handbook-footnote{The
  @ja-tech{IPA} does not define specialized diacritics for the two types of roundedness, the superscript
  letter @ipa-sym{+B} can be used for compression, and the @ipa-sym{+w}, usually omitted, for protrusion.}.
 

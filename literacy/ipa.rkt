@@ -97,7 +97,7 @@
 
 (define ipa-symbol-element
   (lambda [sym]
-    (racketcommentfont (ipa-/sym/ sym))))
+    (racketcommentfont (ipa-phoneme sym))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-word
@@ -114,7 +114,12 @@
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
     (IPA s #:latex? latex?)))
 
-(define ipa-/sym/
+(define ipa-phone
+  (lambda [symbols]
+    (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
+    (IPA (list "[" s "]"))))
+
+(define ipa-phoneme
   (lambda [symbols]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
     (IPA (list "/" s "/"))))

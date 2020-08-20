@@ -1,10 +1,13 @@
 #lang scribble/book
 
 @require{../literacy.rkt}
-@require{../ipa.rkt}
+@require{../chart.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@(define gap (hspace 1))
+@(define long-style (make-style #false (list (make-color-property "DodgerBlue"))))
+@(define short-style (make-style #false (list (make-color-property "Aquamarine"))))
+
+@(define gap1 (hspace 1))
 @(define gap2 (hspace 2))
 @(define gap4 (hspace 4))
 
@@ -14,7 +17,7 @@
 
 @(define en-phonetics
    (lambda [sym]
-     (ipa-phonetics (ipa-/sym/ sym))))
+     (ipa-phonetics (ipa-phoneme sym))))
 
 @(define en-sentence
    (lambda [bases symbols . contents]
@@ -45,10 +48,99 @@
                                                 (cons (map ipa-ruby wrow srow)
                                                       sowr)))])))]))
 
+@(define vnode
+   (lambda [unrounded [rounded #false] [name #false] #:en-vowel [vowel 'none] #:long? [long? #false] #:dot? [dot? #true] #:elem [ipa-elem phone-elem]]
+     (define uv-elem
+       (and unrounded
+            (elem #:style (and (memq vowel '(both left)) (if (memq long? '(#true left)) long-style short-style))
+                  (ipa-elem (~a unrounded)))))
+     
+     (define rv-elem
+       (and rounded
+            (elem #:style (and (memq vowel '(both right)) (if (memq long? '(#true right)) long-style short-style))
+                  (ipa-elem (~a rounded)))))
+
+     (define notation
+       (filter values
+               (cond [(not dot?) (list uv-elem rv-elem)]
+                     [else (list uv-elem full-space rv-elem)])))
+     
+     (list (~a (or name (apply ~a (filter values (list unrounded rounded)))))
+           notation
+           dot?)))
+
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-root-story{(British) English Phonology}
+@handbook-appendix-story{(British) English Phonology}
 
 @handbook-scenario{Phones}
+
+@handbook-action{Vowels}
+
+@tamer-figure-here["ipa:vowels:en" "IPA Vowels (British English)"]{
+ @(let*-values ([(width height) (values 10 6)]
+                [(xunit) (* width 1/6)]
+                [(dx) (values (* xunit 2))])
+    @nested[#:style "tikzpicture"]{
+  @(ipa-line dx width height 'Open
+             (vnode 'a '&OE 'aoe)
+             (vnode '&ipacentralized.a #false 'ca)
+             (vnode 'A '6 #:en-vowel 'both #:long? 'left))
+  @(ipa-line dx width height 'Near-Open #:draw-line? #false
+             (vnode '&ae #false 'ae  #:en-vowel 'left)
+             (vnode '5 #false #:dot? #false))
+  @(ipa-line dx width height 'Open-Mid
+             (vnode 'E '&oe 'eoe)
+             (vnode '3 '&textcloserevepsilon '3cr3 #:en-vowel 'left #:long? #true)
+             (vnode '2 'O #:en-vowel 'both #:long? 'right))
+  @(ipa-line dx width height 'Mid #:draw-line? #false
+             (vnode #false '&textlowering.&o 'cmo)
+             (vnode '* #false 'schwa #:en-vowel 'left #:dot? #false)
+             (vnode #false '&textlowering.o 'mbo))
+  @(ipa-line dx width height 'Close-Mid
+             (vnode 'e '&o 'ecmo #:en-vowel 'left)
+             (vnode '9 '8)
+             (vnode '7 'o))
+  
+  @(ipanode width height 'Near-Front 'Near-Close dx
+            (vnode 'I 'Y  #:en-vowel 'left))
+  
+  @(ipanode width height 'Near-Back 'Near-Close dx
+            (vnode #false 'U #:en-vowel 'right))
+  
+  @(ipa-line dx width height 'Close
+             (vnode 'i 'y #:en-vowel 'left #:long? #true)
+             (vnode '1 '0)
+             (vnode 'W 'u #:en-vowel 'right #:long? #true))
+  
+  @(ipa-edge 'aoe 'ae 'eoe 'cmo 'ecmo 'iy)
+  @(ipa-edge 'ca '5 '3cr3 'schwa '98 '10)
+  @(ipa-edge 'A6 '2O 'mbo '7o 'Wu)
+  
+  @(for/list ([hlabel (in-list ipa-vowel-simplified-backnesses)])
+     (ipanode width height hlabel 'Close dx 1 (vnode hlabel #:dot? #false #:elem tt)))
+  
+  @(for/list ([vlabel (in-list ipa-vowel-heights)])
+     (define-values (x y) (ipa-vowel-position width height 'Front vlabel dx))
+     (ipanode 0 y (vnode vlabel #:dot? #false #:elem tt)))
+  })
+}
+
+@Tamer-Figure-ref{ipa:vowels:en} is the @ja-tech{IPA} vowels chart@handbook-footnote{The chart is
+ introduced in @secref{CardinalVowels}} of (British) English. Generally speaking, there are 7 short
+monothongs, 5 long monothongs, and 8 diphthongs in English:
+
+@nested{
+ @tabular[
+ #:sep gap2
+ #:column-properties '(right left)
+ (list (cons "Long Monothong"
+             (append (map (λ [lm] (elem #:style long-style (ipa-phone lm))) '(i: A: u: 3: O:))
+                     (make-list 3 " ")))
+       (cons "Short Monothong"
+             (append (map (λ [sm] (elem #:style short-style (ipa-phone sm))) '(I 2 U e &ae$ * 6))
+                     (make-list 1 " ")))
+       (cons "Diphthong"
+             (map ipa-phone '(eI aI *U OI aU I* e* U*))))]}
 
 @handbook-scenario{Phonemes}
 
@@ -291,7 +383,7 @@ as irregular, they are just not that into a single word.
 @handbook-event{Reading: A Sad Birthday}
 
 @tabular[
- #:sep gap
+ #:sep gap1
 
  (list (list @ipa-ruby['(It^s   my        birthday         _to_day.)
                        '(Its    maI       ^b3:TdeI         t*^deI)
@@ -375,7 +467,7 @@ as irregular, they are just not that into a single word.
 @handbook-action{The Blue Whale}
 
 @tabular[
- #:sep gap
+ #:sep gap1
 
  (list (list @ipa-ruby['(The        open      ocean.)
                        '(Di:       ^*Up*n     *UpS*n)
@@ -401,7 +493,7 @@ as irregular, they are just not that into a single word.
 @handbook-action{Peppa Pig}
 
 @tabular[
- #:sep gap
+ #:sep gap1
 
  (list (list @ipa-ruby['(It^s   Gran=dda=d    Dog  _with_  Danny      Dog.)
                        '(Its  gr&ae$nd&ae$d   d6g   wID   ^d&ae$ni    d6g)
@@ -415,9 +507,13 @@ as irregular, they are just not that into a single word.
                        '(h*^l*U  ^d&ae$ni    wI*   l6st)
                        '(99998765 655556789 555666 666543)])
 
-       (list @ipa-ruby['(Lost?     I/s   y/our    sa=tnav    broken?     Satnav?)
-                       '(l6st       Iz    jO:  ^s&ae$tn&ae$v ^br*Uk*n ^s&ae$tn&ae$v)
-                       '(667898765 5555 569987    777777     7666679   99998765567)])
+       (list @ipa-ruby['(Lost?     I/s   y/our    sa=tnav    broken?)
+                       '(l6st       Iz    jO:  ^s&ae$tn&ae$v ^br*Uk*n)
+                       '(667898765 5555 569987    777777     7666679)])
+
+       (list @ipa-ruby['(Satnav?)
+                       '(^s&ae$tn&ae$v)
+                       '(99998765567)])
 
        (list @ipa-ruby['(You^re    drivi/ng   a/   camper    van    T   thirty  two hundred|,| sa=tnav    come/s a/ standard.)
                        '(jO:       ^draIvIN   *  ^k&ae$mp*   v&ae$n tI: ^T3:ti  tu: ^h2ndrId ^s&ae$tn&ae$v k2mz  *  ^st&ae$nd*d)
@@ -437,6 +533,50 @@ as irregular, they are just not that into a single word.
 
        (list @ipa-ruby['(Tha=t    camper    va/n  i/s talking.)
                        '(D&ae$t ^k&ae$mp*  v&ae$n Iz  tO:kIN)
-                       '(3344556 678998765  54445 579 9876543210)]))]
+                       '(3344556 678998765  54445 579 9876543210)])
+
+       (list @ipa-ruby['(Cleve/r  +ri/sn^/t i/t?)
+                       '(^klev*   ^Iz*nt    It)
+                       '(5688844  57998765  543210)])
+
+       (list @ipa-ruby['(The   computer^s     voice helps  you fin/d    y/our   way.)
+                       '(D*    k*m^pju:t*z    vOIs  helps  ju: faInd     jO:    weI)
+                       '(55555 54322246887654 45678 88888 8888 8776655 55445566 78987654)])
+
+       (list @ipa-ruby['(But|,|   how   doe/s  i/=t know   where  we  wan_t _to_   go?)
+                       '(b2t      haU   d*z     It   n*U    we*   wi: w6nt   t*    g*U)
+                       '(66666  888777 766554   43 333445 5556789 99 987655  56 6789876543)])
+
+       (list @ipa-ruby['(You te/ll i/t.)
+                       '(ju:  tel  It)
+                       '(3334 4567 789)])
+
+       (list @ipa-ruby['(Uh|,| hello|,| Mrs.   Camper    Van)
+                       '(^2    h*^l*U ^mIsIz ^k&ae$mp*   v&ae$n)
+                       '(666   777764   66667 7899998765 54444567)])
+
+       (list @ipa-ruby['(Hello.)
+                       '(h*^l*U)
+                       '(777654334)])
+
+       (list @ipa-ruby['(We^re     goi/ng   on  a/  holiday.)
+                       '(wI*       ^g*UIN   6n  *   ^h6l*deI)
+                       '(888776655 5544333 334 456 678999987654)])
+
+       (list @ipa-ruby['(Can you te/ll  u/s  the   way?)
+                       '(k*n ju:  tel   *s   D*    weI)
+                       '(555 567 78999 9876 654321 11123456)])
+
+       (list @ipa-ruby['(Procee/d        on  a/ curren=t  roa/d   in   a/  straigh=t    line.)
+                       '(pr*^si:d        6n  *  ^k2r*nt  r*Ud    In   *    streIt      laIn)
+                       '(556667777654334 455 56 67888876 6543334 5666 666 654321123456 789987654321)])
+       
+       (list @ipa-ruby['(Thanks   _for_ your    help|,|      Gran=dda=d   Dog?)
+                       '(T&ae$Nks  f*   jO:     help       ^gr&ae$nd&ae$d d6g)
+                       '(99998765  543  32246 678887654321  5554321000   00135)])
+
+       (list @ipa-ruby['(You^re        welcome.)
+                       '(jO:           ^welk*m)
+                       '(9998877665544 4332211000000)]))]
 
 @handbook-reference[]
