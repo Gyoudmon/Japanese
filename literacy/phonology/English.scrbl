@@ -20,10 +20,10 @@
      (ipa-phonetics (ipa-phoneme sym))))
 
 @(define en-sentence
-   (lambda [bases symbols . contents]
+   (lambda [bases [symbols null] [punctuation "."]]
      @nested[#:style tamer-boxed-style
-             @|gap4| @ipa-ruby[bases symbols] "."
-             contents]))
+             @|gap4| @ipa-ruby[bases symbols]
+             punctuation]))
 
 @(define en-words
    (lambda [bases symbols [cols 4]]
@@ -194,13 +194,101 @@ monothongs, 5 long monothongs, and 8 diphthongs in English:
            6]
  
  @en-words['(knife ⇒ knives leaf ⇒ leaves)
-           '(kaIf  - kaIvz li:f - li:vz)
+           '(kaIf  - kaIvz  li:f - li:vz)
            6]}
  ]
 
 @handbook-action{Aspiration}
 
 @handbook-action{Lateral Release and Nasal Release}
+
+@handbook-action{Liaison}
+
+Native English Speakers don't speak word by word, and it's nature for them to combine @ja-tech{phoneme}s
+across the word boundary in some specific situations, just as if these phonemes were inside a single word.
+
+@itemlist[
+ @item{Consonant + Vowel. This is the most common case.
+       
+ @en-sentence['(Please pic/k it u/p)]
+ 
+ @en-sentence['(Le=t me ha/ve a/ loo/k at i/t)]}
+
+ @item{Vowel + Vowel. Vowels cannot be linked on their own, hence the added semivowels. 
+  @itemlist[
+ @item{A (fuzzy) @en-phonetics{j} is added if following @en-phonetics{i:}, @en-phonetics{eI},
+    @en-phonetics{OI}, or @en-phonetics{aI}. @tt{[palatalization]}
+
+    @en-sentence['(In m/y +jo/pinion)]
+ 
+    @en-sentence['(Th/e +je/nd of the stor/y +ji/s ver/y +ji/nteresting)]
+    
+    @en-sentence['(Ca/n I +ja/dd something) null "?"]
+    
+    @en-sentence['(To b/e h+jo/nst)]
+ }
+
+ @item{A (fuzzy) @en-phonetics{w} is added if following @en-phonetics{u:}, @en-phonetics{U},
+    @en-phonetics{*U}, or @en-phonetics{aU}. @tt{[labialization]}
+    
+    @en-sentence['(ho/w +wa/wful) null "!"]
+    
+    @en-sentence['(/go+wing/)]
+    
+    @en-sentence['(thr/ow +wi/t away)]
+    
+    @en-sentence['(wh/o +ware/ you)]
+   }
+ ]}
+
+ @item{letter @en-letters{-r}/@en-letters{-re} + Vowel. A (fuzzy) @en-phonetics{r} is added.
+
+  @en-sentence['(They^re my fathe/r +ra/n=d mother)]
+ 
+  @en-sentence['(I looked fo/r +ri/t he/re +ra/n=d there)]
+  
+  @en-sentence['(The/re +ris a/ footba/ll u/nde/r +ri/t)]
+
+  @en-sentence['(The/re +ra/re book/s o/n the desk)]
+ 
+  @en-sentence['(He/re +ris a/ letter for you)]
+ 
+  @en-sentence['(He/re +ra/re fou/r +re/ggs)]
+  
+  @en-sentence['(But whe/re +ri/s my cup) null "?"]
+  
+  @en-sentence['(Whe/re +rare +ry/our brothe/r +ra/n=d sister) null "?"]
+ 
+  @en-sentence['(I calle/d y/ou hal/f an ho/u/r +ra/go)]
+
+  More generally speaking, the @en-phonetics{r} works for @en-phonetics{A:}, @en-phonetics{O:},
+  @en-phonetics{3:}, @en-phonetics{*}, @en-phonetics{I*}, @en-phonetics{e*}, and @en-phonetics{U*}.
+
+  @en-sentence['(The /air +ri/s fresh)
+               '(-   e*)]
+  
+  @en-sentence['(The ar/ea +ri/s flooded)
+               '(-   ^e*ri*)]
+  
+  @en-sentence['(Chin/a +ra/n=d Japan)
+               '(^tSaIn*)]
+  
+  @en-sentence['(la/w +ra/n=d order)
+               '(lO:)]
+
+  @en-sentence['(A ca/r +ra/n=d a bike)
+               '(- kA:)]
+
+  @en-sentence['(the tou/r +ri/s good)
+               '(-   tU*)]
+ }
+]
+
+@handbook-action{Assimilation}
+
+@handbook-event{Progressive Assimilation}
+
+@handbook-event{Regressive Assimilation}
 
 @handbook-scenario{Prosody}
 
