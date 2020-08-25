@@ -6,8 +6,8 @@
 (require scribble/base)
 (require scribble/core)
 
-(require "../digitama/ipa.rkt")
-(require "ipa.rkt")
+@require{../digitama/ipa.rkt}
+@require{ipa.rkt}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @(define full-space (string (integer->char #x3000)))

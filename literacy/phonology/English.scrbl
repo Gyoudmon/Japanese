@@ -144,7 +144,129 @@ monothongs, 5 long monothongs, and 8 diphthongs in English:
 
 @handbook-scenario{Phonemes}
 
-@handbook-action{Voiceless and Voiced Morphological Suffixes}
+@handbook-action{Aspiration}
+
+@handbook-action{Lateral Release and Nasal Release}
+
+@handbook-action{Liaison}
+
+Native English speakers usually don't treat an utterance as a stream of words@handbook-footnote{Words
+ are invented for reading and writing, whereas @ja-tech{phoneme}s are regulated for speaking and listening.
+ They are distinctive concepts, and no known languages follow the one-character-one-syllable-one-morpheme
+ principle. This also indicates that you should not do liaison only by observing the spells of words.},
+instead, it's nature for them to treat an utterance as a stream of syllables, even the consonant part
+and vowel part of a @ja-tech{syllable} cross the word boundary. This is why and where the liaison occur.
+In fact, this phonological phenomenon applies to the pronunciation of a single word as well. For instances,
+@ipa-ruby['(/go+wing/ /wi=tness/ /=s+Streng+kth/)
+          '(^g*UIN      wItn*s     streNT)],
+@etc
+
+@itemlist[
+ @item{@ja-tech{Consonant} + @ja-tech{Vowel}. This is the most common case.
+       
+ @en-sentence['(Please pic/k it u/p)]
+ 
+ @en-sentence['(Le=t me ha/ve a/ loo/k at i/t)]}
+
+ @item{@ja-tech{Vowel} + @ja-tech{Vowel}. @ja-tech{Vowel}s cannot be linked on their own, hence the
+  added @ja-tech{semivowel}s.
+  
+  @itemlist[
+ @item{A (fuzzy) @en-phonetics{j} is added if following @en-phonetics{i:}, @en-phonetics{eI},
+    @en-phonetics{OI}, or @en-phonetics{aI}. @tt{[palatalization]}
+
+    @en-sentence['(In m/y +jo/pinion)]
+ 
+    @en-sentence['(I come to se/e +jA/dam)]
+    
+    @en-sentence['(H/e +ja/sked ne for a cu/p o/f tea)]
+    
+    @en-sentence['(Th/e +je/n/d o/f the stor/y +ji/s ver/y +ji/nteresting)]
+ }
+
+ @item{A (fuzzy) @en-phonetics{w} is added if following @en-phonetics{u:}, @en-phonetics{U},
+    @en-phonetics{*U}, or @en-phonetics{aU}. @tt{[labialization]}
+    
+    @en-sentence['(ho/w +wa/wful) null "!"]
+    
+    @en-sentence['(She^ll g/o +wa/way tomorro/w +wa/fternoon)]
+    
+    @en-sentence['(The coa/t i/s to/o +we/xpensive)]
+   }
+ ]}
+
+ @item{letter @en-letters{-r}/@en-letters{-re} + @ja-tech{Vowel}. A (fuzzy) @en-phonetics{r} is added.
+
+  @en-sentence['(They^re my fathe/r +ra/n=d mother)]
+ 
+  @en-sentence['(I looked fo/r +ri/t he/re +ra/n=d there)]
+  
+  @en-sentence['(The/re +ris a/ football unde/r +ri/t)]
+
+  @en-sentence['(The/re +rare/ book/s o/n the desk)]
+ 
+  @en-sentence['(He/re +ris a/ letter for you)]
+ 
+  @en-sentence['(He/re +ra/re fou/r +re/ggs)]
+  
+  @en-sentence['(But whe/re +ri/s my cup) null "?"]
+  
+  @en-sentence['(Whe/re +rare/ your brothe/r +ra/n=d sister) null "?"]
+ 
+  @en-sentence['(I calle/d y/ou hal/f an ho/u/r +ra/go)]
+
+  More generally speaking, the @en-phonetics{r} works for @en-phonetics{A:}, @en-phonetics{O:},
+  @en-phonetics{3:}, @en-phonetics{*}, @en-phonetics{I*}, @en-phonetics{e*}, and @en-phonetics{U*}.
+
+  @en-sentence['(Th/e +jair +ri/s fresh)
+               '(-     e*)]
+  
+  @en-sentence['(The ar/ea +ri/s flooded)
+               '(-   ^e*ri*)]
+  
+  @en-sentence['(Chin/a +ra/n=d Japan)
+               '(^tSaIn*)]
+  
+  @en-sentence['(la/w +ra/n/d or/der)
+               '(lO:)]
+  
+  @en-sentence['(wa/r +ra/n=d peace)
+               '(wO:)]
+
+  @en-sentence['(A ca/r +ra/n=d a bike)
+               '(- kA:)]
+
+  @en-sentence['(the tou/r +ri/s good)
+               '(-   tU*)]
+ }
+]
+
+@handbook-action{Assimilation}
+
+Assimilation another phonological phenomenon similar to liaion but for @ja-tech{Consonant} + @ja-tech{Consonant}.
+
+@itemlist[
+ @item{Same consonants, also included the two with same articulatory features and only differ in
+  voicedness. The first consonant would not contribute to the pronunciation by leaving a short or
+  no stop for it.
+  
+  @en-words['(|ni=2ce song| |so=2me money| |be=d time| |qui=2te different|) null 4]}
+
+ @item{@en-phonetics{t} @en-phonetics{d} + @en-phonetics{T} @en-phonetics{l}. They have similar
+  articulatory features, and would be blended towarding the second one.
+  
+  @en-words['(|hol/=d th/e line please| |I go/=t th/e message| |a/=t th/e moment|) null 4]}
+
+ @item{@ja-tech{Plosive} + @ja-tech{Consonant}. They usually are different consonants, and the first
+  would be elided without leaving a short stop for it.
+
+  @en-words['(|goo=d girl| |las=t Monday| |spea=k more slowly| |brigh=t colour|) null 4]}
+ ]
+
+@handbook-event{Progressive Assimilation}
+
+In this category, @ja-tech{phonemes} assimilate to their preceding @ja-tech{phonemes}. The most well
+known case is the voiceless-voiced-assimilation.
 
 @itemlist[
  @item{@en-letters{-ed} that of an inflected @ja-tech{verb} is realized as @en-phonetics{t} if
@@ -194,101 +316,57 @@ monothongs, 5 long monothongs, and 8 diphthongs in English:
            6]
  
  @en-words['(knife ⇒ knives leaf ⇒ leaves)
-           '(kaIf  - kaIvz  li:f - li:vz)
+           '(naIf  - naIvz  li:f - li:vz)
            6]}
  ]
 
-@handbook-action{Aspiration}
+@handbook-event{Regressive Assimilation}
 
-@handbook-action{Lateral Release and Nasal Release}
-
-@handbook-action{Liaison}
-
-Native English Speakers don't speak word by word, and it's nature for them to combine @ja-tech{phoneme}s
-across the word boundary in some specific situations, just as if these phonemes were inside a single word.
+In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phonemes}. If the resulting
+@ja-tech{phoneme} is the same as the following one, the length doubled.
 
 @itemlist[
- @item{Consonant + Vowel. This is the most common case.
-       
- @en-sentence['(Please pic/k it u/p)]
- 
- @en-sentence['(Le=t me ha/ve a/ loo/k at i/t)]}
+ @item{@en-phonetics{s} ⇒ @en-phonetics{S}
+  @en-words['(|spa/+S=2ce/ shuttle| /=s+S/tronge)
+            '(|speIs S2tl|            str6NT)
+            4]}
 
- @item{Vowel + Vowel. Vowels cannot be linked on their own, hence the added semivowels. 
-  @itemlist[
- @item{A (fuzzy) @en-phonetics{j} is added if following @en-phonetics{i:}, @en-phonetics{eI},
-    @en-phonetics{OI}, or @en-phonetics{aI}. @tt{[palatalization]}
-
-    @en-sentence['(In m/y +jo/pinion)]
+ @item{@en-phonetics{z} ⇒ @en-phonetics{s}
+  @en-words['(new/+z=s/paper |hi/+z=s/ farm| |he ha/+z=s/ six sisters|)
+            '(^nju:zpeIp*    |hIs fA:m|      |hi: h&ae$s sIks ^sIst*z|)
+            4]}
  
-    @en-sentence['(Th/e +je/nd of the stor/y +ji/s ver/y +ji/nteresting)]
-    
-    @en-sentence['(Ca/n I +ja/dd something) null "?"]
-    
-    @en-sentence['(To b/e h+jo/nst)]
+ @item{@en-phonetics{v} ⇒ @en-phonetics{f}
+  @en-words['(|o/+f=f/ course| |pro/+f=2ve/ to me|)
+            '(|*v kO:s|        |pru:v t* mi:|)
+            4]}
+ 
+ @item{@en-phonetics{n} + @en-phonetics{k} or @en-phonetics{g} ⇒ @en-phonetics{N}. This is a hint of
+  @ipa-ruby['(/=s+Streng+kth/) '(streNT)].
+  @en-words['(|o/+N=2ne/ cup| |in her ow/+N=n/ car|)
+            '(|w2n k2p|       |In h3: oUn kA:|)
+            4]}
+
+ @item{@en-phonetics{n} + @en-phonetics{m} ⇒ @en-phonetics{m}.
+  @en-words['(|i/+m=n/ my opinion| |seve/+m=n/ million|)
+            '(|In maI *^pinj*n|     |sevn mIlj*n|)
+            4]}
+ ]
+
+@handbook-event{Reciprocal Assimilation}
+
+In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}.
+
+@itemlist[
+ @item{@en-phonetics{t} + @en-phonetics{j} ⇒ @en-phonetics{tS}
+  @en-sentence['(I^ll pu/t y/ou through)]
+  
  }
-
- @item{A (fuzzy) @en-phonetics{w} is added if following @en-phonetics{u:}, @en-phonetics{U},
-    @en-phonetics{*U}, or @en-phonetics{aU}. @tt{[labialization]}
-    
-    @en-sentence['(ho/w +wa/wful) null "!"]
-    
-    @en-sentence['(/go+wing/)]
-    
-    @en-sentence['(thr/ow +wi/t away)]
-    
-    @en-sentence['(wh/o +ware/ you)]
-   }
- ]}
-
- @item{letter @en-letters{-r}/@en-letters{-re} + Vowel. A (fuzzy) @en-phonetics{r} is added.
-
-  @en-sentence['(They^re my fathe/r +ra/n=d mother)]
- 
-  @en-sentence['(I looked fo/r +ri/t he/re +ra/n=d there)]
   
-  @en-sentence['(The/re +ris a/ footba/ll u/nde/r +ri/t)]
-
-  @en-sentence['(The/re +ra/re book/s o/n the desk)]
- 
-  @en-sentence['(He/re +ris a/ letter for you)]
- 
-  @en-sentence['(He/re +ra/re fou/r +re/ggs)]
-  
-  @en-sentence['(But whe/re +ri/s my cup) null "?"]
-  
-  @en-sentence['(Whe/re +rare +ry/our brothe/r +ra/n=d sister) null "?"]
- 
-  @en-sentence['(I calle/d y/ou hal/f an ho/u/r +ra/go)]
-
-  More generally speaking, the @en-phonetics{r} works for @en-phonetics{A:}, @en-phonetics{O:},
-  @en-phonetics{3:}, @en-phonetics{*}, @en-phonetics{I*}, @en-phonetics{e*}, and @en-phonetics{U*}.
-
-  @en-sentence['(The /air +ri/s fresh)
-               '(-   e*)]
-  
-  @en-sentence['(The ar/ea +ri/s flooded)
-               '(-   ^e*ri*)]
-  
-  @en-sentence['(Chin/a +ra/n=d Japan)
-               '(^tSaIn*)]
-  
-  @en-sentence['(la/w +ra/n=d order)
-               '(lO:)]
-
-  @en-sentence['(A ca/r +ra/n=d a bike)
-               '(- kA:)]
-
-  @en-sentence['(the tou/r +ri/s good)
-               '(-   tU*)]
+ @item{@en-phonetics{d} + @en-phonetics{j} ⇒ @en-phonetics{dZ}.
+  @en-sentence['(I^ll sen/d y/ou the book)]
  }
 ]
-
-@handbook-action{Assimilation}
-
-@handbook-event{Progressive Assimilation}
-
-@handbook-event{Regressive Assimilation}
 
 @handbook-scenario{Prosody}
 
@@ -493,7 +571,7 @@ as irregular, they are just not that into a single word.
                        '(^i:ven  maI    d6g  h&ae$d mO:    kA:dz  D*n   mi:   6n    hIz   ^b3:TdeI)
                        '(6677876 6556 678998 98766 665544 444454 43334 4565 54456 678998 76543222)])
        
-       (list @ipa-ruby['(Maybe   my       do/g     a/=t=e     my      cards.)
+       (list @ipa-ruby['(Maybe   my       do/g     a/=2te     my      cards.)
                        '(^meIbi  maI      d6g       eIt       maI     kA:dz)
                        '(5566776 654456 677766 6789988776655 56677 776655443322)])
        

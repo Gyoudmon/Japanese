@@ -78,7 +78,7 @@
 
 (define ipa-diacritic-element
   (lambda [word]
-    (elem #:style "textsuperscript" word)))
+    (elem #:style "textsuperscript" (IPA word))))
 
 (define ipa-puncture-element
   (lambda [word]
@@ -201,7 +201,10 @@
     [(chars make-element nekot snekot)
      (define-values (maybe-token rest $?)
        (cond [(null? (cdr chars)) (values #false null #false)]
-             [else (values (make-element (string (cadr chars))) (cddr chars) #false)]))
+             [else (let ([t (cadr chars)])
+                     (cond [(not (char<=? #\1 t #\9)) (values (make-element (string t)) (cddr chars) #false)]
+                           [else (let-values ([(ts rs) (split-at (cddr chars) (min (- (length chars) 2) (- (char->integer t) 48)))])
+                                   (values (make-element (list->string ts)) rs #false))]))]))
      (values (ipa-chars-token++ maybe-token nekot snekot) rest $?)]
     [(chars $ make-element nekot snekot)
      (ipa-chars-token++ chars $ make-element nekot snekot #false)]
