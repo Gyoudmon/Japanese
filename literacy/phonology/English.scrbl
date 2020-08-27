@@ -368,6 +368,67 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
  }
 ]
 
+@handbook-event{Reading: Charle and Lola}
+
+@tabular[
+ #:sep gap1
+
+ (list (list @ipa-ruby['(Snow is  my  favouri=2te an=d my  best.)
+                       '(sn*U Iz  maI ^feIv*rIt   *nd  maI best)
+                       '(7777 76 6556 6788887654  4444 567 789987)])
+
+       (list @ipa-ruby['(I    have   this little sister|,| Lola.)
+                       '(aI  h&ae$v  DIs ^lIt+ll ^sIst*    l*Ul*)
+                       '(5556 678998 8877 776655 55445    5677654)])
+
+       (list @ipa-ruby['(She^=s small _an=d_ very  funny)
+                       '(Siz    smO:l   *nd ^veri ^f2ni)
+                       '(77765 5456788 87654 4456 6789987654)])
+
+       (list @ipa-ruby['(I=t  hasn^=t  come   yet.)
+                       '(It ^h&ae$z*nt k2m    jet)
+                       '(555 67899876 6788765 543)])
+       
+       (list @ipa-ruby['(It^=s still    coming    yet.)
+                       '(Its    stIl    ^k2mIN    jet)
+                       '(55556 667788 88999887766 654)])
+       
+       (list @ipa-ruby['(Today    Lola  i/s e/xtremel/y +je/xcited|,|     _because_  the  ma/n    o/n   the  weather sa/ys i/t^s go+wing to snow!)
+                       '(t*^deI   l*Ul* Iz  Ik^stri:mli  ik^saItId         bI^k6z    D*  m&ae$n   6n    D*   ^weD*    sez  Its  ^g*UIN  t* sn*U)
+                       '(66789998 65555 556 6789988776655 566776655443322 4445566777 7655 678877 776655 5544 5677766  6655 554445 567766 656 67776543)])
+       
+       (list @ipa-ruby['(Ooh! Snow!)
+                       '(u:   sn*U)
+                       '(6666 67887654)])
+
+       (list @ipa-ruby['(Lola   canno=t  wait _for_ the  snow  _to_ come.)
+                       '(l*Ul* ^k&ae$n6t weIt  f*   D*   sn*U   t*  k2m)
+                       '(54445  56789999 9876 65555 556 677654 456 6776543)])
+
+       (list @ipa-ruby['(She^s go=t a/ll =her/ things  ready  jus/t i/n case.)
+                       '(Si:z  g6t  O:l    h*  TINz    ^redi  dZ2st In keIs)
+                       '(55555 5557 7999 99998 876545 5678876 55667 767 79876)])
+
+       (list @ipa-ruby['(Sn/ow   +wi/s  my  favouri=2te _an_/d i/s  my   best)
+                       '(sn*U     Iz   maI  ^feIverit   *nd   Iz  maI   best)
+                       '(88998765 54   445  56776543   332211 112 23467 7899876543)])
+
+       (list @ipa-ruby['(Remember     Lola|,| snow  _can_     only    come  whe/n i/t^s   very    very  cold.)
+                       '(rI^memb*     l*Ul*   sn*U   k*n    ^*Unli     k2m   wen  Its    ^veri   ^veri  k*Uld)
+                       '(222446665432 22223  2112345 54335 579998765 543222 2345  566654 4321112 665432 246665432)])
+       
+       (list @ipa-ruby['(Da=d  sai/d  i/=t migh=t no=t snow till mi=dnight|,| /or +re/ven tommorrow.)
+                       '(d&ae$d sed    It   maIt  n6t  sn*U tIl  ^midnaIt      o:   ^i:v*n t*^m6r*U)
+                       '(77665 543222  23  334455 555 55556 6677 667765432    666  67888  887654322345)])
+       
+       (list @ipa-ruby['(I   know|,|  _bu_/t i/t^s realy    col=d righ=t now.)
+                       '(aI  n*U       b*t   Its  ^rI*li    k*Uld raIt   naU)
+                       '(666 67899876  5566  6666 678998877 66556 67899 999876)])
+       
+       (list @ipa-ruby['(S/o +wI/ thin=k snow will  come  sooner rather _than_ mi=dnight)
+                       '(s*U  aI   TINk  sn*U wIl   k2m   su:n*  ^rA:D*   D*n  ^mIdnaIt)
+                       '(555 555  55555 57998 87655 56557 798765 555555  5567 7898877665544)]))]
+
 @handbook-scenario{Prosody}
 
 @handbook-action{Lexical Stress}
