@@ -146,8 +146,6 @@ monothongs, 5 long monothongs, and 8 diphthongs in English:
 
 @handbook-action{Aspiration}
 
-@handbook-action{Lateral Release and Nasal Release}
-
 @handbook-action{Liaison}
 
 Native English speakers usually don't treat an utterance as a stream of words@handbook-footnote{Words
@@ -155,10 +153,10 @@ Native English speakers usually don't treat an utterance as a stream of words@ha
  They are distinctive concepts, and no known languages follow the one-character-one-syllable-one-morpheme
  principle. This also indicates that you should not do liaison only by observing the spells of words.},
 instead, it's nature for them to treat an utterance as a stream of syllables, even the consonant part
-and vowel part of a @ja-tech{syllable} cross the word boundary. This is why and where the liaison occur.
+and vowel part of a @ja-tech{syllable} cross the word boundary. This is why and where the liaison occurs.
 In fact, this phonological phenomenon applies to the pronunciation of a single word as well. For instances,
-@ipa-ruby['(/go+wing/ /wi=tness/ /=s+Streng+kth/)
-          '(^g*UIN      wItn*s     streNT)],
+@ipa-ruby['(/go+wing/ /e=d+2dZucation/ /wi=tness/ /=s+Streng+kth/)
+          '(^g*UIN      edjU^keIS*n      wItn*s     streNT)],
 @etc
 
 @itemlist[
@@ -175,13 +173,9 @@ In fact, this phonological phenomenon applies to the pronunciation of a single w
  @item{A (fuzzy) @en-phonetics{j} is added if following @en-phonetics{i:}, @en-phonetics{eI},
     @en-phonetics{OI}, or @en-phonetics{aI}. @tt{[palatalization]}
 
-    @en-sentence['(In m/y +jo/pinion)]
- 
     @en-sentence['(I come to se/e +jA/dam)]
     
-    @en-sentence['(H/e +ja/sked ne for a cu/p o/f tea)]
-    
-    @en-sentence['(Th/e +je/n/d o/f the stor/y +ji/s ver/y +ji/nteresting)]
+    @en-sentence['(H/e +ja/sked me for a cu/p o/f tea)]
  }
 
  @item{A (fuzzy) @en-phonetics{w} is added if following @en-phonetics{u:}, @en-phonetics{U},
@@ -195,21 +189,9 @@ In fact, this phonological phenomenon applies to the pronunciation of a single w
    }
  ]}
 
- @item{letter @en-letters{-r}/@en-letters{-re} + @ja-tech{Vowel}. A (fuzzy) @en-phonetics{r} is added.
+ @item{@en-letters{-r}/@en-letters{-re} + @ja-tech{Vowel}. A (fuzzy) @en-phonetics{r} is added.
 
-  @en-sentence['(They^re my fathe/r +ra/n=d mother)]
- 
   @en-sentence['(I looked fo/r +ri/t he/re +ra/n=d there)]
-  
-  @en-sentence['(The/re +ris a/ football unde/r +ri/t)]
-
-  @en-sentence['(The/re +rare/ book/s o/n the desk)]
- 
-  @en-sentence['(He/re +ris a/ letter for you)]
- 
-  @en-sentence['(He/re +ra/re fou/r +re/ggs)]
-  
-  @en-sentence['(But whe/re +ri/s my cup) null "?"]
   
   @en-sentence['(Whe/re +rare/ your brothe/r +ra/n=d sister) null "?"]
  
@@ -218,46 +200,54 @@ In fact, this phonological phenomenon applies to the pronunciation of a single w
   More generally speaking, the @en-phonetics{r} works for @en-phonetics{A:}, @en-phonetics{O:},
   @en-phonetics{3:}, @en-phonetics{*}, @en-phonetics{I*}, @en-phonetics{e*}, and @en-phonetics{U*}.
 
-  @en-sentence['(Th/e +jair +ri/s fresh)
-               '(-     e*)]
-  
   @en-sentence['(The ar/ea +ri/s flooded)
-               '(-   ^e*ri*)]
-  
+               '(-   ^e*rI*)]
+
   @en-sentence['(Chin/a +ra/n=d Japan)
                '(^tSaIn*)]
   
   @en-sentence['(la/w +ra/n/d or/der)
                '(lO:)]
-  
-  @en-sentence['(wa/r +ra/n=d peace)
-               '(wO:)]
 
   @en-sentence['(A ca/r +ra/n=d a bike)
                '(- kA:)]
-
+  
   @en-sentence['(the tou/r +ri/s good)
                '(-   tU*)]
  }
 ]
 
+After all, liaison is not universally indispensable. The most notable situationses are:
+
+@itemlist[
+ @item{To emphasize something, in which case, the emphasized words tend to be pronounced clearly.
+  @en-sentence['(In /my/ ◌ opinion)]
+ }
+
+ @item{To separate sense groups, in which case, a short stop would occur.
+  @en-sentence['(The/re +ris a/ football ◌ unde/r +ri/t)]
+  
+  @en-sentence['(Th/e +je/n/d o/f the story ◌ is ver/y +ji/nteresting)]
+ }
+]
+
 @handbook-action{Assimilation}
 
-Assimilation another phonological phenomenon similar to liaion but for @ja-tech{Consonant} + @ja-tech{Consonant}.
+Assimilation is another phonological phenomenon similar to liaion but for @ja-tech{Consonant} + @ja-tech{Consonant}.
 
 @itemlist[
  @item{Same consonants, also included the two with same articulatory features and only differ in
-  voicedness. The first consonant would not contribute to the pronunciation by leaving a short or
+  voicedness. The former consonant would not contribute to the pronunciation by leaving a short or
   no stop for it.
   
   @en-words['(|ni=2ce song| |so=2me money| |be=d time| |qui=2te different|) null 4]}
 
- @item{@en-phonetics{t} @en-phonetics{d} + @en-phonetics{T} @en-phonetics{l}. They have similar
-  articulatory features, and would be blended towarding the second one.
+ @item{@en-phonetics{t} @en-phonetics{d} + @en-phonetics{D}. They have similar articulatory features,
+  and would be blended towarding the second one.
   
   @en-words['(|hol/=d th/e line please| |I go/=t th/e message| |a/=t th/e moment|) null 4]}
 
- @item{@ja-tech{Plosive} + @ja-tech{Consonant}. They usually are different consonants, and the first
+ @item{@ja-tech{Plosive} + @ja-tech{Consonant}. They are usually different consonants, and the former
   would be elided without leaving a short stop for it.
 
   @en-words['(|goo=d girl| |las=t Monday| |spea=k more slowly| |brigh=t colour|) null 4]}
@@ -341,13 +331,13 @@ In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phon
             '(|*v kO:s|        |pru:v t* mi:|)
             4]}
  
- @item{@en-phonetics{n} + @en-phonetics{k} or @en-phonetics{g} ⇒ @en-phonetics{N}. This is a hint of
-  @ipa-ruby['(/=s+Streng+kth/) '(streNT)].
+ @item{@en-phonetics{n} + @en-phonetics{k} or @en-phonetics{g} ⇒ @en-phonetics{N} [This is a hint of
+  @ipa-ruby['(/=s+Streng+kth/) '(streNT)]]
   @en-words['(|o/+N=2ne/ cup| |in her ow/+N=n/ car|)
             '(|w2n k2p|       |In h3: oUn kA:|)
             4]}
 
- @item{@en-phonetics{n} + @en-phonetics{m} ⇒ @en-phonetics{m}.
+ @item{@en-phonetics{n} + @en-phonetics{m} ⇒ @en-phonetics{m}
   @en-words['(|i/+m=n/ my opinion| |seve/+m=n/ million|)
             '(|In maI *^pinj*n|     |sevn mIlj*n|)
             4]}
@@ -355,7 +345,7 @@ In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phon
 
 @handbook-event{Reciprocal Assimilation}
 
-In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}.
+In this category, @ja-tech{phonemes} assimilate to each other for another new @ja-tech{phoneme}.
 
 @itemlist[
  @item{@en-phonetics{t} + @en-phonetics{j} ⇒ @en-phonetics{tS}
@@ -363,9 +353,15 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
   
  }
   
- @item{@en-phonetics{d} + @en-phonetics{j} ⇒ @en-phonetics{dZ}.
+ @item{@en-phonetics{d} + @en-phonetics{j} ⇒ @en-phonetics{dZ}
   @en-sentence['(I^ll sen/d y/ou the book)]
  }
+
+ @item{@en-phonetics{s} + @en-phonetics{j} ⇒ @en-phonetics{S}}
+ @item{@en-phonetics{z} + @en-phonetics{j} ⇒ @en-phonetics{Z}}
+ @item{@en-phonetics{s} + @en-phonetics{S} ⇒ @en-phonetics{S} [This is actually an instance of
+  @emph{Regressive Assimilation}]}
+ @item{@en-phonetics{z} + @en-phonetics{S} ⇒ @en-phonetics{Z}}
 ]
 
 @handbook-event{Reading: Charle and Lola}
@@ -381,7 +377,7 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
                        '(aI  h&ae$v  DIs ^lIt+ll ^sIst*    l*Ul*)
                        '(5556 678998 8877 776655 55445    5677654)])
 
-       (list @ipa-ruby['(She^=s small _an=d_ very  funny)
+       (list @ipa-ruby['(She^=s small .an=d. very  funny)
                        '(Siz    smO:l   *nd ^veri ^f2ni)
                        '(77765 5456788 87654 4456 6789987654)])
 
@@ -393,7 +389,7 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
                        '(Its    stIl    ^k2mIN    jet)
                        '(55556 667788 88999887766 654)])
        
-       (list @ipa-ruby['(Today    Lola  i/s e/xtremel/y +je/xcited|,|     _because_  the  ma/n    o/n   the  weather sa/ys i/t^s go+wing to snow!)
+       (list @ipa-ruby['(Today    Lola  i/s e/xtremel/y +je/xcited|,|     .because.  the  ma/n    o/n   the  weather sa/ys i/t^s go+wing to snow!)
                        '(t*^deI   l*Ul* Iz  Ik^stri:mli  ik^saItId         bI^k6z    D*  m&ae$n   6n    D*   ^weD*    sez  Its  ^g*UIN  t* sn*U)
                        '(66789998 65555 556 6789988776655 566776655443322 4445566777 7655 678877 776655 5544 5677766  6655 554445 567766 656 67776543)])
        
@@ -401,7 +397,7 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
                        '(u:   sn*U)
                        '(6666 67887654)])
 
-       (list @ipa-ruby['(Lola   canno=t  wait _for_ the  snow  _to_ come.)
+       (list @ipa-ruby['(Lola   canno=t  wait .for. the  snow  .to. come.)
                        '(l*Ul* ^k&ae$n6t weIt  f*   D*   sn*U   t*  k2m)
                        '(54445  56789999 9876 65555 556 677654 456 6776543)])
 
@@ -409,11 +405,11 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
                        '(Si:z  g6t  O:l    h*  TINz    ^redi  dZ2st In keIs)
                        '(55555 5557 7999 99998 876545 5678876 55667 767 79876)])
 
-       (list @ipa-ruby['(Sn/ow   +wi/s  my  favouri=2te _an_/d i/s  my   best)
+       (list @ipa-ruby['(Sn/ow   +wi/s  my  favouri=2te .an./d i/s  my   best)
                        '(sn*U     Iz   maI  ^feIverit   *nd   Iz  maI   best)
                        '(88998765 54   445  56776543   332211 112 23467 7899876543)])
 
-       (list @ipa-ruby['(Remember     Lola|,| snow  _can_     only    come  whe/n i/t^s   very    very  cold.)
+       (list @ipa-ruby['(Remember     Lola|,| snow  .can.     only    come  whe/n i/t^s   very    very  cold.)
                        '(rI^memb*     l*Ul*   sn*U   k*n    ^*Unli     k2m   wen  Its    ^veri   ^veri  k*Uld)
                        '(222446665432 22223  2112345 54335 579998765 543222 2345  566654 4321112 665432 246665432)])
        
@@ -421,13 +417,129 @@ In this category, @ja-tech{phonemes} assimilate to another new @ja-tech{phoneme}
                        '(d&ae$d sed    It   maIt  n6t  sn*U tIl  ^midnaIt      o:   ^i:v*n t*^m6r*U)
                        '(77665 543222  23  334455 555 55556 6677 667765432    666  67888  887654322345)])
        
-       (list @ipa-ruby['(I   know|,|  _bu_/t i/t^s realy    col=d righ=t now.)
+       (list @ipa-ruby['(I   know|,|  .bu./t i/t^s realy    col=d righ=t now.)
                        '(aI  n*U       b*t   Its  ^rI*li    k*Uld raIt   naU)
                        '(666 67899876  5566  6666 678998877 66556 67899 999876)])
        
-       (list @ipa-ruby['(S/o +wI/ thin=k snow will  come  sooner rather _than_ mi=dnight)
+       (list @ipa-ruby['(S/o +wI/ thin=k snow will  come  sooner rather .than. mi=dnight)
                        '(s*U  aI   TINk  sn*U wIl   k2m   su:n*  ^rA:D*   D*n  ^mIdnaIt)
                        '(555 555  55555 57998 87655 56557 798765 555555  5567 7898877665544)]))]
+
+@handbook-action{Plosion}
+
+Besides the assimilation, there are some alternatives for improving the fluency of speech. The ones
+specific to @ja-tech{plosive}s and other @ja-tech{consonant}s concern the plosion, and they are
+associated with more operational definitions, instead of simply skipping the @ja-tech{plosive}
+with a short or no stop as is defined in assimilation. They should have subtle yet distinguishable
+hearing experiences.
+
+@handbook-event{Plosion Loss}
+
+When two or more @ja-tech{plosive}s appear consecutively in the stream of syllables, the former one
+would only be progressed with the blocking action and without the releasing action, closely followed
+by the latter. Note that even though no real sound of the former plosive is produced, the blocking
+action must not be elided.
+
+@en-words['(|wha_t time| goo_dbye  |bi_g kite|  re+ja_ct)
+          '(|^w6t taIm|   gUd^baI  |^bIg ^kaIt| ri:&ae$kt)
+          4]
+
+For the two high frequent words @en-letters{asked} and @en-letters{stopped}, when they are used as the
+@ja-tech{intransitive verb}s, they are reallized as usual, @ipa-phonetics{A:s_kt} and
+@ipa-phonetics{st6_pt}. When they are used as the @ja-tech{transitive verb}s, the suffix
+@en-letters{-ed} would also lose plosion, with a longer stop, if the @ja-tech{object} starts with a
+@ja-tech{consonant}, or be linked with the @ja-tech{object} otherwise.
+
+@en-sentence['(They sto_4pped the fight)
+             '(-    sd6pt)]
+  
+@en-sentence['(H/e +ja/s_k/ed a/ lady for help)
+             '(-      A:skt   *)]
+
+@handbook-event{Incomplete Plosion}
+
+When a @ja-tech{plosive} is followed by a @ja-tech{fricative} or @ja-tech{affricate}, it would be
+progressed with the blocking action and a partial releasing action. That is, sliding to the following
+@ja-tech{consonant} as soon as releasing the @ja-tech{plosive}, so that the @ja-tech{plosive} is much
+weaker than the normal case. Sometimes, there is no notable difference between the plosion loss and
+the imcomplete plosion.
+
+@en-words['(pi_cture   |tha_t joke|     |bi_g jug|)
+          '(|^pIktS*|  |^D&ae$t ^dZ*Uk| |^bIg ^dZ2g|)
+          4]
+
+@;handbook-event{Nasal Release}
+
+@;handbook-event{Lateral Release}
+
+@handbook-event{Reading: The Love Books}
+
+@tabular[
+ #:sep gap1
+
+ (list (list @ipa-ruby['(Come live  with m/e  .a/.n=d. be  my  love.)
+                       '(k2m  lIv    wID  mi:  *nd     bi: maI  l2v)
+                       '(8997 76787 7766 66554 44456  676 6787 7898765)])
+
+       (list @ipa-ruby['(These pretty pleasures  might  me  move.)
+                       '(Di:z  ^prIti ^pleZ*z    maIt   mi: mu:v)
+                       '(44445 567776 6789998765 567765 555 567888765)])
+
+       (list @ipa-ruby['(.To. live   with  thee  .an=d.  be  thy  love.)
+                       '(t*   lIv    wID    Di:  *nd     bi: DaI  l2v)
+                       '(555  579987 7666 678876 4455667 777 7787 789998765)])
+
+       (list @ipa-ruby['(Give  me   my   Romeo.)
+                       '(gIv   mi:  maI ^r*Umi*U)
+                       '(99987 765 5665 567777654321)])
+
+       (list @ipa-ruby['(Love. Love.  Love.)
+                       '(l2v   l2v    l2v)
+                       '(99998 877776 665544)])
+       
+       (list @ipa-ruby['(Drin_k  .to.  me  only   wi=2th thi/ne e/yes.)
+                       '(drINk    t*   mi: ^*Unli wID    DaIn   aIz)
+                       '(56789987 656 676  77776  65444  45654  4566654321)])
+       
+       (list @ipa-ruby['(Sha/ll  I/   compare   thee  /to +wa/ summer^s  day?)
+                       '(S*l     aI   k*m^pe*   Di:   tU    *  ^s2m*z    deI)
+                       '(123456 6776 5432112345 67776 543 3223 357888753 321000123)])
+       
+       (list @ipa-ruby['(She   walk/s in/ beauty.)
+                       '(Si:   wO:ks  In  ^bju:ti)
+                       '(22334 468888 888 887766554433221)])
+
+       (list @ipa-ruby['(I/f  e/ver two  .were.  one|,| then  surely   we.)
+                       '(If   ^ev*  tu:    w*    w2n    Den   ^SO:li   wi:)
+                       '(6667 78999 9876 666555 6789987 44445 56788876 656789876)])
+
+       (list @ipa-ruby['(I   carry   your   heart.)
+                       '(aI ^k&ae$ri jO:    hA:t)
+                       '(444 4688765 556677 778899998765)])
+
+       (list @ipa-ruby['(I    carr/y     +ji/t .in.  .my. heart.)
+                       '(aI   ^k&ae$ri    It    In    maI hA:t)
+                       '(5556 6789999876 65    55543 3334 45666654)])
+
+       (list @ipa-ruby['(/I   +jam   I/  an/d you are/ you.)
+                       '(aI   &ae$m  aI  *nd  ju:  *   ju:)
+                       '(888 876555 5677 5567 777 7655 56777654)])
+
+       (list @ipa-ruby['(I   love  you.  I^m   gla/d    I +je/xist.)
+                       '(aI   l2v  jU    aIm   gl&ae$d aI  Ig^zIst)
+                       '(555 56788 87654 43456 678999 9876 65456777654)])
+       
+       (list @ipa-ruby['(Love.   Love.  Love.)
+                       '(l2v     l2v    l2v)
+                       '(9988776 655554 43333210)])
+       
+       (list @ipa-ruby['(I     though_t .tha_t. love  .woul_d. las_t forever.  I  was   wrong.)
+                       '(aI    TO:t      D*t    l2v     wUd    lA:st f*r^ev*  aI  w6z   r6N)
+                       '(11123 45666654  432234 45666 65432223 35777 75445675 777 76556 6777765)])
+       
+       (list @ipa-ruby['(Trea_d sof=tly|,| because   you  trea/d   o/n  my    dreams.)
+                       '(tred   s6ftli     bI^k6z    ju:  tred     6n   maI   dri:mz)
+                       '(999876 66665554   4445566 667788 88999998 8877 77667 7788887654)]))]
 
 @handbook-scenario{Prosody}
 
@@ -612,7 +724,7 @@ as irregular, they are just not that into a single word.
 @tabular[
  #:sep gap1
 
- (list (list @ipa-ruby['(It^s   my        birthday         _to_day.)
+ (list (list @ipa-ruby['(It^s   my        birthday         .to.day.)
                        '(Its    maI       ^b3:TdeI         t*^deI)
                        '(6665 554433 357999887766554433 33445566554433)])
 
@@ -620,11 +732,11 @@ as irregular, they are just not that into a single word.
                        '(^nd   aIm  Ik^spektIN    l6ts  *nd   l6ts     *v  kA:dz)
                        '(34555 5554 3456788776655 57987 6556  78877665 56  6777665544)])
 
-       (list @ipa-ruby['(Okay|,| here  we     go.    Newspaper|,|  a  letter  _to_  my     mum|,| fas=t food|,|  pizza|,| a letter _to_ my  dad|,| newspaper!)
+       (list @ipa-ruby['(Okay|,| here  we     go.    Newspaper|,|  a  letter  .to.  my     mum|,| fas=t food|,|  pizza|,| a letter .to. my  dad|,| newspaper!)
                        '(.*U^keI hI*   wi     g*U    ^nju:s.peIp*  *  ^let*    t*   maI     m2m    fa:st fu:d    ^pi:ts*  * ^let*   t* maI  d&ae$d ^nju:z.peIp*)
                        '(999987 776655 443345 56776655 777777654357 545 6789998 7766 554433 445566  5555  56655443 88997755 54 567777 432 234 677654 8888877665544)])
 
-       (list @ipa-ruby['(Bu=t  where +rare my    birthday   cards? I^_ve_ go=t no   cards.)
+       (list @ipa-ruby['(Bu=t  where +rare my    birthday   cards? I^.ve. go=t no   cards.)
                        '(b*t    we*    A:  maI   ^b3:TdeI   kA:dz    aIv   g6t n*U  kA:dz)
                        '(65556 556677 776 65445 5678998767 788765 6666   6544 4565 56654)])
        
@@ -636,7 +748,7 @@ as irregular, they are just not that into a single word.
                        '(^meIbi  maI      d6g       eIt       maI     kA:dz)
                        '(5566776 654456 677766 6789988776655 56677 776655443322)])
        
-       (list @ipa-ruby['(_But_|,| I don^/t a/ctually   ha/ve       a/    dog.)
+       (list @ipa-ruby['(.But.|,| I don^/t a/ctually   ha/ve       a/    dog.)
                        '(b*t     aI doUnt  ^&ae$ktS*li h&ae$v      *     d6g)
                        '(6666   555 55676  67887766554 45678987 876788 888776655443322)]))]
 
@@ -663,7 +775,7 @@ as irregular, they are just not that into a single word.
                        '(Di:     ^&ae$lIs)
                        '(8888876 5556789)])
 
-       (list @ipa-ruby['(There^_s been _some deba/te a/bou=t that.)
+       (list @ipa-ruby['(There^.s been .some deba/te a/bou=t that.)
                        '(De@z     bIn   s@m  dI^beIt *^baUt  D&ae$t)
                        '(4555555 44332 21111 1234555 5432112 34554432)])
  
@@ -679,15 +791,15 @@ as irregular, they are just not that into a single word.
                        '(w6t   weI)
                        '(5554  4321)])
        
-       (list @ipa-ruby['(A/ll I/ wan=t _to d/o +wi/s wa/ke u/=p _from this dream.)
+       (list @ipa-ruby['(A/ll I/ wan=t .to d/o +wi/s wa/ke u/=p .from this dream.)
                        '(O:l  aI  w6nt  t@ du:  Iz  weIk   2p   fr@m DIs  dri:m)
                        '(5554 32  223  34 4554  4321 123   455  54321 1112 3455432)])
        
-       (list @ipa-ruby['(Fine. I^ll ta/ke you/ _to the Ha/re a/n=d the Hatter.)
+       (list @ipa-ruby['(Fine. I^ll ta/ke you/ .to the Ha/re a/n=d the Hatter.)
                        '(faIn  aIl  teIk  yu:   t@ D@   he@  *nd    D@ ^h&ae$t@)
                        '(4555  543  3554  433  33  334 45555 543   21  1354321)])
        
-       (list @ipa-ruby['(_Bu=t that^s th/e +je/n/d of i/t.)
+       (list @ipa-ruby['(.Bu=t that^s th/e +je/n/d of i/t.)
                        '(b@t   D&ae$ts Di:   end  *v  It)
                        '(334   45555  543  355430   42 221)]))]
 
@@ -700,11 +812,11 @@ as irregular, they are just not that into a single word.
                        '(Di:       ^*Up*n     *UpS*n)
                        '(5555567 88887766555 57788776655443)])
 
-       (list @ipa-ruby['(It    covers     more  _than       half  _the   surface      _o_/f  our/  planet.)
+       (list @ipa-ruby['(It    covers     more  .than       half  .the   surface      .o./f  our/  planet.)
                        '(It    k2v*z      mO:   D*n         hA:f  D*     ^s3:fIs       *v    aU*   ^pl&ae$nIt)
                        '(55556 678888767 789999 8877665544 789999 987777 788999998765 66665 554445 77665544334455)])
 
-       (list @ipa-ruby['(Yet|,| _for  _the      mos=t      part|,|    it^s   a   watery     desert|,|      empt/y   _+jo/f life.)
+       (list @ipa-ruby['(Yet|,| .for  .the      mos=t      part|,|    it^s   a   watery     desert|,|      empt/y   .+jo/f life.)
                        '(jet     f*    D*       m*Ust      pA:t       Its    *   ^wO:t*ri   ^dez*t         ^empti    *v    laIf)
                        '(777777 5555 555567 778899998877 6788776543  666666 654 45677765432 24776655443311 67887654 234567 88876543)])
 
@@ -712,7 +824,7 @@ as irregular, they are just not that into a single word.
                        '(^h2nt*z hI*  spend  De*   laIz   In *  ^k6nst*nt  s3:tS   f*  ske*s  *nd  I^lu:sIv preI)
                        '(999987  765  567776 6545  678887 67 765 5677765  5777653 4554 468887 4333 35776544 567531)])
 
-       (list @ipa-ruby['(Remarkably|,| _this seemingly   barren  wilderness _is home  _to _the larges=t hunter  _of the/m a/ll --- _The blue whale.)
+       (list @ipa-ruby['(Remarkably|,| .this seemingly   barren  wilderness .is home  .to .the larges=t hunter  .of the/m a/ll --- .The blue whale.)
                        '(rI^mA:k*bli    DIs  ^si:mINli ^b&ae$r*n ^wIld*n*s  Iz  h*Um   t*  D*  lA:dZIst  ^h2nt* *v   D*m  O:l   -   D*  blu: weIl)
                        '(55678876543   55556 78877667   78999876 67766555   45 5566776 44 456  788888   8987654 55  557   987  654 2223 5677 76543210)]))]
 
@@ -722,7 +834,7 @@ as irregular, they are just not that into a single word.
 @tabular[
  #:sep gap1
 
- (list (list @ipa-ruby['(It^s   Gran=dda=d    Dog  _with_  Danny      Dog.)
+ (list (list @ipa-ruby['(It^s   Gran=dda=d    Dog  .with.  Danny      Dog.)
                        '(Its  gr&ae$nd&ae$d   d6g   wID   ^d&ae$ni    d6g)
                        '(44445 5678886688867 77765  5556  678999758 88887654)])
 
@@ -730,7 +842,7 @@ as irregular, they are just not that into a single word.
                        '(h*^l*U   pep*)
                        '(99998765 655556789)])
 
-       (list @ipa-ruby['(Hello|,| Danny.   _We_^re lost.)
+       (list @ipa-ruby['(Hello|,| Danny.   .We.^re lost.)
                        '(h*^l*U  ^d&ae$ni    wI*   l6st)
                        '(99998765 655556789 555666 666543)])
 
@@ -770,7 +882,7 @@ as irregular, they are just not that into a single word.
                        '(D*    k*m^pju:t*z    vOIs  helps  ju: faInd     jO:    weI)
                        '(55555 54322246887654 45678 88888 8888 8776655 55445566 78987654)])
 
-       (list @ipa-ruby['(But|,|   how   doe/s  i/=t know   where  we  wan_t _to_   go?)
+       (list @ipa-ruby['(But|,|   how   doe/s  i/=t know   where  we  wan.t .to.   go?)
                        '(b2t      haU   d*z     It   n*U    we*   wi: w6nt   t*    g*U)
                        '(66666  888777 766554   43 333445 5556789 99 987655  56 6789876543)])
 
@@ -798,7 +910,7 @@ as irregular, they are just not that into a single word.
                        '(pr*^si:d        6n  *  ^k2r*nt  r*Ud    In   *    streIt      laIn)
                        '(556667777654334 455 56 67888876 6543334 5666 666 654321123456 789987654321)])
        
-       (list @ipa-ruby['(Thanks   _for_ your    help|,|      Gran=dda=d   Dog?)
+       (list @ipa-ruby['(Thanks   .for. your    help|,|      Gran=dda=d   Dog?)
                        '(T&ae$Nks  f*   jO:     help       ^gr&ae$nd&ae$d d6g)
                        '(99998765  543  32246 678887654321  5554321000   00135)])
 

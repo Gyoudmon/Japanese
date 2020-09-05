@@ -15,8 +15,10 @@
 (define ipa-group-style (make-style #false (list (make-color-property "Crimson") (make-background-color-property "MistyRose"))))
 (define ipa-link-style (make-style "textbottomtiebar" (style-properties ipa-group-style)))
 (define ipa-doublebar-style (make-style "ipadoublebar" (list (make-color-property "DeepSkyBlue"))))
+(define ipa-retract-style (make-style "underline" (list (make-color-property "DeepSkyBlue"))))
 (define ipa-weak-style (make-style #false (list (make-color-property "DarkKhaki"))))
 (define ipa-tone-style (make-style #false (list (make-color-property "Aquamarine"))))
+(define ipa-tag-style (make-style 'subscript (list (make-color-property "ForestGreen"))))
 
 (define ipa-link-element (elem #:style ipa-link-style ""))
 
@@ -60,9 +62,9 @@
                        (define toned-element
                          (cond [(or (not p) (not latex?)) token-element]
                                [else (make-multiarg-element "ipaclap"
-                                                            (list (make-element ipa-tone-style
-                                                                                (tone #:latex? #true (~a p)))
-                                                                  token-element))]))
+                                                            (list token-element
+                                                                  (make-element ipa-tone-style
+                                                                                (tone #:latex? #true (~a p)))))]))
 
                        (make-sentence (cdr bases)
                                       (add1 i)
@@ -79,6 +81,14 @@
 (define ipa-diacritic-element
   (lambda [word]
     (elem #:style "textsuperscript" (IPA word))))
+
+(define ipa-plosion-loss-element
+  (lambda [word]
+    (elem #:style ipa-retract-style (IPA word))))
+
+(define ipa-tag-element
+  (lambda [word]
+    (elem #:style ipa-tag-style (smaller (smaller word)))))
 
 (define ipa-puncture-element
   (lambda [word]
@@ -158,6 +168,7 @@
                   [(eq? self #\.) (tokenize (cdr chars) (cons #\" (cons #\" nekot)) snekot)]
                   [(eq? self #\+) (let-values ([(token++ rest _) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++))]
                   [(eq? self #\&) (let-values ([(token++ rest _) (ipa-chars-token++ chars #\$ ipa-named-element nekot snekot)]) (tokenize rest null token++))]
+                  [(eq? self #\_) (let-values ([(token++ rest _) (ipa-chars-token++ chars ipa-plosion-loss-element nekot snekot)]) (tokenize rest null token++))]
                   [else (tokenize (cdr chars) (cons self nekot) snekot)]))))))
 
 (define ipa-word-tokenize
@@ -179,8 +190,10 @@
                  [(#\=) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-puncture-element nekot snekot)]) (tokenize rest null token++ $?))]
                  [(#\/) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\/ ipa-phonetics nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
                  [(#\+) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-diacritic-element nekot snekot)]) (tokenize rest null token++ $?))]
-                 [(#\_) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\_ ipa-weak-element nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
+                 [(#\#) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-tag-element nekot snekot)]) (tokenize rest null token++ $?))]
+                 [(#\.) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\. ipa-weak-element nekot snekot ipa-word-tokenize)]) (tokenize rest null token++ $?))]
                  [(#\&) (let-values ([(token++ rest $?) (ipa-chars-token++ chars #\$ ipa-named-element nekot snekot)]) (tokenize rest null token++ $?))]
+                 [(#\_) (let-values ([(token++ rest $?) (ipa-chars-token++ chars ipa-plosion-loss-element nekot snekot)]) (tokenize rest null token++ $?))]
                  [else (tokenize (cdr chars) (cons self nekot) snekot unterminated?)]))]
             [else ; only checked `continue?` for the first time
              (let-values ([(token++ rest $?) (ipa-chars-token++ (cons #\/ chars) #\/ ipa-phonetics nekot snekot ipa-word-tokenize)])
@@ -190,7 +203,7 @@
   (lambda [chars $ [make-element values] [subtake #false]]
     (define term-idx (index-of (cdr chars) $ eq?))
     (define ipa-size (or term-idx (sub1 (length chars))))
-    (cond [(< ipa-size 1) (values #false null #false)]
+    (cond [(< ipa-size 1) (values (and (null? (cdr chars)) (eq? $ #\.) (string $)) null #false)]
           [else (let* ([word (list->string (take (cdr chars) ipa-size))])
                   (values (make-element (if (not subtake) word (let-values ([(e ?) (subtake word)]) e)))
                           (take-right chars (max (- (length chars) ipa-size 2) 0))
