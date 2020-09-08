@@ -125,14 +125,14 @@
     (IPA s #:latex? latex?)))
 
 (define ipa-phone
-  (lambda [symbols]
+  (lambda [symbols [latex? 'auto]]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
-    (IPA (list "[" s "]"))))
+    (IPA (list "[" s "]") #:latex? latex?)))
 
 (define ipa-phoneme
-  (lambda [symbols]
+  (lambda [symbols [latex? 'auto]]
     (define-values (s $?) (ipa-symbol-tokenize (~a symbols)))
-    (IPA (list "/" s "/"))))
+    (IPA (list "/" s "/") #:latex? latex?)))
 
 (define ipa-ruby-content
   (lambda [v]

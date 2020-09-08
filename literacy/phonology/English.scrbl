@@ -754,7 +754,67 @@ as irregular, they are just not that into a single word.
 
 @handbook-action{Prosodic Stress}
 
-.
+Given that English utterances are composed of syllables, just like @ja-tech{polysyllabic word}s,
+sentences and words share same prosodic stress patterns. More precisely, English is a stress-timed
+language, in which stressed syllables appear at roughly constant rate and non-stressed syllables
+are shortened to accommodate them.
+
+Generally speaking, @ja-tech{ancillary word}s tend to be realized as their weak forms unless they
+are emphasized, whereas @ja-tech{independent word}s tend to be realized as their strong forms.
+
+@handbook-event{Pronunciation of some prepositions}
+
+Prepositions are ancillary words. When they
+
+@itemlist[
+ @item{occur sentence-medially, their vowels would change to the @tt{unstressed central vowel}
+  @ipa-phonetics{@ipa-phone{*}}. Specifically, @en-letters{to} may assimilate to the following
+  vowel and be realized as @en-phonetics{tU}.
+
+  @en-words['(at for from of to)
+            '(*t f*  fr*m *v t*)
+            5]
+
+ @en-sentence['(She^s waiting .for. her Dad)
+              '(-     -        f*)]
+ }
+
+ @item{occur sentence-finally, they would not be realized as the weak forms.
+
+  @en-words['(at    for from of to)
+            '(&ae$t fO: fr6m 6v tu:)
+            5]
+
+  Note that these symbols are written the same as their strong forms, but they usually are not
+  stressed.
+
+ @en-sentence['(What are you looking at)
+              '(-     -              &ae$t)
+              "?"]}
+
+ @item{are actually emphasized, or as parts of some set phrases. they would be realized as the
+  strong forms with stress.
+       
+  @en-words['(at    for from of to)
+            '(&ae$t fO: fr6m 6v tu:)
+            5]
+
+  @en-sentence['(be hard   at it)
+               '(-  -    &ae$t)]}
+ ]
+
+@handbook-event{Pronunciation of some conjunctions}
+
+Conjunctions are ancillary words, when they are realized as their weak forms, their vowels would
+change to the @tt{unstressed central vowel} @ipa-phonetics{@ipa-phone{*}}.
+
+In contrast to prepositions, conjunctios may connect two sense groups, and in these cases, they
+would not be realized as weak forms.
+
+@handbook-event{Pronunciation of @en-letters{the}}
+
+It is recommended that, realizing it as @en-phonetics{D*} before consonants, and as @en-phonetics{Di}
+or @en-phonetics{Di:} before vowels.
 
 @handbook-scenario{Materials for Practice}
 
