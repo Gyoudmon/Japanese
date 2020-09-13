@@ -11,7 +11,7 @@
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @(define broad-style (make-style #false (list (make-color-property "DodgerBlue"))))
 @(define narrow-style (make-style #false (list (make-color-property "SandyBrown"))))
-@(define index-style (make-style 'subscript (list (make-color-property "DimGray"))))
+@(define index-style (make-style #false (list (make-color-property "DimGray"))))
 
 @(define vnode
    (lambda [unrounded [rounded #false] [name #false] #:ja-vowel [vowel 'none] #:narrow? [narrow? #false] #:dot [dot #true] #:elem [ipa-elem phone-elem]]
@@ -31,9 +31,9 @@
                      [(not (pair? dot)) (list uv-elem full-space rv-elem)]
                      [else (let ([lidx (car dot)]
                                  [ridx (cdr dot)])
-                             (list (list (elem #:style index-style (if (< lidx 10) (~a #\space lidx) (~a lidx))) uv-elem)
+                             (list (list (subscript (elem #:style index-style (if (< lidx 10) (~a #\space lidx) (~a lidx)))) uv-elem)
                                    full-space
-                                   (list rv-elem (elem #:style index-style (if (< ridx 10) (~a ridx #\space) (~a ridx))))))])))
+                                   (list rv-elem (subscript (elem #:style index-style (if (< ridx 10) (~a ridx #\space) (~a ridx)))))))])))
      
      (list (~a (or name (apply ~a (filter values (list unrounded rounded)))))
            notation

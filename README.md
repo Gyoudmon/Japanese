@@ -100,7 +100,7 @@ The single-sentence example with identifier `| ex ss |` looks like
 `ex0.1` if it is exemplified in the book. The example counter
 autoincrements chapter by chapter.
 
-`Example (.1`                                                     
+`Example 0.1`                                                     
 ねえ、どうも由紀子ゆきこが`NOM`返事へんじを`ACC`出さだなかっ`NEG`た`PST`ようだ`Belief`よ`Assert`
                                                                   
  Hey，It seems that Yukiko didn't send a reply，(I tell you)        
@@ -109,7 +109,7 @@ Similarly, `ex0.2` exemplifies the multi-sentence example `| ex ms |`,
 besides, each sentence can be referenced independently: `ex0.2a`,
 `ex0.2b`, etc.
 
-`Example (.2`                                                                          
+`Example 0.2`                                                                          
  `a` 悟空ごくうは`TOP`クリリンと`COM`天下一武道会てんかいちぶどうかいに`DAT`参加さんかした`PST`                           
                                                                                        
       Goku participated in the World Martial Arts Tournament with Krillin              

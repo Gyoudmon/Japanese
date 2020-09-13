@@ -803,18 +803,76 @@ Prepositions are ancillary words. When they
                '(-  -    &ae$t)]}
  ]
 
-@handbook-event{Pronunciation of some conjunctions}
+@;handbook-event{Pronunciation of some conjunctions}
 
+@;{
 Conjunctions are ancillary words, when they are realized as their weak forms, their vowels would
 change to the @tt{unstressed central vowel} @ipa-phonetics{@ipa-phone{*}}.
 
 In contrast to prepositions, conjunctios may connect two sense groups, and in these cases, they
 would not be realized as weak forms.
+}
 
-@handbook-event{Pronunciation of @en-letters{the}}
+@;handbook-event{Pronunciation of @en-letters{the}}
 
+@;{
 It is recommended that, realizing it as @en-phonetics{D*} before consonants, and as @en-phonetics{Di}
 or @en-phonetics{Di:} before vowels.
+}
+
+@handbook-event{Reading: Wish You Well}
+
+@tabular[
+ #:sep gap1
+
+ (list (list @ipa-ruby['(Don^=t worry|,|   I  haven^=t  come    t/o +wun/do your good   wor/k  o/f th/e +jo/ther  night.)
+                       '(d*Unt  ^w2ri     aI ^h&ae$v*nt k2m     tU   2n^du: jO:  gUd     w3:k  *v  Di    ^2D*     naIt)
+                       '(777776 65432111 444  44567777 77665544 444 5678876 6555 55567 7899987 765 5445 567776543 32100123456)])
+
+       (list @ipa-ruby['(You   must^ve   bee/n  u/_p before the servants.)
+                       '(j*    m2st*v     bIn   2p   bI^fO: D* ^s3:v*nts)
+                       '(33345 567765432 222345 5666 666666 667 789999876543)])
+
+       (list @ipa-ruby['(They  .were.  rather surprised  .to. see  me.)
+                       '(DeI     w*    ^rA:D* s*^praIzd   t*  si:  mi)
+                       '(66665 544456 6788876 6778899876 655 56766 66678)])
+
+       (list @ipa-ruby['( I   wante_d   .to. give    you  this.)
+                       '(aI   w6ntId     t*  gIv     j*   DIs)
+                       '(5556 678876543 3345 5678765 5445 56776543)])
+       
+       (list @ipa-ruby['(It^s   my     lucky  charm.)
+                       '(Its    maI    ^l2ki  tSA:m)
+                       '(55665 54445 57999876 667899987654321)])
+       
+       (list @ipa-ruby['(I^ve  ha/d  it  a/lways.)
+                       '(aIv  h&ae$d It ^O:lweIz)
+                       '(445 5678876 67 789987654321)])
+
+       (list @ipa-ruby['(So   you   mus=t  promise  .to. bring i=t back|,|  withou/t .a./ scratch.)
+                       '(s*U  j*    m*st   ^pr6mIs   t*  brIN  It  b&ae$k   wID^aUt   *  skr&ae$tS)
+                       '(4455 54456 678887 789987655 567 78887 765 56787654 55667887 7667 78987654)])
+       
+       (list @ipa-ruby['(Won^/t y/ou  nee/d i/t.)
+                       '(w*Unt   ju:  ni:d It)
+                       '(444456 67876 65555 55678)])
+       
+       (list @ipa-ruby['(No/t  a/s mu/ch  a/s you.)
+                       '(n6t   *z  m2tS   *z  ju:)
+                       '(77765 544 568888 876 678998765)])
+       
+       (list @ipa-ruby['(So   loo/k a/fte/r +ri/t|,| please.)
+                       '(s*U  lUk   ^A:ft*     It    pli:z)
+                       '(4445 56778 8998765  54445   77665544)])
+       
+       (list @ipa-ruby['(Try  no=t  .to. b/e +ja/ hero|,|  if  that^s  what you^/re +ra/frai/d o/f.)
+                       '(traI  n6t   t*  bi    *  ^hI*r*U  If  D&ae$ts w6t  j*        *^freId  *v)
+                       '(4456 67899 9876 654 4445 5678876 3345 5678999 9876 6543211 1123579999 9876543)])
+
+       (list @ipa-ruby['(Jus=t come back|,| sa/fe .a/n=d. round.)
+                       '(dZ2st c2m  b&ae$k  seIf    *nd   saUnd)
+                       '(55567 7899 98765   8888  8765556 678999876)]))]
+
 
 @handbook-scenario{Materials for Practice}
 
