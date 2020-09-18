@@ -322,7 +322,7 @@ In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phon
             4]}
 
  @item{@en-phonetics{z} ⇒ @en-phonetics{s}
-  @en-words['(new/+z=s/paper |hi/+z=s/ farm| |he ha/+z=s/ six sisters|)
+  @en-words['(new/+s=s/paper |hi/+s=s/ farm| |he ha/+s=s/ six sisters|)
             '(^nju:zpeIp*    |hIs fA:m|      |hi: h&ae$s sIks ^sIst*z|)
             4]}
  
@@ -445,8 +445,8 @@ action must not be elided.
           4]
 
 For the two high frequent words @en-letters{asked} and @en-letters{stopped}, when they are used as the
-@ja-tech{intransitive verb}s, they are reallized as usual, @ipa-phonetics{A:s_kt} and
-@ipa-phonetics{st6_pt}. When they are used as the @ja-tech{transitive verb}s, the suffix
+@ja-tech{intransitive verb}s, they are reallized as usual, @en-phonetics{A:s_kt} and
+@en-phonetics{st6_pt}. When they are used as the @ja-tech{transitive verb}s, the suffix
 @en-letters{-ed} would also lose plosion, with a longer stop, if the @ja-tech{object} starts with a
 @ja-tech{consonant}, or be linked with the @ja-tech{object} otherwise.
 
@@ -639,7 +639,7 @@ A polysyllabic word is usually derived from a shorter one by adding prefixes and
 @item{@en-letters{-ic}/@en-letters{-ial}/@en-letters{-ive}: stressed on the syllable previous to the suffix.
        
   @en-words['(scientist  ⇒ scientific  "" economy   ⇒  economic ""    atom   ⇒ atomic  "" instinct ⇒ instinc/tive/)
-            '(^saI*ntIst - s2I*n^tIfik  - I^c6n*mi  -  I:c*^n6mik -  ^&ae$t*m -  *^t6mik - ^InstINkt - In^stINktIv)
+            '(^saI*ntIst - s2I*n^tIfik  - I^k6n*mi  -  I:k*^n6mik -  ^&ae$t*m -  *^t6mik - ^InstINkt - In^stINktIv)
             8]}
 
 @item{@en-letters{-able}/@en-letters{-al}: usually unchanged, or unpredictable (true irregular).
@@ -671,7 +671,7 @@ A polysyllabic word is usually derived from a shorter one by adding prefixes and
 Otherwise, the stressed syllable tends to be remained:
 
 @en-words['(forget ⇒ unforgettable ""  economic  ⇒ economical  "" author ⇒ authorize ""  regard ⇒ regardless)
-          '(f*^get -  2nf*^get*bl   - I:c*^n6mik - I:c*^n6mik*l -  ^O:T* - ^O:T6raIz   - rI^gA:d - rI^gA:dl*s)
+          '(f*^get -  2nf*^get*bl   - I:k*^n6mik - I:k*^n6mik*l -  ^O:T* - ^O:T6raIz   - rI^gA:d - rI^gA:dl*s)
           8]
 
 with irregularities:
@@ -1035,5 +1035,51 @@ or @en-phonetics{Di:} before vowels.
        (list @ipa-ruby['(You^re        welcome.)
                        '(jO:           ^welk*m)
                        '(9998877665544 4332211000000)]))]
+
+
+@handbook-action{The Queen's Christmas Speech}
+
+@tabular[
+ #:sep gap1
+
+ (list (list @ipa-ruby['(In    1914|,|    many  people though=t .the.   war .woul=d. b/e +jo/ver  by  Christmas.)
+                       '(In     -        ^meni ^pi:p*l  TO:t      D*    wO:   wUd    bi    ^*Uv*  baI ^krIsm*s)
+                       '(33345 5677887655 7777 78999987 7766555  5567 789987 7766555 555  789975 5445 567888888765432)])
+
+       (list @ipa-ruby['(.Bu=t. sad+lly  by  then|,| .the. trenches .were. dug  an=d the future  shape of the wa/r +ri/n Europe .wa=s. set.)
+                       '(b*t   ^s&ae$dli baI D*n       D*  trentSIz   w*   d2g  *nd  D* ^fju:tS* SeIp  *v D*  wO:    In ^jU*r*p   w*z  set)
+                       '(55567  789987   766 6667654  333 4567888765 55567 7887 5555 555 678887  7654 444 456 6788 88888 8876555 55667 7887654)])
+
+       (list @ipa-ruby['(.Bu./t a/s  we know|,|  something remarkable did    happen    tha=t  Christmas|,| exactl/y  a/  hundre/d y/ear/s a/go  today.)
+                       '(b*t    *z   wi n*U      ^s2mTIN  rI^ma:k*b*l dId    ^h&ae$p*n D&ae$t ^krIsm*s  Ig^z&ae$ktli *  ^h2ndrId   jI*z   *^g*U t*^deI)
+                       '(5556  6677 788 88765434 777777777 777765445 5678998 876676543 66666  6788887654   456788876 655 56666555 56666543 4311 1234566543210)])
+
+       (list @ipa-ruby['(Without    an/y +ji/nstructio/n o/r command|,|  the shooting stopped|,|)
+                       '(wID^aUt    ^eni   In^str2kS*n   O: k*^mA:nd    D*  ^Su:tIN   st6pt)
+                       '(2223456667 78998 87789998765  544 445678876543 1112 34555432 23566543210)])
+
+       (list @ipa-ruby['(.an=d. Germa/n a/n=d Briti=2sh soldiers me/t i/n  No  Man^s   Land.)
+                       '(*nd  ^dZ3:m*n  *nd  ^brItIS  ^s*UldZ*z met  In  n*U m&ae$nz l&ae$d)
+                       '(012  3456654 43222 34566543 32111235 5665 54334 567 7765434 45554321)])
+       
+       (list @ipa-ruby['(Photographs .were. taken .an.=d gif/ts   e/xchanged.)
+                       '(^f^Ut*grA:fs w*   ^teIk*n *nd   gIfts    Iks^tSeIndZd)
+                       '(99999987654 43333 3334565 54322 23456654 4321123456654321)])
+
+       (list @ipa-ruby['(I_t  wa/s  a/  Christmas  truce.)
+                       '(It   w*z   *   ^krIsm*s   tru:s)
+                       '(9987 76544 445 5666654321 123455554321)])
+
+       (list @ipa-ruby['(Truce/s are/ no/t  a/   ne/w  +wi/dea.)
+                       '(tru:sIz  *   n6t   *    nju:   aI^dI*)
+                       '(7777765 5445 56776 655 567899 99987654321)])
+
+       (list @ipa-ruby['(In  th/e +ja/ncient world|,| .a. truce .was. declare=d .for. .the. duratio/n o/f  th/e +jO/lympi=c Games.)
+                       '(In  Di:   ^eInS*nt  w3:ld     *  tru:s  w*z  dI^kle*d   f*    D*  djU^reIS*n *v   Di     *^lImpIk  geImz)
+                       '(556 678999 99987654 4321112 2345 56777 7654 43223456776 555  55554 432234566 6543 3211 12345666654 456777654321)])
+
+       (list @ipa-ruby['(An=d war/s a/.n.=d   batt+lles    were   pu/t   o/n  hold.)
+                       '(*nd  wO:z    *nd     ^b&ae$tlz     w*     pUt   6n   h*Uld)
+                       '(6654 43221 12345665 54321112345 56654334 456776 6556 6789987654321)]))]
 
 @handbook-reference[]
