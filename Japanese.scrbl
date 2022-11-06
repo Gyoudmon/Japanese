@@ -36,7 +36,7 @@ is introduced to organize example sentences in this book. Meanwhile there are th
  @item{@bold{ACG}: Examples in fields of animation, cartoon, game and such.}
  ]
 
-Typeseting with environment variable @envvar{JAREALM} set to @italic{realm name} to generate the
+Typesetting with environment variable @envvar{JAREALM} setting to @italic{realm name} generates the
 target edition, say @exec{env JAREALM=STEM raco wisemon typeset}, and @ja-tech{realm} names are case
 sensitive.
 
@@ -53,13 +53,13 @@ Typically, an example in the file consists of five parts:
   Note that whitespaces are parts of names.}
  @item{@bold{Japanese Sentence}: the mandatory part of an example, written with the primary writting
   system(a.k.a. @ja-tech{kanji}). Tokens are separated by whitespaces.}
- @item{@bold{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation.
-  @racket[-] is used as a placeholder of a non-@ja-tech{kanji} token.}
+ @item{@bold{Ruby}: written in @ja-tech{hiragana} above kanji tokens to show their pronunciation. The
+  @litchar{-} is used as the placeholder for a non-@ja-tech{kanji} token.}
  @item{@bold{Mark}: written in English below @ja-tech{kana} tokens to show their grammatical or
   pragmatical functions. Multi-marks for one token are separated by period(@racketparenfont[@._]).
   Note that marks and rubies share the second line of an example in the file.}
  @item{@bold{Translation}: the meaning of the sentence, written primarily in English. Zero or multi
-  translations are allowed. Note that @emph{no} blank lines among translations.}
+  translations are also allowed. Note that @emph{no} blank lines among translations.}
  ]
 
 For multi-sentence examples, the last four parts repeat, and sentences are separated by blank lines.
@@ -106,7 +106,7 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 @include-section{literacy/terminology.scrbl}
 @include-section{literacy/abbreviation.scrbl}
 
-@; `texbook-back` will unnumber following sections without affecting the header
+@; `texbook-backmatter` will unnumber following sections without affecting the header
 @handbook-appendix[#:index-section? #true #:numbered? #true
  (bib-entry #:key      "CJLH"
             #:title    "The Combridge Handbook of Japanese Linguistics"
