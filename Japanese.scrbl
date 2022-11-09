@@ -108,18 +108,8 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 
 @; `texbook-backmatter` will unnumber following sections without affecting the header
 @handbook-appendix[#:index-section? #true #:numbered? #true
- (bib-entry #:key      "CJLH"
-            #:title    "The Combridge Handbook of Japanese Linguistics"
-            #:author   (editor "Yoko Hasegawa")
-            #:location (book-location #:publisher "Cambridge University Press")
-            #:date     "2018"
-            #:is-book? #true)
- (bib-entry #:key      "WBJG"
-            #:title    "世界最強日文文法"
-            #:author   (authors "桶田宜加" "清水祐美子")
-            #:location (book-location #:publisher "懶鬼子英日語")
-            #:date     "2018"
-            #:is-book? #true)
+ (book-bib-entry "CJLH" "The Combridge Handbook of Japanese Linguistics" (editor "Yoko Hasegawa") "Cambridge University Press" #:date "2018")
+ (book-bib-entry "WBJG" "世界最強日文文法" (authors "桶田宜加" "清水祐美子") "懶鬼子英日語" #:date "2018")
  (bib-entry #:key      "CJL"
             #:title    @chinese{综合日语}
             #:author   (authors @chinese{彭广陆} @chinese{守屋三千代})
