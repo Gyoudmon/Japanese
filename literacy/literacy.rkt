@@ -174,7 +174,7 @@
                    (tabular #:style 'block
                             #:column-properties '(left)
                             #:row-properties (append '(bottom-border) (make-list (sub1 (length example-row)) '()) '(bottom-border))
-                            (append (list (list (tamer-indexed-block-elemtag #:type type #:separator #false sym:extag "Example" chapter-index current-index)))
+                            (append (list (list (tamer-indexed-block-elemtag #:type type #:tail #false sym:extag "Example" chapter-index current-index)))
                                     example-row))))
          ja-example-index-type
          ja-example-style)]
