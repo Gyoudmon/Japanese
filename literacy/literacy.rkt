@@ -198,7 +198,7 @@
                             #:column-properties '(left)
                             #:row-properties (make-list (add1 (length example-rows)) 'bottom-border)
                             (append (list (list (list ($tex:phantomsection)
-                                                      (tamer-indexed-block-elemtag #:type type #:separator #false sym:extag "Example" chapter-index current-index))))
+                                                      (tamer-indexed-block-elemtag #:type type #:tail #false sym:extag "Example" chapter-index current-index))))
                                     example-rows))))
          ja-example-index-type
          ja-example-style)])]))
