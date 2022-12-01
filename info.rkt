@@ -12,8 +12,8 @@
 
 (define typesettings '(["Japanese.scrbl" lualatex #px#"realm/\\w+/\\w+[.]tex$"]))
 
-(define samples '(["literacy/pos.scrbl" 0]
+(define literacy-samples '(["literacy/pos.scrbl" 0]
 
-                  ["literacy/pos/verb.scrbl" 1 _]
-                  ["literacy/category/case.scrbl" 0 _]
-                  ["literacy/phonology/ipa.scrbl" 0 _]))
+                           ["literacy/pos/verb.scrbl" 1 _]
+                           ["literacy/category/case.scrbl" 0 _]
+                           ["literacy/phonology/ipa.scrbl" 0 _]))
