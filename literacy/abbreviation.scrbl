@@ -17,15 +17,15 @@
       #'(make-traverse-block
          (λ [get set!]
            (define latex? (handbook-latex-renderer? get))
-           (ja-tabular2 (list (bold (symbol->string 'head)) ... (chinese (bold (symbol->string 'head-zh-col)) #:latex? latex?))
-                        (map (λ [a] (cons (deftech (symbol->string (car a)) #:style? #false) (cdr a)))
-                             (ja-terminology-abbreviations get
-                                                           (list (list 'abbr.
-                                                                       (tech (symbol->string 'en-col))
-                                                                       (symbol->string 'col) ...
-                                                                       (chinese (symbol->string 'zh-col) #:latex? latex?))
-                                                                 ...)))
-                        3))))))
+           (ja-tabular/2 (list (bold (symbol->string 'head)) ... (chinese (bold (symbol->string 'head-zh-col)) #:latex? latex?))
+                         (map (λ [a] (cons (deftech (symbol->string (car a)) #:style? #false) (cdr a)))
+                              (ja-terminology-abbreviations get
+                                                            (list (list 'abbr.
+                                                                        (tech (symbol->string 'en-col))
+                                                                        (symbol->string 'col) ...
+                                                                        (chinese (symbol->string 'zh-col) #:latex? latex?))
+                                                                  ...)))
+                         3))))))
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @handbook-story{Abbreviation}

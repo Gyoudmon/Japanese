@@ -303,23 +303,9 @@
   (lambda contents
     (racketmetafont "「" contents "」")))
 
-(define ja-tabular2
+(define ja-tabular/2
   (lambda [table-head table-rows [gap 1] [empty-cols (list "")]]
-    (define col-size (length table-head))
-    (define col-properties (make-list col-size 'left))
-    (define cel-properties (make-list col-size '()))
-     
-    (tabular #:sep (hspace gap)
-             #:style 'centered
-             #:row-properties '(bottom-border ())
-             #:column-properties (append col-properties '(center) col-properties)
-             #:cell-properties (list (append cel-properties '(left-border) cel-properties))
-             (cons (append table-head empty-cols table-head)
-                   (let make-table ([rows table-rows]
-                                    [swor null])
-                     (cond [(null? rows) (reverse swor)]
-                           [(null? (cdr rows)) (reverse (cons (append (car rows) empty-cols (make-list col-size 'cont)) swor))]
-                           [else (make-table (cddr rows) (cons (append (car rows) empty-cols (cadr rows)) swor))]))))))
+    (handbook-appendix-tabular/2 table-head table-rows gap empty-cols)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ja-input

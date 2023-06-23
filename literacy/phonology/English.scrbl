@@ -76,7 +76,7 @@
 
 @handbook-action{Vowels}
 
-@tamer-figure-here["ipa:vowels:en" "IPA Vowels (British English)"]{
+@tamer-figure!["ipa:vowels:en" "IPA Vowels (British English)"]{
  @(let*-values ([(width height) (values 10 6)]
                 [(xunit) (* width 1/6)]
                 [(dx) (values (* xunit 2))])
