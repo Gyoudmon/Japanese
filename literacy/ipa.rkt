@@ -12,15 +12,14 @@
 (require scribble/latex-properties)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define ipa-group-style (make-style #false (list (make-color-property "Crimson") (make-background-color-property "MistyRose"))))
-(define ipa-link-style (make-style "textbottomtiebar" (style-properties ipa-group-style)))
-(define ipa-doublebar-style (make-style "ipadoublebar" (list (make-color-property "DeepSkyBlue"))))
-(define ipa-retract-style (make-style "underline" (list (make-color-property "DeepSkyBlue"))))
-(define ipa-weak-style (make-style #false (list (make-color-property "DarkKhaki"))))
-(define ipa-tone-style (make-style #false (list (make-color-property "Aquamarine"))))
-(define ipa-tag-style (make-style 'subscript (list (make-color-property "ForestGreen"))))
+(define ipa-group-style (type-rgb 'Crimson 'MistyRose))
+(define ipa-doublebar-style (fg-rgb 'DeepSkyBlue "ipadoublebar"))
+(define ipa-retract-style (fg-rgb 'DeepSkyBlue "underline"))
+(define ipa-weak-style (fg-rgb 'DarkKhaki))
+(define ipa-tone-style (fg-rgb 'Aquamarine))
+(define ipa-tag-style (fg-rgb 'ForestGreen 'subscript))
 
-(define ipa-link-element (elem #:style ipa-link-style ""))
+(define ipa-link-element (elem #:style (make-style "textbottomtiebar" (style-properties ipa-group-style)) ""))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define ipa-ruby
