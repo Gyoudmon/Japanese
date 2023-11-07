@@ -102,11 +102,11 @@ besides, each sentence can be referenced independently: @ja-exref[#:elem values 
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @texbook-backmatter[]
+@; `texbook-backmatter` will unnumber following sections without affecting the header
 
 @include-section{literacy/terminology.scrbl}
 @include-section{literacy/abbreviation.scrbl}
 
-@; `texbook-backmatter` will unnumber following sections without affecting the header
 @handbook-appendix[#:index-section? #true #:numbered? #true
  (book-bib-entry "CJLH" "The Combridge Handbook of Japanese Linguistics" (editor "Yoko Hasegawa") "Cambridge University Press" #:date "2018")
  (book-bib-entry "WBJG" "世界最強日文文法" (authors "桶田宜加" "清水祐美子") "懶鬼子英日語" #:date "2018")

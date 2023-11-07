@@ -9,9 +9,9 @@
    #:date 1967)
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@(define broad-style (make-style #false (list (make-color-property "DodgerBlue"))))
-@(define narrow-style (make-style #false (list (make-color-property "SandyBrown"))))
-@(define index-style (make-style #false (list (make-color-property "DimGray"))))
+@(define broad-style (fg-rgb 'DodgerBlue))
+@(define narrow-style (fg-rgb 'SandyBrown))
+@(define index-style (fg-rgb 'DimGray))
 
 @(define vnode
    (lambda [unrounded [rounded #false] [name #false] #:ja-vowel [vowel 'none] #:narrow? [narrow? #false] #:dot [dot #true] #:elem [ipa-elem phone-elem]]

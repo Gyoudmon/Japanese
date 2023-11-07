@@ -4,8 +4,8 @@
 @require{../chart.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@(define long-style (make-style #false (list (make-color-property "DodgerBlue"))))
-@(define short-style (make-style #false (list (make-color-property "Aquamarine"))))
+@(define long-style (fg-rgb 'DodgerBlue))
+@(define short-style (fg-rgb 'Aquamarine))
 
 @(define gap1 (hspace 1))
 @(define gap2 (hspace 2))
