@@ -3,7 +3,7 @@
 @require{literacy/literacy.rkt}
 
 @;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@handbook-title/pkg-desc[]
+@handbook-title/pkg-desc[#:documentclass "stone/documentclass.tex" #:tex-package "stone/load.tex" #:tex-CJK? #false]
 @texbook-frontmatter[]
 
 @; The preface will always be displayed after the table of contents if it is `include-section`ed.
