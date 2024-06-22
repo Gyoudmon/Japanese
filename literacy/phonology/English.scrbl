@@ -253,7 +253,7 @@ Assimilation is another phonological phenomenon similar to liaion but for @ja-te
   @en-words['(|goo=d girl| |las=t Monday| |spea=k more slowly| |brigh=t colour|) null 4]}
  ]
 
-@handbook-event{Progressive Assimilation}
+@handbook-scene{Progressive Assimilation}
 
 In this category, @ja-tech{phonemes} assimilate to their preceding @ja-tech{phonemes}. The most well
 known case is the voiceless-voiced-assimilation.
@@ -310,7 +310,7 @@ known case is the voiceless-voiced-assimilation.
            6]}
  ]
 
-@handbook-event{Regressive Assimilation}
+@handbook-scene{Regressive Assimilation}
 
 In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phonemes}. If the resulting
 @ja-tech{phoneme} is the same as the following one, the length doubled.
@@ -343,7 +343,7 @@ In this category, @ja-tech{phonemes} assimilate to their following @ja-tech{phon
             4]}
  ]
 
-@handbook-event{Reciprocal Assimilation}
+@handbook-scene{Reciprocal Assimilation}
 
 In this category, @ja-tech{phonemes} assimilate to each other for another new @ja-tech{phoneme}.
 
@@ -364,7 +364,7 @@ In this category, @ja-tech{phonemes} assimilate to each other for another new @j
  @item{@en-phonetics{z} + @en-phonetics{S} ⇒ @en-phonetics{Z}}
 ]
 
-@handbook-event{Reading: Charle and Lola}
+@handbook-scene{Reading: Charle and Lola}
 
 @tabular[
  #:sep gap1
@@ -433,7 +433,7 @@ associated with more operational definitions, instead of simply skipping the @ja
 with a short or no stop as is defined in assimilation. They should have subtle yet distinguishable
 hearing experiences.
 
-@handbook-event{Plosion Loss}
+@handbook-scene{Plosion Loss}
 
 When two or more @ja-tech{plosive}s appear consecutively in the stream of syllables, the former one
 would only be progressed with the blocking action and without the releasing action, closely followed
@@ -456,7 +456,7 @@ For the two high frequent words @en-letters{asked} and @en-letters{stopped}, whe
 @en-sentence['(H/e +ja/s_k/ed a/ lady for help)
              '(-      A:skt   *)]
 
-@handbook-event{Incomplete Plosion}
+@handbook-scene{Incomplete Plosion}
 
 When a @ja-tech{plosive} is followed by a @ja-tech{fricative} or @ja-tech{affricate}, it would be
 progressed with the blocking action and a partial releasing action. That is, sliding to the following
@@ -468,11 +468,11 @@ the imcomplete plosion.
           '(|^pIktS*|  |^D&ae$t ^dZ*Uk| |^bIg ^dZ2g|)
           4]
 
-@;handbook-event{Nasal Release}
+@;handbook-scene{Nasal Release}
 
-@;handbook-event{Lateral Release}
+@;handbook-scene{Lateral Release}
 
-@handbook-event{Reading: The Love Books}
+@handbook-scene{Reading: The Love Books}
 
 @tabular[
  #:sep gap1
@@ -561,7 +561,7 @@ syllables, respectively, like in @en-phonetics{pr*.n2nsI^eIS*n}.
 Stressed syllables of English words are generally unpredictable, nonetheless, some cheatsheets
 can be made for heuristic before looking up dictionaries.
 
-@handbook-event{Disyllables}
+@handbook-scene{Disyllables}
 
 @itemlist[
  @item{A @ja-tech{noun} or a @ja-tech{adjective} tends to stress on the first syllable.
@@ -614,7 +614,7 @@ is indispensable for high quality communicating with native speakers.
 @en-sentence['(I must tell you|,| I^m a /eunuch/)
              '(-  -    -    -      -  - ^ju:n*k)]
 
-@handbook-event{Polysyllables}
+@handbook-scene{Polysyllables}
 
 A polysyllabic word is usually derived from a shorter one by adding prefixes and/or suffixes:
 
@@ -680,7 +680,7 @@ with irregularities:
           '(^&ae$dv*taIz - &ae$d^v*tIzm*nt)
           8]
 
-@handbook-event{Compound Words}
+@handbook-scene{Compound Words}
 
 A compound word is the word composed of two or more single words and represents a new word. Compound
 words can be written in any of the three forms: 1). a single word; 2). a hyphenated long word; or
@@ -719,7 +719,7 @@ Native speakers have made themselves very sensible to the stress accent patterns
 Besides, some compound words may have more than one stressed words, these words may not be considered
 as irregular, they are just not that into a single word.
 
-@handbook-event{Reading: A Sad Birthday}
+@handbook-scene{Reading: A Sad Birthday}
 
 @tabular[
  #:sep gap1
@@ -762,7 +762,7 @@ are shortened to accommodate them.
 Generally speaking, @ja-tech{ancillary word}s tend to be realized as their weak forms unless they
 are emphasized, whereas @ja-tech{independent word}s tend to be realized as their strong forms.
 
-@handbook-event{Pronunciation of some prepositions}
+@handbook-scene{Pronunciation of some prepositions}
 
 Prepositions are ancillary words. When they
 
@@ -803,7 +803,7 @@ Prepositions are ancillary words. When they
                '(-  -    &ae$t)]}
  ]
 
-@;handbook-event{Pronunciation of some conjunctions}
+@;handbook-scene{Pronunciation of some conjunctions}
 
 @;{
 Conjunctions are ancillary words, when they are realized as their weak forms, their vowels would
@@ -813,14 +813,14 @@ In contrast to prepositions, conjunctios may connect two sense groups, and in th
 would not be realized as weak forms.
 }
 
-@;handbook-event{Pronunciation of @en-letters{the}}
+@;handbook-scene{Pronunciation of @en-letters{the}}
 
 @;{
 It is recommended that, realizing it as @en-phonetics{D*} before consonants, and as @en-phonetics{Di}
 or @en-phonetics{Di:} before vowels.
 }
 
-@handbook-event{Reading: Wish You Well}
+@handbook-scene{Reading: Wish You Well}
 
 @tabular[
  #:sep gap1

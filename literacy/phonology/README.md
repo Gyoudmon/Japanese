@@ -28,14 +28,13 @@ A62O;2Ombo;mbo7o;7oWu;
 07Close`Close`;06Near-Close`Near-Close`;05Close-Mid`Close-Mid`;04Mid`Mid`;03Open-Mid`Open-Mid`;02Near-Open`Near-Open`;01Open`Open`;
 `Figure 1.1: `IPA Vowels
 
-Figure 1.1 is the well known vowel chart defined in the IPA, extended
-the Jones \[1:CardinalVowels\], a measuring system of vowels that well
-trained phoneticians can produce and recognize. That is, vowels defined
-in figure 1.1 are just abstract references, instead of exact mappings,
-of real vowels in a particular language, although for some languages,
-some of their vowels may happen to coincide with the cardinal vowels.
-Nonetheless, figure 1.1 still deserves its place for beginners due to
-its intuitiveness.
+Figure1.1 is the well known vowel chart defined in the IPA, extended the
+ \[1\], a measuring system of vowels that well trained phoneticians can
+produce and recognize. That is, vowels defined in figure1.1 are just
+abstract references, instead of exact mappings, of real vowels in a
+particular language, although for some languages, some of their vowels
+may happen to coincide with the cardinal vowels. Nonetheless, figure1.1
+still deserves its place for beginners due to its intuitiveness.
 
 A _cardinal vowel_ 「基本母音きほんぼいん」 is defined to be produced when the
 tongue is in an extreme position, either front or back, high or lowThe
@@ -47,7 +46,7 @@ consistently associated with the position of the tongue and jaw, thus,
 it is safe to follow the simple definition. Given that opening the mouth
 will lower the tongue from the viewpoint of the palate, moving the
 tongue vertically can be simplified to opening and closing the mouth,
-which adjusts the aperture of the jaw. As is in figure 1.1, the IPA
+which adjusts the aperture of the jaw. As is in figure1.1, the IPA
 prefers the `open`/`close` model, which inverts the `high`/`low` model..
 The three corner vowels, \[i\], \[A\], and \[u\], have articulatory
 definitions, other cardinal vowels are auditorily equidistant amongst
@@ -73,7 +72,7 @@ the roundedness, and are more often unrounded than rounded.
 
 Generally speaking, there are only 5 vowels in Japanese. In a broad
 sense, these vowels can be simply transcribed as the five blue symbols
-in Figure 1.1, while in a narrow sense, if compared to similar vowels in
+in Figure1.1, while in a narrow sense, if compared to similar vowels in
 other languages, they should be transcribed as the orange onesThay are
 marked with diacritics whose meanings can be observed in the chart
 directly. \[◌\] means ​_lowered_​, \[◌\] means ​_advanced_​, and \[◌\]
@@ -107,7 +106,8 @@ learning from professional teachers.
 _Consonant_s are produced with a partial or total closure of the vocal
 tract.
 
-## Reference
+## References
 
-\[1\]Daniel Jones. Cardinal Vowels. 1967.                                                           
-     [https://en.wikipedia.org/wiki/Cardinal\_vowels](https://en.wikipedia.org/wiki/Cardinal_vowels)
+\[1\]Daniel Jones. Cardinal Vowels.                                                                  
+     [https://en.wikipedia.org/wiki/Cardinal\_vowels](https://en.wikipedia.org/wiki/Cardinal_vowels),
+     1967.                                                                                           
